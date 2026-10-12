@@ -1,0 +1,19 @@
+[project]
+name = "proofop"
+version = "0.1.0"
+description = "Proof-carrying operation for device agents: goal contracts and obligation ledgers that a checker proves against recorded UI evidence."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+dependencies = ["pydantic>=2"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["src"]
