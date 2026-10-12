@@ -5,10 +5,14 @@ description = "Proof-carrying operation for device agents: goal contracts and ob
 readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.10"
-dependencies = ["pydantic>=2"]
+dependencies = ["pydantic>=2", "mcp>=2.2", "uvicorn>=0.30"]
 
 [project.optional-dependencies]
+ios = ["fb-idb>=1.1.7"]
 test = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+proofop = "proofop.cli:main"
 
 [build-system]
 requires = ["hatchling"]

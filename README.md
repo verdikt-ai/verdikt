@@ -17,7 +17,18 @@ verifies the claim against that screen's UI tree.
   screen before acting, so a layout shift cannot redirect a tap.
 - **UI element model** (`proofop.tree`).
 
-Status: pre-release. Device adapters, a reference MCP server and the AndroidWorld / iOSWorld
-benchmark runners will follow (see the architecture plan).
+## Use it
+
+```sh
+pipx install "proofop[ios]"
+claude mcp add phone -- proofop serve --android emulator-5554     # or: --ios <simulator-udid>
+```
+
+Then ask your agent to do something on the phone. It records the goal's obligations, acts, closes each one
+with evidence, and can only finish once the checker accepts the ledger. Every run leaves a folder with each
+screen, its UI tree, the ledger and `certificate.json`; `proofop verify <run>` re-checks it. See `install.md`,
+`SKILL.md` and `AGENTS.md`.
+
+Status: pre-release. The AndroidWorld / iOSWorld benchmark runners and the results site will follow.
 
 License: Apache-2.0.

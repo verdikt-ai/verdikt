@@ -82,9 +82,16 @@ def shows(text: str, claim: str) -> bool:
 
 
 def verify(task_dir: Path) -> dict:
+    """Verify the newest run under `task_dir/runs/` (the benchmark layout)."""
     run = run_dir(task_dir)
     if run is None:
         return {'run': None, 'obligations': []}
+    return verify_run(run)
+
+
+def verify_run(run: Path) -> dict:
+    """Verify one run folder: `progress.json` (the ledger) against `screens/NNNN.tree.json`."""
+    run = Path(run)
     obligations = []
     for crit, e in ledger(run).items():
         status = e.get('status')
@@ -127,8 +134,7 @@ def challenge(result: dict, absence_challenged: set[str]) -> str | None:
     if not lines:
         return None
     return ('The checker reviewed your obligation ledger and did not accept it yet:\n' + '\n'.join(lines) +
-            '\nContinue with the actions you have left (your budget did not reset). Do not call end_session. '
-            'When done, end with the ANSWER line again.')
+            '\nContinue with the actions you have left (your budget did not reset), then finish again.')
 
 
 def answer_with_facts(answer: str | None, result: dict) -> str | None:

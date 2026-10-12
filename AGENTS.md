@@ -1,0 +1,7 @@
+# Agents: start here
+
+- To operate a phone, use the `proofop` MCP server (see `install.md` to add it) and follow `SKILL.md`.
+- To audit a finished run: `proofop verify <run-folder>`.
+- To test one assertion against a saved UI tree: `proofop check '<check>' --tree screen.json`.
+- Library code lives in `src/proofop/`: `checks` (assertion language), `tree` (element model), `targeting`
+  (stable taps), `contracts` (goal contracts), `ledger` (the checker), `session` (operator), `server` (MCP), `drivers`.
