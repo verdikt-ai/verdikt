@@ -15,10 +15,10 @@ ROOT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(os.environ.get('VERDIKT_
 OUT = ROOT / 'site' / 'pco'
 SITE = 'https://verdikt-ai.github.io/verdikt/pco'
 CODE = 'https://github.com/verdikt-ai/verdikt'
-TITLE = 'Proof-Carrying Operation: Device Agents Whose Completion Is Checked, Not Declared'
+TITLE = 'Proof-Carrying Operation: Device Agents Whose Completion Claims Are Checked Against the Screen'
 AUTHORS = ['Hussein Abdinoor Mohamed', 'Kedar R. Haldankar']
-DOI = '10.5281/zenodo.23345802'  # filled in once Zenodo assigns it
-PREPRINT = 'https://doi.org/10.5281/zenodo.23345802'  # the arXiv abstract page, e.g. https://arxiv.org/abs/2610.xxxxx; the paper is read there, not hosted here
+DOI = '10.5281/zenodo.23349257'  # filled in once Zenodo assigns it
+PREPRINT = 'https://doi.org/10.5281/zenodo.23349257'  # the arXiv abstract page, e.g. https://arxiv.org/abs/2610.xxxxx; the paper is read there, not hosted here
 
 
 def main() -> None:
@@ -37,7 +37,7 @@ def main() -> None:
              (f"{100 * meanA:.1f}%", 'AndroidWorld pass@1 averaged over three seeds, no app knowledge')]
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Proof-Carrying Operation</title>
-<meta name="description" content="Device agents whose completion is checked by a deterministic checker against recorded UI evidence, not declared by the model.">
+<meta name="description" content="Device agents whose completion claims are checked by code against the recorded accessibility tree of the screen they cite, with every run leaving an auditable certificate.">
 <meta name="citation_title" content="{html.escape(TITLE)}">{''.join(f'<meta name="citation_author" content="{a}">' for a in AUTHORS)}
 <meta name="citation_publication_date" content="{date.today().isoformat()}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

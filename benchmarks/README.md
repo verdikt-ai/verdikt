@@ -50,6 +50,7 @@ prompts, `pco.py`, and the checker in `verdikt_core.proof.ledger`) is all here.
 ```sh
 python -m benchmarks.explorer.stats                         # -> $VERDIKT_BENCH/explorer/stats.json
 python -m benchmarks.explorer.export $VERDIKT_BENCH/site/pco/results   # the public results site
+python -m benchmarks.paper.audit                            # -> $VERDIKT_BENCH/paper/audit.json (checker audit, sample)
 python -m benchmarks.paper.build_paper                      # -> $VERDIKT_BENCH/paper/draft.{html,pdf}
 python -m benchmarks.paper.build_site_page                  # -> $VERDIKT_BENCH/site/pco/index.html
 ```

@@ -2,8 +2,8 @@
 
 Proof-carrying operation for device agents.
 
-**Paper:** [Proof-Carrying Operation: Device Agents Whose Completion Is Checked, Not Declared](https://verdikt-ai.github.io/verdikt/pco/)
-([preprint, doi:10.5281/zenodo.23345802](https://doi.org/10.5281/zenodo.23345802) · [every run, frame and statistic](https://verdikt-ai.github.io/verdikt/pco/results/)).
+**Paper:** [Proof-Carrying Operation: Device Agents Whose Completion Claims Are Checked Against the Screen](https://verdikt-ai.github.io/verdikt/pco/)
+([preprint, doi:10.5281/zenodo.23349257](https://doi.org/10.5281/zenodo.23349257) · [every run, frame and statistic](https://verdikt-ai.github.io/verdikt/pco/results/)).
 On iOSWorld, PCO raises fully passed tasks from 77/133 to 90/133 (McNemar p = 0.007).
 
 A device agent usually decides for itself that a task is done. Verdikt Core moves that decision to a
