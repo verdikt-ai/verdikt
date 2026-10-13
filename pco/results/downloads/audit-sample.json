@@ -1,0 +1,1121 @@
+{
+ "legend": {
+  "S": "sound: the cited screen shows a value that only appears if the obligation was met (a sent message, a saved alarm row, a confirmation, the requested fact)",
+  "E": "editor state: the claim is the value of an editable field (note title or body) on the cited screen; the edit is shown, its persistence is not",
+  "W": "weak: the matched text is a generic control label or a bare number that can appear whether or not the obligation was met (a button named Repost, a like count, the word Run)",
+  "M": "mismatch: the matched text is present but does not evidence the obligation it closes (a component price cited for a cart total; an unrelated screen cited for a skipped branch)"
+ },
+ "seed": 7,
+ "rows": [
+  {
+   "i": 0,
+   "task": "mem-052",
+   "type": "DO",
+   "obligation": "DO: Create 'Professional Brand Summary' note in Notes",
+   "claim": "Professional Brand Summary",
+   "evidence_frame": 40,
+   "explanation": "Notes list now shows a row titled Professional Brand Summary with preview \"Current positioning: Staff Automation Engineer...\"",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Professional Brand Summary, 7:48 PM, \u00b7, Current positioning: Staff Automation Engineer at Meridian Technologies (Python,"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 1,
+   "task": "mem-015",
+   "type": "DO",
+   "obligation": "DO: search MegaMart for related products",
+   "claim": "KitchenAid Classic Plus 4.5-Quart Tilt-Head Stand Mixer",
+   "evidence_frame": 41,
+   "explanation": "A search for \"kitchen\" returned the KitchenAid Classic Plus Stand Mixer ($279.99), Ninja AF101 Air Fryer, T-fal Cookware Set, Instant Pot Duo ($89.99), Vitamix E310, and Fellow Stagg EKG Kettle ($165.00).",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "KitchenAid Classic Plus 4.5-Quart Tilt-Head Stand Mixer, by KitchenAid, 4.8, (74.2k), Popular pick in KitchenAid, Kitche"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 2,
+   "task": "multi-011",
+   "type": "DO",
+   "obligation": "DO: Create Notes note titled 'Catalina Trip Plan' with all info",
+   "claim": "Catalina Trip Plan",
+   "evidence_frame": 40,
+   "explanation": "The note's title field reads \"Catalina Trip Plan\" and the body contains the listing details, the SF weather for Oct 18\u201321 and the restaurant picks Lazy Bear, Commis and Chez Panisse.",
+   "matched": [
+    {
+     "type": "TextField",
+     "key": "AXValue",
+     "text": "Catalina Trip Plan"
+    }
+   ],
+   "label": "E",
+   "note": null
+  },
+  {
+   "i": 3,
+   "task": "multi-061",
+   "type": "DO",
+   "obligation": "DO: Add a Drama film as backup to 'Weeknight Watch' list",
+   "claim": "10/12 - 8:00 PM EDT",
+   "evidence_frame": 8,
+   "explanation": "Not applicable: part of the no-games branch; the screen shows \"MLB \u2022 2 games\" scheduled tonight, so no movie pick is needed.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "10/12 - 8:00 PM EDT"
+    }
+   ],
+   "label": "M",
+   "note": "multi-061: the agent closed the 'add a Drama film' DO with a screen showing an MLB schedule, because its IF branch said no film was needed; the checker accepted the unrelated text."
+  },
+  {
+   "i": 4,
+   "task": "freshcart-001",
+   "type": "DO",
+   "obligation": "DO: Add avocados from Natural Foods Market to cart",
+   "claim": "Organic Hass Avocados",
+   "evidence_frame": 20,
+   "explanation": "Natural Foods Market cart shows \"Organic Hass Avocados\" $11.98 with quantity 2.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Organic Hass Avocados"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 5,
+   "task": "lockedin-002",
+   "type": "DO",
+   "obligation": "DO: DM Elena Brooks asking about dinner to celebrate",
+   "claim": "Congrats on the new role at Substack, Elena! Do you want to get dinner to celebrate?",
+   "evidence_frame": 28,
+   "explanation": "The Elena Brooks chat now shows the sent message \"Congrats on the new role at Substack, Elena! Do you want to get dinner to celebrate?\" at 7:36 PM, marked \"Seen\".",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Congrats on the new role at Substack, Elena! Do you want to get dinner to celebrate?"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 6,
+   "task": "multi-088",
+   "type": "DO",
+   "obligation": "DO: order high-protein recovery meal from QuickBite (Sweetgreen or Sugarfish)",
+   "claim": "Order confirmed",
+   "evidence_frame": 56,
+   "explanation": "Tracking screen shows \"Order confirmed\", \"ETA 24 min\", \"Sweetgreen 1 item\" (Chicken Pesto Parm, $25.25 total).",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Order confirmed"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 7,
+   "task": "multi-036",
+   "type": "DO",
+   "obligation": "DO: log oatmeal as breakfast in CalTrack",
+   "claim": "Oatmeal added to Breakfast.",
+   "evidence_frame": 19,
+   "explanation": "Dashboard shows toast \"Oatmeal added to Breakfast.\" and Breakfast total rose to 535.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Oatmeal added to Breakfast."
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 8,
+   "task": "lockedin-004",
+   "type": "DO",
+   "obligation": "DO: follow Netflix from job detail",
+   "claim": "Following",
+   "evidence_frame": 25,
+   "explanation": "About the company section shows Netflix, 537K followers, with button now reading \"Following\".",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Following"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 9,
+   "task": "multi-006",
+   "type": "DO",
+   "obligation": "DO: Send group message to Brunch Crew in QuickChat with restaurant details",
+   "claim": "Booked Fiore Trattoria for 8 tonight, Mon Oct 12 at 9:00 PM",
+   "evidence_frame": 74,
+   "explanation": "Brunch Crew thread shows my sent message \"Booked Fiore Trattoria for 8 tonight, Mon Oct 12 at 9:00 PM...\" with a check mark.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Booked Fiore Trattoria for 8 tonight, Mon Oct 12 at 9:00 PM (451 Howard St, SF), patio seating, vegetarian friendly. Cod"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 10,
+   "task": "multi-048",
+   "type": "DO",
+   "obligation": "DO: Open Product Strategy folder in CloudDrive",
+   "claim": "Product Strategy",
+   "evidence_frame": 71,
+   "explanation": "Product Strategy folder open in CloudDrive listing All Hands Storyline, Q3 Planning Brief and Board Prep.",
+   "matched": [
+    {
+     "type": "Heading",
+     "key": "AXLabel",
+     "text": "Product Strategy"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 11,
+   "task": "lockedin-001",
+   "type": "DO",
+   "obligation": "DO: email Leo Chen the link asking for preparation advice",
+   "claim": "Interview Prep - Technical Program Manager at Amazon",
+   "evidence_frame": 110,
+   "explanation": "Sent mailbox top row: \"Leo Chen, 8:30 PM, Interview Prep - Technical Program Manager at Amazon, Hi Leo, I\u2019m preparing for a Technical Program Manager role at Amazon. Here is my...\".",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Leo Chen, 8:30 PM, Interview Prep - Technical Program Manager at Amazon, Hi Leo, I\u2019m preparing for a Technical Program M"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 12,
+   "task": "multi-032",
+   "type": "DO",
+   "obligation": "DO: update a cell in QA Test Matrix in CloudSheets",
+   "claim": "Localization",
+   "evidence_frame": 34,
+   "explanation": "QA Test Matrix, back in view mode, shows cell A6 (sheet_cell_A6) with the value \"Localization\", which was previously empty.",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Localization"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 13,
+   "task": "mem-027",
+   "type": "DO",
+   "obligation": "DO: update Workout Plan note with adjusted targets",
+   "claim": "Adjusted Targets (Oct 12):",
+   "evidence_frame": 37,
+   "explanation": "Workout Plan note body now ends with the new section \"Adjusted Targets (Oct 12):\" listing weight, rate, projected goal date, calories, running and race targets; editing is closed.",
+   "matched": [
+    {
+     "type": "TextArea",
+     "key": "AXValue",
+     "text": "Weekly Schedule:\n\nMonday - Upper Body\n- Bench press 4x8\n- Overhead press 3x10\n- Rows 4x10\n- Bicep curls 3x12\n\nWednesday "
+    }
+   ],
+   "label": "E",
+   "note": null
+  },
+  {
+   "i": 14,
+   "task": "dinespot-001",
+   "type": "DO",
+   "obligation": "DO: Search SF restaurants with Outdoor Seating tag",
+   "claim": "10 restaurants nearby",
+   "evidence_frame": 29,
+   "explanation": "The Outdoor collection is applied: the list now reads \"10 restaurants nearby\" and includes Harborline Seafood.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "10 restaurants nearby"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 15,
+   "task": "lockedin-004",
+   "type": "DO",
+   "obligation": "DO: reply to Rachel Torres InMail with interest and 3+ questions",
+   "claim": "Hi Rachel, thank you for the details! I\u2019m very interested in the Platform Engineering Lead role",
+   "evidence_frame": 10,
+   "explanation": "Sent bubble at 7:45 PM marked \"Seen\" contains the reply with questions 1), 2), 3).",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Hi Rachel, thank you for the details! I\u2019m very interested in the Platform Engineering Lead role and would love to hop on"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 16,
+   "task": "multi-017",
+   "type": "DO",
+   "obligation": "DO: 6:30 AM alarm labeled 'Morning Run' in Clock",
+   "claim": "6:30, Morning Run",
+   "evidence_frame": 36,
+   "explanation": "Clock Alarms list shows enabled alarm row \"6:30, Morning Run\" (value 1), created via Add Alarm with AM selected.",
+   "matched": [
+    {
+     "type": "CheckBox",
+     "key": "AXLabel",
+     "text": "6:30, Morning Run"
+    },
+    {
+     "type": "CheckBox",
+     "key": "AXLabel",
+     "text": "6:30, Morning Run"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 17,
+   "task": "multi-014",
+   "type": "DO",
+   "obligation": "DO: place snack order from QuickBite (Shake Shack or Domino's)",
+   "claim": "Order confirmed",
+   "evidence_frame": 61,
+   "explanation": "Tracking screen shows \"Order confirmed\", \"ETA 29 min\", \"Shake Shack 1 item\".",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Order confirmed"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 18,
+   "task": "lockedin-002",
+   "type": "DO",
+   "obligation": "DO: Repost Elena's post",
+   "claim": "Repost",
+   "evidence_frame": 17,
+   "explanation": "After tapping Repost on Elena Brooks' post \"I'm thrilled to share that I'm starting a new position as Head of Content at Substack!\", the Repost button is now highlighted blue like the active Like button.",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Repost"
+    }
+   ],
+   "label": "W",
+   "note": "lockedin-002: 'Repost' is the button's label before and after reposting."
+  },
+  {
+   "i": 19,
+   "task": "mem-032",
+   "type": "DO",
+   "obligation": "DO: message closest running friend about next Saturday run in QuickChat",
+   "claim": "Hey Priya! Want to join the next Saturday long run this Saturday (Oct 17)?",
+   "evidence_frame": 49,
+   "explanation": "Priya Raman thread shows the sent message \"Hey Priya! Want to join the next Saturday long run this Saturday (Oct 17)? 7:00 AM start from Crissy Field.\" at 6:50 PM with a sent checkmark; Priya replied \"Absolutely! I'd love to join.\"",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Hey Priya! Want to join the next Saturday long run this Saturday (Oct 17)? 7:00 AM start from Crissy Field. Let\u2019s keep i"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 20,
+   "task": "lockedin-004",
+   "type": "DO",
+   "obligation": "DO: save Platform Engineering Lead job at Netflix",
+   "claim": "Saved",
+   "evidence_frame": 21,
+   "explanation": "Job detail for Netflix \"Platform Engineering Lead\" now shows the button as \"Saved\".",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Saved"
+    },
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Saved"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 21,
+   "task": "multi-037",
+   "type": "DO",
+   "obligation": "DO: create Notes note 'Weekly Priorities' with action items",
+   "claim": "Weekly Priorities",
+   "evidence_frame": 43,
+   "explanation": "Note with title \"Weekly Priorities\" and body \"1. P0 bugs only - release branch cut, cherry-picks for P0 only...\" is shown.",
+   "matched": [
+    {
+     "type": "TextField",
+     "key": "AXValue",
+     "text": "Weekly Priorities"
+    }
+   ],
+   "label": "E",
+   "note": null
+  },
+  {
+   "i": 22,
+   "task": "multi-014",
+   "type": "DO",
+   "obligation": "DO: message Avery Fam group in QuickChat with movie and snack details",
+   "claim": "Movie night pick: Inception! Snacks ordered from Shake Shack: Cheese Fries, total $14.03, ETA 29 min.",
+   "evidence_frame": 71,
+   "explanation": "Avery Fam thread shows the sent message \"Movie night pick: Inception! Snacks ordered from Shake Shack...\" at 7:40 PM, and both family members have replied.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Movie night pick: Inception! Snacks ordered from Shake Shack: Cheese Fries, total $14.03, ETA 29 min."
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 23,
+   "task": "lockedin-002",
+   "type": "DO",
+   "obligation": "DO: Like Elena Brooks' celebration post",
+   "claim": "313",
+   "evidence_frame": 10,
+   "explanation": "After tapping Like, the reaction count went from \"312\" to \"313\" and the Like button is shown highlighted blue.",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "313"
+    }
+   ],
+   "label": "W",
+   "note": "lockedin-002: the like count 313 only proves the like relative to the previous 312, which the checker does not see."
+  },
+  {
+   "i": 24,
+   "task": "multi-088",
+   "type": "DO",
+   "obligation": "DO: message Running Club Announcements in QuickChat with weekly stats",
+   "claim": "Weekly update: 4 runs, 33.2 mi this week incl a 13.1 mi long run.",
+   "evidence_frame": 79,
+   "explanation": "Thread \"Running Club Announcements\" shows my sent message \"Weekly update: 4 runs, 33.2 mi this week incl a 13.1 mi long run...\" at 8:02 PM with checkmark, followed by replies.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Weekly update: 4 runs, 33.2 mi this week incl a 13.1 mi long run. Weight down 1.6 lb to 182.2 (goal 176). Avg 1361 cal/d"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 25,
+   "task": "multi-040",
+   "type": "DO",
+   "obligation": "DO: Book Golden Gate Izakaya on DineSpot for 2 after 5pm",
+   "claim": "Code: RSV2007",
+   "evidence_frame": 41,
+   "explanation": "Confirmation screen shows \"Reservation Confirmed\", \"Golden Gate Izakaya\", \"Sat, Oct 24 \u2022 7:00 PM\", \"Code: RSV2007\".",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Code: RSV2007"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 26,
+   "task": "mem-004",
+   "type": "DO",
+   "obligation": "DO: update reading list note in Notes with the book",
+   "claim": "Currently reading: Pachinko by Min Jin Lee (mentioned by Grace Lin, book club pick)",
+   "evidence_frame": 40,
+   "explanation": "The \"Books to Read\" note body now reads \"Currently reading: Pachinko by Min Jin Lee (mentioned by Grace Lin, book club pick)\" and the keyboard is dismissed.",
+   "matched": [
+    {
+     "type": "TextArea",
+     "key": "AXValue",
+     "text": "Fiction:\n- Project Hail Mary - Andy Weir\n- Klara and the Sun - Kazuo Ishiguro\n- The Midnight Library - Matt Haig\n- Piran"
+    }
+   ],
+   "label": "E",
+   "note": null
+  },
+  {
+   "i": 27,
+   "task": "mem-029",
+   "type": "DO",
+   "obligation": "DO: Create 'Dining Profile' note in Notes",
+   "claim": "Dining Profile",
+   "evidence_frame": 50,
+   "explanation": "Notes list now shows the row \"Dining Profile, 7:31 PM, \u00b7 Top cuisines: Mexican, Japanese...\"",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Dining Profile, 7:31 PM, \u00b7, Top cuisines: Mexican, Japanese (sushi, izakaya, kaiseki), Seafood; also Italian"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 28,
+   "task": "multi-055",
+   "type": "DO",
+   "obligation": "DO: Log protein shake in CalTrack",
+   "claim": "Protein shake added to Breakfast.",
+   "evidence_frame": 41,
+   "explanation": "Breakfast now lists \"Protein shake, 1 1 bottle, 160\" and toast \"Protein shake added to Breakfast.\"",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Protein shake added to Breakfast."
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 29,
+   "task": "multi-055",
+   "type": "DO",
+   "obligation": "DO: Set 5:45 AM alarm labeled 'Training Day'",
+   "claim": "5:45, Training Day",
+   "evidence_frame": 101,
+   "explanation": "The Alarms list shows the new row \"5:45, Training Day\" with its toggle on (value 1).",
+   "matched": [
+    {
+     "type": "CheckBox",
+     "key": "AXLabel",
+     "text": "5:45, Training Day"
+    },
+    {
+     "type": "CheckBox",
+     "key": "AXLabel",
+     "text": "5:45, Training Day"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 30,
+   "task": "multi-093",
+   "type": "DO",
+   "obligation": "DO: QuickChat congratulations message to Rohan",
+   "claim": "Rohan! Just saw the Series A news, $18M is huge. So proud of you, man. You\u2019ve earned every bit of it. Drinks on me to celebrate!",
+   "evidence_frame": 68,
+   "explanation": "Sent message at 6:30 PM in Rohan Mehta QuickChat thread; Rohan replied \"Thanks, Jordan! I appreciate it.\"",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Rohan! Just saw the Series A news, $18M is huge. So proud of you, man. You\u2019ve earned every bit of it. Drinks on me to ce"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 31,
+   "task": "multi-090",
+   "type": "DO",
+   "obligation": "DO: add All Hands storylines section to Launch Retrospective in CloudDocs",
+   "claim": "All Hands Storylines:",
+   "evidence_frame": 46,
+   "explanation": "The saved Launch Retrospective document text now ends with \"All Hands Storylines: - What changed, what shipped, and where we are investing next\".",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Launch Retrospective \u2014 March 2026\n\nWhat went well:\n- Staged rollout kept incidents low\n- On-call rotation held through w"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 32,
+   "task": "multi-046",
+   "type": "DO",
+   "obligation": "DO: DineSpot reservation for 6 at 11 AM Saturday at Marina Oyster Club (confirmation)",
+   "claim": "Code: RSV2007",
+   "evidence_frame": 71,
+   "explanation": "Confirmation screen shows \"Reservation Confirmed\", \"Marina Oyster Club\", \"Sat, Oct 17 \u2022 11:30 AM\", \"Code: RSV2007\". No 11:00 AM slot existed; closest 11:30 AM booked with note \"Party of 6\".",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Code: RSV2007"
+    }
+   ],
+   "label": "S",
+   "note": "multi-046: the booking is real but at 11:30 AM; the obligation asked for 11 AM. The checker verifies presence, not constraints; the rubric judge caught it."
+  },
+  {
+   "i": 33,
+   "task": "multi-087",
+   "type": "DO",
+   "obligation": "DO: message Sofia Kim in QuickChat with flight details",
+   "claim": "Hey Sofia! I\u2019m headed to NYC on Wed, Oct 14.",
+   "evidence_frame": 83,
+   "explanation": "Sofia Kim chat shows sent message 6:55 PM: \"Hey Sofia! I\u2019m headed to NYC on Wed, Oct 14. Flight DL1358 SFO to JFK, departs 7:30 AM...\"",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Hey Sofia! I\u2019m headed to NYC on Wed, Oct 14. Flight DL1358 SFO to JFK, departs 7:30 AM (boarding 6:55 AM, gate E13), arr"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 34,
+   "task": "tasterank-001",
+   "type": "DO",
+   "obligation": "DO: add Tartine Manufactory to Want to Try list",
+   "claim": "Want to Try",
+   "evidence_frame": 12,
+   "explanation": "Save to List sheet for Tartine Manufactory shows \"Want to Try\" button now selected with a checkmark.",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Want to Try"
+    }
+   ],
+   "label": "W",
+   "note": "tasterank-001: 'Want to Try' is a list name shown whether or not it is selected."
+  },
+  {
+   "i": 35,
+   "task": "quickchat-003",
+   "type": "DO",
+   "obligation": "DO: reply in that thread confirming registration and asking about race day meetup plan",
+   "claim": "Confirmed, I\u2019m registered for the Brooklyn Half! What\u2019s the race day meetup plan?",
+   "evidence_frame": 13,
+   "explanation": "Sent bubble in Elena Brooks thread under \"Mon, Oct 12\" reads \"Confirmed, I\u2019m registered for the Brooklyn Half! What\u2019s the race day meetup plan?\" with 8:25 PM and delivered checkmark.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Confirmed, I\u2019m registered for the Brooklyn Half! What\u2019s the race day meetup plan?"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 36,
+   "task": "mem-028",
+   "type": "DO",
+   "obligation": "DO: update average spending section in Spending Dashboard",
+   "claim": "232.28",
+   "evidence_frame": 100,
+   "explanation": "The Avg/month column now shows Food (out) C4 = \"232.28\" and Transport C5 = \"185.50\", which blend in October's figures. Food (home) at 310 and Shopping at 175 were not updated because I ran out of actions.",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "232.28"
+    },
+    {
+     "type": "TextField",
+     "key": "AXValue",
+     "text": "232.28"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 37,
+   "task": "freshcart-001",
+   "type": "DO",
+   "obligation": "DO: Add salmon from Natural Foods Market to cart",
+   "claim": "Wild Caught Sockeye Salmon",
+   "evidence_frame": 20,
+   "explanation": "Natural Foods Market cart shows \"Wild Caught Sockeye Salmon\" $29.98 with quantity 2.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Wild Caught Sockeye Salmon"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 38,
+   "task": "multi-039",
+   "type": "DO",
+   "obligation": "DO: add salmon, spinach, blueberries, eggs to Notes Shopping List",
+   "claim": "New items:",
+   "evidence_frame": 62,
+   "explanation": "Reopened Shopping List note (saved 7:53 PM) shows \"New items: - Salmon - Spinach - Blueberries - Eggs\".",
+   "matched": [
+    {
+     "type": "TextArea",
+     "key": "AXValue",
+     "text": "Groceries for this week:\n\n- Milk (oat)\n- Eggs (1 dozen)\n- Sourdough bread\n- Avocados (3)\n- Chicken breast\n- Pasta\n- Toma"
+    }
+   ],
+   "label": "E",
+   "note": null
+  },
+  {
+   "i": 39,
+   "task": "mem-010",
+   "type": "DO",
+   "obligation": "DO: set alarms in Clock for upcoming deadlines",
+   "claim": "v3 API migration deadline Oct 31",
+   "evidence_frame": 55,
+   "explanation": "Alarms list shows \"7:08, v3 API migration deadline Oct 31\" and \"7:07, Order Mom\u2019s birthday gift by Oct 21\" enabled.",
+   "matched": [
+    {
+     "type": "CheckBox",
+     "key": "AXLabel",
+     "text": "7:08, v3 API migration deadline Oct 31"
+    },
+    {
+     "type": "CheckBox",
+     "key": "AXLabel",
+     "text": "7:08, v3 API migration deadline Oct 31"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 40,
+   "task": "mem-036",
+   "type": "KNOW",
+   "obligation": "KNOW: CalTrack daily calories on training vs rest days",
+   "claim": "1361 cal",
+   "evidence_frame": 12,
+   "explanation": "Calorie Intake History: Oct 12 1,669; Oct 11 1,437; Oct 10 1,294; Oct 9 1,222; Oct 8 1,060; Oct 7 1,540; Oct 6 1,305. Avg Intake 1361 cal, goal 2450.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "1361 cal"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 41,
+   "task": "mem-052",
+   "type": "KNOW",
+   "obligation": "KNOW: Notifications profile-view and reaction signals",
+   "claim": "3 people viewed your profile. See who's checking you out with Premium.",
+   "evidence_frame": 19,
+   "explanation": "Notifications list: 3 people viewed profile; Petra+4 reacted to comment on process; Tessa reacted to monitoring dashboard post; Samir+2 liked on-call culture comment.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "3 people viewed your profile. See who's checking you out with Premium."
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 42,
+   "task": "mem-018",
+   "type": "KNOW",
+   "obligation": "KNOW: Mail ride receipt destinations neighborhood",
+   "claim": "SoMa \u2192 Home Comfort  Total: $23.30",
+   "evidence_frame": 44,
+   "explanation": "Ride receipts most often go to Home (410 Brannan St, SoMa), along with a trip from SoMa, Work, Oracle Park, Airport, and Marina.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "CityRide Receipts, Sep 20, Trip with Jordan on Sunday, Thanks for riding, Jordan.  SoMa \u2192 Home Comfort  Total: $23.30  R"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 43,
+   "task": "multi-034",
+   "type": "KNOW",
+   "obligation": "KNOW: MegaMart recent purchases total",
+   "claim": "$42.20",
+   "evidence_frame": 34,
+   "explanation": "Past Orders shows most recent delivered orders AMZ100250 Feb 18, 2026 $9.72 and AMZ100249 Feb 6, 2026 $42.20; Active tab had AMZ100251 $151.52, AMZ100253 $313.87, AMZ100252 $227.31 (Feb 26-28, 2026).",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "AMZ100249, Feb 6, 2026, Delivered, Blue Buffalo Blue Bits Tender Beef Training Treats, Greenies Original Dental Dog Trea"
+    }
+   ],
+   "label": "M",
+   "note": "multi-034: a single order amount cited for a 'recent purchases total'."
+  },
+  {
+   "i": 44,
+   "task": "mem-010",
+   "type": "KNOW",
+   "obligation": "KNOW: Mom's birthday gift order deadline",
+   "claim": "Order by: October 21 to be safe",
+   "evidence_frame": 11,
+   "explanation": "Gift Ideas note shows \"Birthday: October 28\" and \"Order by: October 21 to be safe\".",
+   "matched": [
+    {
+     "type": "TextArea",
+     "key": "AXValue",
+     "text": "Birthday: October 28\n\nIdeas:\n- Kindle Paperwhite (she mentioned wanting one)\n- Cooking class subscription\n- Cashmere sca"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 45,
+   "task": "multi-039",
+   "type": "KNOW",
+   "obligation": "KNOW: daily calorie goal",
+   "claim": "2450",
+   "evidence_frame": 3,
+   "explanation": "Today dashboard shows \"2450\" labeled \"Goal\" in the calorie summary.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "2450"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 46,
+   "task": "mem-039",
+   "type": "KNOW",
+   "obligation": "KNOW: travel preferences from SkyTrip past trips",
+   "claim": "SFO, LAX, Departed, Flight, DL1357, Date, Mon, Jun 15, Seat, 23C, Cost, $238.00",
+   "evidence_frame": 11,
+   "explanation": "Past trips are mostly SFO-based economy flights, with repeated LA trips (JFK\u2192LAX Oct 12 $388, ATL\u2192LAX Oct 7 $504, SFO\u2192LAX Jun 15 $238) and West Coast short-hops (SAN, LAS, SEA); budget fares ~$200-400.",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "SFO, LAX, Departed, Flight, DL1357, Date, Mon, Jun 15, Seat, 23C, Cost, $238.00, F2V6NK"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 47,
+   "task": "multi-036",
+   "type": "KNOW",
+   "obligation": "KNOW: weekend incidents in TeamChat #support-ops",
+   "claim": "Three enterprise customers flagged the same search issue. Engineering is aware.",
+   "evidence_frame": 37,
+   "explanation": "#support-ops weekend (Feb 7-8) messages: Leo Chen Feb 8, 5:00 AM \"Three enterprise customers flagged the same search issue. Engineering is aware.\"; Lena Ortiz Feb 7 says escalation volume stable.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Three enterprise customers flagged the same search issue. Engineering is aware."
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 48,
+   "task": "trailblaze-004",
+   "type": "KNOW",
+   "obligation": "KNOW: friend's activity type",
+   "claim": "Run",
+   "evidence_frame": 5,
+   "explanation": "Activity header button reads \"Jordan Avery, Run, \u2022, 16h ago\", so the type is Run.",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Ava Torres, Run, \u2022, 15h ago"
+    },
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "Jordan Avery, Run, \u2022, 16h ago"
+    }
+   ],
+   "label": "W",
+   "note": "trailblaze-004: the word 'Run' appears in several rows."
+  },
+  {
+   "i": 49,
+   "task": "multi-080",
+   "type": "KNOW",
+   "obligation": "KNOW: grocery cart total (<= $25)",
+   "claim": "$2.99",
+   "evidence_frame": 45,
+   "explanation": "Salmon unit price $14.99 plus spinach $2.99 = $17.98 for the items I added, which is under $25. The whole cart, including items already in it, shows an item subtotal of $67.51 and an estimated total of $82.13.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "$2.99"
+    }
+   ],
+   "label": "M",
+   "note": "multi-080: a unit price cited for a cart total."
+  },
+  {
+   "i": 50,
+   "task": "mem-023",
+   "type": "KNOW",
+   "obligation": "KNOW: MegaMart order history (items, categories, amounts this month)",
+   "claim": "AMZ100253, Feb 26, 2026, Out for delivery, Vitamix E310 Explorian Blender, Professional-Grade, $313.87",
+   "evidence_frame": 58,
+   "explanation": "The MegaMart Active orders tab shows AMZ100253, Vitamix E310 Explorian Blender, $313.87; AMZ100251, Ninja AF101 Air Fryer + Rubbermaid set, $151.52; and AMZ100252, Sony WH-1000XM5, $227.31. Most of the order history is kitchen items.",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "AMZ100253, Feb 26, 2026, Out for delivery, Vitamix E310 Explorian Blender, Professional-Grade, $313.87, Arrives Tomorrow"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 51,
+   "task": "mem-007",
+   "type": "KNOW",
+   "obligation": "KNOW: Chiefs in TicketBox",
+   "claim": "No results",
+   "evidence_frame": 27,
+   "explanation": "TicketBox search for \"Chiefs\" shows \"No results\" / \"Try a team, artist, venue, or event.\"",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "No results"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 52,
+   "task": "multi-040",
+   "type": "KNOW",
+   "obligation": "KNOW: Ali Wong show time/date at Great American Music Hall",
+   "claim": "Sat, Oct 24 at 2:58pm",
+   "evidence_frame": 45,
+   "explanation": "Ali Wong event page at Great American Music Hall shows \"Sat, Oct 24 at 2:58pm\" under the title.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Sat, Oct 24 at 2:58pm"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 53,
+   "task": "multi-073",
+   "type": "KNOW",
+   "obligation": "KNOW: Tomorrow's weather forecast in SF",
+   "claim": "High 71\u00b0  Low 54\u00b0",
+   "evidence_frame": 12,
+   "explanation": "Sheet \"San Francisco Tue\" shows \"High 71\u00b0  Low 54\u00b0\", \"Sunny\", wind NNE 2 to 14 mph gusts 21 mph.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "High 71\u00b0  Low 54\u00b0"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 54,
+   "task": "mem-024",
+   "type": "KNOW",
+   "obligation": "KNOW: Cinephile Seenlist movies/genres",
+   "claim": "The Godfather, 87%, Mar 14, 1972",
+   "evidence_frame": 11,
+   "explanation": "Seenlist (4 movies): Inception, The Dark Knight, The Shawshank Redemption, The Godfather \u2014 all visible on this screen.",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "The Godfather, 87%, Mar 14, 1972, Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleon"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 55,
+   "task": "mem-047",
+   "type": "KNOW",
+   "obligation": "KNOW: QuickBite order history (frequency, average, favorite restaurants)",
+   "claim": "Sugarfish, 2 items \u00b7 $57.37 \u00b7 Oct 2, 2026",
+   "evidence_frame": 20,
+   "explanation": "Past orders Sep 14\u2013Oct 11 (4 weeks): 11 orders totaling $303.27 (Chipotle $28.00, Sweetgreen $19.79, Shake Shack $31.88, Starbucks $23.27, Whole Foods $32.31, Sugarfish $57.37, Panera $20.26, Chick-fil-A $17.11, Jersey Mike's $15.50, Pizza Hut $41.03, CAVA $16.75). Avg $27.57/order, ~2.75 orders/week; repeat favorites Chipotle, Sweetgreen, Starbucks.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Sugarfish, 2 items \u00b7 $57.37 \u00b7 Oct 2, 2026\nTrust Me, Trust Me Lite, Delivered"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 56,
+   "task": "mem-007",
+   "type": "KNOW",
+   "obligation": "KNOW: TicketBox followed team",
+   "claim": "St. Louis Blues, 27 Events",
+   "evidence_frame": 7,
+   "explanation": "TicketBox Favorites > Performers Following list includes \"St. Louis Blues, 27 Events\"",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "St. Louis Blues, 27 Events"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 57,
+   "task": "multi-035",
+   "type": "KNOW",
+   "obligation": "KNOW: movie title from Cinephile",
+   "claim": "The Fix",
+   "evidence_frame": 102,
+   "explanation": "The Date Night list screen shows \"1 movies sorted by release date\", and the single row is \"The Fix, 68%, Sep 10, 2026\".",
+   "matched": [
+    {
+     "type": "Button",
+     "key": "AXLabel",
+     "text": "The Fix, 68%, Sep 10, 2026, Disillusioned by the end of the war in Afghanistan, a group of disgraced, war-torn ex-CIA op"
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 58,
+   "task": "multi-085",
+   "type": "KNOW",
+   "obligation": "KNOW: #product status update",
+   "claim": "The localization vendor delivered translations for 12 languages. QA pass starts Monday.",
+   "evidence_frame": 6,
+   "explanation": "#product shows Mateo Fuentes: \"The localization vendor delivered translations for 12 languages. QA pass starts Monday.\" and Petra: analytics dashboards live.",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "The localization vendor delivered translations for 12 languages. QA pass starts Monday."
+    }
+   ],
+   "label": "S",
+   "note": null
+  },
+  {
+   "i": 59,
+   "task": "mem-003",
+   "type": "KNOW",
+   "obligation": "KNOW: most frequently ordered restaurant",
+   "claim": "Chipotle Mexican Grill",
+   "evidence_frame": 21,
+   "explanation": "History lists Chipotle Mexican Grill 4 times (Oct 11, Sep 9, Aug 20, Jul 9), more than any other (Starbucks, Panera 3).",
+   "matched": [
+    {
+     "type": "StaticText",
+     "key": "AXLabel",
+     "text": "Chipotle Mexican Grill, 2 items \u00b7 $22.24 \u00b7 Sep 9, 2026\nChicken Bowl, Chips & Guacamole, Delivered"
+    }
+   ],
+   "label": "S",
+   "note": null
+  }
+ ]
+}

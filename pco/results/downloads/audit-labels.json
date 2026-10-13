@@ -1,0 +1,24 @@
+{
+ "what": "Manual audit of a random sample of obligations the checker marked proven in the PCO v2 run (run3-pco-v2). The sample is drawn by benchmarks/paper/audit.py with seed 7: 40 DO and 20 KNOW obligations. Each was read with its obligation text, the agent's claim and explanation, and the UI-tree nodes of the cited screen that contain the claim.",
+ "legend": {
+  "S": "sound: the cited screen shows a value that only appears if the obligation was met (a sent message, a saved alarm row, a confirmation, the requested fact)",
+  "E": "editor state: the claim is the value of an editable field (note title or body) on the cited screen; the edit is shown, its persistence is not",
+  "W": "weak: the matched text is a generic control label or a bare number that can appear whether or not the obligation was met (a button named Repost, a like count, the word Run)",
+  "M": "mismatch: the matched text is present but does not evidence the obligation it closes (a component price cited for a cart total; an unrelated screen cited for a skipped branch)"
+ },
+ "seed": 7,
+ "n_do": 40,
+ "n_know": 20,
+ "labels": ["S","S","E","M","S","S","S","S","S","S","S","S","S","E","S","S","S","S","W","S","S","E","S","W","S","S","E","S","S","S","S","S","S","S","W","S","S","S","E","S",
+            "S","S","S","M","S","S","S","S","W","M","S","S","S","S","S","S","S","S","S","S"],
+ "notes": {
+  "3": "multi-061: the agent closed the 'add a Drama film' DO with a screen showing an MLB schedule, because its IF branch said no film was needed; the checker accepted the unrelated text.",
+  "18": "lockedin-002: 'Repost' is the button's label before and after reposting.",
+  "23": "lockedin-002: the like count 313 only proves the like relative to the previous 312, which the checker does not see.",
+  "32": "multi-046: the booking is real but at 11:30 AM; the obligation asked for 11 AM. The checker verifies presence, not constraints; the rubric judge caught it.",
+  "34": "tasterank-001: 'Want to Try' is a list name shown whether or not it is selected.",
+  "43": "multi-034: a single order amount cited for a 'recent purchases total'.",
+  "48": "trailblaze-004: the word 'Run' appears in several rows.",
+  "49": "multi-080: a unit price cited for a cart total."
+ }
+}
