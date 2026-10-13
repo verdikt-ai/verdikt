@@ -13,7 +13,7 @@ from verdikt_core.session import Session
 
 INSTRUCTIONS = """Operate the phone to accomplish the user's goal. Completion is decided by a checker, not by you.
 1. Call `screen`, then record every obligation of the goal with `record` (free): DO for each state change,
-   KNOW for each fact to report or use, IF for each condition.
+   KNOW for each fact to report or use, IF for each condition, SAY for each result you must work out.
 2. Act. Every action returns the screen it produced, with a step number.
 3. Close each obligation while its proof is on screen: `close(text, value=<exact text on that screen>)`
    (it defaults to the latest step). A claim the cited screen does not show is not accepted.
@@ -68,8 +68,8 @@ def build(session: Session) -> MCPServer:
         return await run(session.wait, seconds)
 
     @mcp.tool()
-    async def record(kind: Literal['DO', 'KNOW', 'IF'], text: str) -> str:
-        """Record an obligation of the goal (free). DO: a state change. KNOW: a fact to report or use. IF: a condition."""
+    async def record(kind: Literal['DO', 'KNOW', 'IF', 'SAY'], text: str) -> str:
+        """Record an obligation of the goal (free). DO: a state change. KNOW: a fact to report or use. IF: a condition. SAY: a result you work out (summary, comparison, recommendation)."""
         return session.record(kind, text)
 
     @mcp.tool()

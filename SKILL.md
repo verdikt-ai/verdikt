@@ -10,7 +10,9 @@ You have the `verdikt-core` MCP tools for one device. A checker, not you, decide
 1. `screen` to look (free). Then `record` every obligation of the goal (free):
    - `DO` for each state change (each message, booking, edit, setting; one per recipient),
    - `KNOW` for each fact to report or to use later,
-   - `IF` for each condition in the goal.
+   - `IF` for each condition in the goal,
+   - `SAY` for each result you work out (summary, comparison, recommendation); close it with the result as `value`.
+   Go through the goal clause by clause; missing an obligation is the most common way to fail.
 2. Act with `tap`, `type_text`, `swipe`, `press`, `launch`, `wait`. Each returns the new screen and its step number.
 3. Close each obligation while its proof is on screen: `close(text, value=<text copied exactly from the screen>)`.
    Close one as `absent` only after looking in every place it could be (threads, details, other tabs, other apps).

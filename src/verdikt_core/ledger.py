@@ -19,7 +19,7 @@ import re
 import unicodedata
 from pathlib import Path
 
-TYPES = ('DO', 'KNOW', 'IF')
+TYPES = ('DO', 'KNOW', 'IF', 'SAY')  # SAY: a derived result (summary, comparison, recommendation) stated, not shown
 LONG = 30            # claims longer than this may match by token coverage
 COVERAGE = 0.8       # share of a long claim's tokens the screen must show
 
@@ -97,7 +97,10 @@ def verify_run(run: Path) -> dict:
         status = e.get('status')
         o = {'obligation': crit, 'type': kind(crit), 'status': status, 'claim': e.get('actual'),
              'evidence_frame': e.get('evidence_frame'), 'explanation': e.get('explanation')}
-        if status == 'pass':
+        if status == 'pass' and o['type'] == 'SAY':
+            # A derived result has no screen to show it; it must be stated, and it goes into the answer.
+            o['verdict'], o['reason'] = ('proven', '') if e.get('actual') else ('unproven', 'closed without stating the result (`actual`)')
+        elif status == 'pass':
             text = screen_text(run, e.get('evidence_frame'))
             if not e.get('actual'):
                 o['verdict'], o['reason'] = 'unproven', 'closed without the value it claims (`actual`)'
@@ -139,7 +142,7 @@ def challenge(result: dict, absence_challenged: set[str]) -> str | None:
 
 def answer_with_facts(answer: str | None, result: dict) -> str | None:
     """The agent's answer, completed with every proven KNOW fact it left out."""
-    facts = [o for o in result['obligations'] if o['type'] == 'KNOW' and o['verdict'] == 'proven' and o.get('claim')]
+    facts = [o for o in result['obligations'] if o['type'] in ('KNOW', 'SAY') and o['verdict'] == 'proven' and o.get('claim')]
     base = (answer or '').strip()
     missing = [o for o in facts if norm(o['claim']) not in norm(base)]
     if not missing:

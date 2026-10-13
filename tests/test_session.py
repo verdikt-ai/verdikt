@@ -85,3 +85,15 @@ def test_android_dump_maps_to_the_element_model():
     nodes = parse_dump(xml)
     assert nodes[0]['type'] == 'TextField' and nodes[0]['AXValue'] == 'Ann' and 'Focused' in nodes[0]['traits']
     assert nodes[1]['type'] == 'StaticText' and nodes[1]['AXLabel'] == 'Saved'
+
+
+def test_a_derived_result_is_stated_and_goes_into_the_answer(tmp_path):
+    d = FakeDriver([[node('Run 5.2 mi Sat', 100, kind='StaticText')]])
+    s = Session(d, tmp_path / 'run')
+    s.look()
+    s.record('KNOW', 'last run')
+    s.record('SAY', 'running pattern')
+    s.close('last run', value='5.2 mi')
+    s.close('running pattern', value='Runs on Saturdays, about 5 miles')
+    out = s.finish('done')
+    assert out.startswith('finished') and 'running pattern: Runs on Saturdays' in out

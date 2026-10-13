@@ -20,7 +20,7 @@ from verdikt_core.drivers.base import Driver, Shot
 from verdikt_core.targeting import refind
 from verdikt_core.tree import Element, parse_tree, visible_elements
 
-TYPES = ('DO', 'KNOW', 'IF')
+TYPES = ('DO', 'KNOW', 'IF', 'SAY')
 SETTLE_S = 0.8
 FOCUS_TAPS = 3
 
@@ -146,6 +146,11 @@ class Session:
         crit = self._find(text)
         if crit is None:
             return f'error: no obligation {text!r} was recorded; record it first'
+        if crit.startswith('SAY:'):
+            if not value:
+                return 'error: give `value`, the result you worked out (it goes into the answer)'
+            self.store.ledger({'criterion': crit, 'status': 'pass', 'actual': value})
+            return f'closed {crit} with {value!r}'
         if absent:
             self.store.ledger({'criterion': crit, 'status': 'fail', 'explanation': explanation or 'not found'})
             return f'closed {crit} as absent; the checker will challenge it once'
