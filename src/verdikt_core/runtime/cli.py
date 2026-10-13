@@ -14,8 +14,8 @@ from pathlib import Path
 
 
 def cmd_serve(a: argparse.Namespace) -> int:
-    from verdikt_core.server import build
-    from verdikt_core.session import Session
+    from verdikt_core.runtime.server import build
+    from verdikt_core.runtime.session import Session
     if bool(a.ios) == bool(a.android):
         print('give exactly one of --ios UDID or --android SERIAL', file=sys.stderr)
         return 2
@@ -41,7 +41,7 @@ def cmd_serve(a: argparse.Namespace) -> int:
 
 
 def cmd_verify(a: argparse.Namespace) -> int:
-    from verdikt_core import ledger
+    from verdikt_core.proof import ledger
     result = ledger.verify_run(Path(a.run_dir))
     if a.json:
         print(json.dumps(ledger.certificate(result, rounds=0), indent=1))
@@ -56,8 +56,8 @@ def cmd_verify(a: argparse.Namespace) -> int:
 def cmd_check(a: argparse.Namespace) -> int:
     from types import SimpleNamespace
 
-    from verdikt_core.checks import match_once, parse_check
-    from verdikt_core.tree import parse_tree
+    from verdikt_core.ui.checks import match_once, parse_check
+    from verdikt_core.ui.tree import parse_tree
     c = parse_check(a.check)
     if c.problems:
         print('cannot parse: ' + '; '.join(c.problems), file=sys.stderr)

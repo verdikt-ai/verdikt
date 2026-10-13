@@ -9,7 +9,7 @@ from typing import Literal
 
 from mcp.server.mcpserver import Image, MCPServer
 
-from verdikt_core.session import Session
+from verdikt_core.runtime.session import Session
 
 INSTRUCTIONS = """Operate the phone to accomplish the user's goal. Completion is decided by a checker, not by you.
 1. Call `screen`, then record every obligation of the goal with `record` (free): DO for each state change,

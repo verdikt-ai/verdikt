@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from verdikt_core.tree import (
+from verdikt_core.ui.tree import (
     compact,
     find,
     foreground_app,
@@ -14,7 +14,7 @@ from verdikt_core.tree import (
     tree_hash,
 )
 
-FIXTURE = Path(__file__).parent / "fixtures" / "raw_tree_dump.json"
+FIXTURE = Path(__file__).parents[1] / "fixtures" / "raw_tree_dump.json"
 
 
 @pytest.fixture

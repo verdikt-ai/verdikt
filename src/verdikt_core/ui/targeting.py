@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, Field
 
-from verdikt_core.tree import Element
+from verdikt_core.ui.tree import Element
 
 Point = tuple[int, int]
 

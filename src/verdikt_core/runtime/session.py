@@ -3,10 +3,10 @@ that a checker gates.
 
 - Every action returns the screen it produced; the agent never spends an action only to look.
 - `[index]` refers to the screen the agent last saw; before acting, the element is re-found on
-  the live screen (`verdikt_core.targeting.refind`), so a layout shift cannot redirect a tap.
+  the live screen (`verdikt_core.ui.targeting.refind`), so a layout shift cannot redirect a tap.
 - Typing into a field taps it until the field reports focus (where the platform reports focus).
 - The agent records obligations (DO / KNOW / IF) and closes each with the value it claims and the
-  step of a recorded screen that shows it. `finish` asks the checker (`verdikt_core.ledger`) first:
+  step of a recorded screen that shows it. `finish` asks the checker (`verdikt_core.proof.ledger`) first:
   open, unproven or unchallenged-absent obligations refuse it (at most `rounds` times), the
   action budget never resets, and the final answer is completed from proven facts only.
 """
@@ -15,10 +15,10 @@ from __future__ import annotations
 import time
 from pathlib import Path
 
-from verdikt_core import ledger
+from verdikt_core.proof import ledger
 from verdikt_core.drivers.base import Driver, Shot
-from verdikt_core.targeting import refind
-from verdikt_core.tree import Element, parse_tree, visible_elements
+from verdikt_core.ui.targeting import refind
+from verdikt_core.ui.tree import Element, parse_tree, visible_elements
 
 TYPES = ('DO', 'KNOW', 'IF', 'SAY')
 SETTLE_S = 0.8
@@ -27,7 +27,7 @@ FOCUS_TAPS = 3
 
 class Session:
     def __init__(self, driver: Driver, run_dir: Path | str, budget: int = 50, rounds: int = 2):
-        from verdikt_core.store import Store
+        from verdikt_core.runtime.store import Store
         self.driver, self.store = driver, Store(Path(run_dir))
         self.budget, self.max_rounds = budget, rounds
         self.actions = self.rounds = 0

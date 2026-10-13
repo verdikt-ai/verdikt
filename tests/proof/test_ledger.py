@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from verdikt_core import ledger as pco
+from verdikt_core.proof import ledger as pco
 
 
 def _run(tmp_path: Path, events: list[dict], screens: dict[int, list[str]]) -> Path:

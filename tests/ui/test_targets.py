@@ -1,7 +1,7 @@
 import pytest
 
-from verdikt_core.targeting import Target, resolve
-from verdikt_core.tree import parse_tree
+from verdikt_core.ui.targeting import Target, resolve
+from verdikt_core.ui.tree import parse_tree
 
 
 @pytest.fixture
@@ -61,7 +61,7 @@ def test_unknown_id_falls_back_to_text(els):
 
 # ---------- chosen / refind: the element the agent picked, on the screen as it is now ----------
 
-from verdikt_core.targeting import chosen, refind  # noqa: E402
+from verdikt_core.ui.targeting import chosen, refind  # noqa: E402
 
 
 def _row(label, y, ident="row", type_="Button", value=None):

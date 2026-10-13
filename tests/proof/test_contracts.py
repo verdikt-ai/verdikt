@@ -1,7 +1,7 @@
 """Android contracts: checks written in the check language, decided against the UI tree."""
 from types import SimpleNamespace as NS
 
-from verdikt_core import contracts as C
+from verdikt_core.proof import contracts as C
 
 
 def el(cls, text=None, desc=None, y=0, rid=None, **kw):

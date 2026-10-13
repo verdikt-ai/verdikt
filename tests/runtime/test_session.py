@@ -3,7 +3,7 @@ import json
 
 from verdikt_core.drivers.android import parse_dump
 from verdikt_core.drivers.base import Shot
-from verdikt_core.session import Session
+from verdikt_core.runtime.session import Session
 
 
 def node(label, y, kind='Button', ident='', value=None, traits=()):

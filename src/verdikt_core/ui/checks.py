@@ -41,7 +41,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
-from verdikt_core.tree import INTERACTIVE_TYPES, Element, tree_value_hash, visible_elements
+from verdikt_core.ui.tree import INTERACTIVE_TYPES, Element, tree_value_hash, visible_elements
 
 ENV_CHECK_TIMEOUT = "QA_CHECK_TIMEOUT_S"
 DEFAULT_TIMEOUT_S = 5.0
