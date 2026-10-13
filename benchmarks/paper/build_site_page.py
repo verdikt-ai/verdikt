@@ -1,12 +1,11 @@
 """The paper's landing page (verdikt-ai.github.io/verdikt/pco) from the same statistics as the paper.
 
-    python3 -m benchmarks.paper.build_site_page [BENCH_ROOT]  -> BENCH_ROOT/site/pco/index.html + paper.pdf
+    python3 -m benchmarks.paper.build_site_page [BENCH_ROOT]  -> BENCH_ROOT/site/pco/index.html
 """
 from __future__ import annotations
 
 import html
 import json
-import shutil
 import os
 import sys
 from datetime import date
@@ -19,6 +18,7 @@ CODE = 'https://github.com/verdikt-ai/verdikt'
 TITLE = 'Proof-Carrying Operation: Device Agents Whose Completion Is Checked, Not Declared'
 AUTHORS = ['Hussein Abdinoor Mohamed', 'Kedar R. Haldankar']
 DOI = ''  # filled in once Zenodo assigns it
+PREPRINT = ''  # the arXiv abstract page, e.g. https://arxiv.org/abs/2610.xxxxx; the paper is read there, not hosted here
 
 
 def main() -> None:
@@ -30,7 +30,7 @@ def main() -> None:
     meanA = sum(A[k]['pass_rate'] for k in ('run3-opus', 'practice-seed7', 'practice-seed8')) / 3
     year = date.today().year
     bib = (f"@misc{{mohamed{year}pco,\n  title  = {{{TITLE}}},\n  author = {{{' and '.join(AUTHORS)}}},\n"
-           f"  year   = {{{year}}},\n  note   = {{Preprint}},\n  url    = {{{SITE}}}" + (f",\n  doi    = {{{DOI}}}" if DOI else '') + "\n}")
+           f"  year   = {{{year}}},\n  note   = {{Preprint}},\n  url    = {{{PREPRINT or SITE}}}" + (f",\n  doi    = {{{DOI}}}" if DOI else '') + "\n}")
     stats = [(f"{v2['passed']}/133", f"iOSWorld tasks fully passed with PCO, from {b['passed']} (McNemar p = {p['mcnemar_exact_p']:.3f})"),
              (f"{rep['passed']}/133", 'in an independent repeat run'),
              (f"{v2['mean_score']:.3f}", f"mean rubric score, from {b['mean_score']:.3f}"),
@@ -39,7 +39,7 @@ def main() -> None:
 <title>Proof-Carrying Operation</title>
 <meta name="description" content="Device agents whose completion is checked by a deterministic checker against recorded UI evidence, not declared by the model.">
 <meta name="citation_title" content="{html.escape(TITLE)}">{''.join(f'<meta name="citation_author" content="{a}">' for a in AUTHORS)}
-<meta name="citation_publication_date" content="{date.today().isoformat()}"><meta name="citation_pdf_url" content="{SITE}/paper.pdf">
+<meta name="citation_publication_date" content="{date.today().isoformat()}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
@@ -54,6 +54,7 @@ h1 {{ font-family:var(--display); font-stretch:115%; font-weight:800; font-size:
 .authors {{ font-size:18px; margin:0 0 4px; }} .aff {{ color:var(--muted); margin:0 0 28px; }}
 .btns {{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:44px; }}
 .btns a {{ font:500 14px var(--mono); text-decoration:none; color:var(--ink); border:1px solid var(--ink); border-radius:999px; padding:9px 16px; }}
+.soon {{ font:500 14px var(--mono); color:var(--muted); border:1px dashed var(--line); border-radius:999px; padding:9px 16px; }}
 .btns a.primary {{ background:var(--ink); color:var(--bg); }} .btns a:focus-visible {{ outline:2px solid var(--signal); outline-offset:2px; }}
 .stats {{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--ink); margin-bottom:44px; }}
 @media (max-width:700px) {{ .stats {{ grid-template-columns:repeat(2,minmax(0,1fr)); }} }}
@@ -67,7 +68,7 @@ button {{ font:500 13px var(--mono); border:1px solid var(--line); background:va
 <span class="label">Preprint · {date.today().strftime('%B %Y')}</span>
 <h1>{html.escape(TITLE)}</h1>
 <p class="authors">{' · '.join(AUTHORS)}</p><p class="aff">Verdikt</p>
-<div class="btns"><a class="primary" href="paper.pdf">Read the paper (PDF)</a><a href="results/">Explore every run</a><a href="results/#/data">Data &amp; statistics</a><a href="{CODE}">Code (Apache-2.0)</a>{f'<a href="https://doi.org/{DOI}">doi:{DOI}</a>' if DOI else ''}</div>
+<div class="btns">{f'<a class="primary" href="{PREPRINT}">Read the preprint</a>' if PREPRINT else '<span class="soon">Preprint on arXiv: coming soon</span>'}<a href="results/">Explore every run</a><a href="results/#/data">Data &amp; statistics</a><a href="{CODE}">Code (Apache-2.0)</a>{f'<a href="https://doi.org/{DOI}">doi:{DOI}</a>' if DOI else ''}</div>
 <div class="stats">{''.join(f'<div class="stat"><b>{v}</b><span>{html.escape(t)}</span></div>' for v, t in stats)}</div>
 <h2>Abstract</h2>
 <p>Agents that operate phones decide for themselves when a task is done, and most of their failures happen at that decision: they stop before every part of a multi-step goal is finished, give up when evidence is hard to find, or report facts they never checked. We move the decision from the model to a checker. In proof-carrying operation (PCO) the agent compiles the goal into typed obligations and closes each with the value it claims and the recorded screen that shows it; a deterministic checker accepts a claim only if that screen's UI tree contains it, challenges claims of absence, and completes the final answer only from proven facts. On iOSWorld, PCO raises the share of fully passed tasks from {b['passed']}/133 to {v2['passed']}/133 and the mean rubric score from {b['mean_score']:.3f} to {v2['mean_score']:.3f} (exact McNemar p = {p['mcnemar_exact_p']:.3f}), an independent repeat reproduces it ({rep['passed']}/133), and an ablation attributes the gain to the complete, evidence-bound obligation ledger. On AndroidWorld the same operator averages {100 * meanA:.1f}% pass@1 over three seeds with no app knowledge.</p>
@@ -83,7 +84,7 @@ document.getElementById('copy').onclick = () => {{
 </script></body></html>"""
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / 'index.html').write_text(page)
-    shutil.copy(ROOT / 'paper' / 'draft.pdf', OUT / 'paper.pdf')
+    (OUT / 'paper.pdf').unlink(missing_ok=True)
     print(OUT / 'index.html')
 
 
