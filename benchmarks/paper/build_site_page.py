@@ -17,8 +17,8 @@ SITE = 'https://verdikt-ai.github.io/verdikt/pco'
 CODE = 'https://github.com/verdikt-ai/verdikt'
 TITLE = 'Proof-Carrying Operation: Device Agents Whose Completion Is Checked, Not Declared'
 AUTHORS = ['Hussein Abdinoor Mohamed', 'Kedar R. Haldankar']
-DOI = '10.5281/zenodo.23345803'  # filled in once Zenodo assigns it
-PREPRINT = 'https://doi.org/10.5281/zenodo.23345803'  # the arXiv abstract page, e.g. https://arxiv.org/abs/2610.xxxxx; the paper is read there, not hosted here
+DOI = '10.5281/zenodo.23345802'  # filled in once Zenodo assigns it
+PREPRINT = 'https://doi.org/10.5281/zenodo.23345802'  # the arXiv abstract page, e.g. https://arxiv.org/abs/2610.xxxxx; the paper is read there, not hosted here
 
 
 def main() -> None:
