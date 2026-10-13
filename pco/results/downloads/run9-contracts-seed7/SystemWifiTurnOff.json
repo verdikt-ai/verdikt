@@ -1,0 +1,98 @@
+{
+ "id": "SystemWifiTurnOff",
+ "app": "Settings",
+ "goal": "Turn wifi off.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 54.2,
+ "cost": 0.17085140000000001,
+ "answer": null,
+ "summary": "Wi\u2011Fi is now off. I switched it off in Settings > Network & internet > Internet, and the switch shows as off on screen. The saved network \"AndroidWifi\" now reads \"Saved / No internet access,\" and the phone is on T\u2011Mobile mobile data (3G).\n\nThe page notes \"Wi\u2011Fi turns back on automatically,\" so Android may switch it back on by itself later.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOff/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Wi\" unchecked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOff/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (407,794)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOff/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (279,610)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOff/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "x": 965,
+    "y": 824
+   },
+   "result": "tapped (965,824)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOff/006.webp"
+  },
+  {
+   "n": 4,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "count Switch == 1",
+     "text \"Saved / No internet access\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOff/007.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOff/009.webp"
+  }
+ ]
+}

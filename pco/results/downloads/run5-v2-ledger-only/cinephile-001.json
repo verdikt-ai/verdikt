@@ -1,0 +1,133 @@
+{
+ "id": "cinephile-001",
+ "app": "cinephile",
+ "category": "single_app",
+ "goal": "Search for 'The Godfather' in Cinephile and add it to my Wishlist. What's the year and rating?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 5,
+ "budget": 50,
+ "seconds": 50.9,
+ "cost": 0.3177,
+ "answer": "1972, 86%",
+ "summary": "I added The Godfather to your Wishlist in Cinephile. The button on its page now says \"In wishlist\".\n\nIt came out in 1972 (March 14, 1972) and has an 86% rating from 23,747 ratings. The search results list showed 87% for the same film, so the app isn't consistent; 86% is the figure on the movie's own page.\n\nANSWER: 1972, 86%",
+ "rubric": [
+  {
+   "criterion": "Open Cinephile app and navigate to search",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Cinephile app is open with a search field visible and 'The Godfather' already typed in, indicating the app was opened and search was navigated to."
+  },
+  {
+   "criterion": "Type 'The Godfather' in the search field",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-4 clearly show 'The Godfather' typed in the search field, and search results for 'The Godfather' are displayed."
+  },
+  {
+   "criterion": "Tap 'The Godfather' from search results",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows The Godfather in search results with 87% rating and Mar 14, 1972 date. Step 4 tapped on this result, and Screenshot 5 shows the movie detail page for 'The Godfather' was opened."
+  },
+  {
+   "criterion": "Add the movie to Wishlist",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows the Wishlist button before being tapped. The final screenshot (6) shows the button changed to 'In wishlist' (highlighted in red/pink), confirming the movie was successfully added to the Wishlist."
+  },
+  {
+   "criterion": "Report the release year of the movie",
+   "satisfied": true,
+   "reasoning": "The agent reported '1972' as the release year, which matches what is shown on the movie detail page ('1972 \u2022 175 minutes \u2022 Released United States of America')."
+  },
+  {
+   "criterion": "Report the rating of the movie",
+   "satisfied": true,
+   "reasoning": "The agent reported '86%' as the rating, which matches the rating shown on the movie detail page (86% with 23,747 ratings). Note: the search results showed 87% but the detail page shows 86%, and the agent correctly reported the detail page rating of 86%."
+  }
+ ],
+ "judge": "The agent successfully opened the Cinephile app, searched for 'The Godfather', found it in search results, tapped on it to view the movie detail page, added it to the Wishlist (confirmed by the button changing to 'In wishlist'), and reported the year (1972) and rating (86%). The final answer of '1972, 86%' matches what is shown on the movie detail page.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 7
+    },
+    "text": "The Godfather"
+   },
+   "result": "typed 'The Godfather'; verified: true; field value now 'The Godfather'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cinephile-001/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "130,460,300,480"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (215, 470) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cinephile-001/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "press",
+   "args": {
+    "key": "enter"
+   },
+   "result": "pressed enter",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cinephile-001/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (201, 577) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cinephile-001/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 13
+    }
+   },
+   "result": "tapped at (80, 406) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cinephile-001/0012.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "release year of The Godfather",
+   "verdict": "proven",
+   "claim": "1972",
+   "frame": 10
+  },
+  {
+   "type": "KNOW",
+   "text": "rating of The Godfather",
+   "verdict": "proven",
+   "claim": "86%",
+   "frame": 10
+  },
+  {
+   "type": "DO",
+   "text": "add The Godfather to Wishlist",
+   "verdict": "proven",
+   "claim": "In wishlist",
+   "frame": 12
+  }
+ ]
+}

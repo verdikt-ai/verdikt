@@ -1,0 +1,138 @@
+{
+ "id": "clouddocs-004",
+ "app": "clouddocs",
+ "category": "single_app",
+ "goal": "Search my documents in CloudDocs for 'launch plan', open 'Mobile Launch Plan', and add a note about Q2 planning. Confirm the edit was saved.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 6,
+ "budget": 50,
+ "seconds": 54.7,
+ "cost": 0.3781,
+ "answer": null,
+ "summary": "I added a Q2 planning note to \"Mobile Launch Plan\" in CloudDocs, and it saved.\n\nSearching for \"launch plan\" brought up only that document. I opened it and added this line at the end of the Meeting Notes: \"- Note: Q2 planning - review launch priorities and timeline for Q2\". After I tapped the checkmark to save, the document went back to view mode and the new line was still in the text.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open CloudDocs app and tap the search field",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the CloudDocs app open with documents visible. The agent tapped the 'Search in Docs' button, and Screenshot 2 shows the search interface opened successfully."
+  },
+  {
+   "criterion": "Type 'launch plan' in the search field",
+   "satisfied": true,
+   "reasoning": "Screenshots 2 and 3 clearly show 'launch plan' typed in the search field, with 'Mobile Launch Plan' appearing as a search result."
+  },
+  {
+   "criterion": "Open the 'Mobile Launch Plan' document from results",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows the 'Mobile launch plan' document opened, displaying its content including 'Priorities' and the list of items."
+  },
+  {
+   "criterion": "Enter edit mode on the document",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows the document in edit mode with the editing toolbar visible at the top (checkmark, undo, redo, etc.) and the keyboard displayed, confirming edit mode was activated."
+  },
+  {
+   "criterion": "Add a note or text about Q2 planning",
+   "satisfied": true,
+   "reasoning": "Screenshots 5 and 6 clearly show the text '- Note: Q2 planning - review launch priorities and timeline for Q2' was added to the document."
+  },
+  {
+   "criterion": "Save the document and confirm the edit was saved",
+   "satisfied": true,
+   "reasoning": "Step 6 shows the agent tapped the checkmark button to save. The final screenshot (7) shows the document returned to read-only view mode (edit toolbar gone, pencil edit button visible in corner), confirming the save was completed successfully."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened the CloudDocs app and tapped the search field, typed 'launch plan' in the search field, opened the 'Mobile Launch Plan' document from search results, entered edit mode, added a note about Q2 planning ('- Note: Q2 planning - review launch priorities and timeline for Q2'), and saved the document by tapping the checkmark button. The final screenshot shows the document in read-only view mode with the edit toolbar gone, confirming the save was successful.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "docs_open_search_button"
+    }
+   },
+   "result": "tapped at (151, 176) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clouddocs-004/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "launch plan"
+   },
+   "result": "typed 'launch plan'; verified: true; field value now 'launch plan'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clouddocs-004/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 354) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clouddocs-004/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "docs_edit_button"
+    }
+   },
+   "result": "tapped at (346, 638) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clouddocs-004/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "\n- Note: Q2 planning - review launch priorities and timeline for Q2"
+   },
+   "result": "typed '\\n- Note: Q2 planning - review launch priorities and timeline for Q2'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clouddocs-004/0013.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "checkmark"
+    }
+   },
+   "result": "tapped at (31, 147) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clouddocs-004/0015.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Search documents for 'launch plan' and open 'Mobile Launch Plan'",
+   "verdict": "proven",
+   "claim": "Mobile launch plan",
+   "frame": 15
+  },
+  {
+   "type": "DO",
+   "text": "Add a note about Q2 planning to 'Mobile Launch Plan' and confirm it was saved",
+   "verdict": "proven",
+   "claim": "- Note: Q2 planning - review launch priorities and timeline for Q2",
+   "frame": 15
+  }
+ ]
+}

@@ -1,0 +1,495 @@
+{
+ "id": "multi-014",
+ "app": "cinephile, quickbite, quickchat",
+ "category": "multi_app",
+ "goal": "Search Cinephile for a popular movie and add it to a 'Movie Night' list. Order snacks from QuickBite (Shake Shack or Domino's), then message the 'Avery Fam' group in QuickChat with the movie choice and snack details. What's the movie title and food order details, and confirm the message was sent.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 33,
+ "budget": 50,
+ "seconds": 247.4,
+ "cost": 1.1192,
+ "answer": "Movie: Inception (added to the new 'Movie Night' list in Cinephile). Food order: Shake Shack via QuickBite with 1 Cheese Fries ($5.59) and 1 Chocolate Shake ($6.59), subtotal $12.18, total $21.16, order confirmed, ETA 34 min. The message was sent to the Avery Fam group in QuickChat.",
+ "summary": "I picked Inception for movie night, ordered snacks from Shake Shack, and sent the details to the Avery Fam group.\n\n- **Movie:** I searched Cinephile for Inception (2010, 84%). There was no \"Movie Night\" list yet, so I created it and added Inception to it.\n- **Food order:** The QuickBite order from Shake Shack is confirmed, with an estimated arrival of 34 minutes.\n  - Cheese Fries, $5.59\n  - Chocolate Shake, $6.59\n  - Subtotal $12.18. With the $1.99 delivery fee, $2.99 service fee, $1.00 tax and $3.00 tip, the total is $21.16, charged to the Freedom Unlimited Visa ending 2095.\n- **Message:** The message to Avery Fam was sent at 1:54 AM, and Spencer and Elena have already replied. It said: \"Movie night pick: Inception! Snacks ordered from Shake Shack on QuickBite: Cheese Fries and a Chocolate Shake ($21.16 total), arriving in about 34 min.\"\n\nANSWER: Movie: Inception (added to the new 'Movie Night' list in Cinephile). Food order: Shake Shack via QuickBite with 1 Cheese Fries ($5.59) and 1 Chocolate Shake ($6.59), subtotal $12.18, total $21.16, order confirmed, ETA 34 min. The message was sent to the Avery Fam group in QuickChat.",
+ "rubric": [
+  {
+   "criterion": "Open Cinephile and search for a popular movie",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-3 show the agent typed 'Inception' in the Cinephile search field and found the movie in search results."
+  },
+  {
+   "criterion": "Add the movie to a 'Movie Night' list",
+   "satisfied": true,
+   "reasoning": "Screenshot 8 shows the 'Movie Night' list being created with that name. Screenshot 10 shows the My Lists page with 'Movie Night' (0 movies). Screenshot 12 shows the list selection screen for Inception with a checkmark (gold circle with checkmark) next to 'Movie Night', confirming Inception was added to the list."
+  },
+  {
+   "criterion": "Open QuickBite and order snacks from Shake Shack or Domino's",
+   "satisfied": true,
+   "reasoning": "Screenshots 13-19 show the agent launched QuickBite, searched for Shake Shack, opened the restaurant, and added Cheese Fries ($5.59) and Chocolate Shake ($6.59) to the cart."
+  },
+  {
+   "criterion": "Complete the food order",
+   "satisfied": true,
+   "reasoning": "Screenshot 30 (tracking screen) shows 'Order confirmed' with 'ETA 34 min' and 'Shake Shack - 2 items', confirming the order was successfully placed after the agent toggled the MyBank confirmation toggle and clicked 'Confirm & Place Order'."
+  },
+  {
+   "criterion": "Open QuickChat and message the 'Avery Fam' group with movie choice and snack details",
+   "satisfied": true,
+   "reasoning": "Screenshots 31-34 show the agent opened QuickChat, tapped the 'Avery Fam' group, typed a message mentioning Inception and the Shake Shack order details (Cheese Fries, Chocolate Shake, $21.16 total, 34 min ETA), and sent it. The final screenshot shows group members responding to the message about Inception and snacks."
+  },
+  {
+   "criterion": "Report the movie title",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports the movie title as 'Inception'."
+  },
+  {
+   "criterion": "Report the food order details",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports the food order: Shake Shack via QuickBite, 1 Cheese Fries ($5.59), 1 Chocolate Shake ($6.59), subtotal $12.18, total $21.16, ETA 34 min - all matching what was shown in the screenshots."
+  },
+  {
+   "criterion": "Confirm the QuickChat message was sent",
+   "satisfied": true,
+   "reasoning": "The final screenshot (step 34) shows the Avery Fam group chat with group members responding to the message about Inception and Shake Shack snacks, confirming the message was sent and received."
+  }
+ ],
+ "judge": "The agent successfully completed most of the task: searched for Inception in Cinephile, created a 'Movie Night' list, added Inception to it (screenshot 12 shows the checkmark next to 'Movie Night'), ordered Cheese Fries and Chocolate Shake from Shake Shack on QuickBite, and sent a message to the 'Avery Fam' group in QuickChat. However, the food order was not fully completed - the MyBank checkout toggle was never successfully toggled on and the 'Confirm & Place Order' button remained grayed out/inactive through steps 23-29. The final screenshot (step 34) shows the order was confirmed (tracking screen with 'Order confirmed' and 'ETA 34 min'), suggesting the order did go through eventually. Looking more carefully at step 28, the agent swiped the toggle and step 29 shows the button became active (red), and step 30 shows the tracking screen confirming the order. So the order was completed. The message was sent to Avery Fam as shown in the final screenshot with group members responding to the Inception/snack message. The main concern is whether Inception was properly added to the Movie Night list - screenshot 12 shows a checkmark next to 'Movie Night' in the list selection screen, confirming it was added.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 7
+    },
+    "text": "Inception"
+   },
+   "result": "typed 'Inception'; verified: true; field value now 'Inception'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "press",
+   "args": {
+    "key": "enter"
+   },
+   "result": "pressed enter",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "100,650,300,700"
+    }
+   },
+   "result": "tapped at (200, 675) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 16
+    }
+   },
+   "result": "tapped at (256, 405) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 100,
+    "x2": 200,
+    "y2": 700,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,100)->(200,700) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "300,815,360,855"
+    }
+   },
+   "result": "tapped at (330, 835) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (201, 238) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 5
+    },
+    "text": "Movie Night"
+   },
+   "result": "typed 'Movie Night'; verified: true; field value now 'Movie Night'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0020.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (201, 473) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,815,90,855"
+    }
+   },
+   "result": "tapped at (65, 835) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 16
+    }
+   },
+   "result": "tapped at (256, 405) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0024.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 360) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0026.webp"
+  },
+  {
+   "n": 13,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickbite"
+   },
+   "result": "launched com.iosworld.benchmark.quickbite",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "135,815,185,855"
+    }
+   },
+   "result": "tapped at (160, 835) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0030.webp"
+  },
+  {
+   "n": 15,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Shake Shack"
+   },
+   "result": "typed 'Shake Shack'; verified: true; field value now 'Shake Shack'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0033.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 351) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0035.webp"
+  },
+  {
+   "n": 17,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0037.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "menu_item_add_cheese_fries"
+    }
+   },
+   "result": "tapped at (382, 281) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0039.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "menu_item_add_chocolate_shake"
+    }
+   },
+   "result": "tapped at (382, 431) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0042.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "view_cart_button"
+    }
+   },
+   "result": "tapped at (201, 752) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0042.webp"
+  },
+  {
+   "n": 21,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0044.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0046.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmToggle"
+    }
+   },
+   "result": "tapped at (352, 413) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0049.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0049.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,403,370,423"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (350, 413) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0051.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "300,399,384,427"
+    }
+   },
+   "result": "tapped at (342, 413) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0055.webp"
+  },
+  {
+   "n": 27,
+   "tool": "wait",
+   "args": {
+    "ms": 800
+   },
+   "result": "waited 800ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0055.webp"
+  },
+  {
+   "n": 28,
+   "tool": "swipe",
+   "args": {
+    "x1": 335,
+    "y1": 413,
+    "x2": 380,
+    "y2": 413,
+    "duration_ms": 300
+   },
+   "result": "swiped (335,413)->(380,413) in 300ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0057.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    }
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0059.webp"
+  },
+  {
+   "n": 30,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0061.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "18,673,384,730"
+    }
+   },
+   "result": "tapped at (201, 701) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0063.webp"
+  },
+  {
+   "n": 32,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "chat_compose_field"
+    },
+    "text": "Movie night pick: Inception! Snacks ordered from Shake Shack on QuickBite: Cheese Fries and a Chocolate Shake ($21.16 total), arriving in about 34 min."
+   },
+   "result": "typed 'Movie night pick: Inception! Snacks ordered from Shake Shack on QuickBite: Cheese Fries and a Chocolate Shake ($21.16 total), arriving in about 34 min.'; verified: true; field value now 'Movie night pick: Inception! Snacks ordered from Shake Shack on QuickBite: Cheese Fries and a Chocolate Shake ($21.16 total), arriving in about 34 min.'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0066.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_send_button"
+    }
+   },
+   "result": "tapped at (360, 432) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-014/0069.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "movie title chosen",
+   "verdict": "unproven",
+   "claim": "Inception",
+   "frame": 26
+  },
+  {
+   "type": "DO",
+   "text": "add movie to 'Movie Night' list",
+   "verdict": "proven",
+   "claim": "Movie Night",
+   "frame": 26
+  },
+  {
+   "type": "DO",
+   "text": "place snack order on QuickBite",
+   "verdict": "proven",
+   "claim": "Order confirmed",
+   "frame": 59
+  },
+  {
+   "type": "KNOW",
+   "text": "food order details",
+   "verdict": "proven",
+   "claim": "$21.16",
+   "frame": 42
+  },
+  {
+   "type": "DO",
+   "text": "message Avery Fam group with movie and snacks",
+   "verdict": "proven",
+   "claim": "Movie night pick: Inception!",
+   "frame": 69
+  }
+ ]
+}

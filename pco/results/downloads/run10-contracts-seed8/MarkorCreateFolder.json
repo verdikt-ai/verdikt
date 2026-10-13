@@ -1,0 +1,112 @@
+{
+ "id": "MarkorCreateFolder",
+ "app": "Markor",
+ "goal": "Create a new folder in Markor named folder_20261013_043116.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 50.7,
+ "cost": 0.1501116,
+ "answer": null,
+ "summary": "I created the folder `folder_20261013_043116` in Markor, and it now shows in the file list. It's in the folder Markor opened to by default, alongside `backup_research_paper_summary.md`.\n\nAn `.app` folder also showed up in that list as soon as I created the folder. I didn't make it myself; it looks like Markor created it.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateFolder/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"folder_20261013_043116\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateFolder/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"folder_20261013_043116\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateFolder/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateFolder/003.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "folder_20261013_043116",
+    "x": 370,
+    "y": 930,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"folder_20261013_043116\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateFolder/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (171,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateFolder/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 1
+   },
+   "result": "pressed back",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text ~\"folder_20261013_043116\" visible -> Button \"Folder folder_20261013_043116 \" [13]",
+   "frame": "media/run10-contracts-seed8/MarkorCreateFolder/006.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateFolder/007.webp"
+  }
+ ]
+}

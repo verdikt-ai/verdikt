@@ -1,0 +1,100 @@
+{
+ "rounds": 0,
+ "obligations": 9,
+ "proven": 9,
+ "unproven": 0,
+ "absent": 0,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: checking balance",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$15,621.00",
+   "evidence_frame": 80,
+   "explanation": "MyBank home shows \"TOTAL CHECKING (...6645), $15,621.00, Available balance\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: savings balance",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$4,920.50",
+   "evidence_frame": 80,
+   "explanation": "MyBank home shows \"SAVINGS (...1032), $4,920.50, Available balance\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: credit card balance",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$4,643.72",
+   "evidence_frame": 80,
+   "explanation": "MyBank home shows \"Freedom Unlimited (...2095) ... $4,643.72, Current balance, Available credit, $3,356.28\" (earlier it read $4,588.98).",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: pay SplitPay pending requests under $50",
+   "type": "DO",
+   "status": "pass",
+   "claim": "You paid Kai Santos, brunch, -$33.00, 1m",
+   "evidence_frame": 27,
+   "explanation": "Recent transactions now show \"You paid Leo Chen, parking, -$17.00\", \"You paid Kai Santos, brunch, -$33.00\", \"You paid Maya Patel, dinner split, -$42.00\"; the You owe section is gone.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: MegaMart recent purchases total",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$9.72",
+   "evidence_frame": 33,
+   "explanation": "Past Orders list shows most recent delivered \"AMZ100250, Feb 18, 2026, Delivered, CeraVe ... $9.72\" and \"AMZ100249, Feb 6, 2026 ... $42.20\"; Active tab (step 31) showed AMZ100251 $151.52, AMZ100253 $313.87, AMZ100252 $227.31.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: QuickBite food spending",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Sugarfish, 2 items \u00b7 $57.37 \u00b7 Oct 2, 2026",
+   "evidence_frame": 39,
+   "explanation": "Past orders show October orders: Chipotle $28.00 Oct 11, Sweetgreen $19.79, Shake Shack $31.88, Starbucks $23.27, Whole Foods $32.31, Sugarfish $57.37 Oct 2 \u2014 total $192.62 for October.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: Device Testing Tasks work-related expenses",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Review cell editing",
+   "evidence_frame": 45,
+   "explanation": "Tasks tab has columns Task, Owner, Due, Status only (Match Sheets UI, Seed task workbook, Review cell editing); Apps tab (step 43) only App and Status columns. No expense amounts \u2014 work-related expenses = $0.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "SAY: monthly discretionary spending total",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "October 2026 discretionary spending \u2248 $319.61 (QuickBite $192.62 + MegaMart $34.99 + SplitPay $92.00; no work expenses in Device Testing Tasks).",
+   "evidence_frame": 48,
+   "explanation": "Computed from gathered facts: QuickBite October orders $192.62 + MegaMart online order charged Oct 09 $34.99 (MyBank) + SplitPay requests paid today $92.00 ($42+$33+$17) + work expenses $0 = $319.61.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: add row with this month's totals to Monthly Expense Log",
+   "type": "DO",
+   "status": "pass",
+   "claim": "319.61",
+   "evidence_frame": 78,
+   "explanation": "Row 9 of Monthly Expense Log now shows \"Oct 12\", \"Discretionary\", \"319.61\", \"Oct: QuickBite 192.62 + MegaMart 34.99 + SplitPay 92\"; Total updated to 3072.23.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

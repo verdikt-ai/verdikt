@@ -1,0 +1,382 @@
+{
+ "id": "lockedin-002",
+ "app": "lockedin, dinespot, quickchat",
+ "category": "multi_app",
+ "goal": "Open lockedin and find a recent post from Elena Brooks celebrating a new role or achievement. Like it, leave a short congratulatory comment, and repost it. Then send Elena Brooks a direct message asking if she wants to get dinner to celebrate, and book a table for 2 on DineSpot for Saturday at dinner time in San Francisco. What restaurant did you book?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 26,
+ "budget": 50,
+ "seconds": 211.7,
+ "cost": 0.9470583999999999,
+ "answer": "Mister Jiu's",
+ "summary": "I booked a table for 2 at Mister Jiu's, 28 Waverly Pl, San Francisco, for Saturday, Oct 17 at 7:00 PM. DineSpot shows \"Reservation Confirmed\" with code RSV2007.\n\nEverything else is done too:\n- **Elena's post:** I found her post about starting a new position as Head of Content at Substack. I liked it, and the reaction count went up from 312 to 313.\n- **Comment:** I posted \"Congratulations on the new role, Elena!\" and it now appears on the post.\n- **Repost:** I tapped Repost and the button turned blue, but no confirmation message appeared.\n- **Message:** I sent Elena \"Congrats on the new role, Elena! Do you want to get dinner to celebrate?\" She replied that dinner sounds great and to find a time that works for both of you.\n\nYou didn't name a restaurant, so I picked Mister Jiu's because it had online times. The higher-rated Lazy Bear only offered a waitlist.\n\nANSWER: Mister Jiu's",
+ "rubric": [
+  {
+   "criterion": "Open LockedIn and find a recent post from Elena Brooks about a new role or achievement",
+   "satisfied": true,
+   "reasoning": "The agent searched for 'Elena Brooks' in LockedIn and found her post from 1 day ago announcing her new position as Head of Content at Substack, which is clearly a new role/achievement post."
+  },
+  {
+   "criterion": "Like Elena Brooks' post",
+   "satisfied": true,
+   "reasoning": "In Step 5, the agent tapped the Like button (id: post_action_like). Screenshot 10 shows the Like button highlighted in blue, and the reaction count increased from 312 to 313, confirming the like was successfully applied."
+  },
+  {
+   "criterion": "Leave a short congratulatory comment on the post",
+   "satisfied": true,
+   "reasoning": "The agent typed 'Congratulations on the new role, Elena!' in the comment field (visible in Screenshot 6). Screenshot 10 shows this comment appearing in the comments section attributed to 'Jordan Avery' (the logged-in user) with timestamp 'just now', confirming the comment was successfully posted."
+  },
+  {
+   "criterion": "Repost Elena Brooks' post",
+   "satisfied": true,
+   "reasoning": "In Step 11, the agent tapped the Repost button (id: post_action_repost). Screenshot 12 shows the Repost button highlighted in blue, confirming the repost was completed."
+  },
+  {
+   "criterion": "Send Elena Brooks a direct message asking about dinner to celebrate",
+   "satisfied": true,
+   "reasoning": "The agent navigated to Elena Brooks' profile, tapped Message, typed 'Congrats on the new role, Elena! Do you want to get dinner to celebrate?' and sent it. Screenshot 17 shows the message successfully delivered in the chat with Elena Brooks."
+  },
+  {
+   "criterion": "Open DineSpot and search for restaurants in San Francisco",
+   "satisfied": true,
+   "reasoning": "The agent launched DineSpot (Step 17) and the app showed San Francisco as the location. Screenshots 18-23 show the DineSpot app with 'Search San Francisco' and '35 restaurants nearby' in San Francisco."
+  },
+  {
+   "criterion": "Book a table for 2 on Saturday at dinner time",
+   "satisfied": true,
+   "reasoning": "The agent changed the date to Saturday Oct 17 (visible in Step 22 screenshot showing Sat, Oct 17 selected), kept 2 guests, selected 7:00 PM dinner time at Mister Jiu's, and confirmed the reservation. The final screenshot shows 'Reservation Confirmed - Mister Jiu's - Sat, Oct 17 \u2022 7:00 PM' with 2 guests."
+  },
+  {
+   "criterion": "Report the restaurant name booked on DineSpot",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported 'Mister Jiu's' as the restaurant booked, which matches the confirmed reservation shown in the final screenshot."
+  },
+  {
+   "criterion": "Confirm all LockedIn interactions (like, comment, repost) were completed",
+   "satisfied": true,
+   "reasoning": "All three interactions were completed: Like (button turned blue, count increased to 313), Comment ('Congratulations on the new role, Elena!' visible in comments section), and Repost (Repost button turned blue in Screenshot 12)."
+  }
+ ],
+ "judge": "The agent successfully completed all required tasks: found Elena Brooks' post about her new role as Head of Content at Substack, liked it (Like button turned blue, reaction count went from 312 to 313), left a congratulatory comment ('Congratulations on the new role, Elena!' visible in comments), reposted it (Repost button turned blue), sent Elena Brooks a direct message asking about dinner to celebrate, opened DineSpot which showed San Francisco restaurants, changed the date to Saturday Oct 17, selected Mister Jiu's, and confirmed the reservation for 2 guests at 7:00 PM on Saturday Oct 17. The final screenshot shows 'Reservation Confirmed - Mister Jiu's - Sat, Oct 17 \u2022 7:00 PM'. The agent correctly reported the restaurant as 'Mister Jiu's'.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Search"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Search)",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "140,70,260,100"
+    }
+   },
+   "result": "tapped at (200, 85) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Elena Brooks"
+   },
+   "result": "typed 'Elena Brooks'; verified: true; field value now 'Elena Brooks'",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (198, 349) via index",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "tapped at (55, 631) via index",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 77
+    },
+    "text": "Congratulations on the new role, Elena!"
+   },
+   "result": "typed 'Congratulations on the new role, Elena!'; verified: false; field value now ''",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 78
+    }
+   },
+   "result": "tapped at (374, 513) via index",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "16,230,386,300"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 265) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0017.webp"
+  },
+  {
+   "n": 9,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 20,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (201,350)->(201,524) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0019.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 420,
+    "x2": 200,
+    "y2": 200,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,420)->(200,200) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0021.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (248, 197) via index",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0023.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (37, 110) via index",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0025.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 205) via index",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0027.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 21
+    }
+   },
+   "result": "tapped at (177, 492) via index",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0029.webp"
+  },
+  {
+   "n": 15,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "chat_message_field"
+    },
+    "text": "Congrats on the new role, Elena! Do you want to get dinner to celebrate?"
+   },
+   "result": "typed 'Congrats on the new role, Elena! Do you want to get dinner to celebrate?'; verified: true; field value now 'Congrats on the new role, Elena! Do you want to get dinner to celebrate?'",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0032.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_send_button"
+    }
+   },
+   "result": "tapped at (373, 510) via id",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0034.webp"
+  },
+  {
+   "n": 17,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.dinespot"
+   },
+   "result": "launched com.iosworld.benchmark.dinespot",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0036.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_context_party_time_button"
+    }
+   },
+   "result": "tapped at (120, 164) via id",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0038.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "search_date_button"
+    }
+   },
+   "result": "tapped at (166, 124) via id",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0040.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "335,760,370,795"
+    }
+   },
+   "result": "tapped at (352, 777) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0043.webp"
+  },
+  {
+   "n": 21,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 30,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,568)->(201,306) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0043.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "search_date_done_button"
+    }
+   },
+   "result": "tapped at (201, 699) via id",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0046.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_restaurant_tr_mister_jius"
+    }
+   },
+   "result": "tapped at (206, 717) via id",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0048.webp"
+  },
+  {
+   "n": 24,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 30,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,568)->(201,306) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0050.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_slot_20261017_1900"
+    }
+   },
+   "result": "tapped at (73, 590) via id",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0052.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 779) via id",
+   "refused": false,
+   "frame": "media/run1-opus/lockedin-002/0054.webp"
+  }
+ ],
+ "ledger": null
+}

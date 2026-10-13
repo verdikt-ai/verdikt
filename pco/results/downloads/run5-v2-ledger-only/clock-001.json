@@ -1,0 +1,170 @@
+{
+ "id": "clock-001",
+ "app": "clock",
+ "category": "single_app",
+ "goal": "Set a new alarm for 6:45 AM labeled 'Gym' in the Clock app and confirm it's set.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 9,
+ "budget": 50,
+ "seconds": 70.8,
+ "cost": 0.3864,
+ "answer": null,
+ "summary": "I set a new alarm for 6:45 AM labeled \"Gym\" in the Clock app. It's now at the top of the Alarms list as \"6:45, Gym\" and switched on. I picked AM on the time picker before saving.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open Clock app and navigate to the Alarm tab",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Clock app open on the World Clock tab. Step 1 tapped the Alarm tab, and Screenshot 2 shows the Alarms list, confirming successful navigation to the Alarm tab."
+  },
+  {
+   "criterion": "Tap the add alarm button",
+   "satisfied": true,
+   "reasoning": "Step 2 tapped the '+' button (Add Alarm), and Screenshot 3 shows the 'Add Alarm' screen opened with a time picker and label field."
+  },
+  {
+   "criterion": "Set the alarm time to 6:45 AM",
+   "satisfied": true,
+   "reasoning": "Screenshots 4-7 show the agent scrolling the hour picker from 12 to 6 and the minutes were already at 43, then in Screenshot 8 (step 8 before state) the picker shows 6:45 AM, confirming the time was set correctly to 6:45 AM."
+  },
+  {
+   "criterion": "Set the alarm label to 'Gym'",
+   "satisfied": true,
+   "reasoning": "Step 8 typed 'Gym' into the label field. Screenshots 8 and 9 show 'Gym' entered in the Label field, confirmed by the action result 'field value now Gym'."
+  },
+  {
+   "criterion": "Save the alarm",
+   "satisfied": true,
+   "reasoning": "Step 9 tapped the Save button (identified as 'Add Alarm' group containing the Save button). The final screenshot (10) shows the Alarms list without the Add Alarm screen, indicating the alarm was saved."
+  },
+  {
+   "criterion": "Confirm the alarm is set and active",
+   "satisfied": true,
+   "reasoning": "The final screenshot (10) shows the Alarms list with '6:45 Gym' at the top with a green toggle (active/enabled), confirming the alarm is set and active."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened the Clock app, navigated to the Alarm tab, tapped the add alarm button (+), set the time to 6:45 AM, entered the label 'Gym', saved the alarm, and the final screenshot confirms the alarm '6:45 Gym' is listed and active (toggle is green/on).",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "110,800,190,860"
+    }
+   },
+   "result": "tapped at (150, 830) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clock-001/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "345,65,385,105"
+    }
+   },
+   "result": "tapped at (365, 85) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clock-001/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "swipe",
+   "args": {
+    "x1": 128,
+    "y1": 360,
+    "x2": 128,
+    "y2": 168,
+    "duration_ms": 1500
+   },
+   "result": "swiped (128,360)->(128,168) in 1500ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clock-001/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "110,270,150,290"
+    }
+   },
+   "result": "tapped at (130, 280) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clock-001/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "110,298,150,312"
+    }
+   },
+   "result": "tapped at (130, 305) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clock-001/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "110,320,150,330"
+    }
+   },
+   "result": "tapped at (130, 325) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clock-001/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "180,298,215,312"
+    }
+   },
+   "result": "tapped at (197, 305) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clock-001/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Gym"
+   },
+   "result": "typed 'Gym'; verified: true; field value now 'Gym'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clock-001/0019.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "320,80,385,120"
+    }
+   },
+   "result": "tapped at (352, 100) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/clock-001/0021.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Alarm set for 6:45 AM labeled 'Gym' and shown as set",
+   "verdict": "proven",
+   "claim": "6:45, Gym",
+   "frame": 21
+  }
+ ]
+}

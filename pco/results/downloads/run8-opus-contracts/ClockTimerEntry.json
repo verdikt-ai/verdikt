@@ -1,0 +1,118 @@
+{
+ "id": "ClockTimerEntry",
+ "app": "Clock",
+ "goal": "Create a timer with 0 hours, 16 minutes, and 35 seconds. Do not start the timer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 7,
+ "budget": 10,
+ "seconds": 27.6,
+ "cost": 0.1368034,
+ "answer": null,
+ "summary": "I set the timer in the Clock app to 00h 16m 35s, and I didn't start it. It's sitting on the Timer tab, ready to go when you tap the play button.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Clock"
+   },
+   "result": "opened Clock",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ClockTimerEntry/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"16m 35s\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ClockTimerEntry/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (540,2232)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ClockTimerEntry/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (265,793)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ClockTimerEntry/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (816,1068)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ClockTimerEntry/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (816,793)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ClockTimerEntry/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (540,1068)",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text \"00h 16m 35s\" visible -> no match; nearest: StaticText \"0 hours, 16 minutes, 35 seconds\" [2], Button \"00\" [12], StaticText \"Phone two bars.\" [23], StaticText \"11:34\" [21], Button \"Backspace 5\" [14]",
+   "frame": "media/run8-opus-contracts/ClockTimerEntry/006.webp"
+  },
+  {
+   "n": 6,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"0 hours, 16 minutes, 35 seconds\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ClockTimerEntry/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ClockTimerEntry/008.webp"
+  }
+ ]
+}

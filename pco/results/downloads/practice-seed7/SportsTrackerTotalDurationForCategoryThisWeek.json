@@ -1,0 +1,60 @@
+{
+ "id": "SportsTrackerTotalDurationForCategoryThisWeek",
+ "app": "Opentracks",
+ "goal": "What was the total duration of cycling activities in the OpenTracks app this week? Assume the week starts from Monday. Express your answer in minutes as a single integer.",
+ "success": false,
+ "score": 0.0,
+ "steps": 4,
+ "budget": 10,
+ "seconds": 23.4,
+ "cost": 0.1277584,
+ "answer": "588",
+ "summary": "I answered **588**: four cycling tracks this week (Mon Oct 9 \u2013 Sun Oct 15) add up to 588 minutes.\n\nI picked out the cycling tracks by the bicycle icon in the OpenTracks track list. I didn't open each track to check its category.\n\n| Track | Day | Duration | Minutes |\n|---|---|---|---|\n| Bicycle Adventure | Wednesday | 3:45:00 | 225 |\n| Light Workout | Wednesday | 2:15:00 | 135 |\n| Cycle Trip | Wednesday | 2:48:00 | 168 |\n| Lunch Break Fitness | Monday | 1:00:00 | 60 |\n\nThe newest track is from Friday, so nothing was logged on Saturday or Sunday. I left out \"Singletrack Session\", which looks like mountain biking, because it's from Oct 4, before this week.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "OpenTracks"
+   },
+   "result": "opened OpenTracks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed7/SportsTrackerTotalDurationForCategoryThisWeek/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed7/SportsTrackerTotalDurationForCategoryThisWeek/001.webp"
+  },
+  {
+   "n": 3,
+   "tool": "answer",
+   "args": {
+    "text": "588"
+   },
+   "result": "answer recorded: \"588\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed7/SportsTrackerTotalDurationForCategoryThisWeek/002.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed7/SportsTrackerTotalDurationForCategoryThisWeek/002.webp"
+  }
+ ]
+}

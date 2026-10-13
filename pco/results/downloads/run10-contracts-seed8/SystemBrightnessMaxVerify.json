@@ -1,0 +1,73 @@
+{
+ "id": "SystemBrightnessMaxVerify",
+ "app": "Settings",
+ "goal": "Turn brightness to the max value.",
+ "success": true,
+ "score": 1.0,
+ "steps": 4,
+ "budget": 10,
+ "seconds": 58.1,
+ "cost": 0.0985032,
+ "answer": null,
+ "summary": "Brightness was already at its maximum, so I didn't change anything. Settings > Display showed \"Brightness level: 100%\". I didn't move the slider, since that could only have lowered it.",
+ "step_list": [
+  {
+   "n": 0,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"100%\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": null
+  },
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBrightnessMaxVerify/001.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "half"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBrightnessMaxVerify/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 12
+   },
+   "result": "tapped (275,1450)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBrightnessMaxVerify/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBrightnessMaxVerify/005.webp"
+  }
+ ]
+}

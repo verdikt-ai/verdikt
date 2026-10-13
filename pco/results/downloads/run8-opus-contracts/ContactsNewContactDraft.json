@@ -1,0 +1,166 @@
+{
+ "id": "ContactsNewContactDraft",
+ "app": "Contacts",
+ "goal": "Go to the new contact screen and enter the following details: First Name: Grace, Last Name: Taylor, Phone: 799-802-1530, Phone Label: Work. Do NOT hit save.",
+ "success": true,
+ "score": 1.0,
+ "steps": 10,
+ "budget": 12,
+ "seconds": 93.3,
+ "cost": 0.2575096,
+ "answer": null,
+ "summary": "I filled in the new contact screen in Contacts and didn't tap Save, so the contact is still an unsaved draft.\n\n- **First name:** Grace\n- **Last name:** Taylor\n- **Phone:** 799-802-1530\n- **Phone label:** Work (changed from the default, Mobile)",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Contacts"
+   },
+   "result": "opened Contacts",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "TextField \"First name\" value \"Grace\"",
+     "TextField \"Last name\" value \"Taylor\"",
+     "text ~\"799\" visible",
+     "text \"Work\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (540,1271)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (943,2011)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "Grace",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Grace\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"First name\" value \"Grace\" -> TextField \"First name\" value=\"Grace\" [7] has value \"Grace\"",
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "Taylor",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Taylor\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Last name\" value \"Taylor\" -> TextField \"Last name\" value=\"Taylor\" [8] has value \"Taylor\"",
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "799-802-1530",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"799-802-1530\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text ~\"799\" visible -> TextField \"Phone\" value=\"799-802-1530\" [10]",
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 16
+   },
+   "result": "tapped (112,2337)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (361,1627)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 23
+   },
+   "result": "tapped (361,399)",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text \"Work\" visible -> no match; nearest: Button \"Work Phone\" [11], Button \"Delete Work Phone\" [13], Image \"More options\" [3], Image \"Back\" [16], Image \"Show more name fields\" [14]",
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/009.webp"
+  },
+  {
+   "n": 9,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "TextField \"First name\" value \"Grace\"",
+     "TextField \"Last name\" value \"Taylor\"",
+     "TextField \"Phone\" value \"799-802-1530\"",
+     "Button \"Work Phone\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsNewContactDraft/011.webp"
+  }
+ ]
+}

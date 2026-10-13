@@ -1,0 +1,87 @@
+{
+ "id": "TasksDueOnDate",
+ "app": "Tasks",
+ "goal": "What tasks do I have due October 21 2023 in Tasks app? Answer with the titles only. If there are multiples titles, format your answer in a comma separated list.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 52.9,
+ "cost": 0.14853639999999999,
+ "answer": "Attend training session, Call client for follow-up, Follow up on support tickets",
+ "summary": "I've submitted the answer, and you have three tasks due Saturday:\n\n**Attend training session, Call client for follow-up, Follow up on support tickets**\n\nI didn't open each task to check its exact date. I went by the \"Sat\" label in the task list, and since tasks due Oct 22 show a full date, I took \"Sat\" to mean the coming Saturday, Oct 21. \"Follow up on support tickets\" appeared in the screenshot but not in the screen's text readout, so it's the least confirmed of the three. Further down the list, all the tasks are already completed, and none of them are due Saturday.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Tasks"
+   },
+   "result": "opened Tasks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksDueOnDate/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksDueOnDate/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksDueOnDate/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksDueOnDate/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "answer",
+   "args": {
+    "text": "Attend training session, Call client for follow-up, Follow up on support tickets",
+    "evidence": [
+     "text \"Attend training session\" visible",
+     "text \"Call client for follow-up\" visible"
+    ]
+   },
+   "result": "answer recorded: \"Attend training session, Call client for follow-up, Follow up on support tickets\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksDueOnDate/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksDueOnDate/004.webp"
+  }
+ ]
+}

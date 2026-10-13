@@ -1,0 +1,184 @@
+{
+ "id": "RecipeDeleteMultipleRecipes",
+ "app": "Broccoli",
+ "goal": "Delete the following recipes from Broccoli app: Zucchini Noodles with Pesto, Garlic Butter Shrimp, Lentil Soup.",
+ "success": true,
+ "score": 1.0,
+ "steps": 14,
+ "budget": 24,
+ "seconds": 85.5,
+ "cost": 0.27783940000000007,
+ "answer": null,
+ "summary": "I deleted all three recipes from Broccoli: Garlic Butter Shrimp, Lentil Soup and Zucchini Noodles with Pesto. I confirmed each deletion in the app's dialog, and the recipe list now shows \"No recipes found.\" These were the only three recipes in the app, so it's now empty.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Broccoli"
+   },
+   "result": "opened Broccoli",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Zucchini Noodles with Pesto\" absent",
+     "text \"Garlic Butter Shrimp\" absent",
+     "text \"Lentil Soup\" absent"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (697,463)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (1027,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (812,535)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (860,1262)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (697,463)",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS StaticText \"Lentil Soup\" visible -> ambiguous: StaticText \"Lentil Soup\" matched 2 elements [1] [7]; add a role, id= or a longer text",
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (1027,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (812,535)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Delete this recipe?\" visible -> StaticText \"Delete this recipe?\" [0]",
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (860,1262)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (697,463)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (1027,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (812,535)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Delete this recipe?\" visible -> StaticText \"Delete this recipe?\" [0]",
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (860,1262)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteMultipleRecipes/014.webp"
+  }
+ ]
+}

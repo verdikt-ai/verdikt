@@ -1,0 +1,350 @@
+{
+ "id": "multi-080",
+ "app": "caltrack, freshcart",
+ "category": "multi_app",
+ "goal": "Check my CalTrack dashboard for my remaining calorie budget vs my 2,450 goal. Calculate how many calories I need in my next meal to stay on track. Browse FreshCart at Natural Foods Market for recovery-friendly foods \u2014 salmon and spinach \u2014 that fit within a $25 grocery budget, and add items to my cart without exceeding it. What's my remaining calorie budget, target calories for next meal, items added, and grocery total?",
+ "success": false,
+ "score": 0.5,
+ "judged": true,
+ "steps": 21,
+ "budget": 50,
+ "seconds": 160.8,
+ "cost": 0.8071,
+ "answer": "Remaining calorie budget: 921 calories (2,450 goal \u2212 1,669 food + 140 exercise); next meal target: ~921 calories; items added: Wild Caught Sockeye Salmon 12 oz ($14.99) and Organic Baby Spinach 5 oz ($2.99) from Natural Foods Market; grocery total: $17.98 (under $25); target calories for next meal: Next meal target \u2248 921 calories (2450 \u2212 1669 food + 140 exercise = 921 remaining; all four meals already logged so the next meal can use the full remainder).",
+ "summary": "You have 921 calories left today, and I added salmon and spinach from Natural Foods Market to your FreshCart cart for $17.98, under your $25 budget.\n\n- **Remaining calories:** your CalTrack dashboard shows a 2,450 goal, minus 1,669 eaten, plus 140 burned exercising, which leaves 921.\n- **Next meal target:** about 921 calories. Breakfast, lunch, dinner and snacks are already logged, so your next meal can use the whole amount.\n- **Items added:**\n  - 1 \u00d7 Wild Caught Sockeye Salmon (12 oz), $14.99\n  - 1 \u00d7 Organic Baby Spinach (5 oz), $2.99\n- **Grocery total for what I added:** $17.98.\n\nYour Natural Foods Market cart already had other items before I started, including one of the same salmon, so it now shows 2 salmon. The full cart's estimated total, with fees, tax and tip, is $82.13; the $17.98 covers only what I added. I didn't check out.\n\nANSWER: Remaining calorie budget: 921 calories (2,450 goal \u2212 1,669 food + 140 exercise); next meal target: ~921 calories; items added: Wild Caught Sockeye Salmon 12 oz ($14.99) and Organic Baby Spinach 5 oz ($2.99) from Natural Foods Market; grocery total: $17.98 (under $25)",
+ "rubric": [
+  {
+   "criterion": "Open CalTrack dashboard and check remaining calorie budget vs 2,450 goal",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 clearly shows the CalTrack dashboard with 921 calories remaining, goal of 2,450, food consumed 1,669, and exercise 140. The agent successfully read these values."
+  },
+  {
+   "criterion": "Calculate how many calories are needed in the next meal to stay on track",
+   "satisfied": true,
+   "reasoning": "The agent correctly calculated 921 remaining calories (2450 - 1669 + 140 = 921) and identified this as the target for the next meal. The calculation is mathematically correct based on the dashboard data."
+  },
+  {
+   "criterion": "Open FreshCart and navigate to Natural Foods Market",
+   "satisfied": true,
+   "reasoning": "The agent launched FreshCart, navigated through the store list, and successfully opened the Natural Foods Market store page as shown in screenshot 10."
+  },
+  {
+   "criterion": "Browse for recovery-friendly foods: salmon and spinach",
+   "satisfied": true,
+   "reasoning": "The agent searched for 'salmon' and found Wild Caught Sockeye Salmon at $14.99, then searched for 'spinach' and found Organic Baby Spinach at $2.99. Both recovery-friendly foods were browsed."
+  },
+  {
+   "criterion": "Add items to cart while staying within the $25 grocery budget",
+   "satisfied": false,
+   "reasoning": "The final cart screenshot shows Wild Caught Sockeye Salmon at $29.98 (2 units were added instead of 1) plus Organic Hass Avocados at $5.99, with a total of $82.13. The cart far exceeds the $25 budget. Additionally, the cart appears to contain items from previous sessions and the salmon was doubled."
+  },
+  {
+   "criterion": "Verify the grocery total does not exceed $25",
+   "satisfied": false,
+   "reasoning": "The final cart shows a total of $82.13 for Natural Foods Market items, which far exceeds the $25 budget. Even just the salmon at $29.98 (2 units) alone exceeds the budget."
+  },
+  {
+   "criterion": "Report remaining calorie budget, target calories for next meal, items added, and grocery total",
+   "satisfied": false,
+   "reasoning": "The agent reported $17.98 as the grocery total (1 salmon + 1 spinach), but the actual cart shows $82.13 with 2 salmon units and avocados. The reported items and total don't match what was actually in the cart at the end."
+  },
+  {
+   "criterion": "Grocery total stays within the $25 budget constraint",
+   "satisfied": false,
+   "reasoning": "The final cart total is $82.13, which is far above the $25 budget constraint. The agent added 2 units of salmon ($29.98) instead of 1, and the cart also contains other items not related to the task."
+  }
+ ],
+ "judge": "The agent successfully checked the CalTrack dashboard (921 calories remaining from 2,450 goal), navigated to FreshCart and Natural Foods Market, and searched for salmon and spinach. However, the final cart screenshot shows 2 units of Wild Caught Sockeye Salmon at $29.98 (2\u00d7$14.99) plus Organic Hass Avocados at $5.99, with a total of $82.13 \u2014 far exceeding the $25 budget. The agent added 2 salmon instead of 1, and the cart contains items from multiple stores. The grocery total for the Natural Foods Market items alone ($29.98 + $5.99 = $35.97 visible) exceeds $25. The agent's reported answer of $17.98 is incorrect based on what the cart actually shows. The spinach was searched but it's unclear if it was properly added (the cart shows avocados instead of spinach). The budget constraint was violated.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.freshcart"
+   },
+   "result": "launched com.iosworld.benchmark.freshcart",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 83
+    }
+   },
+   "result": "tapped at (360, 612) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 13
+    }
+   },
+   "result": "tapped at (52, 442) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0006.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (201, 140) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0008.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Natural Foods Market"
+   },
+   "result": "typed 'Natural Foods Market'; verified: true; field value now 'Natural Foods Market'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (113, 524) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (32, 96) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0017.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 96
+    }
+   },
+   "result": "tapped at (248, 548) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0019.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 147) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0021.webp"
+  },
+  {
+   "n": 11,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "sent 20 deletes; cleared: false; field value now 'Search products and stores'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0024.webp"
+  },
+  {
+   "n": 12,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "salmon"
+   },
+   "result": "typed 'salmon'; verified: true; field value now 'salmon'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0026.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (104, 329) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 41
+    }
+   },
+   "result": "tapped at (272, 756) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0030.webp"
+  },
+  {
+   "n": 15,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "sent 6 deletes; cleared: false; field value now 'Search products and stores'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0033.webp"
+  },
+  {
+   "n": 16,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "spinach"
+   },
+   "result": "typed 'spinach'; verified: true; field value now 'spinach'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0035.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (104, 329) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0038.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "add_to_cart_wf_spinach_417"
+    }
+   },
+   "result": "tapped at (272, 756) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0038.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 15
+    }
+   },
+   "result": "tapped at (201, 740) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0040.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "return"
+    }
+   },
+   "result": "tapped at (349, 779) via text",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0042.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 15
+    }
+   },
+   "result": "tapped at (201, 740) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-080/0044.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "remaining calorie budget",
+   "verdict": "proven",
+   "claim": "921",
+   "frame": 1
+  },
+  {
+   "type": "SAY",
+   "text": "target calories for next meal",
+   "verdict": "proven",
+   "claim": "Next meal target \u2248 921 calories (2450 \u2212 1669 food + 140 exercise = 921 remaining; all four meals already logged so the next meal can use the full remainder).",
+   "frame": 1
+  },
+  {
+   "type": "DO",
+   "text": "add salmon to FreshCart cart (Natural Foods Market)",
+   "verdict": "proven",
+   "claim": "Wild Caught Sockeye Salmon",
+   "frame": 44
+  },
+  {
+   "type": "DO",
+   "text": "add spinach to FreshCart cart (Natural Foods Market)",
+   "verdict": "proven",
+   "claim": "Organic Baby Spinach",
+   "frame": 44
+  },
+  {
+   "type": "KNOW",
+   "text": "grocery cart total (<= $25)",
+   "verdict": "proven",
+   "claim": "$2.99",
+   "frame": 44
+  }
+ ]
+}

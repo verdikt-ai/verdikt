@@ -1,0 +1,647 @@
+{
+ "id": "multi-073",
+ "app": "clock, caltrack, quickbite, weather",
+ "category": "multi_app",
+ "goal": "Start the stopwatch in Clock and record 3 lap splits at 1-minute intervals. Log a post-workout protein shake in CalTrack (search 'protein') and check my daily calorie progress vs the 2,450 goal. Order a recovery smoothie from QuickBite. Check Weather in SF for tomorrow's outdoor workout conditions. What are the lap times, calorie progress, smoothie order total, and tomorrow's weather forecast?",
+ "success": false,
+ "score": 0.8889,
+ "judged": true,
+ "steps": 47,
+ "budget": 50,
+ "seconds": 470.4,
+ "cost": 1.0692,
+ "answer": "Lap times: Lap 1 01:17.00, Lap 2 00:59.01, Lap 3 00:48.79; Calorie progress: 1,829 of 2,450 eaten (+140 burned), 761 remaining; Smoothie order total: $16.95 (Razzmatazz from Jamba); Tomorrow's SF weather: Sunny, high 71\u00b0, low 54\u00b0, south-southwest wind 2\u20139 mph.; Lap times: Lap 1, 01:17.00; Daily calorie progress vs 2,450 goal: 1829; Tomorrow's weather forecast in SF: Sunny, with a high near 71. South southwest wind 2 to 9 mph.",
+ "summary": "I did all four tasks, though the laps aren't the even 1-minute splits you asked for and QuickBite had no protein smoothie.\n\n- **Laps:** Lap 1 was 01:17.00, Lap 2 was 00:59.01 and Lap 3 was 00:48.79. Each step on my side took several seconds, so I couldn't tap Lap at exactly one-minute marks. The stopwatch is still running.\n- **Calories:** I logged a protein shake (160 cal, 30 g protein) from the 'protein' search. CalTrack put it under Breakfast rather than as a post-workout snack. Food is now 1,829 of your 2,450 goal. You've burned 140 from exercise, which leaves 761 calories. Protein is at 155.8 of 170 g.\n- **Smoothie:** QuickBite had no protein or \"recovery\" smoothie, so I ordered a Razzmatazz from Jamba (raspberries, strawberries, banana). It came to $16.95: $8.29 smoothie, $1.99 delivery, $2.99 service fee, $0.68 tax and a $3.00 tip. It's charged to your Freedom Unlimited card (...2095), the order is confirmed and the ETA is 32 minutes.\n- **Tomorrow's weather (Wednesday, SF):** Sunny, high 71\u00b0, low 54\u00b0, with a south-southwest wind of 2\u20139 mph. That's good weather for an outdoor workout.\n\nANSWER: Lap times: Lap 1 01:17.00, Lap 2 00:59.01, Lap 3 00:48.79; Calorie progress: 1,829 of 2,450 eaten (+140 burned), 761 remaining; Smoothie order total: $16.95 (Razzmatazz from Jamba); Tomorrow's SF weather: Sunny, high 71\u00b0, low 54\u00b0, south-southwest wind 2\u20139 mph.",
+ "rubric": [
+  {
+   "criterion": "Open Clock and start the stopwatch",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-2 show the agent navigated to the Clock app's Stopwatch tab and tapped Start. Screenshot 7 shows the stopwatch running at 00:41.72."
+  },
+  {
+   "criterion": "Record 3 lap splits at approximately 1-minute intervals using the Lap button",
+   "satisfied": true,
+   "reasoning": "Screenshots show Lap 1 recorded at 01:17.00 (step 9), Lap 2 at 00:59.01 (step 15), and Lap 3 at 00:48.79 (step 21). All three laps are approximately 1 minute each."
+  },
+  {
+   "criterion": "Open CalTrack and search for 'protein' to log a post-workout protein shake",
+   "satisfied": true,
+   "reasoning": "Screenshots 22-28 show the agent launched CalTrack, tapped Add, selected Food, typed 'protein' in the search field, found 'Protein shake', selected it, and tapped 'Add Food'. Screenshot 29 shows the dashboard with Protein shake added."
+  },
+  {
+   "criterion": "Check daily calorie progress vs the 2,450 goal in CalTrack",
+   "satisfied": true,
+   "reasoning": "Screenshot 29 shows the CalTrack dashboard with Goal: 2450, Food: 1829, Exercise: 140, Remaining: 761 calories."
+  },
+  {
+   "criterion": "Open QuickBite and order a recovery smoothie",
+   "satisfied": true,
+   "reasoning": "Screenshots 30-44 show the agent opened QuickBite, searched for 'smoothie', found Jamba, added Razzmatazz to cart, proceeded to checkout, confirmed the order, and the tracking screen (screenshot 44) shows 'Order confirmed' with ETA 32 min."
+  },
+  {
+   "criterion": "Open Weather app and check San Francisco forecast for tomorrow",
+   "satisfied": true,
+   "reasoning": "Screenshots 45-48 show the agent launched the Weather app showing San Francisco, scrolled to the 10-day forecast, and tapped on Wednesday (tomorrow) which showed: Sunny, High 71\u00b0, Low 54\u00b0, South southwest wind 2 to 9 mph."
+  },
+  {
+   "criterion": "Report the three lap split times",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported Lap 1: 01:17.00, Lap 2: 00:59.01, Lap 3: 00:48.79, which matches what is visible in the screenshots."
+  },
+  {
+   "criterion": "Report calorie progress, smoothie order total, and tomorrow's weather forecast",
+   "satisfied": true,
+   "reasoning": "The agent reported: calorie progress 1,829 of 2,450 (761 remaining, +140 burned); smoothie order total $16.95 (Razzmatazz from Jamba); tomorrow's SF weather: Sunny, high 71\u00b0, low 54\u00b0, south-southwest wind 2-9 mph. All values match the screenshots."
+  },
+  {
+   "criterion": "Stop the stopwatch after recording laps",
+   "satisfied": false,
+   "reasoning": "The agent never tapped the Stop button on the stopwatch. After recording the 3rd lap in step 21, the agent immediately launched CalTrack (step 22) without stopping the stopwatch. The stopwatch was still running when the agent left the Clock app, and it was never stopped throughout the trajectory."
+  }
+ ],
+ "judge": "The agent completed most tasks successfully: opened Clock and started the stopwatch, recorded 3 lap splits (Lap 1: 01:17.00, Lap 2: 00:59.01, Lap 3: 00:48.79), logged a protein shake in CalTrack, checked calorie progress (1,829 of 2,450 goal, 761 remaining), opened QuickBite and ordered a Razzmatazz smoothie from Jamba ($16.95 total), and checked SF weather for tomorrow (Wednesday: Sunny, High 71\u00b0, Low 54\u00b0, South southwest wind 2-9 mph). However, the agent failed to stop the stopwatch after recording the 3 laps - the stopwatch was still running when the agent switched to other apps, and it was never stopped. The final answer correctly reports all the requested data. The order was successfully placed (tracking screen shown). The main failure is not stopping the stopwatch.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "230,800,270,850"
+    }
+   },
+   "result": "tapped at (250, 825) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (297, 328) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0010.webp"
+  },
+  {
+   "n": 3,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0010.webp"
+  },
+  {
+   "n": 4,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0010.webp"
+  },
+  {
+   "n": 6,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0010.webp"
+  },
+  {
+   "n": 7,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0013.webp"
+  },
+  {
+   "n": 8,
+   "tool": "wait",
+   "args": {
+    "ms": 7000
+   },
+   "result": "waited 7000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0013.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (104, 328) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0015.webp"
+  },
+  {
+   "n": 10,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0020.webp"
+  },
+  {
+   "n": 11,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0020.webp"
+  },
+  {
+   "n": 12,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0020.webp"
+  },
+  {
+   "n": 13,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0020.webp"
+  },
+  {
+   "n": 14,
+   "tool": "wait",
+   "args": {
+    "ms": 3000
+   },
+   "result": "waited 3000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0023.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (104, 328) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0023.webp"
+  },
+  {
+   "n": 16,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0030.webp"
+  },
+  {
+   "n": 17,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0030.webp"
+  },
+  {
+   "n": 18,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0030.webp"
+  },
+  {
+   "n": 19,
+   "tool": "wait",
+   "args": {
+    "ms": 10000
+   },
+   "result": "waited 10000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0030.webp"
+  },
+  {
+   "n": 20,
+   "tool": "wait",
+   "args": {
+    "ms": 3000
+   },
+   "result": "waited 3000ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0030.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (104, 328) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0030.webp"
+  },
+  {
+   "n": 22,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.caltrack"
+   },
+   "result": "launched com.iosworld.benchmark.caltrack",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0032.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (354, 747) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0034.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (201, 156) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0036.webp"
+  },
+  {
+   "n": 25,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "protein"
+   },
+   "result": "typed 'protein'; verified: true; field value now 'protein'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0039.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 339) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0041.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 20
+    }
+   },
+   "result": "tapped at (201, 811) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0043.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (52, 100) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0045.webp"
+  },
+  {
+   "n": 29,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clock"
+   },
+   "result": "launched com.iosworld.benchmark.clock",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0047.webp"
+  },
+  {
+   "n": 30,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickbite"
+   },
+   "result": "launched com.iosworld.benchmark.quickbite",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0049.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,175,380,225"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (355, 200) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0051.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "140,815,180,850"
+    }
+   },
+   "result": "tapped at (160, 832) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0053.webp"
+  },
+  {
+   "n": 33,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "smoothie"
+   },
+   "result": "typed 'smoothie'; verified: true; field value now 'smoothie'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0056.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "16,240,386,380"
+    }
+   },
+   "result": "tapped at (201, 310) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0058.webp"
+  },
+  {
+   "n": 35,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0060.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "tapped at (382, 117) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0062.webp"
+  },
+  {
+   "n": 37,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 23
+    }
+   },
+   "result": "tapped at (201, 752) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0064.webp"
+  },
+  {
+   "n": 38,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0066.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 34
+    }
+   },
+   "result": "tapped at (201, 740) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0068.webp"
+  },
+  {
+   "n": 40,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (352, 413) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0071.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 470) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0071.webp"
+  },
+  {
+   "n": 42,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "350,403,380,423"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (365, 413) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0073.webp"
+  },
+  {
+   "n": 43,
+   "tool": "swipe",
+   "args": {
+    "x1": 335,
+    "y1": 413,
+    "x2": 380,
+    "y2": 413,
+    "duration_ms": 300
+   },
+   "result": "swiped (335,413)->(380,413) in 300ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0076.webp"
+  },
+  {
+   "n": 44,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (201, 470) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0078.webp"
+  },
+  {
+   "n": 45,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.weather"
+   },
+   "result": "launched com.iosworld.benchmark.weather",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0080.webp"
+  },
+  {
+   "n": 46,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0082.webp"
+  },
+  {
+   "n": 47,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 88
+    }
+   },
+   "result": "tapped at (201, 269) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-073/0084.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Start stopwatch and record 3 laps",
+   "verdict": "proven",
+   "claim": "Lap 3, 00:48.79",
+   "frame": 47
+  },
+  {
+   "type": "KNOW",
+   "text": "Lap times",
+   "verdict": "proven",
+   "claim": "Lap 1, 01:17.00",
+   "frame": 47
+  },
+  {
+   "type": "DO",
+   "text": "Log protein shake in CalTrack",
+   "verdict": "proven",
+   "claim": "Protein shake added to Breakfast.",
+   "frame": 45
+  },
+  {
+   "type": "KNOW",
+   "text": "Daily calorie progress vs 2,450 goal",
+   "verdict": "proven",
+   "claim": "1829",
+   "frame": 45
+  },
+  {
+   "type": "DO",
+   "text": "Order recovery smoothie from QuickBite",
+   "verdict": "proven",
+   "claim": "Order confirmed",
+   "frame": 78
+  },
+  {
+   "type": "KNOW",
+   "text": "Smoothie order total",
+   "verdict": "proven",
+   "claim": "$16.95",
+   "frame": 66
+  },
+  {
+   "type": "KNOW",
+   "text": "Tomorrow's weather forecast in SF",
+   "verdict": "proven",
+   "claim": "Sunny, with a high near 71. South southwest wind 2 to 9 mph.",
+   "frame": 84
+  }
+ ]
+}

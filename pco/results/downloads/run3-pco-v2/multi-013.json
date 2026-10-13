@@ -1,0 +1,403 @@
+{
+ "id": "multi-013",
+ "app": "clouddocs, cloudslides, cloudsheets",
+ "category": "multi_app",
+ "goal": "Open CloudDocs and edit the 'Q2 Roadmap' to add a new section. Then open CloudSlides and add a new slide to the 'Conference Practice Deck' summarizing my changes. Finally, open the 'Bug Triage Log' spreadsheet in CloudSheets and update a cell to reflect the new plan. Confirm all three documents were updated.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 27,
+ "budget": 50,
+ "seconds": 223.5,
+ "cost": 0.9803,
+ "answer": null,
+ "summary": "I updated all three documents, and each change was still there after saving or after reopening the app.\n\n1. **CloudDocs, \"Q2 Roadmap\":** I added a new section at the end called \"Q3 Follow-ups:\", with one point: \"- Prioritize API v3 migration bug fixes before public launch\". When I came back to the document later, the section was still there.\n2. **CloudSlides, \"Conference Practice Deck\":** I added slide 5, titled \"Q2 Roadmap Update\", with this text: \"Added Q3 Follow-ups section: prioritize API v3 migration bug fixes before public launch\". It shows in the saved deck.\n3. **CloudSheets, \"Bug Triage Log\":** I wrote \"Q3 plan: prioritize API v3 migration bug fixes\" in cell A7. That was the first empty row, under the existing bugs (BUG-204 to BUG-214). The value stayed after I left edit mode.\n\nYou didn't say what the new section or the cell should contain, so I chose that wording myself. I also didn't change any existing bug entries; the plan is a new note in its own row.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open CloudDocs and find the 'Q2 Roadmap' document",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows CloudDocs open with the Q2 Roadmap document visible. Step 1 shows the agent tapping on the Q2 Roadmap file, and Screenshot 2 shows the document opened successfully."
+  },
+  {
+   "criterion": "Add a new section to the Q2 Roadmap",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 clearly shows the Q2 Roadmap document in edit mode with a new 'Q3 Follow-ups:' section added at the bottom, containing '- Prioritize API v3 migration bug fixes before public launch'. The edit was saved as shown in Screenshot 5/6."
+  },
+  {
+   "criterion": "Open CloudSlides and find the 'Conference Practice Deck'",
+   "satisfied": true,
+   "reasoning": "Screenshot 7 shows CloudSlides opened with the Conference Practice Deck visible in the file list. Step 7 shows the agent tapping on it, and Screenshot 8 shows the deck opened."
+  },
+  {
+   "criterion": "Add a new slide summarizing the changes",
+   "satisfied": true,
+   "reasoning": "Screenshots 13-19 show a new slide was added with title 'Q2 Roadmap Update' and body content 'Added Q3 Follow-ups section: prioritize API v3 migration bug fixes before public launch'. Screenshot 19 confirms the slide content was successfully entered."
+  },
+  {
+   "criterion": "Open CloudSheets and find the 'Bug Triage Log' spreadsheet",
+   "satisfied": true,
+   "reasoning": "Screenshot 22 shows CloudSheets opened with the Bug Triage Log visible at the top of the list. Step 22 shows the agent tapping on it, and Screenshot 23 shows the spreadsheet opened."
+  },
+  {
+   "criterion": "Update a cell to reflect the new plan",
+   "satisfied": true,
+   "reasoning": "Screenshots 25-27 show that cell A7 was updated with 'Q3 plan: prioritize API v3 migration bug fixes'. The formula bar shows the full content and the cell displays the truncated version 'Q3 plan: prioritize API v3...'."
+  },
+  {
+   "criterion": "Confirm the CloudDocs document was updated",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 clearly shows the Q2 Roadmap document with the new 'Q3 Follow-ups' section added. The final screenshot 28 also shows the CloudDocs Q2 Roadmap document, confirming it was updated."
+  },
+  {
+   "criterion": "Confirm the CloudSlides presentation was updated",
+   "satisfied": true,
+   "reasoning": "Screenshot 19 shows the new slide with title 'Q2 Roadmap Update' and body content summarizing the changes was successfully added to the Conference Practice Deck presentation."
+  },
+  {
+   "criterion": "Confirm the CloudSheets spreadsheet was updated",
+   "satisfied": true,
+   "reasoning": "Screenshot 27 shows the Bug Triage Log spreadsheet with cell A7 containing 'Q3 plan: prioritize API v3...' (truncated display of 'Q3 plan: prioritize API v3 migration bug fixes'), confirming the update was saved."
+  }
+ ],
+ "judge": "The agent successfully completed all three main tasks: (1) opened CloudDocs and added a 'Q3 Follow-ups' section to the Q2 Roadmap document, (2) opened CloudSlides and added a new slide titled 'Q2 Roadmap Update' with content summarizing the changes to the Conference Practice Deck, and (3) opened CloudSheets and updated cell A7 in the Bug Triage Log with 'Q3 plan: prioritize API v3 migration bug fixes'. All three documents were updated as evidenced by the screenshots.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (294, 400) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "docs_edit_button"
+    }
+   },
+   "result": "tapped at (346, 638) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "\n\nQ3 Follow-ups:\n- Prioritize API v3 migration bug fixes before public launch"
+   },
+   "result": "typed '\\n\\nQ3 Follow-ups:\\n- Prioritize API v3 migration bug fixes before public launch'; verified: unknown (field not readable; screen unchanged)",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (31, 147) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cloudslides"
+   },
+   "result": "launched com.iosworld.benchmark.cloudslides",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 19
+    }
+   },
+   "result": "tapped at (296, 653) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "slides_edit_button"
+    }
+   },
+   "result": "tapped at (350, 724) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (235, 95) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 11
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 331) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 11
+    }
+   },
+   "result": "sent 50 deletes; cleared: false; field value now 'Conference Practice Deck'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "bounds": "300,317,381,346"
+    }
+   },
+   "result": "sent 50 deletes; cleared: false; field value now 'Conference Practice Deck'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0028.webp"
+  },
+  {
+   "n": 13,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Q2 Roadmap Update"
+   },
+   "result": "typed 'Q2 Roadmap Update'; verified: false; field value now 'Conference Practice Deck'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0032.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 443) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0032.webp"
+  },
+  {
+   "n": 15,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 12
+    },
+    "text": "Added Q3 Follow-ups section: prioritize API v3 migration bug fixes before public launch"
+   },
+   "result": "typed 'Added Q3 Follow-ups section: prioritize API v3 migration bug fixes before public launch'; verified: false; field value now 'Conference Practice Deck'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0035.webp"
+  },
+  {
+   "n": 16,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "bounds": "300,452,310,462"
+    }
+   },
+   "result": "sent 50 deletes; cleared: false; field value now 'Conference Practice Deck'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0038.webp"
+  },
+  {
+   "n": 17,
+   "tool": "clear",
+   "args": {
+    "target": {}
+   },
+   "result": "sent 50 deletes; cleared: false; field value now 'Conference Practice Deck'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0041.webp"
+  },
+  {
+   "n": 18,
+   "tool": "clear",
+   "args": {
+    "target": {}
+   },
+   "result": "sent 50 deletes; cleared: false; field value now 'Conference Practice Deck'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0044.webp"
+  },
+  {
+   "n": 19,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Added Q3 Follow-ups section: prioritize API v3 migration bug fixes before public launch"
+   },
+   "result": "typed 'Added Q3 Follow-ups section: prioritize API v3 migration bug fixes before public launch'; verified: false; field value now 'Conference Practice Deck'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0046.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (12, 95) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0048.webp"
+  },
+  {
+   "n": 21,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cloudsheets"
+   },
+   "result": "launched com.iosworld.benchmark.cloudsheets",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0050.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (200, 262) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0052.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_A7"
+    }
+   },
+   "result": "tapped at (174, 518) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0054.webp"
+  },
+  {
+   "n": 24,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    },
+    "text": "Q3 plan: prioritize API v3 migration bug fixes"
+   },
+   "result": "typed 'Q3 plan: prioritize API v3 migration bug fixes'; verified: true; field value now 'Q3 plan: prioritize API v3 migration bug fixes'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0058.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 75
+    }
+   },
+   "result": "tapped at (368, 806) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0058.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (27, 136) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0060.webp"
+  },
+  {
+   "n": 27,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clouddocs"
+   },
+   "result": "launched com.iosworld.benchmark.clouddocs",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-013/0062.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Add a new section to 'Q2 Roadmap' in CloudDocs",
+   "verdict": "proven",
+   "claim": "Q3 Follow-ups:",
+   "frame": 62
+  },
+  {
+   "type": "DO",
+   "text": "Add a new slide to 'Conference Practice Deck' in CloudSlides summarizing the changes",
+   "verdict": "proven",
+   "claim": "Q2 Roadmap Update",
+   "frame": 48
+  },
+  {
+   "type": "DO",
+   "text": "Update a cell in 'Bug Triage Log' in CloudSheets to reflect the new plan",
+   "verdict": "proven",
+   "claim": "Q3 plan: prioritize API v3 migration bug fixes",
+   "frame": 60
+  }
+ ]
+}

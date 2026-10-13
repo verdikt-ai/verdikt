@@ -1,0 +1,97 @@
+{
+ "id": "MarkorCreateFolder",
+ "app": "Markor",
+ "goal": "Create a new folder in Markor named folder_20261012_084238.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 36.1,
+ "cost": 0.16241819999999998,
+ "answer": null,
+ "summary": "I created a folder named folder_20261012_084238 in Markor, inside the Documents folder where Markor opened. It now appears in the file list.\n\nThe final check flagged a miss at first, but that was a mistake in the check I wrote. It looked for the folder name as standalone text, and the list shows it as \"Folder folder_20261012_084238\".",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateFolder/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"folder_20261012_084238\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateFolder/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateFolder/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "folder_20261012_084238",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"folder_20261012_084238\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField ~\"my_note\" value \"folder_20261012_084238\" -> TextField \"my_note\" value=\"folder_20261012_084238\" [1] has value \"folder_20261012_084238\"",
+   "frame": "media/run8-opus-contracts/MarkorCreateFolder/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (171,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateFolder/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS text \"folder_20261012_084238\" visible -> no match; nearest: Button \"Folder folder_20261012_084238 10/15/2023, 15:34\" [14], Button \"Folder .. 10/15/2023, 15:34\" [12], Button \"Folder .app 10/15/2023, 15:34\" [13], Button \"File 2023_01_16_recipe_homemade_pizza.md 10/15/2023, 15:34\" [15], Button \"File favorite_book_quotes_2023_04_11.md \" [19]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateFolder/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateFolder/005.webp"
+  }
+ ]
+}

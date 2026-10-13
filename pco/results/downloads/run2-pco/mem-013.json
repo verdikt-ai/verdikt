@@ -1,0 +1,692 @@
+{
+ "id": "mem-013",
+ "app": "notes, quickchat, mail, megamart, dinespot",
+ "category": "memory",
+ "goal": "I have a loved one's birthday coming up \u2014 check Notes, QuickChat, and Mail to figure out whose and when. Find a gift on MegaMart within the budget mentioned in my notes and make a DineSpot reservation for a birthday dinner. Let me know the person's name, birthday date, budget, the gift you chose, and the reservation confirmation.",
+ "success": false,
+ "score": 0.625,
+ "judged": true,
+ "steps": 50,
+ "budget": 50,
+ "seconds": 421.6,
+ "cost": 4.063,
+ "answer": "Name: Mom; Birthday: October 28; Budget: ~$200; Gift: PaperLite Reader (11th Generation) \u2014 6.8\" Display, 16 GB, $139.99 (Order #AMZ100254); Reservation: none confirmed, only \"Waitlist Joined\" at Lazy Bear, Wed Oct 28, 2 guests, 6:00\u20137:30 PM",
+ "summary": "I still don't have a confirmed dinner reservation, and I've now used all 50 actions. The last one only reopened DineSpot, which still shows \"Waitlist Joined\" for Lazy Bear on Wed, Oct 28, 2 guests, 6:00\u20137:30 PM. I've recorded the reservation as blocked by the action limit, not as proof that no table exists. I never got to try other party sizes, other times or the other restaurants, or to check DineSpot's Reservations tab.\n\nThe rest is unchanged:\n- **Whose birthday:** your Mom's, from the Notes entry \"Gift Ideas - Mom's Birthday\". QuickChat and Mail don't give her name.\n- **Date:** October 28.\n- **Budget:** about $200.\n- **Gift:** I ordered the PaperLite Reader (the store's version of the Kindle Paperwhite) on MegaMart for $139.99, $151.54 with tax. The order number is #AMZ100254.\n\nYou'll need to book the dinner yourself or wait on the waitlist.\n\nANSWER: Name: Mom; Birthday: October 28; Budget: ~$200; Gift: PaperLite Reader (11th Generation) \u2014 6.8\" Display, 16 GB, $139.99 (Order #AMZ100254); Reservation: none confirmed, only \"Waitlist Joined\" at Lazy Bear, Wed Oct 28, 2 guests, 6:00\u20137:30 PM",
+ "rubric": [
+  {
+   "criterion": "Search Notes for birthday-related notes",
+   "satisfied": true,
+   "reasoning": "The agent opened Notes, navigated to All iCloud, found the 'Gift Ideas - Mom's Birthday' note, and read its contents including birthday date (October 28) and budget (~$200)."
+  },
+  {
+   "criterion": "Search QuickChat for birthday-related conversations",
+   "satisfied": false,
+   "reasoning": "The agent launched QuickChat and opened the 'Avery Fam' chat, but this chat did not contain birthday-related content. The agent did not search QuickChat specifically for birthday-related messages or scroll through other chats to find relevant birthday information."
+  },
+  {
+   "criterion": "Search Mail for birthday-related communications",
+   "satisfied": true,
+   "reasoning": "The agent launched Mail and searched for 'birthday', finding a result from Sofia Kim with 'Happy birthday!' subject. The agent also searched for 'Mom' and 'Gift' in Mail, showing a thorough search effort."
+  },
+  {
+   "criterion": "Identify the person's name, birthday date, and gift budget",
+   "satisfied": true,
+   "reasoning": "The agent correctly identified: Person = Mom, Birthday = October 28, Budget = ~$200, all from the Notes app."
+  },
+  {
+   "criterion": "Search MegaMart for a gift within the identified budget",
+   "satisfied": true,
+   "reasoning": "The agent searched MegaMart for 'PaperLite' (a Kindle Paperwhite equivalent mentioned in the notes) and found the PaperLite Reader (11th Generation) at $139.99, which is within the ~$200 budget."
+  },
+  {
+   "criterion": "Purchase or add the gift to cart on MegaMart",
+   "satisfied": true,
+   "reasoning": "The agent went through the full checkout process on MegaMart and received an order confirmation (Order #AMZ100254) for the PaperLite Reader at $139.99 + $11.55 tax = $151.54 total."
+  },
+  {
+   "criterion": "Make a DineSpot reservation for a birthday dinner",
+   "satisfied": false,
+   "reasoning": "The agent attempted to make a reservation at Lazy Bear on October 28 (Mom's birthday), but there was no availability. The agent joined the waitlist instead. A waitlist entry is not a confirmed reservation - it's just a request to be notified if availability opens up. The agent should have tried other restaurants with available times on October 28."
+  },
+  {
+   "criterion": "Report person's name, birthday date, budget, chosen gift, and reservation confirmation",
+   "satisfied": false,
+   "reasoning": "The agent reported the name (Mom), birthday (October 28), budget (~$200), and gift (PaperLite Reader, Order #AMZ100254), but could not provide a reservation confirmation because only a waitlist was joined, not an actual reservation. The final answer acknowledged this limitation."
+  }
+ ],
+ "judge": "The agent successfully completed most of the task: checked Notes (found Mom's birthday on October 28 with ~$200 budget), checked QuickChat (browsed chats), searched Mail for birthday-related emails, identified the gift (PaperLite Reader at $139.99, within budget), purchased it on MegaMart (Order #AMZ100254), and attempted a DineSpot reservation for October 28. However, the DineSpot reservation was not fully confirmed - the restaurant (Lazy Bear) had no availability for the selected date, so the agent joined a waitlist instead. A waitlist entry is not a confirmed reservation. The task required making a reservation, not joining a waitlist. Additionally, the agent did not thoroughly search QuickChat for birthday-related conversations (only opened one unrelated chat thread).",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (201, 294) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (201, 677) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 17
+    }
+   },
+   "result": "tapped at (201, 719) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.mail"
+   },
+   "result": "launched com.iosworld.benchmark.mail",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 16
+    },
+    "text": "birthday"
+   },
+   "result": "typed 'birthday'; verified: true; field value now 'Birthday'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,800,360,850"
+    }
+   },
+   "result": "tapped at (200, 825) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0019.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 11
+    }
+   },
+   "result": "tapped at (143, 774) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0021.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Mom"
+   },
+   "result": "typed 'Mom'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0023.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,800,360,850"
+    }
+   },
+   "result": "tapped at (200, 825) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0026.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Select All"
+    }
+   },
+   "result": "tapped at (143, 774) via text",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0026.webp"
+  },
+  {
+   "n": 12,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "gift"
+   },
+   "result": "typed 'gift'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0028.webp"
+  },
+  {
+   "n": 13,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.megamart"
+   },
+   "result": "launched com.iosworld.benchmark.megamart",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0030.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "product_row_kindle_paperwhite_109"
+    }
+   },
+   "result": "tapped at (118, 2127) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0032.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "tab_cart"
+    }
+   },
+   "result": "tapped at (253, 805) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0034.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "30,70,300,110"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (165, 90) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0036.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "tab_home"
+    }
+   },
+   "result": "tapped at (61, 810) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0039.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,70,300,110"
+    }
+   },
+   "result": "tapped at (170, 90) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0039.webp"
+  },
+  {
+   "n": 19,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "PaperLite\n"
+   },
+   "result": "typed 'PaperLite\\n'; verified: false; field value now 'PaperLite'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0042.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 26
+    }
+   },
+   "result": "tapped at (197, 501) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0044.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (201, 680) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0046.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 11
+    }
+   },
+   "result": "tapped at (62, 516) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0048.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (200, 270) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0051.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "checkout_continue_delivery_button"
+    }
+   },
+   "result": "tapped at (62, 540) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0051.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 16
+    }
+   },
+   "result": "tapped at (201, 846) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0054.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "checkout_continue_payment_button"
+    }
+   },
+   "result": "tapped at (62, 935) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0054.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 18
+    }
+   },
+   "result": "tapped at (62, 869) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0056.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 21
+    }
+   },
+   "result": "tapped at (73, 533) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0058.webp"
+  },
+  {
+   "n": 29,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.dinespot"
+   },
+   "result": "launched com.iosworld.benchmark.dinespot",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0060.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (160, 487) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0062.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 31
+    }
+   },
+   "result": "tapped at (85, 808) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0064.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (120, 164) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0066.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (166, 124) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0068.webp"
+  },
+  {
+   "n": 34,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 422,
+    "x2": 200,
+    "y2": 100,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,422)->(200,100) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0070.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "185,515,215,541"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (200, 528) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0073.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "search_date_done_button"
+    }
+   },
+   "result": "tapped at (201, 699) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0075.webp"
+  },
+  {
+   "n": 37,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (167, 124) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0077.webp"
+  },
+  {
+   "n": 38,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 422,
+    "x2": 200,
+    "y2": 100,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,422)->(200,100) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0081.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "185,618,215,642"
+    }
+   },
+   "result": "tapped at (200, 630) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0081.webp"
+  },
+  {
+   "n": 40,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "search_date_done_button"
+    }
+   },
+   "result": "tapped at (201, 699) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0081.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 52
+    }
+   },
+   "result": "tapped at (202, 591) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0083.webp"
+  },
+  {
+   "n": 42,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 35,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,589)->(201,285) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0085.webp"
+  },
+  {
+   "n": 43,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 32
+    }
+   },
+   "result": "tapped at (211, 569) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0087.webp"
+  },
+  {
+   "n": 44,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "120,620,150,640"
+    }
+   },
+   "result": "tapped at (135, 630) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0090.webp"
+  },
+  {
+   "n": 45,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (200, 793) via text",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0090.webp"
+  },
+  {
+   "n": 46,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 35
+    }
+   },
+   "result": "tapped at (90, 693) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0092.webp"
+  },
+  {
+   "n": 47,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 557) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0094.webp"
+  },
+  {
+   "n": 48,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "33,545,147,575"
+    }
+   },
+   "result": "tapped at (90, 560) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0096.webp"
+  },
+  {
+   "n": 49,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.notes"
+   },
+   "result": "launched com.iosworld.benchmark.notes",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0098.webp"
+  },
+  {
+   "n": 50,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.dinespot"
+   },
+   "result": "launched com.iosworld.benchmark.dinespot",
+   "refused": false,
+   "frame": "media/run2-pco/mem-013/0100.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "person's name",
+   "verdict": "proven",
+   "claim": "Mom",
+   "frame": 98
+  },
+  {
+   "type": "KNOW",
+   "text": "birthday date",
+   "verdict": "proven",
+   "claim": "Birthday: October 28",
+   "frame": 5
+  },
+  {
+   "type": "KNOW",
+   "text": "gift budget",
+   "verdict": "proven",
+   "claim": "Budget: ~$200",
+   "frame": 5
+  },
+  {
+   "type": "DO",
+   "text": "buy gift on MegaMart within budget",
+   "verdict": "proven",
+   "claim": "Order #AMZ100254",
+   "frame": 58
+  },
+  {
+   "type": "DO",
+   "text": "DineSpot birthday dinner reservation",
+   "verdict": "absent",
+   "claim": "Waitlist Joined",
+   "frame": 100
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "id": "SimpleSmsSendClipboardContent",
+ "app": "Simple Sms",
+ "goal": "Send a message to +15459061746 with the clipboard content in Simple SMS Messenger",
+ "success": true,
+ "score": 1.0,
+ "steps": 8,
+ "budget": 12,
+ "seconds": 55.9,
+ "cost": 0.14684680000000003,
+ "answer": null,
+ "summary": "I sent the clipboard text to +15459061746 in Simple SMS Messenger, and the message now shows as sent in that conversation.\n\nThe clipboard held \"I think, therefore I am.\" I pasted it into a new conversation with that number and tapped send. It appears in the thread with a sent checkmark, and nothing else was added.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple SMS Messenger"
+   },
+   "result": "opened Simple SMS Messenger",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSendClipboardContent/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSendClipboardContent/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2221)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSendClipboardContent/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "+15459061746",
+    "index": 2,
+    "clear": true,
+    "enter": true
+   },
+   "result": "typed \"+15459061746\" and pressed enter",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSendClipboardContent/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (1017,294)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSendClipboardContent/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (540,2148)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSendClipboardContent/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "press",
+   "args": {
+    "key": "paste",
+    "repeat": 1
+   },
+   "result": "pressed paste",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSendClipboardContent/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (1006,2148)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"I think, therefore I am.\" visible -> StaticText \"I think, therefore I am.\" [11]",
+   "frame": "media/run8-opus-contracts/SimpleSmsSendClipboardContent/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSendClipboardContent/007.webp"
+  }
+ ]
+}

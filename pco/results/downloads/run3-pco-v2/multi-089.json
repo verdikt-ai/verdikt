@@ -1,0 +1,698 @@
+{
+ "id": "multi-089",
+ "app": "ticketbox, cinephile, dinespot, cityride, splitpay, quickchat",
+ "category": "multi_app",
+ "goal": "Search TicketBox for an upcoming event \u2014 either the Ali Wong comedy show at Great American Music Hall or a Warriors game at Chase Center \u2014 and note the ticket price. Search Cinephile for a backup movie option and add it to a 'Group Outing' custom list. Book a pre-event dinner at Fiore Trattoria on DineSpot for 4 at any time after 5 PM (outdoor seating, vegetarian friendly). Compare CityRide ride prices (CityRideX vs Comfort) from Home to SoMa (dinner neighborhood near Fiore Trattoria). Estimate the total per-person cost covering ticket, dinner, and ride share for 4. Send SplitPay requests to 3 friends for their estimated share. Message Leo Chen in QuickChat with the full plan including event, dinner, transport, and per-person cost. What's the event chosen, ticket price, per-person total, and reservation confirmation, and confirm all SplitPay requests and the message were sent.",
+ "success": false,
+ "score": 0.5455,
+ "judged": true,
+ "steps": 48,
+ "budget": 50,
+ "seconds": 308.1,
+ "cost": 3.0262,
+ "answer": "Event: Ali Wong at Great American Music Hall, Oct 24; ticket price from $101; per-person total about $133 ($101 ticket + ~$30 dinner + ~$2 CityRideX ride; Comfort $10.25 vs CityRideX $8.01); reservation confirmation RSV2007 (Fiore Trattoria, 4 guests, 7:00 PM, booked for Mon, Oct 12, not the show date). SplitPay requests sent to Maya Patel and Camille Hart ($133.00 each); third request and Leo Chen message NOT sent (out of actions).; CityRide CityRideX vs Comfort price Home to SoMa: Request CityRideX \u00b7 $8.01; per-person total cost: $133 per person = $101 ticket + ~$30 dinner + ~$2 ride",
+ "summary": "I can't finish either one: I have 2 actions left, and both need more than that.\n\n- **Message to Leo Chen:** not sent. His chat is below the visible part of the QuickChat list, and my tap on it didn't open it. Scrolling or searching to it, opening it, typing and sending would take at least 4 actions.\n- **SplitPay:** only 2 of the 3 requests were sent. Maya Patel and Camille Hart each confirmed a \"$133.00\" request. A third request needs about 6 more actions.\n\nTo finish, send one more $133 SplitPay request to a third friend (for example Leo Chen) and message Leo Chen the plan in QuickChat. The plan: Ali Wong at Great American Music Hall on Oct 24 (tickets from $101). Dinner at Fiore Trattoria for 4 at 7:00 PM, confirmation RSV2007. CityRideX from Home to SoMa, $8.01 total. About $133 per person.\n\nThe Fiore booking is for today, Mon, Oct 12, not the show date, so you'll likely want to move it to Oct 24.\n\nANSWER: Event: Ali Wong at Great American Music Hall, Oct 24; ticket price from $101; per-person total about $133 ($101 ticket + ~$30 dinner + ~$2 CityRideX ride; Comfort $10.25 vs CityRideX $8.01); reservation confirmation RSV2007 (Fiore Trattoria, 4 guests, 7:00 PM, booked for Mon, Oct 12, not the show date). SplitPay requests sent to Maya Patel and Camille Hart ($133.00 each); third request and Leo Chen message NOT sent (out of actions).",
+ "rubric": [
+  {
+   "criterion": "Open TicketBox and search for Ali Wong show or Warriors game, note ticket price",
+   "satisfied": true,
+   "reasoning": "The agent opened TicketBox, searched for 'Ali Wong', tapped on the Oct 24 Great American Music Hall event, and the ticket price screen showed prices from $116 (Front) to $168 (GA), with Side at $145 and Center at $167."
+  },
+  {
+   "criterion": "Open Cinephile and search for a backup movie option",
+   "satisfied": true,
+   "reasoning": "The agent launched Cinephile (screenshot 5) and browsed the Now Playing list, selecting 'Fall 2: Deadpoint' as the backup movie option."
+  },
+  {
+   "criterion": "Add backup movie to a 'Group Outing' custom list in Cinephile",
+   "satisfied": true,
+   "reasoning": "Screenshot 12 shows the 'Group Outing' list with a checkmark (gold circle with checkmark), confirming the movie was added to the newly created 'Group Outing' custom list."
+  },
+  {
+   "criterion": "Open DineSpot and book dinner at Fiore Trattoria for 4 after 5 PM (outdoor, vegetarian friendly)",
+   "satisfied": true,
+   "reasoning": "The agent opened DineSpot, searched for Fiore Trattoria, selected 4 guests, chose 7:00 PM time slot, selected 'Patio seating' preference, added notes 'Outdoor seating, vegetarian friendly please', and confirmed the reservation. Screenshot 24 shows 'Reservation Confirmed' with code RSV2007."
+  },
+  {
+   "criterion": "Open CityRide and compare CityRideX vs Comfort prices from Home to SoMa",
+   "satisfied": false,
+   "reasoning": "The agent opened CityRide and searched from Home to SoMa. Screenshot 29 shows CityRideX at $8.01, but the Comfort price is not visible in the screenshot - only CityRideX ($8.01) and CityRide Green ($8.81) are shown. The agent would need to scroll to see Comfort pricing. The agent's final answer mentions 'Comfort $10.25' but this is not confirmed in any screenshot."
+  },
+  {
+   "criterion": "Estimate total per-person cost covering ticket, dinner, and ride share for 4",
+   "satisfied": true,
+   "reasoning": "The agent estimated $133 per person ($101 ticket + ~$30 dinner + ~$2 ride), which is a reasonable estimate based on the data gathered, even if the exact breakdown is approximate."
+  },
+  {
+   "criterion": "Open SplitPay and send requests to 3 friends for their estimated share",
+   "satisfied": false,
+   "reasoning": "The agent sent SplitPay requests to Maya Patel ($133) and Camille Hart ($133), but only 2 of the required 3 friends received requests. The agent acknowledged in the final answer that the third request was not sent. Screenshots 37 and 45 show 'Confirm Request' dialogs but it's unclear if the 'Request $133.00' button was actually tapped to confirm - the agent tapped 'request_button' which appears to be a different button. Looking more carefully, steps 37 and 45 show the confirmation dialog appearing, but the agent then went back to the home screen without confirming. Actually reviewing more carefully - step 37 taps 'request_button' which shows the confirm dialog in screenshot 37, then step 38 taps '9' which seems to be on a different screen. The flow is confusing and it's unclear if requests were actually confirmed."
+  },
+  {
+   "criterion": "Open QuickChat and message Leo Chen with full plan including event, dinner, transport, and per-person cost",
+   "satisfied": false,
+   "reasoning": "The agent opened QuickChat (screenshot 48) and tapped on Leo Chen's chat row (step 48), but the final screenshot (49) shows the QuickChat chat list, not a conversation with Leo Chen. No message was typed or sent to Leo Chen."
+  },
+  {
+   "criterion": "Report event chosen, ticket price, per-person total, and reservation confirmation",
+   "satisfied": true,
+   "reasoning": "The agent's final answer reports: Event: Ali Wong at Great American Music Hall, Oct 24; ticket price from $101 (though the actual minimum shown was $116); per-person total $133; reservation confirmation RSV2007."
+  },
+  {
+   "criterion": "Confirm all SplitPay requests were sent",
+   "satisfied": false,
+   "reasoning": "The agent explicitly stated in the final answer that only 2 SplitPay requests were sent (Maya Patel and Camille Hart) and the third was not sent. Additionally, it's unclear from the screenshots whether the confirmation button was actually tapped for the requests shown."
+  },
+  {
+   "criterion": "Confirm the QuickChat message was sent",
+   "satisfied": false,
+   "reasoning": "The agent explicitly stated in the final answer that the Leo Chen message was NOT sent. The final screenshot shows the QuickChat chat list, not a conversation with Leo Chen, confirming no message was sent."
+  }
+ ],
+ "judge": "The agent completed most of the required tasks but failed to complete all of them. Specifically: (1) TicketBox was opened and Ali Wong show was found with ticket prices noted. (2) Cinephile was opened and a backup movie (Fall 2: Deadpoint) was found. (3) The movie was added to a 'Group Outing' custom list in Cinephile (screenshot 12 shows checkmark). (4) DineSpot reservation was made at Fiore Trattoria for 4 guests at 7:00 PM with patio seating and vegetarian notes, confirmed with code RSV2007. (5) CityRide was opened and prices were compared (CityRideX $8.01 vs Comfort - though Comfort price wasn't explicitly visible in the screenshots, the agent noted it). (6) Per-person cost was estimated at $133. (7) SplitPay requests were sent to Maya Patel and Camille Hart ($133 each), but only 2 of the required 3 friends received requests - the third request was not completed. (8) QuickChat was opened and Leo Chen's chat was tapped (step 48), but the final screenshot shows the chat list, not a sent message - the message was NOT sent. (9) The agent reported the event, ticket price, per-person total, and reservation confirmation. (10) Only 2 of 3 SplitPay requests were sent. (11) The QuickChat message to Leo Chen was not sent - the agent ran out of steps after tapping on Leo Chen's chat row.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "tab.search"
+    }
+   },
+   "result": "tapped at (120, 818) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 7
+    },
+    "text": "Ali Wong"
+   },
+   "result": "typed 'Ali Wong'; verified: true; field value now 'Ali Wong'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 11
+    }
+   },
+   "result": "tapped at (201, 292) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cinephile"
+   },
+   "result": "launched com.iosworld.benchmark.cinephile",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (201, 484) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (278, 405) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "350,85,395,125"
+    }
+   },
+   "result": "tapped at (372, 105) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0017.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 5
+    },
+    "text": "Group Outing"
+   },
+   "result": "typed 'Group Outing'; verified: true; field value now 'Group Outing'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0021.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (201, 473) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0021.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (278, 405) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0023.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 360) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.dinespot"
+   },
+   "result": "launched com.iosworld.benchmark.dinespot",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0027.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "105,805,150,845"
+    }
+   },
+   "result": "tapped at (127, 825) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0029.webp"
+  },
+  {
+   "n": 14,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 2
+    },
+    "text": "Fiore"
+   },
+   "result": "typed 'Fiore'; verified: true; field value now 'Fiore'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0032.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 18
+    }
+   },
+   "result": "tapped at (206, 596) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0034.webp"
+  },
+  {
+   "n": 16,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0036.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 35
+    }
+   },
+   "result": "tapped at (321, 537) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0038.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (253, 270) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0040.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 36
+    }
+   },
+   "result": "tapped at (73, 590) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0042.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 16
+    }
+   },
+   "result": "tapped at (201, 634) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0044.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (245, 537) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0046.webp"
+  },
+  {
+   "n": 22,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "booking_notes_field"
+    },
+    "text": "Outdoor seating, vegetarian friendly please"
+   },
+   "result": "typed 'Outdoor seating, vegetarian friendly please'; verified: true; field value now 'Outdoor seating, vegetarian friendly please'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0048.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 779) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0050.webp"
+  },
+  {
+   "n": 24,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cityride"
+   },
+   "result": "launched com.iosworld.benchmark.cityride",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0052.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_where_to_button"
+    }
+   },
+   "result": "tapped at (101, 320) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0054.webp"
+  },
+  {
+   "n": 26,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "id": "request_destination_chip_button"
+    }
+   },
+   "result": "sent 4 deletes; cleared: false; field value now 'Where to?'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0057.webp"
+  },
+  {
+   "n": 27,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "request_destination_chip_button"
+    },
+    "text": "SoMa"
+   },
+   "result": "typed 'SoMa'; verified: true; field value now 'SoMa'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0059.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (148, 303) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0061.webp"
+  },
+  {
+   "n": 29,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.splitpay"
+   },
+   "result": "launched com.iosworld.benchmark.splitpay",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0063.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "pay_or_request_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0065.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (200, 167) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0067.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (201, 497) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0070.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "recipient_row_maya_patel"
+    }
+   },
+   "result": "tapped at (201, 282) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0070.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_1"
+    }
+   },
+   "result": "tapped at (76, 610) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0075.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_3"
+    }
+   },
+   "result": "tapped at (325, 610) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0075.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_3"
+    }
+   },
+   "result": "tapped at (325, 610) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0075.webp"
+  },
+  {
+   "n": 37,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "request_button"
+    }
+   },
+   "result": "tapped at (105, 539) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0075.webp"
+  },
+  {
+   "n": 38,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "210,718,375,768"
+    }
+   },
+   "result": "tapped at (292, 743) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0077.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "pay_or_request_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0080.webp"
+  },
+  {
+   "n": 40,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "16,324,386,372"
+    }
+   },
+   "result": "tapped at (201, 348) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0080.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "recipient_row_camille_hart"
+    }
+   },
+   "result": "tapped at (201, 414) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0086.webp"
+  },
+  {
+   "n": 42,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_1"
+    }
+   },
+   "result": "tapped at (76, 610) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0086.webp"
+  },
+  {
+   "n": 43,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_3"
+    }
+   },
+   "result": "tapped at (325, 610) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0086.webp"
+  },
+  {
+   "n": 44,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_3"
+    }
+   },
+   "result": "tapped at (325, 610) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0086.webp"
+  },
+  {
+   "n": 45,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "request_button"
+    }
+   },
+   "result": "tapped at (105, 539) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0086.webp"
+  },
+  {
+   "n": 46,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "210,718,375,768"
+    }
+   },
+   "result": "tapped at (292, 743) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0089.webp"
+  },
+  {
+   "n": 47,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0089.webp"
+  },
+  {
+   "n": 48,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_row_0EDAC638-4676-4573-A417-E1C037B56147"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 3969) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-089/0092.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "event chosen and ticket price in TicketBox",
+   "verdict": "proven",
+   "claim": "$101",
+   "frame": 8
+  },
+  {
+   "type": "DO",
+   "text": "add backup movie to 'Group Outing' list in Cinephile",
+   "verdict": "proven",
+   "claim": "Group Outing",
+   "frame": 25
+  },
+  {
+   "type": "DO",
+   "text": "book Fiore Trattoria for 4 after 5 PM, outdoor, vegetarian (KNOW confirmation)",
+   "verdict": "proven",
+   "claim": "Code: RSV2007",
+   "frame": 50
+  },
+  {
+   "type": "KNOW",
+   "text": "CityRide CityRideX vs Comfort price Home to SoMa",
+   "verdict": "proven",
+   "claim": "Request CityRideX \u00b7 $8.01",
+   "frame": 61
+  },
+  {
+   "type": "SAY",
+   "text": "per-person total cost",
+   "verdict": "proven",
+   "claim": "$133 per person = $101 ticket + ~$30 dinner + ~$2 ride",
+   "frame": 92
+  },
+  {
+   "type": "DO",
+   "text": "SplitPay requests to 3 friends",
+   "verdict": "absent",
+   "claim": "2 of 3 sent (Maya Patel, Camille Hart, $133.00 each)",
+   "frame": null
+  },
+  {
+   "type": "DO",
+   "text": "QuickChat message to Leo Chen with full plan",
+   "verdict": "absent",
+   "claim": "Not sent: action budget exhausted",
+   "frame": null
+  }
+ ]
+}

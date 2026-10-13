@@ -1,0 +1,109 @@
+{
+ "id": "clouddrive-001",
+ "app": "clouddrive",
+ "category": "single_app",
+ "goal": "Open the Product Strategy folder in CloudDrive, find the most recently modified file, and star it. What's the file name and last modified date?",
+ "success": false,
+ "score": 0.8333,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 39.5,
+ "cost": 0.2773,
+ "answer": "All Hands Storyline, last modified 3/5/26",
+ "summary": "I starred \"All Hands Storyline\", the most recently modified file in the Product Strategy folder. It was last modified on 3/5/26.\n\nWith the folder sorted newest first, it came ahead of Q3 Planning Brief (3/4/26) and Board Prep (3/1/26). After I starred it, the star icon appeared on its row. The app also changed its modified date to today, 10/12/26, but 3/5/26 is the date it showed before I starred it.\n\nANSWER: All Hands Storyline, last modified 3/5/26",
+ "rubric": [
+  {
+   "criterion": "Open CloudDrive app and navigate to the Product Strategy folder",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the CloudDrive app with folders listed, and Screenshot 2 shows the Product Strategy folder was successfully opened, displaying its contents."
+  },
+  {
+   "criterion": "Identify the most recently modified file in the folder",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the folder sorted by Date modified (descending), with 'All Hands Storyline' at the top with Modified 3/5/26, making it the most recently modified file. The agent correctly identified this file."
+  },
+  {
+   "criterion": "Tap on the file options or context menu for that file",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 shows the context menu was opened for 'All Hands Storyline', displaying options including Open, Details, Share, Rename, Move, Duplicate, Add star, Make available offline, and Move to trash."
+  },
+  {
+   "criterion": "Star the file",
+   "satisfied": true,
+   "reasoning": "The agent tapped 'Add star' from the context menu. The final screenshot (Screenshot 4) shows 'All Hands Storyline' now has a filled star icon, confirming it was successfully starred."
+  },
+  {
+   "criterion": "Report the file name",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported the file name as 'All Hands Storyline', which matches what is shown in the screenshots."
+  },
+  {
+   "criterion": "Report the last modified date",
+   "satisfied": false,
+   "reasoning": "The agent reported '3/5/26' as the last modified date. However, the final screenshot shows the date changed to '10/12/26' after starring. The agent should have reported the date visible in the final state (10/12/26). The reported date of 3/5/26 was the pre-starring date, not the final modified date shown in the app."
+  }
+ ],
+ "judge": "The agent successfully opened the Product Strategy folder, identified the most recently modified file (All Hands Storyline, Modified 3/5/26), opened the context menu, and starred it. However, the final screenshot shows the modified date changed to 10/12/26 after starring (likely because starring updated the modification timestamp). The agent reported '3/5/26' as the last modified date, but the final state shows '10/12/26'. The file name is correct but the reported date doesn't match the final state shown in the app.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (145, 522) via index",
+   "refused": false,
+   "frame": "media/run2-pco/clouddrive-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (364, 244) via index",
+   "refused": false,
+   "frame": "media/run2-pco/clouddrive-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (250, 524) via index",
+   "refused": false,
+   "frame": "media/run2-pco/clouddrive-001/0007.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "name of most recently modified file in Product Strategy",
+   "verdict": "proven",
+   "claim": "All Hands Storyline",
+   "frame": 3
+  },
+  {
+   "type": "KNOW",
+   "text": "last modified date of that file",
+   "verdict": "proven",
+   "claim": "Modified 3/5/26",
+   "frame": 3
+  },
+  {
+   "type": "DO",
+   "text": "star that file",
+   "verdict": "proven",
+   "claim": "Favorite",
+   "frame": 7
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "id": "SystemBluetoothTurnOnVerify",
+ "app": "Settings",
+ "goal": "Turn bluetooth on.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 65.8,
+ "cost": 0.0959928,
+ "answer": null,
+ "summary": "Bluetooth was already on, so I didn't change anything. I checked in Settings > Connected devices > Connection preferences > Bluetooth, where the \"Use Bluetooth\" switch shows as on.",
+ "step_list": [
+  {
+   "n": 0,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Bluetooth\" checked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": null
+  },
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOnVerify/001.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (412,1025)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOnVerify/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (343,1055)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOnVerify/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (302,721)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOnVerify/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "id=switch_widget checked",
+     "text \"Use Bluetooth\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOnVerify/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOnVerify/006.webp"
+  }
+ ]
+}

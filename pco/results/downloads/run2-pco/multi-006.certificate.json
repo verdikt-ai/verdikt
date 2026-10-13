@@ -1,0 +1,60 @@
+{
+ "rounds": 1,
+ "obligations": 5,
+ "proven": 2,
+ "unproven": 0,
+ "absent": 3,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "DO: Book table for 8 at Fiore Trattoria on DineSpot",
+   "type": "DO",
+   "status": "blocked",
+   "claim": "Action budget spent; launch_app refused",
+   "evidence_frame": null,
+   "explanation": "The booking exists. At step 27 DineSpot showed \"Reservation Confirmed\", Fiore Trattoria, \"Mon, Oct 12 \u2022 7:00 PM\", \"Code: RSV2007\". To show it again I tried launch_app(dinespot), but the harness refused it: \"the 50-action budget for task is spent\". The current screen (step 99) is SplitPay, so I cannot cite DineSpot.",
+   "verdict": "absent",
+   "reason": "The booking exists. At step 27 DineSpot showed \"Reservation Confirmed\", Fiore Trattoria, \"Mon, Oct 12 \u2022 7:00 PM\", \"Code: RSV2007\". To show it again I tried launch_app(dinespot), but the harness refused it: \"the 50-action budget for task is spent\". The current screen (step 99) is SplitPay, so I cannot cite DineSpot."
+  },
+  {
+   "obligation": "KNOW: Reservation confirmation",
+   "type": "KNOW",
+   "status": "blocked",
+   "claim": "Action budget spent; launch_app refused",
+   "evidence_frame": null,
+   "explanation": "At step 27 the confirmation screen showed \"Code: RSV2007\" for Fiore Trattoria, Mon, Oct 12 \u2022 7:00 PM. Going back to DineSpot was refused because \"the 50-action budget for task is spent\".",
+   "verdict": "absent",
+   "reason": "At step 27 the confirmation screen showed \"Code: RSV2007\" for Fiore Trattoria, Mon, Oct 12 \u2022 7:00 PM. Going back to DineSpot was refused because \"the 50-action budget for task is spent\"."
+  },
+  {
+   "obligation": "DO: Order birthday cake from Natural Foods Market on FreshCart",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Natural Foods Market \u00b7 NF-2083",
+   "evidence_frame": 50,
+   "explanation": "Screen shows \"Order confirmed!\" with \"Natural Foods Market \u00b7 NF-2083\"; the cart contained Birthday Celebration Cake.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Send Brunch Crew group message in QuickChat with restaurant details",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Birthday dinner booked! Fiore Trattoria, 451 Howard St, San Francisco, CA - Mon, Oct 12 at 7:00 PM, table for 8, patio seating. Confirmation RSV2007. I\u2019ll request $35 each on SplitPay.",
+   "evidence_frame": 69,
+   "explanation": "Brunch Crew thread shows my sent bubble \"Birthday dinner booked! Fiore Trattoria, 451 Howard St...\" at 4:57 PM with delivered check.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Request $35 from each Brunch Crew member on SplitPay",
+   "type": "DO",
+   "status": "blocked",
+   "claim": "Action budget spent; Dante Morales request not sent",
+   "evidence_frame": null,
+   "explanation": "The $35 requests to Camille Hart (confirmed) and Kai Santos (toast \"Requested Kai Santos\" at step 98) were sent. The request to Dante Morales was not sent: the action budget ran out, and further actions are refused with \"the 50-action budget for task is spent\".",
+   "verdict": "absent",
+   "reason": "The $35 requests to Camille Hart (confirmed) and Kai Santos (toast \"Requested Kai Santos\" at step 98) were sent. The request to Dante Morales was not sent: the action budget ran out, and further actions are refused with \"the 50-action budget for task is spent\"."
+  }
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "id": "ClockTimerEntry",
+ "app": "Clock",
+ "goal": "Create a timer with 1 hours, 20 minutes, and 19 seconds. Do not start the timer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 8,
+ "budget": 10,
+ "seconds": 28.9,
+ "cost": 0.1597984,
+ "answer": null,
+ "summary": "I set a timer for 1 hour, 20 minutes and 19 seconds in the Clock app and didn't start it. The Timer screen shows \"01h 20m 19s\", with the Start button still showing.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Clock"
+   },
+   "result": "opened Clock",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"01h 20m 19s\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (540,2232)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (265,793)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (540,793)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 13
+   },
+   "result": "tapped (540,1619)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (265,793)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (816,1344)",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text ~\"01h 20m 19s\" visible -> no match; nearest: StaticText \"1 hour, 20 minutes, 19 seconds\" [2], Button \"00\" [12], StaticText \"Phone two bars.\" [23], StaticText \"11:34\" [21], Button \"Backspace 9\" [14]",
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/007.webp"
+  },
+  {
+   "n": 7,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"1 hour, 20 minutes, 19 seconds\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockTimerEntry/009.webp"
+  }
+ ]
+}

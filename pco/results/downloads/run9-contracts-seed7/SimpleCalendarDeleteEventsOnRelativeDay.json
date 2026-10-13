@@ -1,0 +1,108 @@
+{
+ "id": "SimpleCalendarDeleteEventsOnRelativeDay",
+ "app": "Simple Calendar",
+ "goal": "In Simple Calendar Pro, delete all events scheduled for this Friday.",
+ "success": true,
+ "score": 1.0,
+ "steps": 7,
+ "budget": 12,
+ "seconds": 55.2,
+ "cost": 0.219792,
+ "answer": null,
+ "summary": "I deleted both events on this Friday, October 20, in Simple Calendar Pro. That day's view is now empty.\n\n- \"Review session for Annual Report\" (08:00\u201308:15)\n- \"Appointment for Annual Report\" (17:00\u201317:15)\n\nNothing on other days was changed.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Calendar Pro"
+   },
+   "result": "opened Simple Calendar Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarDeleteEventsOnRelativeDay/001.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"Review\" absent",
+     "text ~\"Appointm\" absent"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarDeleteEventsOnRelativeDay/001.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 36
+   },
+   "result": "tapped (848,1549)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarDeleteEventsOnRelativeDay/003.webp"
+  },
+  {
+   "n": 3,
+   "tool": "long_press",
+   "args": {
+    "index": 56,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (571,428) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarDeleteEventsOnRelativeDay/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 63
+   },
+   "result": "tapped (571,626)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"2 / 2\" visible -> StaticText \"2 / 2\" [1]",
+   "frame": "media/run9-contracts-seed7/SimpleCalendarDeleteEventsOnRelativeDay/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (1016,147)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarDeleteEventsOnRelativeDay/006.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "x": 842,
+    "y": 1284
+   },
+   "result": "tapped (842,1284)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text ~\"Review\" absent -> absent\n  ok   text ~\"Appointm\" absent -> absent",
+   "frame": "media/run9-contracts-seed7/SimpleCalendarDeleteEventsOnRelativeDay/007.webp"
+  },
+  {
+   "n": 7,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarDeleteEventsOnRelativeDay/008.webp"
+  }
+ ]
+}

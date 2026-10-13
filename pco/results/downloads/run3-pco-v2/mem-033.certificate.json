@@ -1,0 +1,70 @@
+{
+ "rounds": 1,
+ "obligations": 6,
+ "proven": 4,
+ "unproven": 0,
+ "absent": 2,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: subscriptions from Mail",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Your Apple Music subscription has been renewed",
+   "evidence_frame": 26,
+   "explanation": "Mail search 'renew' shows \"Your YouTube Premium billing receipt\" ($13.99 seen earlier) and \"Your Apple Music subscription has been renewed\" ($10.99/month); GitHub Pro $4.00 seen in Transactions list.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: recurring charges in MyBank credit card",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Spotify Premium, Monthly subscription, Oct 03, 2026, -$10.99, Freedom Unlimited (...2095)",
+   "evidence_frame": 41,
+   "explanation": "Search shows recurring \"Netflix, Monthly subscription ... -$15.99\" and \"Spotify Premium, Monthly subscription ... -$10.99\" monthly on Freedom Unlimited.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: MegaMart Subscribe & Save items",
+   "type": "KNOW",
+   "status": "blocked",
+   "claim": "No item labeled Subscribe & Save in MegaMart: I checked Home (Your orders/Your account), Orders (Active and Past Orders, AMZ100212 to AMZ100253) and Menu categories. I didn't open individual order details or the Canceled tab, and I can't now because the action budget is exhausted.",
+   "evidence_frame": null,
+   "explanation": "Past Orders rows, e.g. \"AMZ100241, Nov 24, 2025, Delivered, Bounty Quick-Size Paper Towels...\", carry no Subscribe & Save label.",
+   "verdict": "absent",
+   "reason": "Past Orders rows, e.g. \"AMZ100241, Nov 24, 2025, Delivered, Bounty Quick-Size Paper Towels...\", carry no Subscribe & Save label."
+  },
+  {
+   "obligation": "SAY: total monthly recurring cost",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "Netflix $15.99 + YouTube Premium $13.99 + Apple Music $10.99 + Spotify Premium $10.99 + GitHub Pro $4.00 = $55.96/month",
+   "evidence_frame": 55,
+   "explanation": "Sum of monthly costs found in Mail and MyBank; Subscription Audit sheet visible here.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: add 'Subscriptions' row to Subscription Audit in CloudSheets",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Subscriptions",
+   "evidence_frame": 73,
+   "explanation": "Row 8 now shows \"Subscriptions\" in A8 and \"55.96\" in B8 of the Subscription Audit sheet.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: create 'Subscription Audit' note in Notes with each subscription, cost, keep/cancel",
+   "type": "DO",
+   "status": "blocked",
+   "claim": "Notes has no reachable new-note control: in both the folder list (Folders view) and the Notes list, the Toolbar group has no accessible children, and taps at its likely compose spots (365,820), (365,810), (370,830), (375,845), (332,827), (390,815) and the floating spot (356,742) did nothing. The top-right button opened only Select Notes/Sort By. Action budget exhausted (49/50); the note was not created.",
+   "evidence_frame": null,
+   "explanation": "Folder screen shows \"All iCloud, 13\", \"Notes, 5\", \"Work, 3\", \"Personal, 3\", \"Recipes, 2\", \"Recently Deleted, 1\" and an empty Toolbar; no compose button exists in the tree.",
+   "verdict": "absent",
+   "reason": "Folder screen shows \"All iCloud, 13\", \"Notes, 5\", \"Work, 3\", \"Personal, 3\", \"Recipes, 2\", \"Recently Deleted, 1\" and an empty Toolbar; no compose button exists in the tree."
+  }
+ ]
+}

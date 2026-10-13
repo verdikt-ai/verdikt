@@ -1,0 +1,429 @@
+{
+ "id": "mem-003",
+ "app": "quickbite",
+ "category": "memory",
+ "goal": "Check my QuickBite order history to find my most frequently ordered restaurant and item, then place a reorder of my usual. Let me know the restaurant name, what I usually get, and confirm the order went through.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 29,
+ "budget": 50,
+ "seconds": 184.8,
+ "cost": 0.7475,
+ "answer": "Chipotle Mexican Grill; usual is the Chicken Bowl; reorder placed and confirmed (\"Order confirmed\", ETA 27 min, total $20.70)",
+ "summary": "I reordered your usual and the order went through.\n\n- **Restaurant:** Chipotle Mexican Grill is the place you order from most. It shows up 4 times in your history (Oct 11, Sep 9, Aug 20 and Jul 9). Starbucks and Panera Bread come next with 3 each.\n- **Your usual:** The Chicken Bowl. It's the only Chipotle item that appears twice (Oct 11 and Sep 9). Your Jul 9 Chipotle order had a third item the history didn't show, so I couldn't check it.\n- **The order:** One Chicken Bowl ($11.75) to 410 Brannan St, Unit 12B. The total was $20.70, which includes a $3.00 tip, and it was charged to your Freedom Unlimited Visa ending in 2095. The tracking screen says \"Order confirmed\" with an ETA of 27 minutes.\n\nANSWER: Chipotle Mexican Grill; usual is the Chicken Bowl; reorder placed and confirmed (\"Order confirmed\", ETA 27 min, total $20.70)",
+ "rubric": [
+  {
+   "criterion": "Open QuickBite and review order history",
+   "satisfied": true,
+   "reasoning": "The agent navigated to the Orders tab and viewed the Past orders section, scrolling through multiple pages of order history visible in screenshots 4-11."
+  },
+  {
+   "criterion": "Identify the most frequently ordered restaurant",
+   "satisfied": true,
+   "reasoning": "From the order history, Chipotle Mexican Grill appears at least 4 times (Oct 11, Sep 9, Aug 20, Jul 9), making it the most frequently ordered restaurant. The agent correctly identified it."
+  },
+  {
+   "criterion": "Identify the usual order item",
+   "satisfied": true,
+   "reasoning": "The Chicken Bowl appears in multiple Chipotle orders (Oct 11 and Sep 9 visible), and is marked 'Most Popular' on the menu. The agent identified the Chicken Bowl as the usual item, which is a reasonable conclusion from the order history."
+  },
+  {
+   "criterion": "Place a reorder of the usual item from the identified restaurant",
+   "satisfied": true,
+   "reasoning": "The agent added a Chicken Bowl from Chipotle Mexican Grill to the cart, proceeded through checkout, toggled the MyBank confirmation, and clicked 'Confirm & Place Order'. The final screenshot shows the tracking page with 'Order confirmed'."
+  },
+  {
+   "criterion": "Report the restaurant name, usual order, and confirm the order went through",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports: restaurant = Chipotle Mexican Grill, usual item = Chicken Bowl, and confirms the order went through with 'Order confirmed', ETA 27 min, total $20.70 - all matching the final screenshot."
+  }
+ ],
+ "judge": "The agent successfully opened QuickBite, reviewed the order history, identified Chipotle Mexican Grill as the most frequently ordered restaurant, identified the Chicken Bowl as the usual item, placed a reorder, and confirmed the order went through. The final screenshot clearly shows 'Order confirmed' with ETA 27 min from Chipotle Mexican Grill.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Orders"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Orders)",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "225,800,262,840"
+    }
+   },
+   "result": "tapped at (243, 820) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "205,64,258,104"
+    }
+   },
+   "result": "tapped at (231, 84) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,742)->(201,132) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 30,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,306)->(201,568) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 75,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,764)->(201,110) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 75,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,764)->(201,110) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 100,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,0)->(201,874) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0022.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 100,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,0)->(201,874) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 100,
+    "duration_ms": 400,
+    "guard": "warning",
+    "screen_changed": false
+   },
+   "result": "swiped (201,0)->(201,874) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0022.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (201, 701) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0024.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 200,
+    "x2": 201,
+    "y2": 850,
+    "duration_ms": 150
+   },
+   "result": "swiped (201,200)->(201,850) in 150ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 200,
+    "x2": 201,
+    "y2": 850,
+    "duration_ms": 150
+   },
+   "result": "swiped (201,200)->(201,850) in 150ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0028.webp"
+  },
+  {
+   "n": 15,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 200,
+    "x2": 201,
+    "y2": 850,
+    "duration_ms": 150,
+    "screen_changed": false
+   },
+   "result": "swiped (201,200)->(201,850) in 150ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0028.webp"
+  },
+  {
+   "n": 16,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickbite"
+   },
+   "result": "launched com.iosworld.benchmark.quickbite",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0030.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "140,800,180,840"
+    }
+   },
+   "result": "tapped at (160, 820) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0032.webp"
+  },
+  {
+   "n": 18,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Chipotle"
+   },
+   "result": "typed 'Chipotle'; verified: true; field value now 'Chipotle'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0035.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 351) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0037.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "menu_item_add_chicken_bowl"
+    }
+   },
+   "result": "tapped at (382, 632) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0039.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "view_cart_button"
+    }
+   },
+   "result": "tapped at (201, 752) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0041.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 936) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0043.webp"
+  },
+  {
+   "n": 23,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0045.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0047.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmToggle"
+    }
+   },
+   "result": "tapped at (352, 413) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0050.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0050.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "360,403,380,423"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (370, 413) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0052.webp"
+  },
+  {
+   "n": 28,
+   "tool": "swipe",
+   "args": {
+    "x1": 335,
+    "y1": 413,
+    "x2": 378,
+    "y2": 413,
+    "duration_ms": 300
+   },
+   "result": "swiped (335,413)->(378,413) in 300ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0055.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    }
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-003/0057.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "most frequently ordered restaurant",
+   "verdict": "proven",
+   "claim": "Chipotle Mexican Grill",
+   "frame": 18
+  },
+  {
+   "type": "KNOW",
+   "text": "most frequently ordered item",
+   "verdict": "proven",
+   "claim": "Chicken Bowl",
+   "frame": 39
+  },
+  {
+   "type": "DO",
+   "text": "place reorder of usual and confirm it went through",
+   "verdict": "proven",
+   "claim": "Order confirmed",
+   "frame": 57
+  }
+ ]
+}

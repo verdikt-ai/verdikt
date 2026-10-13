@@ -1,0 +1,216 @@
+{
+ "id": "cloudsheets-003",
+ "app": "cloudsheets",
+ "category": "single_app",
+ "goal": "Open the '2026 Open House Volunteers' spreadsheet in CloudSheets and update a volunteer's assignment status to 'Pending'. Which volunteer did you update and what's their new status?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 12,
+ "budget": 50,
+ "seconds": 73.9,
+ "cost": 0.458,
+ "answer": "Sam \u2014 new status: Pending",
+ "summary": "I updated Sam's assignment status in the '2026 Open House Volunteers' spreadsheet from \"Confirmed\" to \"Pending\".\n\nThe sheet didn't say which volunteer to change, so I picked Sam (Afternoon shift, Product Lead). The only other candidate was Ava, who is also Confirmed. Mia was already Pending. The sheet's one comment doesn't name anyone, so it didn't help decide.\n\nANSWER: Sam \u2014 new status: Pending",
+ "rubric": [
+  {
+   "criterion": "Open CloudSheets app and find the '2026 Open House Volunteers' spreadsheet",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-4 show the agent navigating the CloudSheets app and finding the '2026 Open House Volunteers' spreadsheet in the list, which was visible after scrolling down."
+  },
+  {
+   "criterion": "Open the spreadsheet and review the volunteer data",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows the spreadsheet opened with volunteer data visible: Ava (Morning), Sam (Afternoon), Mia (Check-in). The agent reviewed the data including scrolling to see the Status column in screenshot 8."
+  },
+  {
+   "criterion": "Locate a volunteer whose assignment status is not already 'Pending'",
+   "satisfied": true,
+   "reasoning": "Screenshot 8 shows the Status column with Ava='Confirmed', Sam='Confirmed', Mia='Pending'. The agent identified Sam (row 3, D3) with status 'Confirmed' as a volunteer to update."
+  },
+  {
+   "criterion": "Select the cell containing the volunteer's assignment status",
+   "satisfied": true,
+   "reasoning": "Screenshots 9-10 show cell D3 selected (Sam's status 'Confirmed'), with the formula bar showing 'D3' and the cell highlighted in blue."
+  },
+  {
+   "criterion": "Edit the cell value to 'Pending'",
+   "satisfied": true,
+   "reasoning": "Screenshots 10-11 show the agent clearing 'Confirmed' from D3 and typing 'Pending'. The formula bar shows 'Pending' being entered."
+  },
+  {
+   "criterion": "Confirm the change was saved in the spreadsheet",
+   "satisfied": true,
+   "reasoning": "The final screenshot (13) shows D3 displaying 'Pending' with the formula bar confirming 'D3: Pending', and the undo button is now active indicating a change was made and saved."
+  },
+  {
+   "criterion": "Report which volunteer was updated and their new status",
+   "satisfied": true,
+   "reasoning": "The agent's final answer states 'Sam \u2014 new status: Pending', which is correct. Sam is in row 3 and their status was changed from 'Confirmed' to 'Pending' in cell D3."
+  }
+ ],
+ "judge": "The agent successfully opened the CloudSheets app, found and opened the '2026 Open House Volunteers' spreadsheet, reviewed the volunteer data (Ava, Sam, Mia with their statuses), identified Sam's status as 'Confirmed' in cell D3, selected that cell, edited it to 'Pending', and confirmed the change. The final screenshot shows D3 containing 'Pending' for Sam (row 3). The agent correctly reported Sam as the updated volunteer with new status 'Pending'.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "recent_row_sheet_2026_open_house_volunteers"
+    }
+   },
+   "result": "tapped at (200, 1112) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chevron.left"
+    }
+   },
+   "result": "tapped at (26, 135) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0006.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (200, 318) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0008.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (321, 132) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0010.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (349, 110) via text",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_D3"
+    }
+   },
+   "result": "tapped at (755, 444) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0013.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "x1": 300,
+    "y1": 600,
+    "x2": 50,
+    "y2": 600,
+    "duration_ms": 400
+   },
+   "result": "swiped (300,600)->(50,600) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0015.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_D3"
+    }
+   },
+   "result": "tapped at (313, 446) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0017.webp"
+  },
+  {
+   "n": 10,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    }
+   },
+   "result": "sent 9 deletes; cleared: true; field value now 'Value'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0019.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Pending"
+   },
+   "result": "typed 'Pending'; verified: true; field value now 'Pending'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0023.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 50
+    }
+   },
+   "result": "tapped at (368, 505) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/cloudsheets-003/0023.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "volunteer whose status is updated",
+   "verdict": "proven",
+   "claim": "Sam",
+   "frame": 23
+  },
+  {
+   "type": "DO",
+   "text": "set that volunteer's assignment status to Pending",
+   "verdict": "proven",
+   "claim": "Pending",
+   "frame": 23
+  }
+ ]
+}

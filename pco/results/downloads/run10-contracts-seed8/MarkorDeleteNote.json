@@ -1,0 +1,98 @@
+{
+ "id": "MarkorDeleteNote",
+ "app": "Markor",
+ "goal": "Delete the note in Markor named UCcg_kind_rabbit.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 55.0,
+ "cost": 0.12275400000000002,
+ "answer": null,
+ "summary": "I deleted the Markor note named UCcg_kind_rabbit. It's no longer in the file list.\n\nA different note with a similar name, UCcg_kind_rabbit_2023_10_01.md, is still there. I left it alone because it isn't the note you named.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorDeleteNote/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"UCcg_kind_rabbit\" absent"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorDeleteNote/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "long_press",
+   "args": {
+    "index": 24,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,2151) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorDeleteNote/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (922,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorDeleteNote/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (802,1445)",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text ~\"UCcg_kind_rabbit\" absent -> still on screen: Button \"File UCcg_kind_rabbit_2023_10_01.md \" [24]",
+   "frame": "media/run10-contracts-seed8/MarkorDeleteNote/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Button \"File UCcg_kind_rabbit \" absent",
+     "Button \"File UCcg_kind_rabbit_2023_10_01.md \" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorDeleteNote/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorDeleteNote/006.webp"
+  }
+ ]
+}

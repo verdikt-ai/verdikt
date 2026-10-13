@@ -1,0 +1,109 @@
+{
+ "id": "SystemWifiTurnOffVerify",
+ "app": "Settings",
+ "goal": "Turn wifi off.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 59.1,
+ "cost": 0.12233720000000001,
+ "answer": null,
+ "summary": "Wi-Fi was already off when I checked, so I didn't change anything. Settings > Network & internet > Internet shows the Wi-Fi switch off, and the phone is using mobile data (T-Mobile, 3G).\n\nThat screen notes that \"Network preferences\" is set so Wi-Fi turns back on automatically, so it may switch itself back on later.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOffVerify/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Wi-Fi\" unchecked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOffVerify/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (407,794)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOffVerify/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "wait",
+   "args": {
+    "seconds": 1
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOffVerify/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (279,610)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOffVerify/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "wait",
+   "args": {
+    "seconds": 1
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOffVerify/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Wi-Fi\" visible",
+     "count Switch == 1",
+     "id=switch_widget unchecked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOffVerify/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOffVerify/007.webp"
+  }
+ ]
+}

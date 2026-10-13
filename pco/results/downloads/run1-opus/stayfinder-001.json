@@ -1,0 +1,80 @@
+{
+ "id": "stayfinder-001",
+ "app": "stayfinder",
+ "category": "single_app",
+ "goal": "Pull up my upcoming Catalina Island trip (dates shown in StayFinder) on StayFinder and check the listing details. What's the listing name, price per night, number of beds, and number of baths?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 2,
+ "budget": 50,
+ "seconds": 33.6,
+ "cost": 0.38240959999999996,
+ "answer": "Clifftop retreat on Catalina, $327 per night, 5 beds, 3 baths",
+ "summary": "Your upcoming Catalina Island stay, Oct 18 \u2013 Oct 21, is booked at **Clifftop retreat on Catalina**. The listing shows:\n\n- **Price:** $327 per night\n- **Beds:** 5\n- **Baths:** 3\n\nYour Trips list also has a \"Vacation photo session\" on Catalina Island on Oct 20. I left it out because it's a one-day session, not a place to stay.\n\nANSWER: Clifftop retreat on Catalina, $327 per night, 5 beds, 3 baths",
+ "rubric": [
+  {
+   "criterion": "Open StayFinder app and navigate to the Trips tab",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the Trips tab is active (highlighted in red at the bottom) with 'Upcoming reservations' displayed, confirming the agent navigated to the Trips tab."
+  },
+  {
+   "criterion": "Find and tap the Catalina Island trip (dates shown in StayFinder)",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the 'Clifftop retreat on Catalina' trip with dates Oct 18 - Oct 21 at Catalina Island, CA. The agent tapped this listing as shown in Step 2 actions."
+  },
+  {
+   "criterion": "View the listing details",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 (final state) shows the full listing detail page for 'Clifftop retreat on Catalina' with all relevant information visible including price, beds, baths, guests, description, and amenities."
+  },
+  {
+   "criterion": "Report the listing name",
+   "satisfied": true,
+   "reasoning": "The agent reported 'Clifftop retreat on Catalina' which matches exactly what is shown in the final screenshot."
+  },
+  {
+   "criterion": "Report the price per night",
+   "satisfied": true,
+   "reasoning": "The agent reported '$327 per night' which matches the '$327 per night' shown at the bottom of the listing detail page in Screenshot 3."
+  },
+  {
+   "criterion": "Report the number of beds",
+   "satisfied": true,
+   "reasoning": "The agent reported '5 beds' which matches the '5 Beds' shown in the listing details in Screenshot 3."
+  },
+  {
+   "criterion": "Report the number of baths",
+   "satisfied": true,
+   "reasoning": "The agent reported '3 baths' which matches the '3 Baths' shown in the listing details in Screenshot 3."
+  }
+ ],
+ "judge": "The agent successfully opened the StayFinder app, navigated to the Trips tab, found and tapped the Catalina Island trip, and viewed the listing details. The final screenshot clearly shows the listing 'Clifftop retreat on Catalina' with $327 per night, 5 Beds, and 3 Baths - all matching the agent's reported answer.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "180,805,220,860"
+    }
+   },
+   "result": "tapped at (200, 832) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/stayfinder-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (201, 299) via index",
+   "refused": false,
+   "frame": "media/run1-opus/stayfinder-001/0005.webp"
+  }
+ ],
+ "ledger": null
+}

@@ -1,0 +1,60 @@
+{
+ "rounds": 0,
+ "obligations": 5,
+ "proven": 5,
+ "unproven": 0,
+ "absent": 0,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: who the recurring monthly payment is from",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Arnav Srikanth",
+   "evidence_frame": 23,
+   "explanation": "Me > Transactions list shows \"Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d\"; the feed also shows rent december/january/february from Arnav.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: amount of the recurring payment",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "+$650.00",
+   "evidence_frame": 23,
+   "explanation": "Transactions row reads \"Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "IF: this month's (October) payment has not come in yet",
+   "type": "IF",
+   "status": "pass",
+   "claim": "rent march \ud83c\udfe0",
+   "evidence_frame": 23,
+   "explanation": "Latest rent payment from Arnav is \"rent march \ud83c\udfe0, +$650.00, 15d\" (before October); no newer rent payment in the recent transactions, and MyBank search for Arnav shows \"No results\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: send a payment request for this month's payment",
+   "type": "DO",
+   "status": "pass",
+   "claim": "You requested Arnav Srikanth",
+   "evidence_frame": 40,
+   "explanation": "Awaiting payment section now lists \"You requested Arnav Srikanth\" \"$650.00\" \"1m \u00b7 rent\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "SAY: recurring pattern (who, amount, frequency)",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "Arnav Srikanth pays $650.00 rent monthly (rent december, january, february, march); this month's hasn't arrived, so a $650 request was sent.",
+   "evidence_frame": 40,
+   "explanation": "Screen shows \"Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d\"; the feed earlier showed rent december, january, february from Arnav too, so it repeats monthly.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

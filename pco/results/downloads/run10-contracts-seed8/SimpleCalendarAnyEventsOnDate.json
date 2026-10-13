@@ -1,0 +1,75 @@
+{
+ "id": "SimpleCalendarAnyEventsOnDate",
+ "app": "Simple Calendar",
+ "goal": "Do I have any events October 23 2023 in Simple Calendar Pro? Answer with the titles only. If there are multiples titles, format your answer in a comma separated list.",
+ "success": true,
+ "score": 1.0,
+ "steps": 4,
+ "budget": 10,
+ "seconds": 23.1,
+ "cost": 0.1012064,
+ "answer": "Movie night, Dinner with friends, Quarterly review",
+ "summary": "Yes, Simple Calendar Pro has three events on Monday, October 23, 2023:\n\nMovie night, Dinner with friends, Quarterly review\n\nQuarterly review starts at 23:59 that day and runs past midnight into October 24.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Calendar Pro"
+   },
+   "result": "opened Simple Calendar Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarAnyEventsOnDate/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarAnyEventsOnDate/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 39
+   },
+   "result": "tapped (231,1864)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarAnyEventsOnDate/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "answer",
+   "args": {
+    "text": "Movie night, Dinner with friends, Quarterly review",
+    "evidence": [
+     "text \"Movie night\" visible",
+     "text \"Dinner with friends\" visible",
+     "text \"Quarterly review\" visible"
+    ]
+   },
+   "result": "answer recorded: \"Movie night, Dinner with friends, Quarterly review\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarAnyEventsOnDate/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarAnyEventsOnDate/003.webp"
+  }
+ ]
+}

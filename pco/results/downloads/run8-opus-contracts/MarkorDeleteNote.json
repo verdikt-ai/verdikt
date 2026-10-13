@@ -1,0 +1,113 @@
+{
+ "id": "MarkorDeleteNote",
+ "app": "Markor",
+ "goal": "Delete the note in Markor named bold_king_edited.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 31.4,
+ "cost": 0.103324,
+ "answer": null,
+ "summary": "I deleted the note bold_king_edited from Markor's Documents/markor folder. It no longer appears in the file list. The other two notes, insurance_plan_comparison_8Tzh.md and KDyi_grocery_list_weekly.md, are still there.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNote/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"bold_king_edited\" absent",
+     "text \"KDyi_grocery_list_weekly.md\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNote/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "long_press",
+   "args": {
+    "index": 13,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,558) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNote/002.webp"
+  },
+  {
+   "n": 2,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Button ~\"bold_king_edited\" absent",
+     "Button \"File KDyi_grocery_list_weekly.md \" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNote/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (922,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNote/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (802,1445)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   Button ~\"bold_king_edited\" absent -> absent",
+   "frame": "media/run8-opus-contracts/MarkorDeleteNote/005.webp"
+  },
+  {
+   "n": 4,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Button ~\"bold_king_edited\" absent",
+     "Button ~\"KDyi_grocery_list_weekly.md\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNote/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNote/007.webp"
+  }
+ ]
+}

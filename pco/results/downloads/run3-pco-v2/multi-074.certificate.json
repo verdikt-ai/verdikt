@@ -1,0 +1,60 @@
+{
+ "rounds": 1,
+ "obligations": 5,
+ "proven": 4,
+ "unproven": 0,
+ "absent": 1,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: unrecognized request amount",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$42.00",
+   "evidence_frame": 36,
+   "explanation": "Pending requests: \"Maya Patel requested\" \"$42.00\" \"2h \u00b7 dinner split\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: unrecognized request memo",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "2h \u00b7 dinner split",
+   "evidence_frame": 36,
+   "explanation": "Pending requests: \"Maya Patel requested\" \"$42.00\" \"2h \u00b7 dinner split\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: QuickChat mention by requester",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Oh also \u2014 just sent you a SplitPay request for that dinner split from last night. $42 for your half. No rush!",
+   "evidence_frame": 30,
+   "explanation": "Search result shows Maya Patel message \"just sent you a SplitPay request for that dinner split from last night. $42 for your half.\"",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "IF: matching MyBank credit card charge exists",
+   "type": "IF",
+   "status": "fail",
+   "claim": "QuickBite, Chipotle, Oct 12, 2026, -$31.40",
+   "evidence_frame": 54,
+   "explanation": "MyBank search \"Food & drink\" lists every dining charge on Freedom Unlimited (...2095): QuickBite Chipotle -$31.40 Oct 12, QuickBite Shake Shack -$33.18 Oct 08, Chipotle Mexican Grill -$28.00 Oct 08, Blue Bottle -$18.22 Oct 06, QuickBite Sugarfish -$58.50 Oct 03, QuickBite Delivery -$28.64 Oct 02, Blue Bottle -$6.75 Sep 29. No dinner/Italian charge on Oct 11 and none near $42 or $84. Also checked the expanded card Account detail recent activity (Oct 12 back to Oct 04: groceries, transit, Target, gas, Netflix; nothing near $42) and home Recent activity (only $42.00 is a checking SplitPay to Camille H. for concert tickets).",
+   "verdict": "absent",
+   "reason": "MyBank search \"Food & drink\" lists every dining charge on Freedom Unlimited (...2095): QuickBite Chipotle -$31.40 Oct 12, QuickBite Shake Shack -$33.18 Oct 08, Chipotle Mexican Grill -$28.00 Oct 08, Blue Bottle -$18.22 Oct 06, QuickBite Sugarfish -$58.50 Oct 03, QuickBite Delivery -$28.64 Oct 02, Blue Bottle -$6.75 Sep 29. No dinner/Italian charge on Oct 11 and none near $42 or $84. Also checked the expanded card Account detail recent activity (Oct 12 back to Oct 04: groceries, transit, Target, gas, Netflix; nothing near $42) and home Recent activity (only $42.00 is a checking SplitPay to Camille H. for concert tickets)."
+  },
+  {
+   "obligation": "DO: pay request if match, else message requester",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Hey Maya, I got your $42 SplitPay request for \u201cdinner\u201d but I don\u2019t see a matching charge on my card. What dinner was this for?",
+   "evidence_frame": 45,
+   "explanation": "The Maya Patel thread shows my sent message \"Hey Maya, I got your $42 SplitPay request...\" at 8:17 PM with a delivered checkmark.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

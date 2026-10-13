@@ -1,0 +1,110 @@
+{
+ "rounds": 1,
+ "obligations": 10,
+ "proven": 8,
+ "unproven": 0,
+ "absent": 2,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: #product end-of-week status update",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "The localization vendor delivered translations for 12 languages. QA pass starts Monday.",
+   "evidence_frame": 7,
+   "explanation": "#product shows Mateo Fuentes: \"The localization vendor delivered translations for 12 languages. QA pass starts Monday.\" and Petra: analytics dashboards live.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: #announcements end-of-week status update",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "We hit 99.97% uptime this quarter. Best number since launch.",
+   "evidence_frame": 10,
+   "explanation": "#announcements shows Aiden Cross: \"We hit 99.97% uptime this quarter. Best number since launch.\" plus i18n greenlit for Q2 and 94% CSAT.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: Friday mail item needing attention",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Invitation: Sprint retrospective",
+   "evidence_frame": 15,
+   "explanation": "Mail search \"Friday\" shows Jordan Park \"Invitation: Sprint retrospective, Scheduling the sprint retro for Friday at 3 PM\", plus Theo Nguyen \"Dinner Friday?\" at Flour + Water ~7.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Update Mobile Launch Plan doc with weekly progress notes",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Weekly Progress Notes:",
+   "evidence_frame": 26,
+   "explanation": "Saved doc (view mode) text includes \"Weekly Progress Notes:\" with localization, analytics/uptime, sprint retro lines.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Update a cell in QA Test Matrix with this week's status",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Week status: i18n QA starts Mon",
+   "evidence_frame": 40,
+   "explanation": "After saving, sheet_cell_A6 reads \"Week status: i18n QA starts Mon\" in QA Test Matrix.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Disable weekday alarms in Clock",
+   "type": "DO",
+   "status": "pass",
+   "claim": "9:30, Client call, Weekdays",
+   "evidence_frame": 56,
+   "explanation": "All weekday alarms now value=\"0\": \"7:00, Morning run, Weekdays\", \"9:30, Client call, Weekdays\", \"6:15, Wrap up, Weekdays\" all off.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Set 7:00 AM Saturday alarm labeled Weekend Run",
+   "type": "DO",
+   "status": "fail",
+   "claim": "Clock Alarms list (step 86) shows \"7:00, Weekend Run\" enabled with no repeat day; Repeat was \"Never\" at save. Budget spent (50/50), so it can't be edited to Saturday.",
+   "evidence_frame": null,
+   "explanation": "At step 86 the Alarms tab listed \"7:00, Weekend Run\" value=1 without \"Saturday\", unlike the other rows such as \"Morning run, Weekdays\". The Add Alarm sheet at step 84 showed Repeat \"Never\" before saving. No actions remain to fix it.",
+   "verdict": "absent",
+   "reason": "At step 86 the Alarms tab listed \"7:00, Weekend Run\" value=1 without \"Saturday\", unlike the other rows such as \"Morning run, Weekdays\". The Add Alarm sheet at step 84 showed Repeat \"Never\" before saving. No actions remain to fix it."
+  },
+  {
+   "obligation": "KNOW: San Francisco Saturday morning weather forecast",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Sunny. High near 71, with temperatures falling to around 67 in the afternoon.",
+   "evidence_frame": 88,
+   "explanation": "SF Weather shows \"Mostly Clear\", \"Sunny. High near 71...\", 0% precipitation, morning temps ~52\u00b0. Saturday row (weather_daily_row_sat) has no readable label; forecast taken from detail.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: TrailBlaze weekend route chosen",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Twin Peaks Sunrise Repeats",
+   "evidence_frame": 90,
+   "explanation": "TrailBlaze feed shows run route \"Twin Peaks Sunrise Repeats\" 8.3 mi; chosen because Saturday morning is clear/sunny with 0% precip.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Message Priya Raman in QuickChat with forecast and run plan",
+   "type": "DO",
+   "status": "fail",
+   "claim": "Priya Raman thread's latest message is \"Same. I reorganized my entire closet yesterday just to burn energy. Taper brain is no joke.\" (Sat, Oct 10); compose field empty (\"Message\"). No forecast/run-plan message was sent; action budget is fully spent (50/50).",
+   "evidence_frame": 102,
+   "explanation": "Opened the Priya Raman chat (+1 (408) 555-0178): the last message is from Sat, Oct 10 and the compose field shows the \"Message\" placeholder. I searched QuickChat for \"Priya\" and checked her thread. The budget ran out before I could type and send.",
+   "verdict": "absent",
+   "reason": "Opened the Priya Raman chat (+1 (408) 555-0178): the last message is from Sat, Oct 10 and the compose field shows the \"Message\" placeholder. I searched QuickChat for \"Priya\" and checked her thread. The budget ran out before I could type and send."
+  }
+ ]
+}

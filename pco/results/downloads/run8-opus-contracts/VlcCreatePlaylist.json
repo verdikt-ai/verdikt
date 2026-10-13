@@ -1,0 +1,255 @@
+{
+ "id": "VlcCreatePlaylist",
+ "app": "Vlc",
+ "goal": "Create a playlist titled \"Ultimate Fails Series\" with the following files in VLC (located in Internal Memory/VLCVideos), in order: highlight_41_4K_2023_03_30.mp4, scene_68_4K_copy.mp4",
+ "success": true,
+ "score": 1.0,
+ "steps": 19,
+ "budget": 28,
+ "seconds": 132.5,
+ "cost": 0.5291592,
+ "answer": null,
+ "summary": "I created the VLC playlist \"Ultimate Fails Series\" with the two videos in the right order. When I opened the playlist, it listed:\n\n1. highlight_41_4K_2023_03_30.mp4\n2. scene_68_4K_copy.mp4\n\nVLC didn't have storage permission at first, so I tapped \"Grant permission\" to let it see your files. The Video tab still showed no media after that, so I added the files from the VLCVideos folder (Internal memory/VLCVideos) instead.\n\nThe final on-screen check first refused to finish. That was because each file name appeared twice on the screen, so it couldn't tell which match to use, not because a file was missing. The playlist screen itself showed both files in order, so I finished anyway.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "VLC"
+   },
+   "result": "opened VLC",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"highlight_41_4K_2023_03_30\" visible",
+     "text ~\"scene_68_4K_copy\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (377,1236)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "wait",
+   "args": {
+    "seconds": 2
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (108,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (540,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (108,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (540,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "x": 198,
+    "y": 500
+   },
+   "result": "tapped (198,500)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 61
+   },
+   "result": "tapped (561,2256)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "long_press",
+   "args": {
+    "index": 11,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,650) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "index": 17
+   },
+   "result": "tapped (540,798)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"2 selected\" visible -> StaticText \"2 selected\" [6]",
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (1006,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "type",
+   "args": {
+    "text": "Ultimate Fails Series",
+    "index": 2,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Ultimate Fails Series\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Playlist name\" value \"Ultimate Fails Series\" -> TextField \"Playlist name\" value=\"Ultimate Fails Series\" [3] has value \"Ultimate Fails Series\"",
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (975,2025)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/014.webp"
+  },
+  {
+   "n": 15,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 1
+   },
+   "result": "pressed back",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/015.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (73,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/017.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (756,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/018.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (231,867)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/019.webp"
+  },
+  {
+   "n": 18,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS text ~\"highlight_41_4K_2023_03_30\" visible -> ambiguous: text ~\"highlight_41_4K_2023_03_30\" matched 2 elements [7] [10]; add a role, id= or a longer text\n  MISS text ~\"scene_68_4K_copy\" visible -> ambiguous: text ~\"scene_68_4K_copy\" matched 2 elements [8] [13]; add a role, id= or a longer text\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/020.webp"
+  },
+  {
+   "n": 19,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/VlcCreatePlaylist/020.webp"
+  }
+ ]
+}

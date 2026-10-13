@@ -1,0 +1,183 @@
+{
+ "id": "mail-002",
+ "app": "mail",
+ "category": "single_app",
+ "goal": "Filter my Inbox in Mail to show only the Transactions category, then archive a QuickBite receipt. Confirm it was archived.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 10,
+ "budget": 50,
+ "seconds": 72.7,
+ "cost": 0.3853,
+ "answer": null,
+ "summary": "I filtered your inbox to Transactions and archived the QuickBite \"Your Chipotle order receipt\" (from yesterday, total $26.00). It now sits at the top of your Archive, which went from 80 to 81 messages.\n\nIt didn't go straight there. My first swipe on the message sent it to Trash instead of Archive. I opened it from Trash and tapped the archive button, so it's no longer in Trash.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open Mail app and go to Inbox",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Mail app open with 'All Inboxes' displayed, showing 15 unread messages. The app was already open in the Inbox."
+  },
+  {
+   "criterion": "Tap the Transactions category filter",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the Transactions category is now selected (highlighted in blue) and the inbox is filtered to show 'Transactions \u2022 8 unread', confirming the filter was successfully applied."
+  },
+  {
+   "criterion": "Find a QuickBite receipt email in the filtered list",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the QuickBite 'Your Chipotle order receipt' email visible in the Transactions-filtered list. The agent also opened the email (Screenshot 8) showing the full QuickBite Chipotle order receipt."
+  },
+  {
+   "criterion": "Archive the QuickBite receipt email",
+   "satisfied": true,
+   "reasoning": "In Step 8, the agent tapped the archive button (the box with down arrow icon) in the email toolbar while viewing the QuickBite Chipotle order receipt. After this action, the email disappeared from Trash (Screenshot 9 shows 5 messages in trash, down from 6), and the Archive count increased from 80 to 81."
+  },
+  {
+   "criterion": "Confirm the email was archived",
+   "satisfied": true,
+   "reasoning": "The final screenshot (Screenshot 11) shows the Archive mailbox with '81 archived messages' and the QuickBite 'Your Chipotle order receipt' email appearing at the top of the list, confirming it was successfully archived. The count increased from 80 (seen in Screenshot 4) to 81."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: started in the Mail app's All Inboxes, tapped the Transactions category filter (visible in Screenshot 2 showing 'Transactions \u2022 8 unread'), found the QuickBite receipt email in the filtered list, opened it from the Trash (where it had been moved via swipe), used the archive button in the email toolbar, and confirmed archival by navigating to the Archive mailbox which showed 81 archived messages with the QuickBite 'Your Chipotle order receipt' at the top. The archive count increased from 80 to 81, confirming the email was archived.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "category_transactions"
+    }
+   },
+   "result": "tapped at (187, 215) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "swipe",
+   "args": {
+    "x1": 350,
+    "y1": 682,
+    "x2": 40,
+    "y2": 682,
+    "duration_ms": 300
+   },
+   "result": "swiped (350,682)->(40,682) in 300ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "14,55,110,92"
+    }
+   },
+   "result": "tapped at (62, 73) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mailbox_archive"
+    }
+   },
+   "result": "tapped at (201, 581) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "14,55,110,92"
+    }
+   },
+   "result": "tapped at (62, 73) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0013.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mailbox_trash"
+    }
+   },
+   "result": "tapped at (201, 641) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mail_row_your_chipotle_order_receipt"
+    }
+   },
+   "result": "tapped at (201, 250) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "232,794,280,840"
+    }
+   },
+   "result": "tapped at (256, 817) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0017.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "14,55,110,92"
+    }
+   },
+   "result": "tapped at (62, 73) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mailbox_archive"
+    }
+   },
+   "result": "tapped at (201, 581) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mail-002/0020.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Filter Inbox to show only Transactions category",
+   "verdict": "proven",
+   "claim": "Transactions \u2022 7 unread",
+   "frame": 5
+  },
+  {
+   "type": "DO",
+   "text": "Archive a QuickBite receipt and confirm it was archived",
+   "verdict": "proven",
+   "claim": "Your Chipotle order receipt",
+   "frame": 20
+  }
+ ]
+}

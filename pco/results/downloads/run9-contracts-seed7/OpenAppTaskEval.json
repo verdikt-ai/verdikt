@@ -1,0 +1,63 @@
+{
+ "id": "OpenAppTaskEval",
+ "app": "Contacts",
+ "goal": "Open the contacts app. Clear any pop-ups that may appear by granting all permissions that are required.",
+ "success": true,
+ "score": 1.0,
+ "steps": 3,
+ "budget": 10,
+ "seconds": 28.0,
+ "cost": 0.0556454,
+ "answer": null,
+ "summary": "The Contacts app is open on its main contact list. No permission requests came up, so there was nothing to grant. The only pop-up was a tip saying Settings and Help & feedback had moved, and I tapped away to close it. The list shows one contact, Fatima Pereira.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Contacts"
+   },
+   "result": "opened Contacts",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/OpenAppTaskEval/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Fatima Pereira\" visible",
+     "text ~\"Now you can find Settings\" absent"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/OpenAppTaskEval/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "x": 540,
+    "y": 1400
+   },
+   "result": "tapped (540,1400)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/OpenAppTaskEval/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/OpenAppTaskEval/003.webp"
+  }
+ ]
+}

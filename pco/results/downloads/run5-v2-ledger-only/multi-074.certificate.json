@@ -1,0 +1,70 @@
+{
+ "rounds": 0,
+ "obligations": 6,
+ "proven": 6,
+ "unproven": 0,
+ "absent": 0,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: unrecognized request amount",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$17.00",
+   "evidence_frame": 47,
+   "explanation": "Pending requests list shows \"Leo Chen requested\" \"$17.00\" \"1d \u00b7 parking\"; that's the only request with no context in any chat.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: unrecognized request memo",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "1d \u00b7 parking",
+   "evidence_frame": 47,
+   "explanation": "The Leo Chen pending request row shows memo text \"1d \u00b7 parking\" next to \"$17.00\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: requester name",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Leo Chen",
+   "evidence_frame": 45,
+   "explanation": "Chat header shows \"Leo Chen\", the requester of the unrecognized $17 parking request.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: whether requester mentioned it in QuickChat",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Say less. I'm already grabbing my jacket.",
+   "evidence_frame": 45,
+   "explanation": "Leo Chen thread before my message ended with \"Say less. I'm already grabbing my jacket.\" (Oct 10) \u2013 no mention of parking or a SplitPay request; only after I asked did he reply.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "IF: matching MyBank credit card charge found",
+   "type": "IF",
+   "status": "pass",
+   "claim": "$17.00",
+   "evidence_frame": 47,
+   "explanation": "MyBank Freedom Unlimited (...2095) Account detail (step 32) listed charges Oct 4\u201313: $31.40, $34.99, $19.75, $33.18, $84.56, $28.00, $47.83, $8.49, $63.17, $18.22, $24.38, $63.78, $52.10, $15.99 \u2013 none at or around $17.00 and nothing for parking. Answer: no match. Current screen still shows the request \"$17.00\" pending, unpaid.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: pay request if match, else message requester asking what it's for",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Hey Leo, I got a $17.00 SplitPay request from you for \u201cparking\u201d but I don\u2019t recognize it. What\u2019s it for?",
+   "evidence_frame": 45,
+   "explanation": "Leo Chen thread shows my sent message \"Hey Leo, I got a $17.00 SplitPay request from you for \u201cparking\u201d but I don\u2019t recognize it. What\u2019s it for?\" with delivered checkmark, Leo replied.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

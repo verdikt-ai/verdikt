@@ -1,0 +1,97 @@
+{
+ "id": "MarkorCreateFolder",
+ "app": "Markor",
+ "goal": "Create a new folder in Markor named folder_20261013_031306.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 38.3,
+ "cost": 0.1594696,
+ "answer": null,
+ "summary": "I created a new folder named folder_20261013_031306 in Markor. It now shows in the file list under Documents (/storage/emulated/0/Documents).\n\nThe check I set up front failed even though the folder was there. It looked for the name as plain text, but the screen reports the item as \"Folder folder_20261013_031306\". I confirmed the folder on screen and then finished anyway.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateFolder/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"folder_20261013_031306\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateFolder/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateFolder/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "folder_20261013_031306",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"folder_20261013_031306\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"folder_20261013_031306\" visible -> TextField \"my_note\" value=\"folder_20261013_031306\" [1]",
+   "frame": "media/run9-contracts-seed7/MarkorCreateFolder/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (171,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateFolder/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS text \"folder_20261013_031306\" visible -> no match; nearest: Button \"Folder folder_20261013_031306 \" [14], Button \"Folder .. 10/15/2023, 15:34\" [12], Button \"Folder .app \" [13], Button \"File 2023_05_19_weekend_todo_list.md \" [15], Button \"Create a new file or folder\" [1]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateFolder/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateFolder/005.webp"
+  }
+ ]
+}

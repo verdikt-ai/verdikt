@@ -1,0 +1,254 @@
+{
+ "id": "RecipeAddSingleRecipe",
+ "app": "Broccoli",
+ "goal": "Add the following recipes into the Broccoli app:\nRecipe: Baked Cod with Lemon and Dill\n description: A quick and easy meal, perfect for busy weekdays.\n servings: 1 serving\n preparationTime: 30 mins\n ingredients: varies\n directions: Place cod fillets in a baking dish, season with lemon juice, dill, salt, and pepper. Bake until fish flakes easily. Try adding a pinch of your favorite spices for extra flavor.\n",
+ "success": true,
+ "score": 1.0,
+ "steps": 14,
+ "budget": 24,
+ "seconds": 147.5,
+ "cost": 0.402194,
+ "answer": null,
+ "summary": "I added \"Baked Cod with Lemon and Dill\" to Broccoli and saved it. The recipe's page shows every field as you gave it:\n- **Description:** A quick and easy meal, perfect for busy weekdays.\n- **Servings:** 1 serving\n- **Time:** 30 mins\n- **Ingredients:** varies\n- **Directions:** Place cod fillets in a baking dish, season with lemon juice, dill, salt, and pepper. Bake until fish flakes easily. Try adding a pinch of your favorite spices for extra flavor.\n\nWhile I was filling the form, the servings and time text briefly went into the Description field by mistake. I corrected it before saving, so the saved description is right.\n\nThe final automated check on the title failed, but that was a flaw in how I wrote the check, not a problem with the recipe. The title shows correctly on the saved recipe's page, so I ended the session anyway.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Broccoli"
+   },
+   "result": "opened Broccoli",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Baked Cod with Lemon and Dill\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (964,2221)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "Baked Cod with Lemon and Dill",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Baked Cod with Lemon and Dill\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Title\" value \"Baked Cod with Lemon and Dill\" -> TextField \"Title\" value=\"Baked Cod with Lemon and Dill\" [6] has value \"Baked Cod with Lemon and Dill\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "A quick and easy meal, perfect for busy weekdays.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"A quick and easy meal, perfect for busy weekdays.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Description\" value \"A quick and easy meal, perfect for busy weekdays.\" -> TextField \"Description\" value=\"A quick and easy meal, perfect for busy weekdays.\" [8] has value \"A quick and easy meal, perfect for busy weekdays.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "1 serving",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"1 serving\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \"Servings\" value \"1 serving\" -> no match; nearest: TextField \"Description\" [8], TextField \"Source\" [9], TextField \"Title\" [6], TextField \"Categories\" [7]",
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "30 mins",
+    "index": 11,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"30 mins\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \"Time\" value \"30 mins\" -> TextField \"Time\" value=\"Time\" [11] has value \"Time\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": "A quick and easy meal, perfect for busy weekdays.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"A quick and easy meal, perfect for busy weekdays.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Description\" value \"A quick and easy meal, perfect for busy weekdays.\" -> TextField \"Description\" value=\"A quick and easy meal, perfect for busy weekdays.\" [8] has value \"A quick and easy meal, perfect for busy weekdays.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "1 serving",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"1 serving\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Servings\" value \"1 serving\" -> TextField \"Servings\" value=\"1 serving\" [10] has value \"1 serving\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "text": "30 mins",
+    "index": 11,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"30 mins\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Time\" value \"30 mins\" -> TextField \"Time\" value=\"30 mins\" [11] has value \"30 mins\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "type",
+   "args": {
+    "text": "varies",
+    "index": 12,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"varies\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Ingredients\" value \"varies\" -> TextField \"Ingredients\" value=\"varies\" [12] has value \"varies\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "index": 3,
+    "amount": "half"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "type",
+   "args": {
+    "text": "Place cod fillets in a baking dish, season with lemon juice, dill, salt, and pepper. Bake until fish flakes easily. Try adding a pinch of your favorite spices for extra flavor.",
+    "index": 13,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Place cod fillets in a baking dish, season with lemon juice, dill, salt, and pepper. Bake until fish flakes easily. Try adding a pinch of your favorite spices for extra flavor.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Directions\" value \"Place cod fillets in a baking dish, season with lemon juice, dill, salt, and pepper. Bake until fish flakes easily. Try adding a pinch of your favorite spices for extra flavor.\" -> TextField \"Directions\" value=\"Place cod fillets in a baking dish, season with lemon juice, dill, salt, and pepper. Bake until fish flakes easily. Try adding a pinch of your favorite spices for extra flavor.\" [13] has value \"Place cod fillets in a baking dish, season with lemon juice, dill, salt, and pepper. Bake until fish flakes easily. Try adding a pinch of your favorite spices for extra flavor.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (953,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/013.webp"
+  },
+  {
+   "n": 13,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "StaticText \"Baked Cod with Lemon and Dill\" visible",
+     "text \"1 serving\" visible",
+     "text \"30 mins\" visible",
+     "text \"varies\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/013.webp"
+  },
+  {
+   "n": 13,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS StaticText \"Baked Cod with Lemon and Dill\" visible -> ambiguous: StaticText \"Baked Cod with Lemon and Dill\" matched 2 elements [1] [7]; add a role, id= or a longer text\n  ok   text \"1 serving\" visible -> StaticText \"1 serving\" [9]\n  ok   text \"30 mins\" visible -> StaticText \"30 mins\" [11]\n  ok   text \"varies\" visible -> StaticText \"varies\" [14]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/015.webp"
+  },
+  {
+   "n": 13,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "id=details_title value \"Baked Cod with Lemon and Dill\"",
+     "text \"1 serving\" visible",
+     "text \"30 mins\" visible",
+     "text \"varies\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/015.webp"
+  },
+  {
+   "n": 14,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddSingleRecipe/015.webp"
+  }
+ ]
+}

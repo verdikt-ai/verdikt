@@ -1,0 +1,358 @@
+{
+ "id": "ExpenseAddMultiple",
+ "app": "Pro Expense",
+ "goal": "Add the following expenses into the pro expense:\nExpense: Miscellaneous Gifts\n amount_dollars: $112.16\n category_name: Others\n note: I may repeat this\n\nExpense: Mortgage\n amount_dollars: $331.56\n category_name: Housing\n note: Urgent\n\nExpense: Parking Fees\n amount_dollars: $458.78\n category_name: Transportation\n note: Urgent\n",
+ "success": true,
+ "score": 1.0,
+ "steps": 26,
+ "budget": 60,
+ "seconds": 128.7,
+ "cost": 0.8993261999999999,
+ "answer": null,
+ "summary": "I added all three expenses in Pro Expense, and they now show in the Recent list:\n\n| Expense | Amount | Category | Note |\n|---|---|---|---|\n| Miscellaneous Gifts | $112.16 | Others | I may repeat this |\n| Mortgage | $331.56 | Housing | Urgent |\n| Parking Fees | $458.78 | Transportation | Urgent |\n\nOn my first try the typing went into the wrong fields before anything was saved, so I re-entered each field one at a time. The app confirmed every value before I saved, and only these three were added. They're dated today, and this week's spending total went from 0 to 902.50 USD, which matches the three amounts.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Pro Expense"
+   },
+   "result": "opened Pro Expense",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Miscellaneous Gifts\" visible",
+     "text \"Mortgage\" visible",
+     "text \"Parking Fees\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "Miscellaneous Gifts",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Miscellaneous Gifts\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "112.16",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"112.16\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "I may repeat this",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"I may repeat this\" WARNING: the target field shows \"SAVE\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "Miscellaneous Gifts",
+    "index": 5,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Miscellaneous Gifts\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Miscellaneous Gifts\" -> TextField \"Name\" value=\"Miscellaneous Gifts\" [5] has value \"Miscellaneous Gifts\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": "112.16",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"112.16\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"112.16\" -> TextField \"Amount\" value=\"112.16\" [6] has value \"112.16\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "I may repeat this",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"I may repeat this\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"I may repeat this\" -> TextField \"Note\" value=\"I may repeat this\" [9] has value \"I may repeat this\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "scroll",
+   "args": {
+    "direction": "right",
+    "index": 8,
+    "amount": "page"
+   },
+   "result": "scrolled right (revealing content further right)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "scroll",
+   "args": {
+    "direction": "right",
+    "index": 8,
+    "amount": "page"
+   },
+   "result": "scrolled right (revealing content further right)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "index": 16
+   },
+   "result": "tapped (925,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "type",
+   "args": {
+    "text": "Mortgage",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Mortgage\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Mortgage\" -> TextField \"Name\" value=\"Mortgage\" [5] has value \"Mortgage\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/014.webp"
+  },
+  {
+   "n": 15,
+   "tool": "type",
+   "args": {
+    "text": "331.56",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"331.56\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"331.56\" -> TextField \"Amount\" value=\"331.56\" [6] has value \"331.56\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/015.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "index": 14
+   },
+   "result": "tapped (519,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/016.webp"
+  },
+  {
+   "n": 17,
+   "tool": "type",
+   "args": {
+    "text": "Urgent",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Urgent\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"Urgent\" -> TextField \"Note\" value=\"Urgent\" [9] has value \"Urgent\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/017.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Mortgage\" visible -> StaticText \"Mortgage\" [15]",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/018.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/019.webp"
+  },
+  {
+   "n": 20,
+   "tool": "type",
+   "args": {
+    "text": "Parking Fees",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Parking Fees\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Parking Fees\" -> TextField \"Name\" value=\"Parking Fees\" [5] has value \"Parking Fees\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/020.webp"
+  },
+  {
+   "n": 21,
+   "tool": "type",
+   "args": {
+    "text": "458.78",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"458.78\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"458.78\" -> TextField \"Amount\" value=\"458.78\" [6] has value \"458.78\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/021.webp"
+  },
+  {
+   "n": 22,
+   "tool": "type",
+   "args": {
+    "text": "Urgent",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Urgent\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"Urgent\" -> TextField \"Note\" value=\"Urgent\" [9] has value \"Urgent\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/022.webp"
+  },
+  {
+   "n": 23,
+   "tool": "scroll",
+   "args": {
+    "direction": "right",
+    "index": 8,
+    "amount": "half"
+   },
+   "result": "scrolled right (revealing content further right)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/023.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "index": 15
+   },
+   "result": "tapped (722,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/024.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/025.webp"
+  },
+  {
+   "n": 26,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultiple/026.webp"
+  }
+ ]
+}

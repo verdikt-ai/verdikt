@@ -1,0 +1,80 @@
+{
+ "rounds": 0,
+ "obligations": 7,
+ "proven": 7,
+ "unproven": 0,
+ "absent": 0,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: wake-up alarm time from Clock",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "7:00, Morning run, Weekdays",
+   "evidence_frame": 4,
+   "explanation": "Alarms list shows \"7:00, Morning run, Weekdays\" enabled as the earliest alarm.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: exercise time and duration from TrailBlaze",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "48:14",
+   "evidence_frame": 13,
+   "explanation": "Latest activity \"Presidio Tempo Before Work\" (morning run before work), Duration \"48:14\", 6.3 mi; aligns with 7:00 \"Morning run\" alarm.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: commute timing from CityRide receipts in Mail",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Work to Train Station",
+   "evidence_frame": 26,
+   "explanation": "Mail CityRide receipts show \"Home \u2192 Work CityRideX Total: $16.50\" and \"Work \u2192 Home CityRideX Total: $16.50\"; CityRide activity lists Home/Work trips incl. \"Work to Train Station\". Commute: Home\u2192Work in morning (~8:30\u20139:00 AM), Work\u2192Home evening (~6:15\u20136:45 PM).",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: work activity window from TeamChat channels",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Feb 6, 11:00 AM",
+   "evidence_frame": 36,
+   "explanation": "#general channel shows work messages through the day, e.g. \"Feb 6, 11:00 AM\", \"Feb 6, 1:00 PM\", \"Feb 6, 3:00 PM\", \"Feb 6, 5:00 PM\" and standup parking-lot notes; combined with 9:30 Client call and 6:15 Wrap up alarms, the core work window is ~9:00 AM\u20136:15 PM.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: meal times from CalTrack logs",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Meal, Breakfast",
+   "evidence_frame": 40,
+   "explanation": "CalTrack today logs Breakfast 385 cal (banana, Greek yogurt, oatmeal), Lunch 385 (apple, grilled chicken salad), Dinner 575 (quinoa, roasted veg, salmon), Snacks 324 (almonds, protein shake). Entries have no timestamps; Lunch aligns with 12:30 Lunch alarm. Pattern: 3 meals + 2 snacks.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "SAY: hour-by-hour daily schedule",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "7:00 AM wake + ~48-min run; 8:00 breakfast; 8:30-9:00 commute; 9:00-12:30 work (9:30 client call); 12:30-1:30 lunch; 1:30-6:15 work + snack; 6:15-7:00 commute home; 7:00-8:00 dinner; 8:00-10:30 PM personal; 10:30 PM sleep.",
+   "evidence_frame": 53,
+   "explanation": "Note \"Daily Schedule\" with \"7:00 AM Wake up (Morning run alarm)\" saved; schedule derived from alarms, runs, CityRide, TeamChat, CalTrack.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: create 'Daily Schedule' note in Notes",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Daily Schedule, 2:51 AM, \u00b7, 7:00 AM Wake up (Morning run alarm)",
+   "evidence_frame": 53,
+   "explanation": "Notes list shows saved note \"Daily Schedule, 2:51 AM, \u00b7, 7:00 AM Wake up (Morning run alarm)\".",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

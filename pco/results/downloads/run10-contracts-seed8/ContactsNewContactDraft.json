@@ -1,0 +1,151 @@
+{
+ "id": "ContactsNewContactDraft",
+ "app": "Contacts",
+ "goal": "Go to the new contact screen and enter the following details: First Name: Hannah, Last Name: White, Phone: 760-497-2875, Phone Label: Work. Do NOT hit save.",
+ "success": true,
+ "score": 1.0,
+ "steps": 9,
+ "budget": 12,
+ "seconds": 73.6,
+ "cost": 0.2557104,
+ "answer": null,
+ "summary": "I filled in the new contact form in Contacts and left it open without saving:\n\n- **First name:** Hannah\n- **Last name:** White\n- **Phone:** 760-497-2875\n- **Phone label:** Work\n\nThe first check before finishing failed only because I'd checked for the label text as \"Work\", while the app labels it \"Work Phone\". The screen showed \"Work\", so I finished anyway.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Contacts"
+   },
+   "result": "opened Contacts",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "TextField \"First name\" value \"Hannah\"",
+     "TextField \"Last name\" value \"White\"",
+     "text ~\"760\" visible",
+     "text \"Work\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (540,1271)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (943,2011)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "Hannah",
+    "x": 534,
+    "y": 866,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Hannah\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "White",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"White\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Last name\" value \"White\" -> TextField \"Last name\" value=\"White\" [8] has value \"White\"",
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "760-497-2875",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"760-497-2875\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 12
+   },
+   "result": "tapped (523,1598)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 19
+   },
+   "result": "tapped (361,399)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/008.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  ok   TextField \"First name\" value \"Hannah\" -> TextField \"First name\" value=\"Hannah\" [7] has value \"Hannah\"\n  ok   TextField \"Last name\" value \"White\" -> TextField \"Last name\" value=\"White\" [8] has value \"White\"\n  ok   text ~\"760\" visible -> TextField \"Phone\" value=\"760-497-2875\" [10]\n  MISS text \"Work\" visible -> no match; nearest: Button \"Work Phone\" [11], Button \"Delete Work Phone\" [13], StaticText \"Phone two bars.\" [37], Image \"More options\" [3], Image \"Back\" [17]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/009.webp"
+  },
+  {
+   "n": 9,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsNewContactDraft/009.webp"
+  }
+ ]
+}

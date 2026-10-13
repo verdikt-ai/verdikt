@@ -1,0 +1,111 @@
+{
+ "id": "SimpleSmsSend",
+ "app": "Simple Sms",
+ "goal": "Send a text message using Simple SMS Messenger to +13016413946 with message: Inconceivable!",
+ "success": true,
+ "score": 1.0,
+ "steps": 7,
+ "budget": 12,
+ "seconds": 82.2,
+ "cost": 0.1670652,
+ "answer": null,
+ "summary": "I sent \"Inconceivable!\" to +13016413946 in Simple SMS Messenger. It now shows in that conversation with a 15:35 timestamp and a delivered checkmark.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple SMS Messenger"
+   },
+   "result": "opened Simple SMS Messenger",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleSmsSend/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"Inconceivable!\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleSmsSend/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2221)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleSmsSend/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "+13016413946",
+    "index": 2,
+    "clear": true,
+    "enter": true
+   },
+   "result": "typed \"+13016413946\" and pressed enter",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleSmsSend/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (1017,294)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleSmsSend/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "Inconceivable!",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Inconceivable!\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Type a message\u2026\" value \"Inconceivable!\" -> TextField \"Type a message\u2026\" value=\"Inconceivable!\" [7] has value \"Inconceivable!\"",
+   "frame": "media/run9-contracts-seed7/SimpleSmsSend/007.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (1006,2148)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleSmsSend/008.webp"
+  },
+  {
+   "n": 7,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleSmsSend/009.webp"
+  }
+ ]
+}

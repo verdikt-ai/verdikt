@@ -1,0 +1,148 @@
+{
+ "id": "scorezone-003",
+ "app": "scorezone",
+ "category": "single_app",
+ "goal": "Read a top headline article from the ScoreZone home feed, then check the Scores tab to see if the team mentioned in the article has a game scheduled today. What's the headline, the team name, and do they have a game today?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 5,
+ "budget": 50,
+ "seconds": 72.6,
+ "cost": 0.568,
+ "answer": "Headline: \"Rams' Alaric Jackson punches Bills' Bradley Chubb after MNF\"; Team: Los Angeles Rams (the Bills are also mentioned); Game today: No, the Scores tab shows no NFL games scheduled for Oct 13, 2026.; whether team has a game today in Scores: NFL \u2022 No games scheduled",
+ "summary": "The top story on the ScoreZone home feed is \"Rams' Alaric Jackson punches Bills' Bradley Chubb after MNF.\" The article says Rams left tackle Alaric Jackson punched Bills linebacker Bradley Chubb after the Bills beat the Rams 37-34 in overtime on Monday night.\n\nThe article mentions both teams, but the headline leads with the Los Angeles Rams, so I took them as the team. Neither team has a game today. On the Scores tab, the NFL view for Oct 13, 2026 shows \"NFL \u2022 No games scheduled\" and \"NO GAMES FOR THIS DATE.\"\n\nANSWER: Headline: \"Rams' Alaric Jackson punches Bills' Bradley Chubb after MNF\"; Team: Los Angeles Rams (the Bills are also mentioned); Game today: No, the Scores tab shows no NFL games scheduled for Oct 13, 2026.",
+ "rubric": [
+  {
+   "criterion": "Open ScoreZone app and navigate to the Home feed",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 clearly shows the ScoreZone app open on the Home feed with 'For You' section visible and the Home tab selected at the bottom."
+  },
+  {
+   "criterion": "Browse top headlines on the home feed",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the agent scrolled to the 'Top Stories' section and can see the headline 'Rams' Alaric Jackson punches Bills' Bradley Chubb after MNF' as the top story."
+  },
+  {
+   "criterion": "Tap a top headline article to read the full content",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 shows the full article detail view was opened, displaying the complete story content including the headline and article body text."
+  },
+  {
+   "criterion": "Identify and note the team mentioned in the article",
+   "satisfied": true,
+   "reasoning": "The article clearly mentions both the Los Angeles Rams (Alaric Jackson) and the Buffalo Bills (Bradley Chubb). The agent correctly identified both teams from the article content visible in Screenshot 3."
+  },
+  {
+   "criterion": "Navigate to the Scores tab",
+   "satisfied": true,
+   "reasoning": "Screenshots 5 and 6 show the Scores tab is active (highlighted in red at the bottom), confirming successful navigation to the Scores tab."
+  },
+  {
+   "criterion": "Search for the mentioned team's game schedule for today",
+   "satisfied": true,
+   "reasoning": "The agent tapped the NFL chip in the Scores tab (Step 5) to filter for NFL games, which is the relevant league for the Rams and Bills. Screenshot 6 shows the NFL scoreboard for Oct 13, 2026."
+  },
+  {
+   "criterion": "Report the headline of the article read",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported the headline as 'Rams' Alaric Jackson punches Bills' Bradley Chubb after MNF', which matches what is shown in the screenshots."
+  },
+  {
+   "criterion": "Report the team name",
+   "satisfied": true,
+   "reasoning": "The agent reported both the Los Angeles Rams and the Buffalo Bills as the teams mentioned in the article, which is accurate based on the article content shown in Screenshot 3."
+  },
+  {
+   "criterion": "Report whether the team has a game today",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported that neither team has a game today. Screenshot 6 clearly shows 'NFL \u2022 No games scheduled' and 'NO GAMES FOR THIS DATE' for Oct 13, 2026, confirming the Rams and Bills have no game scheduled."
+  }
+ ],
+ "judge": "The agent successfully completed all aspects of the task: opened the ScoreZone app on the home feed, browsed top headlines, tapped the top headline article to read it, identified the teams mentioned (Los Angeles Rams and Buffalo Bills), navigated to the Scores tab, checked the NFL schedule for today (Oct 13, 2026), and correctly reported that no NFL games are scheduled for that date. The final answer correctly identifies the headline, the teams, and the game status.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/scorezone-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_open_headline_001"
+    }
+   },
+   "result": "tapped at (201, 300) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/scorezone-003/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "headline_detail_done_button"
+    }
+   },
+   "result": "tapped at (349, 100) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/scorezone-003/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "100,800,140,850"
+    }
+   },
+   "result": "tapped at (120, 825) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/scorezone-003/0011.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "scores_league_chip_nfl"
+    }
+   },
+   "result": "tapped at (291, 161) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/scorezone-003/0013.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "top headline",
+   "verdict": "proven",
+   "claim": "Rams' Alaric Jackson punches Bills' Bradley Chubb after MNF",
+   "frame": 7
+  },
+  {
+   "type": "KNOW",
+   "text": "team mentioned in article",
+   "verdict": "proven",
+   "claim": "Rams",
+   "frame": 7
+  },
+  {
+   "type": "KNOW",
+   "text": "whether team has a game today in Scores",
+   "verdict": "proven",
+   "claim": "NFL \u2022 No games scheduled",
+   "frame": 13
+  }
+ ]
+}

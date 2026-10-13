@@ -1,0 +1,70 @@
+{
+ "rounds": 0,
+ "obligations": 6,
+ "proven": 6,
+ "unproven": 0,
+ "absent": 0,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: Chipotle order items",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Chicken Bowl, Sofritas Bowl",
+   "evidence_frame": 6,
+   "explanation": "Orders list shows \"Chipotle Mexican Grill, 2 items \u00b7 $28.00 \u00b7 Oct 12, 2026 Chicken Bowl, Sofritas Bowl\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: Chipotle order total",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$28.00",
+   "evidence_frame": 6,
+   "explanation": "Orders list shows \"Chipotle Mexican Grill, 2 items \u00b7 $28.00 \u00b7 Oct 12, 2026\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: MyBank credit card charge amount",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "-$31.40",
+   "evidence_frame": 8,
+   "explanation": "Recent activity shows \"QuickBite, Chipotle, Oct 13, 2026, -$31.40, Freedom Unlimited (...2095)\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: Mail receipt amount",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Total: $26.00",
+   "evidence_frame": 15,
+   "explanation": "Email \"Your Chipotle order receipt\" from QuickBite shows \"Subtotal: $19.75 ... Tip: $3.49 Total: $26.00\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "SAY: whether QuickBite total and bank charge roughly match",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "They roughly match but not exactly: QuickBite total $28.00 vs bank charge $31.40 (a $3.40 difference, possibly a tip added later); the email receipt shows $26.00 for different items.",
+   "evidence_frame": 30,
+   "explanation": "Derived from QuickBite $28.00, bank \"QuickBite, Chipotle\" -$31.40, and email Total $26.00; the note on screen records \"QuickBite order $28.00 ... bank charge $31.40, email receipt $26.00\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: add Chipotle expense note to Notes Shopping List",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Chipotle expense: QuickBite order $28.00 (Chicken Bowl, Sofritas Bowl), bank charge $31.40, email receipt $26.00",
+   "evidence_frame": 30,
+   "explanation": "Shopping List note body now ends with \"Chipotle expense: QuickBite order $28.00 (Chicken Bowl, Sofritas Bowl), bank charge $31.40, email receipt $26.00\".",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

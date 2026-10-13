@@ -1,0 +1,99 @@
+{
+ "id": "MarkorDeleteNewestNote",
+ "app": "Markor",
+ "goal": "Delete the newest note in Markor.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 29.3,
+ "cost": 0.09547180000000001,
+ "answer": null,
+ "summary": "I deleted the newest note in Markor, `final_friendly_king.md`, which was last modified 10/15/2023 at 15:34. The only other note, `fine_jelly_final.md` (15:17), is still in the Documents/markor folder. The file list no longer shows the deleted note.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNewestNote/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"final_friendly_king.md\" absent",
+     "text \"fine_jelly_final.md\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNewestNote/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "long_press",
+   "args": {
+    "index": 13,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,558) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNewestNote/002.webp"
+  },
+  {
+   "n": 2,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Button ~\"final_friendly_king\" absent",
+     "Button ~\"fine_jelly_final.md\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNewestNote/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (922,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNewestNote/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (802,1445)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNewestNote/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorDeleteNewestNote/006.webp"
+  }
+ ]
+}

@@ -1,0 +1,234 @@
+{
+ "id": "weather-004",
+ "app": "weather",
+ "category": "single_app",
+ "goal": "Check the 7-day forecast in the Weather app for both San Francisco and Dallas. Which city will be warmer this weekend? Give me the weekend high temperatures for both.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 11,
+ "budget": 50,
+ "seconds": 160.7,
+ "cost": 0.4944,
+ "answer": "Dallas will be warmer this weekend. Dallas highs: Sat 74\u00b0, Sun 80\u00b0. San Francisco highs: Sat 73\u00b0, Sun 66\u00b0.; San Francisco Saturday high: High 73\u00b0  Low 57\u00b0; San Francisco Sunday high: High 66\u00b0  Low 56\u00b0; Dallas Saturday high: High 74\u00b0  Low 55\u00b0; Dallas Sunday high: High 80\u00b0  Low 60\u00b0; Which city is warmer this weekend: Dallas is warmer this weekend: highs 74\u00b0 Sat / 80\u00b0 Sun vs San Francisco 73\u00b0 Sat / 66\u00b0 Sun.",
+ "summary": "Dallas will be warmer this weekend: its highs are higher than San Francisco's on both Saturday and Sunday. I read these from each day's forecast detail in the Weather app.\n\n| | Sat, Oct 17 | Sun, Oct 18 |\n|---|---|---|\n| **Dallas** | 74\u00b0 (mostly sunny) | 80\u00b0 (sunny) |\n| **San Francisco** | 73\u00b0 (sunny) | 66\u00b0 (mostly sunny) |\n\nSaturday is nearly a tie, only 1\u00b0 apart. On Sunday Dallas is 14\u00b0 warmer.\n\nANSWER: Dallas will be warmer this weekend. Dallas highs: Sat 74\u00b0, Sun 80\u00b0. San Francisco highs: Sat 73\u00b0, Sun 66\u00b0.",
+ "rubric": [
+  {
+   "criterion": "Open Weather app and navigate to San Francisco",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Weather app open with San Francisco displayed, showing current temperature of 63\u00b0 and conditions."
+  },
+  {
+   "criterion": "Scroll to view the 7-day forecast for San Francisco",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the 10-day forecast for San Francisco scrolled into view, showing all days including Sat (73\u00b0) and Sun (66\u00b0)."
+  },
+  {
+   "criterion": "Note the weekend high temperatures for San Francisco",
+   "satisfied": true,
+   "reasoning": "Screenshots 3 and 5 show detailed views of 'San Francisco Sat' (High 73\u00b0, Low 57\u00b0) and 'San Francisco Sun' (High 66\u00b0, Low 56\u00b0), confirming the agent noted these temperatures."
+  },
+  {
+   "criterion": "Navigate to Dallas weather page",
+   "satisfied": true,
+   "reasoning": "Screenshots 9-12 show the agent navigated to Dallas weather page (after passing through New York in screenshots 7-8). The Dallas forecast is clearly visible with the city name shown in the detail panels."
+  },
+  {
+   "criterion": "Scroll to view the 7-day forecast for Dallas",
+   "satisfied": true,
+   "reasoning": "Screenshot 9 shows the Dallas 10-day forecast scrolled into view, showing Sat (74\u00b0) and Sun (80\u00b0) among other days."
+  },
+  {
+   "criterion": "Note the weekend high temperatures for Dallas",
+   "satisfied": true,
+   "reasoning": "Screenshots 10 and 12 show detailed views of 'Dallas Sat' (High 74\u00b0, Low 55\u00b0) and 'Dallas Sun' (High 80\u00b0, Low 60\u00b0), confirming the agent noted these temperatures."
+  },
+  {
+   "criterion": "Report weekend high temperatures for San Francisco",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports San Francisco Saturday high: 73\u00b0 and Sunday high: 66\u00b0, which matches the screenshots."
+  },
+  {
+   "criterion": "Report weekend high temperatures for Dallas",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports Dallas Saturday high: 74\u00b0 and Sunday high: 80\u00b0, which matches the screenshots."
+  },
+  {
+   "criterion": "Report which city will be warmer this weekend",
+   "satisfied": true,
+   "reasoning": "The agent correctly identified Dallas as the warmer city this weekend, with highs of 74\u00b0/80\u00b0 vs San Francisco's 73\u00b0/66\u00b0. This is accurate based on the screenshot data."
+  }
+ ],
+ "judge": "The agent successfully completed the task. It opened the Weather app, navigated to San Francisco, scrolled to view the 10-day forecast, noted the weekend (Sat/Sun) high temperatures for San Francisco (Sat: 73\u00b0, Sun: 66\u00b0), then navigated to Dallas, scrolled to view its forecast, and noted the weekend high temperatures for Dallas (Sat: 74\u00b0, Sun: 80\u00b0). The agent correctly identified Dallas as the warmer city this weekend. The screenshots clearly confirm all the data: SF Sat High 73\u00b0/Low 57\u00b0, SF Sun High 66\u00b0/Low 56\u00b0, Dallas Sat High 74\u00b0/Low 55\u00b0, Dallas Sun High 80\u00b0/Low 60\u00b0. The agent's final answer matches the screenshot data exactly.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sat"
+    }
+   },
+   "result": "tapped at (201, 438) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 451) via text",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sun"
+    }
+   },
+   "result": "tapped at (201, 480) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0008.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 451) via text",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "direction": "left",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (341,437)->(61,437) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0011.webp"
+  },
+  {
+   "n": 7,
+   "tool": "swipe",
+   "args": {
+    "direction": "left",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (341,437)->(61,437) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0014.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0014.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sat"
+    }
+   },
+   "result": "tapped at (201, 438) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0016.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 451) via text",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0019.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sun"
+    }
+   },
+   "result": "tapped at (201, 480) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/weather-004/0019.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "San Francisco Saturday high",
+   "verdict": "proven",
+   "claim": "High 73\u00b0  Low 57\u00b0",
+   "frame": 5
+  },
+  {
+   "type": "KNOW",
+   "text": "San Francisco Sunday high",
+   "verdict": "proven",
+   "claim": "High 66\u00b0  Low 56\u00b0",
+   "frame": 8
+  },
+  {
+   "type": "KNOW",
+   "text": "Dallas Saturday high",
+   "verdict": "proven",
+   "claim": "High 74\u00b0  Low 55\u00b0",
+   "frame": 16
+  },
+  {
+   "type": "KNOW",
+   "text": "Dallas Sunday high",
+   "verdict": "proven",
+   "claim": "High 80\u00b0  Low 60\u00b0",
+   "frame": 19
+  },
+  {
+   "type": "SAY",
+   "text": "Which city is warmer this weekend",
+   "verdict": "proven",
+   "claim": "Dallas is warmer this weekend: highs 74\u00b0 Sat / 80\u00b0 Sun vs San Francisco 73\u00b0 Sat / 66\u00b0 Sun.",
+   "frame": 19
+  }
+ ]
+}

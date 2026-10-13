@@ -1,0 +1,60 @@
+{
+ "rounds": 2,
+ "obligations": 5,
+ "proven": 2,
+ "unproven": 0,
+ "absent": 3,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "DO: Book table for 8 at Fiore Trattoria on DineSpot",
+   "type": "DO",
+   "status": "blocked",
+   "claim": "Action budget spent; confirmation seen at step 33 (Code: RSV2007) could not be re-shown",
+   "evidence_frame": null,
+   "explanation": "Step 33 showed \"Reservation Confirmed\", \"Fiore Trattoria\", \"Tue, Oct 13 \u2022 7:30 PM\", \"Code: RSV2007\". The tool rejected my close at the time because I left out an explanation. The latest screen (step 97) is a Review Booking sheet (\"Fiore Trattoria\", \"8 guests\", \"7:30 PM\"), not the confirmation, and I have no actions left to reach it.",
+   "verdict": "absent",
+   "reason": "Step 33 showed \"Reservation Confirmed\", \"Fiore Trattoria\", \"Tue, Oct 13 \u2022 7:30 PM\", \"Code: RSV2007\". The tool rejected my close at the time because I left out an explanation. The latest screen (step 97) is a Review Booking sheet (\"Fiore Trattoria\", \"8 guests\", \"7:30 PM\"), not the confirmation, and I have no actions left to reach it."
+  },
+  {
+   "obligation": "KNOW: Reservation confirmation",
+   "type": "KNOW",
+   "status": "blocked",
+   "claim": "Action budget spent; step 33 showed Code: RSV2007",
+   "evidence_frame": null,
+   "explanation": "The confirmation screen at step 33 read \"Code: RSV2007\" and \"Tue, Oct 13 \u2022 7:30 PM\". The current screen is the Review Booking sheet with no code, and my action budget is spent, so I can't show that screen again.",
+   "verdict": "absent",
+   "reason": "The confirmation screen at step 33 read \"Code: RSV2007\" and \"Tue, Oct 13 \u2022 7:30 PM\". The current screen is the Review Booking sheet with no code, and my action budget is spent, so I can't show that screen again."
+  },
+  {
+   "obligation": "DO: Order birthday cake from Natural Foods Market on FreshCart",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Natural Foods Market \u00b7 NF-2083",
+   "evidence_frame": 56,
+   "explanation": "Screen shows \"Order confirmed!\" with \"Natural Foods Market \u00b7 NF-2083\"; the cart contained Birthday Celebration Cake.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Send Brunch Crew group message in QuickChat with restaurant details",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Booked Fiore Trattoria (451 Howard St, SF) for 8 on Tue, Oct 13 at 7:30 PM",
+   "evidence_frame": 71,
+   "explanation": "Brunch Crew thread shows my sent message \"Booked Fiore Trattoria (451 Howard St, SF) for 8...\" with delivered check.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Request $35 from each Brunch Crew member on SplitPay",
+   "type": "DO",
+   "status": "blocked",
+   "claim": "Requests sent to Camille Hart and Kai Santos; Dante Morales not sent (budget exhausted)",
+   "evidence_frame": null,
+   "explanation": "I sent $35 requests to Camille Hart (confirmed in the app) and Kai Santos (toast \"Requested Kai Santos\"). The third member, Dante Morales, has no request because my 50 actions ran out. The request exists for him only if it is sent later. The \"Select multiple people\" option says \"Group payments and requests are coming soon.\"",
+   "verdict": "absent",
+   "reason": "I sent $35 requests to Camille Hart (confirmed in the app) and Kai Santos (toast \"Requested Kai Santos\"). The third member, Dante Morales, has no request because my 50 actions ran out. The request exists for him only if it is sent later. The \"Select multiple people\" option says \"Group payments and requests are coming soon.\""
+  }
+ ]
+}

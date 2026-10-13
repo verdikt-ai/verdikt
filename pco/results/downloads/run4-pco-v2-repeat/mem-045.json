@@ -1,0 +1,635 @@
+{
+ "id": "mem-045",
+ "app": "cloudslides, clouddrive, teamchat, clouddocs",
+ "category": "memory",
+ "goal": "Audit my presentation portfolio by recency and cross-references. Browse all presentations in CloudSlides and note each one's last-modified date and slide count. Check CloudDrive for how they're organized into folders. Read TeamChat #eng-mobile and #launch-war-room for any mentions of specific presentations (requests, feedback, launch deadlines). Review related documents in CloudDocs. Group each presentation into one of three buckets: recently-worked (modified in the last 2 weeks), stale (older than 2 weeks with no recent chat/doc references), and actively-discussed (referenced in TeamChat or CloudDocs regardless of age). Report each presentation with its bucket and the evidence (last-modified date, slide count, any referencing channel/doc).",
+ "success": false,
+ "score": 0.0,
+ "judged": true,
+ "steps": 44,
+ "budget": 50,
+ "seconds": 292.4,
+ "cost": 1.617,
+ "answer": "Recently-worked: none. Actively-discussed: none. #eng-mobile, #launch-war-room and CloudDocs name no presentation; TeamChat's only deck mentions are in #leadership, #product and a DM, about decks not in CloudSlides. Stale (all 21, since nothing was modified within 2 weeks of Oct 12, 2026): Product Demo Deck (Mar 5, 2026, 4 slides); Design System Update (Mar 5, 2026, 2 slides); All Hands Storyline (Mar 5, 2026, 2 slides); Conference Practice Deck (Mar 5, 2026, 4 slides, Projects folder); Team Update (Mar 5, 2026, 3 slides, Projects); Partner Kickoff (Mar 4, 2026, 2 slides); Q2 All-Hands (Mar 4, 2026, Projects); Board Prep (Mar 1, 2026); Frontend Codegen Review (Mar 1, 2026, Projects); Project Pitch (Feb 23, 2026); Creative Review (Feb 22, 2026); [Draft] Autonomous Agents (Feb 19, 2026, Projects); S26 City Guide (Feb 18, 2026); Workshop Deck (Feb 17, 2026); Healthcare Startup Criteria (Feb 11, 2026); Workshop Slides (Jan 30, 2026); Signal Check (Jan 26, 2026); Agent Systems Talk (Jan 24, 2026); Product Pitch (Jan 23, 2026); S25 City Guide (Jan 14, 2026). Slide counts for the other 15 decks were not collected, and folders for 16 decks were not checked.; slide counts of presentations: page 1 of 4; TeamChat #eng-mobile mentions of presentations: Quarterly business review deck is 80% done. Need finance inputs by Thursday.; TeamChat #launch-war-room mentions of presentations: Expanding to 10%. Will hold here for one hour before the next increment. @jordana; CloudDocs documents referencing presentations: No matching documents; bucket assignment for each presentation with evidence: All 21 presentations are stale: none was modified after Mar 5, 2026 (over 2 weeks before Oct 12, 2026), and none is named in #eng-mobile, #launch-war-room or CloudDocs.; CloudSlides presentation list with last-modified dates: Mar 5, 2026 at 3:45 AM",
+ "summary": "0 AM | not counted | stale |\n| Board Prep | Mar 1, 2026 11:30 AM | not counted | stale |\n| Frontend Codegen Review (Projects) | Mar 1, 2026 4:20 AM | not counted | stale |\n| Project Pitch | Feb 23, 2026 | not counted | stale |\n| Creative Review | Feb 22, 2026 | not counted | stale |\n| [Draft] Autonomous Agents (Projects) | Feb 19, 2026 | not counted | stale |\n| S26 City Guide | Feb 18, 2026 | not counted | stale |\n| Workshop Deck | Feb 17, 2026 | not counted | stale |\n| Healthcare Startup Criteria | Feb 11, 2026 | not counted | stale |\n| Workshop Slides | Jan 30, 2026 | not counted | stale |\n| Signal Check | Jan 26, 2026 | not counted | stale |\n| Agent Systems Talk | Jan 24, 2026 | not counted | stale |\n| Product Pitch | Jan 23, 2026 | not counted | stale |\n| S25 City Guide | Jan 14, 2026 | not counted | stale |\n\nANSWER: Recently-worked: none. Actively-discussed: none. #eng-mobile, #launch-war-room and CloudDocs name no presentation; TeamChat's only deck mentions are in #leadership, #product and a DM, about decks not in CloudSlides. Stale (all 21, since nothing was modified within 2 weeks of Oct 12, 2026): Product Demo Deck (Mar 5, 2026, 4 slides); Design System Update (Mar 5, 2026, 2 slides); All Hands Storyline (Mar 5, 2026, 2 slides); Conference Practice Deck (Mar 5, 2026, 4 slides, Projects folder); Team Update (Mar 5, 2026, 3 slides, Projects); Partner Kickoff (Mar 4, 2026, 2 slides); Q2 All-Hands (Mar 4, 2026, Projects); Board Prep (Mar 1, 2026); Frontend Codegen Review (Mar 1, 2026, Projects); Project Pitch (Feb 23, 2026); Creative Review (Feb 22, 2026); [Draft] Autonomous Agents (Feb 19, 2026, Projects); S26 City Guide (Feb 18, 2026); Workshop Deck (Feb 17, 2026); Healthcare Startup Criteria (Feb 11, 2026); Workshop Slides (Jan 30, 2026); Signal Check (Jan 26, 2026); Agent Systems Talk (Jan 24, 2026); Product Pitch (Jan 23, 2026); S25 City Guide (Jan 14, 2026). Slide counts for the other 15 decks were not collected, and folders for 16 decks were not checked.",
+ "rubric": [
+  {
+   "criterion": "Browse all presentations in CloudSlides and capture each one's last-modified date and slide count",
+   "satisfied": false,
+   "reasoning": "The agent browsed the CloudSlides list and captured last-modified dates for presentations visible in the list view (Product Demo Deck Mar 5, Design System Update Mar 5, All Hands Storyline Mar 5, Conference Practice Deck Mar 5, Team Update Mar 5, Partner Kickoff Mar 4, and a few more visible after scrolling). However, slide counts were only captured for a handful of presentations by opening them individually (Product Demo, Design System, All Hands, Conference Practice Deck, Team Update, Partner Kickoff, Board Prep). The agent explicitly acknowledged it only collected 'page 1 of 4' of slide counts, meaning the majority of presentations were not fully examined. Many presentations listed in the final answer (Workshop Slides, Signal Check, Agent Systems Talk, Product Pitch, S25 City Guide, etc.) had no slide counts reported."
+  },
+  {
+   "criterion": "Check CloudDrive folder organization for presentations",
+   "satisfied": false,
+   "reasoning": "The agent launched CloudDrive and viewed the top-level folder structure (Projects, Design Sprint, Research, Product Strategy, Ops Review, Shared Assets folders visible). It also opened the Projects folder and saw some presentation files listed there (Conference Practice Deck, Team Update). However, it did not systematically check all folders to map which presentations belong to which folders. The agent only partially explored the Projects folder and did not check Design Sprint, Research, Product Strategy, Ops Review, or Shared Assets folders for presentations."
+  },
+  {
+   "criterion": "Read TeamChat #eng-mobile and #launch-war-room for mentions of specific presentations",
+   "satisfied": false,
+   "reasoning": "The agent opened both #eng-mobile and #launch-war-room channels. In #eng-mobile, it scrolled through some messages but the visible content showed only technical discussions (biometric auth, build time optimization, accessibility audit) with no presentation mentions. In #launch-war-room, it saw rollout metrics discussions with no presentation mentions. The agent did not scroll to the top of either channel to see all messages, and did not use search within these specific channels to find presentation mentions. The agent's final answer correctly noted no presentation mentions in these channels, but the evidence of thorough reading is weak since the agent didn't scroll through the full history."
+  },
+  {
+   "criterion": "Review related documents in CloudDocs for presentation references",
+   "satisfied": false,
+   "reasoning": "The agent launched CloudDocs and searched for 'deck' and 'slide' keywords, both returning 'No matching documents.' However, the agent did not open individual documents to check their content for presentation references. The CloudDocs home screen showed documents like Feature Spec Draft, Q2 Roadmap, Mobile Launch Plan, Compute Access Runbook - the agent did not open any of these to check if they reference presentations. The search approach was reasonable but incomplete."
+  },
+  {
+   "criterion": "Bucket each presentation into recently-worked / stale / actively-discussed using the \u226414-day modification rule and cross-reference evidence",
+   "satisfied": false,
+   "reasoning": "The agent attempted to bucket presentations but the analysis was incomplete. It correctly identified that all presentations were modified in early March 2026 (with the most recent being Mar 5, 2026), and if the current date is around Oct 2026, all would be stale. However, the agent did not complete the cross-referencing step properly - it didn't thoroughly read #eng-mobile and #launch-war-room, and didn't open CloudDocs documents to check for references. The bucketing was done with incomplete evidence."
+  },
+  {
+   "criterion": "Report each presentation with its bucket and supporting evidence (modified date, slide count, referencing channel/doc)",
+   "satisfied": false,
+   "reasoning": "The final report was incomplete. Slide counts were missing for most presentations. The agent acknowledged this gap explicitly ('slide counts for the other 15 decks were not collected'). The folder information was incomplete for most presentations. The report listed presentations without complete evidence for each one. While the agent did provide some evidence for the presentations it did examine (modified dates, some slide counts, folder info for a few), the report was far from comprehensive for all presentations in the portfolio."
+  }
+ ],
+ "judge": "The agent made a reasonable attempt to complete the task but fell significantly short of the full requirements. It browsed some presentations in CloudSlides and captured last-modified dates for those visible in the list view, but did not systematically capture slide counts for all presentations (only opened a few). It checked CloudDrive folder organization partially. It read #eng-mobile and #launch-war-room but did not scroll through the full history of either channel. It searched CloudDocs but only with keyword searches ('deck', 'slide') rather than opening individual documents to check for presentation references. The agent never completed browsing all presentations (acknowledged it only saw 'page 1 of 4' of slide counts), never fully scrolled #eng-mobile to see all messages, and the final report was incomplete and contained inaccuracies (e.g., claiming 21 presentations when the list showed fewer were fully examined, incorrect slide counts for many presentations, and incomplete folder mapping).",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (369, 180) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (123, 181) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (143, 241) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (78, 266) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (345, 95) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (201, 437) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 80,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (201,786)->(201,88) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0014.webp"
+  },
+  {
+   "n": 8,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.teamchat"
+   },
+   "result": "launched com.iosworld.benchmark.teamchat",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0016.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (80, 594) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0018.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 60,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (201,175)->(201,699) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0020.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 250,
+    "x2": 200,
+    "y2": 640,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,250)->(200,640) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0022.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 89) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0024.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "20,62,60,108"
+    }
+   },
+   "result": "tapped at (40, 85) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0026.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "tapped at (203, 360) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0028.webp"
+  },
+  {
+   "n": 15,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 600,
+    "x2": 200,
+    "y2": 220,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,600)->(200,220) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0030.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "20,62,60,108"
+    }
+   },
+   "result": "tapped at (40, 85) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0033.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "tab_search"
+    }
+   },
+   "result": "tap failed: error: no element matched (id=tab_search)",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0033.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "326,768,390,832"
+    }
+   },
+   "result": "tapped at (358, 800) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0035.webp"
+  },
+  {
+   "n": 19,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 9
+    },
+    "text": "deck\n"
+   },
+   "result": "typed 'deck\\n'; verified: false; field value now 'deck'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0038.webp"
+  },
+  {
+   "n": 20,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 680,
+    "x2": 200,
+    "y2": 300,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (200,680)->(200,300) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0040.webp"
+  },
+  {
+   "n": 21,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clouddrive"
+   },
+   "result": "launched com.iosworld.benchmark.clouddrive",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0042.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "tapped at (108, 300) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0044.webp"
+  },
+  {
+   "n": 23,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clouddocs"
+   },
+   "result": "launched com.iosworld.benchmark.clouddocs",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0046.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (151, 176) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0048.webp"
+  },
+  {
+   "n": 25,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "deck\n"
+   },
+   "result": "typed 'deck\\n'; verified: false; field value now 'Search documents'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0050.webp"
+  },
+  {
+   "n": 26,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "deck"
+   },
+   "result": "typed 'deck'; verified: true; field value now 'deck'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0053.webp"
+  },
+  {
+   "n": 27,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "sent 4 deletes; cleared: false; field value now 'Search documents'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0056.webp"
+  },
+  {
+   "n": 28,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "slide"
+   },
+   "result": "typed 'slide'; verified: true; field value now 'slide'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0058.webp"
+  },
+  {
+   "n": 29,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cloudslides"
+   },
+   "result": "launched com.iosworld.benchmark.cloudslides",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0060.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (52, 95) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0063.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "file_row_slides_design_system_update"
+    }
+   },
+   "result": "tapped at (78, 273) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0063.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (52, 95) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0066.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "file_row_slides_all_hands_storyline"
+    }
+   },
+   "result": "tapped at (78, 392) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0066.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (52, 95) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0069.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "file_row_slides_conference_practice_deck"
+    }
+   },
+   "result": "tapped at (78, 511) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0069.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (99, 94) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0071.webp"
+  },
+  {
+   "n": 37,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (357, 86) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0075.webp"
+  },
+  {
+   "n": 38,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chevron.left"
+    }
+   },
+   "result": "tapped at (52, 95) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0075.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "file_row_slides_team_update"
+    }
+   },
+   "result": "tapped at (78, 630) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0075.webp"
+  },
+  {
+   "n": 40,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (52, 95) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0078.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "file_row_slides_partner_kickoff"
+    }
+   },
+   "result": "tapped at (78, 742) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0078.webp"
+  },
+  {
+   "n": 42,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (52, 95) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0081.webp"
+  },
+  {
+   "n": 43,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 700,
+    "x2": 200,
+    "y2": 300,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,700)->(200,300) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0081.webp"
+  },
+  {
+   "n": 44,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "file_row_slides_board_prep"
+    }
+   },
+   "result": "tapped at (78, 138) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-045/0083.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "slide counts of presentations",
+   "verdict": "proven",
+   "claim": "page 1 of 4",
+   "frame": 71
+  },
+  {
+   "type": "KNOW",
+   "text": "CloudDrive folder organization of presentations",
+   "verdict": "proven",
+   "claim": "Projects",
+   "frame": 42
+  },
+  {
+   "type": "KNOW",
+   "text": "TeamChat #eng-mobile mentions of presentations",
+   "verdict": "proven",
+   "claim": "Quarterly business review deck is 80% done. Need finance inputs by Thursday.",
+   "frame": 40
+  },
+  {
+   "type": "KNOW",
+   "text": "TeamChat #launch-war-room mentions of presentations",
+   "verdict": "proven",
+   "claim": "Expanding to 10%. Will hold here for one hour before the next increment. @jordana",
+   "frame": 30
+  },
+  {
+   "type": "KNOW",
+   "text": "CloudDocs documents referencing presentations",
+   "verdict": "proven",
+   "claim": "No matching documents",
+   "frame": 58
+  },
+  {
+   "type": "SAY",
+   "text": "bucket assignment for each presentation with evidence",
+   "verdict": "proven",
+   "claim": "All 21 presentations are stale: none was modified after Mar 5, 2026 (over 2 weeks before Oct 12, 2026), and none is named in #eng-mobile, #launch-war-room or CloudDocs.",
+   "frame": 83
+  },
+  {
+   "type": "KNOW",
+   "text": "CloudSlides presentation list with last-modified dates",
+   "verdict": "proven",
+   "claim": "Mar 5, 2026 at 3:45 AM",
+   "frame": 7
+  }
+ ]
+}

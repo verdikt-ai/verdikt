@@ -1,0 +1,94 @@
+{
+ "id": "ExpenseDeleteSingle",
+ "app": "Pro Expense",
+ "goal": "Delete the following expenses from pro expense: Rental Income.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 31.8,
+ "cost": 0.103968,
+ "answer": null,
+ "summary": "I deleted the \"Rental Income\" expense from Pro Expense. It was the only entry in the full expense log (240.71 USD, dated Oct 9, 2023, note \"Paid by card\"). After I confirmed the delete, the log shows \"No expense logs.\"",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Pro Expense"
+   },
+   "result": "opened Pro Expense",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteSingle/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Rental Income\" absent"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteSingle/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 14
+   },
+   "result": "tapped (540,1906)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteSingle/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (971,278)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteSingle/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (971,1660)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteSingle/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (540,2221)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Rental Income\" absent -> absent",
+   "frame": "media/run8-opus-contracts/ExpenseDeleteSingle/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteSingle/006.webp"
+  }
+ ]
+}

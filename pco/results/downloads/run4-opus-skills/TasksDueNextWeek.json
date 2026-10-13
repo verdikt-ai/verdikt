@@ -1,0 +1,106 @@
+{
+ "id": "TasksDueNextWeek",
+ "app": "Tasks",
+ "goal": "How many tasks do I have due next week in Tasks app? Assume the week starts from Monday. Express your answer as a single integer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 8,
+ "budget": 10,
+ "seconds": 49.2,
+ "cost": 0.22417060000000003,
+ "answer": "6",
+ "summary": "I answered **6**, but this may be an undercount. It covers only the unfinished tasks, and I couldn't check the dates on the completed ones.\n\nNext week is Mon Oct 16 \u2013 Sun Oct 22. These unfinished tasks are due then:\n1. Follow up on support tickets (Tmrw, Oct 16)\n2. Plan family reunion (Tue)\n3. Book flights for conference (Wed)\n4. Research market trends (Fri)\n5. Send report to manager (Sat)\n6. Organize files and folders (Oct 22)\n\nThere are also 9 completed tasks. One is due today, and the other 8 show only a weekday (Mon, Tue, Wed, Thu, Fri). The list doesn't say whether those weekdays are this past week or next week. I tried to open one to see its full date, but it didn't open. Tapping its date opened a location picker instead, and the app was left on that screen. If those 8 fall next week and completed tasks count, the answer could be as high as 14.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Tasks"
+   },
+   "result": "opened Tasks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/TasksDueNextWeek/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/TasksDueNextWeek/001.webp"
+  },
+  {
+   "n": 3,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/TasksDueNextWeek/002.webp"
+  },
+  {
+   "n": 4,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/TasksDueNextWeek/003.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 29
+   },
+   "result": "tapped (546,1430)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/TasksDueNextWeek/004.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 31
+   },
+   "result": "tapped (1002,1453)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/TasksDueNextWeek/005.webp"
+  },
+  {
+   "n": 7,
+   "tool": "answer",
+   "args": {
+    "text": "6"
+   },
+   "result": "answer recorded: \"6\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/TasksDueNextWeek/006.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/TasksDueNextWeek/006.webp"
+  }
+ ]
+}

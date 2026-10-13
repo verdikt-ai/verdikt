@@ -1,0 +1,605 @@
+{
+ "id": "mem-010",
+ "app": "notes, mail, clock, clouddocs",
+ "category": "memory",
+ "goal": "Go through my Notes for any upcoming events or deadlines and cross-reference with Calendar-related emails in Mail. Then set alarms or timers in the Clock app for any upcoming deadlines. Let me know what events and deadlines you found and confirm the alarms were set. Please write up a summary in CloudDocs in a new document.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 43,
+ "budget": 50,
+ "seconds": 260.5,
+ "cost": 1.0496,
+ "answer": "Events and deadlines found: Project Alpha meeting Oct 14 at 10am; Portland trip Oct 20; order Mom's birthday gift by Oct 21; Mom's birthday Oct 28; v3 API migration deadline Oct 31; design review moved to Wednesday at 2 PM; Q2 planning kickoff Thursday at 10 AM; Blair/Jordan weekly sync updated with a room change. Alarms set: 9:30 AM \"Project Alpha meeting Oct 14 10am\", 9:52 AM \"Order Mom's birthday gift - deadline Oct 21\", 9:53 AM \"Ship v3 API migration - deadline Oct 31\". The summary is in a new CloudDocs document titled \"Upcoming Events and Deadlines Summary\".; upcoming events/deadlines in Notes: Ship v3 API migration (deadline: October 31); calendar-related emails in Mail: Invitation: Q2 planning kickoff; summary of events and deadlines found: Notes: Project Alpha meeting Oct 14 10am, Portland trip Oct 20, gift order by Oct 21, Mom's birthday Oct 28, v3 API migration deadline Oct 31. Mail: design review moved to Wednesday 2 PM, Q2 planning kickoff Thursday 10 AM, Blair/Jordan weekly sync updated.",
+ "summary": " three alarms, which are switched on in your Clock list, and wrote a summary in a new CloudDocs document.\n\n**From Notes:**\n- **Oct 14, 10 AM:** the next Project Alpha meeting.\n- **Oct 20:** your Portland trip.\n- **Oct 21:** last day to order Mom's birthday gift.\n- **Oct 28:** Mom's birthday.\n- **Oct 31:** deadline to ship the v3 API migration.\n\n**From Mail:**\n- **Design review:** moved from Tuesday to Wednesday at 2 PM. Your standup note still lists it as \"Design review at 2pm,\" so it's now a day later.\n- **Q2 planning kickoff:** Thursday (Oct 15) at 10 AM, an invitation from Mina Shah.\n- **Blair/Jordan weekly sync:** updated with a room change and a shorter agenda. I only saw the email preview, so I don't have its date or time.\n\n**Alarms:**\n- **9:30 AM:** \"Project Alpha meeting Oct 14 10am\"\n- **9:52 AM:** \"Order Mom's birthday gift - deadline Oct 21\"\n- **9:53 AM:** \"Ship v3 API migration - deadline Oct 31\"\n\nThings to fix:\n- **Alarms ring once, not on the deadline day:** they repeat \"Never\" and the alarm screen has no date option, so each will go off at its next morning time. Only the date in the label ties it to the deadline.\n- **Odd alarm times:** the 9:52 and 9:53 times are leftovers from the time picker, not meaningful times. You may want to change them.\n- **Stray text in the document:** it starts with \"Start typing here.\" because the placeholder text got kept. You'll need to delete it by hand.\n\nANSWER: Events and deadlines found: Project Alpha meeting Oct 14 at 10am; Portland trip Oct 20; order Mom's birthday gift by Oct 21; Mom's birthday Oct 28; v3 API migration deadline Oct 31; design review moved to Wednesday at 2 PM; Q2 planning kickoff Thursday at 10 AM; Blair/Jordan weekly sync updated with a room change. Alarms set: 9:30 AM \"Project Alpha meeting Oct 14 10am\", 9:52 AM \"Order Mom's birthday gift - deadline Oct 21\", 9:53 AM \"Ship v3 API migration - deadline Oct 31\". The summary is in a new CloudDocs document titled \"Upcoming Events and Deadlines Summary\".",
+ "rubric": [
+  {
+   "criterion": "Open Notes and search for any upcoming events or deadlines",
+   "satisfied": true,
+   "reasoning": "The agent opened Notes (All iCloud), browsed through multiple notes including Team Standup Notes, Travel Packing List, Gift Ideas - Mom's Birthday, Project Alpha - Kickoff, and Q1 2026 Goals, reading the content of each to identify upcoming events and deadlines."
+  },
+  {
+   "criterion": "Open Mail and check the updates section for additional upcoming events this week",
+   "satisfied": true,
+   "reasoning": "The agent opened Mail and reviewed calendar-related emails including 'Updated invitation: Blair/Jordan weekly sync', 'Invitation: Q2 planning kickoff' (from Mina Shah), and 'Moved: Design review to Wednesday' (from Riley Brooks). The agent read the content of these emails."
+  },
+  {
+   "criterion": "Cross-reference Notes and Mail to build a complete list of events and deadlines",
+   "satisfied": true,
+   "reasoning": "The agent identified events from both Notes (Project Alpha meeting Oct 14, Portland trip Oct 20, gift order by Oct 21, Mom's birthday Oct 28, v3 API migration deadline Oct 31) and Mail (design review moved to Wednesday 2 PM, Q2 planning kickoff Thursday 10 AM, Blair/Jordan weekly sync updated) and combined them in the CloudDocs summary and final answer."
+  },
+  {
+   "criterion": "Set alarms or timers in Clock app for upcoming deadlines (where feasible within 24 hours)",
+   "satisfied": true,
+   "reasoning": "The agent opened the Clock app and successfully set three alarms: 9:30 AM 'Project Alpha meeting Oct 14 10am', 9:52 AM 'Order Mom's birthday gift - deadline Oct 21', and 9:53 AM 'Ship v3 API migration - deadline Oct 31'. All three are visible in the alarms list screenshot (step 40)."
+  },
+  {
+   "criterion": "Open CloudDocs and create a new document summarizing all events and deadlines found",
+   "satisfied": true,
+   "reasoning": "The agent launched CloudDocs, created a new document, and typed a comprehensive summary including events from Notes and Mail, as well as the alarms set. The document content is visible in screenshot 43 showing 'Upcoming Events and Deadlines Summary' with details about Notes events, Mail calendar events, and alarms set."
+  },
+  {
+   "criterion": "Report all events and deadlines found",
+   "satisfied": true,
+   "reasoning": "The agent's final answer comprehensively lists all events and deadlines found: Project Alpha meeting Oct 14 at 10am, Portland trip Oct 20, order Mom's birthday gift by Oct 21, Mom's birthday Oct 28, v3 API migration deadline Oct 31, design review moved to Wednesday at 2 PM, Q2 planning kickoff Thursday at 10 AM, and Blair/Jordan weekly sync updated with room change."
+  },
+  {
+   "criterion": "Confirm the alarms were set and the CloudDocs summary was created",
+   "satisfied": true,
+   "reasoning": "The agent confirmed in its final answer that three alarms were set (9:30 AM 'Project Alpha meeting Oct 14 10am', 9:52 AM 'Order Mom's birthday gift - deadline Oct 21', 9:53 AM 'Ship v3 API migration - deadline Oct 31') and that a CloudDocs document titled 'Upcoming Events and Deadlines Summary' was created. Screenshots confirm both the alarms list and the CloudDocs document content."
+  }
+ ],
+ "judge": "The agent successfully completed all major components of the task: (1) opened Notes and reviewed multiple notes for upcoming events/deadlines, (2) opened Mail and checked calendar-related emails, (3) cross-referenced both sources to build a complete list, (4) set alarms in Clock app for key deadlines, (5) created a new CloudDocs document with a summary, and (6) reported all findings in the final answer. The alarms list screenshot (step 40 final state) clearly shows three new alarms: 9:30 'Project Alpha meeting Oct 14 10am', 9:52 'Order Mom's birthday gift - deadline Oct 21', and 9:53 'Ship v3 API migration - deadline Oct 31'. The CloudDocs document was created with the summary content visible in screenshot 43. The agent did a reasonable job cross-referencing Notes and Mail content.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "notes_folder_all"
+    }
+   },
+   "result": "tapped at (201, 294) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (201, 245) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0009.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "note_row_travel_packing_list"
+    }
+   },
+   "result": "tapped at (201, 527) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "note_row_gift_ideas_-_mom's_birthday"
+    }
+   },
+   "result": "tapped at (201, 677) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0012.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0015.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "note_row_project_alpha_-_kickoff"
+    }
+   },
+   "result": "tapped at (201, 503) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0017.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0020.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "note_row_q1_2026_goals"
+    }
+   },
+   "result": "tapped at (201, 428) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0020.webp"
+  },
+  {
+   "n": 12,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.mail"
+   },
+   "result": "launched com.iosworld.benchmark.mail",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0022.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mail_row_updated_invitation_blairjordan_weekly_sy"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 874) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0024.webp"
+  },
+  {
+   "n": 14,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0026.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mail_row_updated_invitation_blairjordan_weekly_sy"
+    }
+   },
+   "result": "tapped at (201, 248) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0028.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mail_row_invitation_q2_planning_kickoff"
+    }
+   },
+   "result": "tapped at (201, 333) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0030.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0033.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mail_row_moved_design_review_to_wednesday"
+    }
+   },
+   "result": "tapped at (201, 429) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0033.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0036.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mail_row_updated_invitation_blairjordan_weekly_sy"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 237) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0036.webp"
+  },
+  {
+   "n": 21,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clock"
+   },
+   "result": "launched com.iosworld.benchmark.clock",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0038.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "130,800,180,840"
+    }
+   },
+   "result": "tapped at (155, 820) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0041.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "345,65,390,105"
+    }
+   },
+   "result": "tapped at (367, 85) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0043.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "120,207,145,227"
+    }
+   },
+   "result": "tapped at (132, 217) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0047.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "245,207,275,227"
+    }
+   },
+   "result": "tapped at (260, 217) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0047.webp"
+  },
+  {
+   "n": 26,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Order Mom's birthday gift - deadline Oct 21"
+   },
+   "result": "typed \"Order Mom's birthday gift - deadline Oct 21\"; verified: false; field value now 'Order Mom\u2019s birthday gift - deadline Oct 21'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0051.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "320,80,385,120"
+    }
+   },
+   "result": "tapped at (352, 100) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0051.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "345,65,390,105"
+    }
+   },
+   "result": "tapped at (367, 85) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0053.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "120,217,145,237"
+    }
+   },
+   "result": "tapped at (132, 227) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0056.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "245,217,275,237"
+    }
+   },
+   "result": "tapped at (260, 227) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0056.webp"
+  },
+  {
+   "n": 31,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Ship v3 API migration - deadline Oct 31"
+   },
+   "result": "typed 'Ship v3 API migration - deadline Oct 31'; verified: true; field value now 'Ship v3 API migration - deadline Oct 31'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0058.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "320,80,385,120"
+    }
+   },
+   "result": "tapped at (352, 100) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0061.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "345,65,390,105"
+    }
+   },
+   "result": "tapped at (367, 85) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0061.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "120,236,145,256"
+    }
+   },
+   "result": "tapped at (132, 246) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0063.webp"
+  },
+  {
+   "n": 35,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "930"
+   },
+   "result": "typed '930'; verified: false; field value now 'Label'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0067.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "245,207,275,227"
+    }
+   },
+   "result": "tapped at (260, 217) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0067.webp"
+  },
+  {
+   "n": 37,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Project Alpha meeting Oct 14 10am"
+   },
+   "result": "typed 'Project Alpha meeting Oct 14 10am'; verified: true; field value now 'Project Alpha meeting Oct 14 10am'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0069.webp"
+  },
+  {
+   "n": 38,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "245,207,275,227"
+    }
+   },
+   "result": "tapped at (260, 217) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0071.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "320,80,385,120"
+    }
+   },
+   "result": "tapped at (352, 100) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0073.webp"
+  },
+  {
+   "n": 40,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clouddocs"
+   },
+   "result": "launched com.iosworld.benchmark.clouddocs",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0075.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (352, 760) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0077.webp"
+  },
+  {
+   "n": 42,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Upcoming Events and Deadlines Summary\nFrom Notes: Project Alpha next meeting Oct 14 at 10am; Portland trip Oct 20; order Mom's birthday gift by Oct 21; Mom's birthday Oct 28; Ship v3 API migration deadline Oct 31.\nFrom Mail (calendar): Design review moved from Tuesday to Wednesday at 2 PM (matches standup note design review at 2pm); Q2 planning kickoff Thursday at 10 AM (Mina Shah); Blair/Jordan weekly sync updated with room change and shorter agenda.\nAlarms set in Clock: 9:30 AM Project Alpha meeting Oct 14 10am; 9:52 AM Order Mom's birthday gift - deadline Oct 21; 9:53 AM Ship v3 API migration - deadline Oct 31."
+   },
+   "result": "typed \"Upcoming Events and Deadlines Summary\\nFrom Notes: Project Alpha next meeting Oct 14 at 10am; Portland trip Oct 20; order Mom's birthday gift by Oct 21; Mom's birthday Oct 28; Ship v3 API migration deadline Oct 31.\\nFrom Mail (calendar): Design review moved from Tuesday to Wednesday at 2 PM (matches standup note design review at 2pm); Q2 planning kickoff Thursday at 10 AM (Mina Shah); Blair/Jordan weekly sync updated with room change and shorter agenda.\\nAlarms set in Clock: 9:30 AM Project Alpha meeting Oct 14 10am; 9:52 AM Order Mom's birthday gift - deadline Oct 21; 9:53 AM Ship v3 API migration - deadline Oct 31.\"; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0081.webp"
+  },
+  {
+   "n": 43,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "checkmark"
+    }
+   },
+   "result": "tapped at (31, 147) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mem-010/0081.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "upcoming events/deadlines in Notes",
+   "verdict": "proven",
+   "claim": "Ship v3 API migration (deadline: October 31)",
+   "frame": 20
+  },
+  {
+   "type": "KNOW",
+   "text": "calendar-related emails in Mail",
+   "verdict": "proven",
+   "claim": "Invitation: Q2 planning kickoff",
+   "frame": 36
+  },
+  {
+   "type": "DO",
+   "text": "set alarms for upcoming deadlines in Clock",
+   "verdict": "proven",
+   "claim": "Ship v3 API migration - deadline Oct 31",
+   "frame": 73
+  },
+  {
+   "type": "DO",
+   "text": "create new CloudDocs document with summary",
+   "verdict": "proven",
+   "claim": "Upcoming Events and Deadlines Summary",
+   "frame": 81
+  },
+  {
+   "type": "SAY",
+   "text": "summary of events and deadlines found",
+   "verdict": "proven",
+   "claim": "Notes: Project Alpha meeting Oct 14 10am, Portland trip Oct 20, gift order by Oct 21, Mom's birthday Oct 28, v3 API migration deadline Oct 31. Mail: design review moved to Wednesday 2 PM, Q2 planning kickoff Thursday 10 AM, Blair/Jordan weekly sync updated.",
+   "frame": 81
+  }
+ ]
+}

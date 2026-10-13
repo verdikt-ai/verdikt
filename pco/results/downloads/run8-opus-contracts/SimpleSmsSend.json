@@ -1,0 +1,111 @@
+{
+ "id": "SimpleSmsSend",
+ "app": "Simple Sms",
+ "goal": "Send a text message using Simple SMS Messenger to +16597910719 with message: Beauty is in the eye of the beholder.",
+ "success": true,
+ "score": 1.0,
+ "steps": 7,
+ "budget": 12,
+ "seconds": 62.1,
+ "cost": 0.12965519999999997,
+ "answer": null,
+ "summary": "I sent \"Beauty is in the eye of the beholder.\" to +16597910719 using Simple SMS Messenger. The message now appears in the conversation with that number, timestamped 15:34, with a checkmark under it.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple SMS Messenger"
+   },
+   "result": "opened Simple SMS Messenger",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSend/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Beauty is in the eye of the beholder.\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSend/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2221)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSend/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "+16597910719",
+    "index": 2,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"+16597910719\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSend/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (1017,294)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSend/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "Beauty is in the eye of the beholder.",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Beauty is in the eye of the beholder.\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSend/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (1006,2148)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Type a message\u2026\" visible -> TextField \"Type a message\u2026\" value=\"Type a message\u2026\" [7]",
+   "frame": "media/run8-opus-contracts/SimpleSmsSend/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsSend/007.webp"
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "id": "NotesIsTodo",
+ "app": "Joplin",
+ "goal": "Is the note titled 'To-Do List' in the Joplin app marked as a todo item? Respond with either 'True' if it is a todo or 'False' if not.",
+ "success": true,
+ "score": 1.0,
+ "steps": 4,
+ "budget": 10,
+ "seconds": 45.7,
+ "cost": 0.06676099999999999,
+ "answer": "True",
+ "summary": "**True.** The 'To-Do List' note in Joplin is marked as a todo. When I opened it, its title had a checkbox, and Joplin only shows that for todo items. The checkbox is unticked, so it's an open todo.\n\nThe tool didn't give that checkbox a name I could check against, so I backed the answer only with the note's title on screen. The todo status itself comes from looking at the screenshot.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Joplin"
+   },
+   "result": "opened Joplin",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/NotesIsTodo/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/NotesIsTodo/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "x": 300,
+    "y": 1042
+   },
+   "result": "tapped (300,1042)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/NotesIsTodo/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "answer",
+   "args": {
+    "text": "True",
+    "evidence": [
+     "TextField \"Add title\" value \"To-Do List\""
+    ]
+   },
+   "result": "answer recorded: \"True\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/NotesIsTodo/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/NotesIsTodo/003.webp"
+  }
+ ]
+}

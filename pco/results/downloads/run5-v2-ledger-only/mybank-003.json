@@ -1,0 +1,101 @@
+{
+ "id": "mybank-003",
+ "app": "mybank",
+ "category": "single_app",
+ "goal": "Send $50 via Zelle to Maya Patel in MyBank and confirm the payment was sent.",
+ "success": false,
+ "score": 0.8571,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 56.7,
+ "cost": 0.2888,
+ "answer": null,
+ "summary": "I sent $50 to Maya Patel with Zelle in MyBank, and the app confirmed it with a \"Zelle sent.\" message.\n\n- **Payment:** It went from Total Checking (...6645). Maya Patel was already picked as the recipient, so I only entered the amount and left the memo blank.\n- **Proof:** The payment now shows in Recent activity as \"Maya Patel \u2026 Oct 13, 2026, -$50.00\", and the checking balance dropped from $15,621.00 to $15,571.00.\n- **Something to check:** The Freedom Unlimited credit card balance also went up, from $4,588.98 to $4,623.97 (+$34.99). This payment shouldn't affect the card, and the change matches the earlier $34.99 MegaMart charge on it, so it's worth checking the card's activity.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open MyBank app and navigate to Pay & Transfer",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the MyBank app is already open on the home screen. The agent navigated to Zelle via the 'Send | Zelle\u00ae' chip on the home screen, which is a valid path within the app."
+  },
+  {
+   "criterion": "Select Zelle as the payment method",
+   "satisfied": true,
+   "reasoning": "The agent tapped the 'Send | Zelle\u00ae' button in Step 1, and Screenshot 2 shows the 'Send with Zelle' screen was opened successfully."
+  },
+  {
+   "criterion": "Choose Maya Patel as the recipient",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the 'Send to' field already has 'Maya Patel' selected as the recipient. The recipient was pre-selected or already chosen before the agent's actions."
+  },
+  {
+   "criterion": "Enter $50 as the amount",
+   "satisfied": true,
+   "reasoning": "In Step 2, the agent typed '50' into the amount field. Screenshot 3 confirms the amount field shows '50'."
+  },
+  {
+   "criterion": "Add a memo or note for the payment",
+   "satisfied": false,
+   "reasoning": "The agent did not add any memo or note. The 'Memo (optional)' field remained empty throughout the trajectory. However, the task goal did not explicitly require a memo."
+  },
+  {
+   "criterion": "Send the payment",
+   "satisfied": true,
+   "reasoning": "In Step 3, the agent tapped the 'Send now' button. The final screenshot (Screenshot 4) shows the payment was processed."
+  },
+  {
+   "criterion": "Confirm the payment was sent successfully",
+   "satisfied": true,
+   "reasoning": "The final screenshot shows a green banner at the top reading 'Zelle sent.' confirming the payment was successfully sent. Additionally, the checking account balance decreased from $15,621.00 to $15,571.00, a reduction of exactly $50, further confirming the transaction."
+  }
+ ],
+ "judge": "The agent successfully completed the task of sending $50 via Zelle to Maya Patel in MyBank. The trajectory shows: the MyBank app was already open, the agent tapped 'Send | Zelle\u00ae' to navigate to Zelle, the Zelle form already had Maya Patel selected as recipient, the agent entered $50 as the amount, and tapped 'Send now'. The final screenshot shows a green 'Zelle sent.' confirmation banner, and the checking account balance decreased by $50 (from $15,621.00 to $15,571.00), confirming the payment was sent. The only criterion not met was adding a memo, which was optional and not required by the task goal.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_chip_zelle"
+    }
+   },
+   "result": "tapped at (129, 201) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mybank-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "zelle_amount_field"
+    },
+    "text": "50"
+   },
+   "result": "typed '50'; verified: true; field value now '50'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mybank-003/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "zelle_send_button"
+    }
+   },
+   "result": "tapped at (201, 551) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mybank-003/0008.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Send $50 via Zelle to Maya Patel and confirm it was sent",
+   "verdict": "proven",
+   "claim": "Zelle sent.",
+   "frame": 8
+  }
+ ]
+}

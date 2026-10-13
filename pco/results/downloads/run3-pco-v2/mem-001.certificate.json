@@ -1,0 +1,60 @@
+{
+ "rounds": 0,
+ "obligations": 5,
+ "proven": 5,
+ "unproven": 0,
+ "absent": 0,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: who sends the recurring monthly payment",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Arnav Srikanth",
+   "evidence_frame": 22,
+   "explanation": "SplitPay recent transactions list shows \"Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d\" (also rent february/january/december in feed).",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: amount of the recurring payment",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "+$650.00",
+   "evidence_frame": 22,
+   "explanation": "SplitPay recent transactions list shows \"Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "IF: this month's (October) payment has not arrived yet",
+   "type": "IF",
+   "status": "pass",
+   "claim": "Avalon SF Apartments, February rent, Sep 06, 2026, -$2,850.00, Total Checking (...6645)",
+   "evidence_frame": 20,
+   "explanation": "MyBank 'rent' search shows only outgoing Avalon SF Apartments rows such as \"Avalon SF Apartments, February rent, Sep 06, 2026, -$2,850.00\" and no incoming payment from Arnav; SplitPay's latest Arnav rent was 15d ago (Sep 27), so nothing in October yet.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: send payment request for this month's payment to the sender",
+   "type": "DO",
+   "status": "pass",
+   "claim": "You requested Arnav Srikanth",
+   "evidence_frame": 36,
+   "explanation": "SplitPay Awaiting payment section now shows \"You requested Arnav Srikanth\" \"$650.00\" \"1m \u00b7 rent april\"; pending count went from 6 to 7.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "SAY: recurring pattern (who, amount, frequency)",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "Arnav Srikanth pays you $650.00 monthly for rent via SplitPay (rent december, january, february, march); a $650 request was sent for this month.",
+   "evidence_frame": 36,
+   "explanation": "Feed shows Arnav Srikanth paying rent december, january, february, march, each about a month apart; screen shows \"Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d\".",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

@@ -1,0 +1,175 @@
+{
+ "id": "scorezone-003",
+ "app": "scorezone",
+ "category": "single_app",
+ "goal": "Read a top headline article from the ScoreZone home feed, then check the Scores tab to see if the team mentioned in the article has a game scheduled today. What's the headline, the team name, and do they have a game today?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 7,
+ "budget": 50,
+ "seconds": 68.2,
+ "cost": 0.4773,
+ "answer": "Headline: \"Coventry put four past Newcastle to climb out of relegation zone\"; Team: Coventry City; Game today: Yes. Coventry played Newcastle today and won 4-1, and the game is final.; whether team has a game today: C, COV, (11-12)",
+ "summary": "Yes, Coventry City has a game today (Oct 12, 2026), and it's already over.\n\n- **Headline:** The top story in the ScoreZone home feed is \"Coventry put four past Newcastle to climb out of relegation zone.\" The article says Coventry City beat Newcastle United 4-1 for their first Premier League home win in 25 years.\n- **Team:** Coventry City. Newcastle United is also mentioned, as their opponent.\n- **Game today:** The Scores tab, under EPL for today, shows one game: Newcastle (NEW) 1, Coventry (COV) 4, marked final (FT). This is the same match the article covers.\n\nANSWER: Headline: \"Coventry put four past Newcastle to climb out of relegation zone\"; Team: Coventry City; Game today: Yes. Coventry played Newcastle today and won 4-1, and the game is final.",
+ "rubric": [
+  {
+   "criterion": "Open ScoreZone app and navigate to the Home feed",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the ScoreZone app open on the Home feed with the Home tab selected at the bottom."
+  },
+  {
+   "criterion": "Browse top headlines on the home feed",
+   "satisfied": true,
+   "reasoning": "Screenshots 2 and 3 show the agent scrolling through the home feed and viewing top headlines including the Coventry/Newcastle article in the Top Stories section."
+  },
+  {
+   "criterion": "Tap a top headline article to read the full content",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows the agent tapped the 'Coventry put four past Newcastle to climb out of relegation zone' article and the full story detail view is displayed with the article content."
+  },
+  {
+   "criterion": "Identify and note the team mentioned in the article",
+   "satisfied": true,
+   "reasoning": "The article detail in Screenshot 4 clearly mentions 'Coventry City picked up their first home victory in the Premier League for 25 years with an emphatic 4-1 win over Newcastle United on Monday.' The agent identified Coventry City as the team."
+  },
+  {
+   "criterion": "Navigate to the Scores tab",
+   "satisfied": true,
+   "reasoning": "Screenshots 6 and 7 show the agent navigated to the Scores tab, which is highlighted/selected at the bottom of the screen."
+  },
+  {
+   "criterion": "Search for the mentioned team's game schedule for today",
+   "satisfied": true,
+   "reasoning": "Screenshot 8 shows the agent tapped the EPL chip in the Scores tab and found the Premier League scoreboard showing COV (Coventry) vs NEW (Newcastle) with a final score of 4-1 on Oct 12, 2026."
+  },
+  {
+   "criterion": "Report the headline of the article read",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports the headline as 'Coventry put four past Newcastle to climb out of relegation zone'."
+  },
+  {
+   "criterion": "Report the team name",
+   "satisfied": true,
+   "reasoning": "The agent correctly identified and reported 'Coventry City' as the team mentioned in the article."
+  },
+  {
+   "criterion": "Report whether the team has a game today",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported that Coventry had a game today (Oct 12, 2026), which was already completed (FT) with a 4-1 win over Newcastle, as shown in Screenshot 8."
+  }
+ ],
+ "judge": "The agent successfully completed all aspects of the task. It opened the ScoreZone app, browsed the home feed, tapped the headline article about Coventry, read the full content identifying Coventry City as the team, navigated to the Scores tab, filtered by EPL, and found that Coventry (COV) had a game today (Oct 12, 2026) against Newcastle (NEW), which ended FT 4-1. The agent correctly reported the headline, team name, and confirmed they had a game today.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/scorezone-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 35,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,285)->(201,589) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/scorezone-003/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 21
+    }
+   },
+   "result": "tapped at (201, 522) via index",
+   "refused": false,
+   "frame": "media/run2-pco/scorezone-003/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (349, 100) via index",
+   "refused": false,
+   "frame": "media/run2-pco/scorezone-003/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "100,815,140,850"
+    }
+   },
+   "result": "tapped at (120, 832) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/scorezone-003/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "x1": 350,
+    "y1": 161,
+    "x2": 20,
+    "y2": 161,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (350,161)->(20,161) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/scorezone-003/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (348, 161) via index",
+   "refused": false,
+   "frame": "media/run2-pco/scorezone-003/0016.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "top headline",
+   "verdict": "proven",
+   "claim": "Coventry put four past Newcastle to climb out of relegation zone",
+   "frame": 9
+  },
+  {
+   "type": "KNOW",
+   "text": "team mentioned in article",
+   "verdict": "proven",
+   "claim": "Coventry",
+   "frame": 9
+  },
+  {
+   "type": "KNOW",
+   "text": "whether team has a game today",
+   "verdict": "proven",
+   "claim": "C, COV, (11-12)",
+   "frame": 16
+  }
+ ]
+}

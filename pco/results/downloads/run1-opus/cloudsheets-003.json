@@ -1,0 +1,179 @@
+{
+ "id": "cloudsheets-003",
+ "app": "cloudsheets",
+ "category": "single_app",
+ "goal": "Open the '2026 Open House Volunteers' spreadsheet in CloudSheets and update a volunteer's assignment status to 'Pending'. Which volunteer did you update and what's their new status?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 10,
+ "budget": 50,
+ "seconds": 84.2,
+ "cost": 0.4312,
+ "answer": "Sam, Pending",
+ "summary": "I updated Sam's status in the '2026 Open House Volunteers' spreadsheet. It went from Confirmed to Pending, and the sheet shows the change saved.\n\nYou didn't say which volunteer to update, so I chose Sam (Afternoon shift, Product Lead). Mia was already Pending and Ava is still Confirmed. If you meant Ava, tell me and I'll change her instead and put Sam back to Confirmed.\n\nANSWER: Sam, Pending",
+ "rubric": [
+  {
+   "criterion": "Open CloudSheets app and find the '2026 Open House Volunteers' spreadsheet",
+   "satisfied": true,
+   "reasoning": "Screenshots 1 and 2 show the agent was in the CloudSheets app and found the '2026 Open House Volunteers' spreadsheet in the list, then tapped on it to open it."
+  },
+  {
+   "criterion": "Open the spreadsheet and review the volunteer data",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 shows the spreadsheet opened with volunteer data visible: Ava (Morning shift), Sam (Afternoon shift), and Mia (Check-in shift). The agent reviewed this data."
+  },
+  {
+   "criterion": "Locate a volunteer whose assignment status is not already 'Pending'",
+   "satisfied": true,
+   "reasoning": "Screenshot 6 shows the Status column (D) with Ava having 'Confirmed', Sam having 'Confirmed', and Mia having 'Pending'. The agent selected cell D3 (Sam's status = 'Confirmed'), which was not already 'Pending'."
+  },
+  {
+   "criterion": "Select the cell containing the volunteer's assignment status",
+   "satisfied": true,
+   "reasoning": "Screenshot 7 shows cell D3 selected (highlighted in blue) with 'Confirmed' in the formula bar, confirming the agent selected Sam's status cell."
+  },
+  {
+   "criterion": "Edit the cell value to 'Pending'",
+   "satisfied": true,
+   "reasoning": "Screenshots 8 and 9 show the formula bar being cleared and 'Pending' being typed in. The formula bar shows 'Pending' as the new value for cell D3."
+  },
+  {
+   "criterion": "Confirm the change was saved in the spreadsheet",
+   "satisfied": true,
+   "reasoning": "Screenshots 10 and 11 show the final state where D3 now displays 'Pending' in the spreadsheet, and the undo button is active (indicating a change was made). The change was confirmed by tapping the checkmark."
+  },
+  {
+   "criterion": "Report which volunteer was updated and their new status",
+   "satisfied": true,
+   "reasoning": "The agent's final answer was 'Sam, Pending' which correctly identifies Sam as the volunteer whose status was updated from 'Confirmed' to 'Pending' in cell D3 (row 3 corresponds to Sam)."
+  }
+ ],
+ "judge": "The agent successfully completed all aspects of the task. It opened the CloudSheets app, found and opened the '2026 Open House Volunteers' spreadsheet, reviewed the volunteer data (Ava, Sam, Mia with their statuses), scrolled to see the Status column (column D), identified that cell D3 (Sam's status) was 'Confirmed', selected that cell, cleared the value and typed 'Pending', confirmed the change, and the final screenshot shows D3 now contains 'Pending'. The agent correctly identified Sam as the volunteer updated and reported the new status as 'Pending'.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (200, 327) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (321, 132) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (349, 110) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "x1": 350,
+    "y1": 600,
+    "x2": 50,
+    "y2": 600,
+    "duration_ms": 400
+   },
+   "result": "swiped (350,600)->(50,600) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_D3"
+    }
+   },
+   "result": "tapped at (313, 444) via id",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    }
+   },
+   "result": "sent 9 deletes; cleared: true; field value now 'Value'",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    },
+    "text": "Pending"
+   },
+   "result": "typed 'Pending'; verified: true; field value now 'Pending'",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0019.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 50
+    }
+   },
+   "result": "tapped at (368, 505) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0019.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (27, 136) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudsheets-003/0021.webp"
+  }
+ ],
+ "ledger": null
+}

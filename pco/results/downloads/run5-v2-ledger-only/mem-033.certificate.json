@@ -1,0 +1,70 @@
+{
+ "rounds": 0,
+ "obligations": 6,
+ "proven": 5,
+ "unproven": 0,
+ "absent": 1,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: subscriptions from Mail (name + monthly cost)",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Price: $10.99/month",
+   "evidence_frame": 53,
+   "explanation": "Apple Music renewal email shows \"Apple Music Individual ... Price: $10.99/month\"; earlier YouTube Premium receipt showed \"Charge: $13.99\" and GitHub Pro row \"Amount: $4.00\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: recurring monthly charges in MyBank credit card",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Spotify Premium, Monthly subscription, Oct 03, 2026, -$10.99",
+   "evidence_frame": 28,
+   "explanation": "Search 'subscription' shows \"Netflix, Monthly subscription, Oct 04, 2026, -$15.99\" and \"Spotify Premium, Monthly subscription, Oct 03, 2026, -$10.99\" recurring each month.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: MegaMart Subscribe & Save items",
+   "type": "KNOW",
+   "status": "fail",
+   "claim": "No Subscribe & Save items found",
+   "evidence_frame": null,
+   "explanation": "Checked MegaMart Orders (Active: AMZ100251/253/252; Past Orders list back to Feb 2025) and order detail AMZ100249 (\"Blue Buffalo Blue Bits... Qty 1, $9.99\"); no order or item is labeled Subscribe & Save \u2014 all are one-time orders.",
+   "verdict": "absent",
+   "reason": "Checked MegaMart Orders (Active: AMZ100251/253/252; Past Orders list back to Feb 2025) and order detail AMZ100249 (\"Blue Buffalo Blue Bits... Qty 1, $9.99\"); no order or item is labeled Subscribe & Save \u2014 all are one-time orders."
+  },
+  {
+   "obligation": "SAY: total monthly recurring cost",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "55.96",
+   "evidence_frame": 75,
+   "explanation": "Computed Netflix $15.99 + YouTube Premium $13.99 + Spotify $10.99 + Apple Music $10.99 + GitHub Pro $4.00 = $55.96; sheet B8 shows \"55.96\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: add 'Subscriptions' row to Subscription Audit in CloudSheets",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Subscriptions",
+   "evidence_frame": 75,
+   "explanation": "Sheet row 8 now shows A8 \"Subscriptions\" and B8 \"55.96\" in the Subscription Audit workbook.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: create 'Subscription Audit' note in Notes with each subscription, cost, keep/cancel",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Apple Music - $10.99/mo - Cancel (duplicates Spotify)",
+   "evidence_frame": 88,
+   "explanation": "Note titled \"Subscription Audit\" shows the body listing Netflix, YouTube Premium, Spotify Premium, Apple Music, GitHub Pro with costs, keep/cancel, and \"Total monthly recurring: $55.96\".",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

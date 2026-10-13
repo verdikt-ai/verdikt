@@ -1,0 +1,101 @@
+{
+ "id": "mybank-003",
+ "app": "mybank",
+ "category": "single_app",
+ "goal": "Send $50 via Zelle to Maya Patel in MyBank and confirm the payment was sent.",
+ "success": false,
+ "score": 0.8571,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 31.5,
+ "cost": 0.2797,
+ "answer": null,
+ "summary": "I sent $50 to Maya Patel by Zelle in MyBank, and the app confirmed it went through. A \"Zelle sent.\" message appeared, and Recent activity now lists \"Maya Patel \u2026 Oct 12, 2026, -$50.00\". The money came from Total Checking (...6645), whose balance went from $15,621.00 to $15,571.00.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open MyBank app and navigate to Pay & Transfer",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the MyBank app is already open on the home screen. The agent accessed Zelle directly from the home screen chip button, which is part of the app's payment functionality. The app was clearly open and in use."
+  },
+  {
+   "criterion": "Select Zelle as the payment method",
+   "satisfied": true,
+   "reasoning": "In Step 1, the agent tapped the 'Send | Zelle\u00ae' button on the home screen, which opened the 'Send with Zelle' screen visible in Screenshot 2. Zelle was clearly selected as the payment method."
+  },
+  {
+   "criterion": "Choose Maya Patel as the recipient",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the 'Send with Zelle' form with 'Maya Patel' already selected as the recipient in the 'Send to' field. The recipient was pre-selected or selected before the trajectory began."
+  },
+  {
+   "criterion": "Enter $50 as the amount",
+   "satisfied": true,
+   "reasoning": "In Step 2, the agent typed '50' into the amount field. Screenshots 2 and 3 both show '50' entered in the Payment field. The action result confirmed the field value was '50'."
+  },
+  {
+   "criterion": "Add a memo or note for the payment",
+   "satisfied": false,
+   "reasoning": "The agent did not add any memo or note. Screenshots 2 and 3 show the 'Memo (optional)' field was left empty. No memo was entered before sending the payment."
+  },
+  {
+   "criterion": "Send the payment",
+   "satisfied": true,
+   "reasoning": "In Step 3, the agent tapped the 'Send now' button. The final screenshot (Screenshot 4) shows the app returned to the home screen with a green 'Zelle sent.' confirmation banner at the top."
+  },
+  {
+   "criterion": "Confirm the payment was sent successfully",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows a green banner reading 'Zelle sent.' confirming successful payment. Additionally, the checking account balance decreased from $15,621.00 to $15,571.00, a reduction of exactly $50, further confirming the payment was processed successfully."
+  }
+ ],
+ "judge": "The agent successfully sent $50 via Zelle to Maya Patel through the MyBank app. The final screenshot shows a green 'Zelle sent.' confirmation banner, and the checking account balance decreased from $15,621.00 to $15,571.00 (a $50 reduction), confirming the payment was processed. The agent did not add a memo, but that was optional. All core task requirements were met.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_chip_zelle"
+    }
+   },
+   "result": "tapped at (129, 201) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mybank-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "zelle_amount_field"
+    },
+    "text": "50"
+   },
+   "result": "typed '50'; verified: true; field value now '50'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mybank-003/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "zelle_send_button"
+    }
+   },
+   "result": "tapped at (201, 551) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mybank-003/0008.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Send $50 via Zelle to Maya Patel and confirm it was sent",
+   "verdict": "proven",
+   "claim": "Zelle sent.",
+   "frame": 8
+  }
+ ]
+}

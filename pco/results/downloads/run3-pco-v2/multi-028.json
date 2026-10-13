@@ -1,0 +1,495 @@
+{
+ "id": "multi-028",
+ "app": "quickbite, teamchat",
+ "category": "multi_app",
+ "goal": "Order dinner from Nobu on QuickBite for delivery to Home. Then post a message in TeamChat #launch-war-room with an update on deployment progress, and check #general for any team announcements. What's the food order total and are there any announcements in #general?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 34,
+ "budget": 50,
+ "seconds": 222.8,
+ "cost": 1.7645,
+ "answer": "The Nobu order total is $46.95. Yes, #general has announcements: Zara Okonkwo says TeamChat has a maintenance window tonight between 11pm and 1am and messages may be delayed, and Petra Johansson reminds everyone to submit their weekly status by end of day.; Announcements in #general: Heads-up: TeamChat maintenance window tonight between 11pm-1am, messages may be delayed. @jordana",
+ "summary": "I've now proved the $46.95 total on screen: MyBank shows the Nobu charge (1x Black Cod with Miso) of -$46.95 on your Freedom Unlimited card (...2095), dated Oct 12, 2026.\n\nEverything else was already done:\n- **Nobu order:** placed for delivery to Home and confirmed, about 20 minutes away.\n- **#launch-war-room:** I posted an update saying the rollout is at 10% and holding, the backend is on the new version and metrics look healthy.\n- **#general:** there are two announcements, both mentioning you.\n  - Zara Okonkwo: TeamChat maintenance window tonight from 11pm to 1am, so messages may be delayed.\n  - Petra Johansson: reminder to submit your weekly status by end of day.\n\nANSWER: The Nobu order total is $46.95. Yes, #general has announcements: Zara Okonkwo says TeamChat has a maintenance window tonight between 11pm and 1am and messages may be delayed, and Petra Johansson reminds everyone to submit their weekly status by end of day.",
+ "rubric": [
+  {
+   "criterion": "Open QuickBite and search for Nobu",
+   "satisfied": true,
+   "reasoning": "Screenshots 3-4 clearly show the agent opened QuickBite, navigated to Browse, typed 'Nobu' in the search field, and found Nobu restaurant in the results."
+  },
+  {
+   "criterion": "Order dinner items from Nobu for delivery to Home",
+   "satisfied": true,
+   "reasoning": "The agent added Black Cod with Miso to the cart, proceeded to checkout with delivery to Home (410 Brannan St, Unit 12B), toggled the confirmation checkbox, and the order was confirmed as shown in the tracking screen (Step 23 screenshot showing 'Order confirmed' and 'Driver 3.6 mi away to Home')."
+  },
+  {
+   "criterion": "Open TeamChat and navigate to #launch-war-room",
+   "satisfied": true,
+   "reasoning": "Screenshot 24 shows the TeamChat app was opened and the agent navigated to #launch-war-room channel (visible in the channel header in screenshot 25)."
+  },
+  {
+   "criterion": "Post a deployment progress update in #launch-war-room",
+   "satisfied": true,
+   "reasoning": "Screenshot 27 shows the message 'Deployment progress update: rollout at 10% and holding, backend on new version, metrics looking healthy. Will update before the next increment.' was successfully posted by Jordan Avery in #launch-war-room."
+  },
+  {
+   "criterion": "Check #general for any team announcements",
+   "satisfied": true,
+   "reasoning": "Screenshots 29-30 show the agent navigated to #general and viewed the channel content, which included messages from Zara Okonkwo, Aiden Cross, and Petra Johansson."
+  },
+  {
+   "criterion": "Report the food order total from QuickBite",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported the food order total as $46.95, which matches what is shown in the cart screenshots (subtotal $36.00 + delivery fee $1.99 + service fee $2.99 + tax $2.97 + tip $3.00 = $46.95)."
+  },
+  {
+   "criterion": "Report any announcements found in #general",
+   "satisfied": true,
+   "reasoning": "The agent reported announcements from Zara Okonkwo (TeamChat maintenance window tonight between 11pm-1am, messages may be delayed) and Petra Johansson (submit weekly status by end of day), which are visible in the #general channel screenshots. The agent's final answer included these announcements."
+  }
+ ],
+ "judge": "The agent successfully completed all required tasks: opened QuickBite and searched for Nobu, added Black Cod with Miso to cart and placed the order for delivery to Home (410 Brannan St, Unit 12B), navigated to TeamChat and posted a deployment progress update in #launch-war-room, checked #general for announcements, and correctly reported the food order total ($46.95) and the announcements found in #general. The order was confirmed as shown in the tracking screen (Step 23 screenshot). The message was successfully posted in #launch-war-room (Step 27 screenshot). The #general channel was checked and showed announcements from Zara Okonkwo (TeamChat maintenance window 11pm-1am) and Petra Johansson (submit weekly status by end of day), plus Aiden Cross (cross-team dependency tracker updated). The agent's final answer correctly reported the $46.95 total and the maintenance window announcement.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Browse"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Browse)",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "140,805,178,840"
+    }
+   },
+   "result": "tapped at (159, 822) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Nobu"
+   },
+   "result": "typed 'Nobu'; verified: true; field value now 'Nobu'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_nobu"
+    }
+   },
+   "result": "tapped at (201, 351) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "menu_item_add_black_cod_with_miso"
+    }
+   },
+   "result": "tapped at (382, 632) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "view_cart_button"
+    }
+   },
+   "result": "tapped at (201, 752) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmToggle"
+    }
+   },
+   "result": "tapped at (352, 413) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0021.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0021.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,402,380,424"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (355, 413) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0023.webp"
+  },
+  {
+   "n": 12,
+   "tool": "swipe",
+   "args": {
+    "x1": 335,
+    "y1": 413,
+    "x2": 375,
+    "y2": 413,
+    "duration_ms": 200,
+    "screen_changed": false
+   },
+   "result": "swiped (335,413)->(375,413) in 200ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0026.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmLabel"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (130, 412) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "360,405,380,421"
+    }
+   },
+   "result": "tapped at (370, 413) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0031.webp"
+  },
+  {
+   "n": 15,
+   "tool": "wait",
+   "args": {
+    "ms": 1000
+   },
+   "result": "waited 1000ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0031.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0033.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0035.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmToggle"
+    }
+   },
+   "result": "tapped at (352, 413) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0039.webp"
+  },
+  {
+   "n": 19,
+   "tool": "check",
+   "args": {
+    "expression": "id=mybank.checkout.confirmButton enabled within 3s"
+   },
+   "result": "fail: Button \"Confirm & Place Order\" [10] is disabled after 3.3s",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0039.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,452,360,488"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (200, 470) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0039.webp"
+  },
+  {
+   "n": 21,
+   "tool": "long_press",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmToggle"
+    },
+    "duration_ms": 300
+   },
+   "result": "long-pressed 300ms at (352, 413) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0041.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    }
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0043.webp"
+  },
+  {
+   "n": 23,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.teamchat"
+   },
+   "result": "launched com.iosworld.benchmark.teamchat",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0045.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "channel_row_launch_war_room"
+    }
+   },
+   "result": "tapped at (203, 360) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0047.webp"
+  },
+  {
+   "n": 25,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "composer_text_field"
+    },
+    "text": "Deployment progress update: rollout at 10% and holding, backend on new version, metrics looking healthy. Will update before the next increment."
+   },
+   "result": "typed 'Deployment progress update: rollout at 10% and holding, backend on new version, metrics looking healthy. Will update before the next increment.'; verified: true; field value now 'Deployment progress update: rollout at 10% and holding, backend on new version, metrics looking healthy. Will update before the next increment.'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0051.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "send_message_button"
+    }
+   },
+   "result": "tapped at (355, 469) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0051.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "20,70,56,110"
+    }
+   },
+   "result": "tapped at (38, 90) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0053.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "channel_row_general"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (203, 427) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0055.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "30,419,120,435"
+    }
+   },
+   "result": "tapped at (75, 427) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0057.webp"
+  },
+  {
+   "n": 30,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0059.webp"
+  },
+  {
+   "n": 31,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickbite"
+   },
+   "result": "launched com.iosworld.benchmark.quickbite",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0062.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "195,805,235,840"
+    }
+   },
+   "result": "tapped at (215, 822) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0062.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "20,160,280,245"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (150, 202) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0064.webp"
+  },
+  {
+   "n": 34,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.mybank"
+   },
+   "result": "launched com.iosworld.benchmark.mybank",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-028/0066.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Order dinner from Nobu on QuickBite delivered to Home",
+   "verdict": "proven",
+   "claim": "Order confirmed",
+   "frame": 43
+  },
+  {
+   "type": "KNOW",
+   "text": "Food order total",
+   "verdict": "proven",
+   "claim": "$46.95",
+   "frame": 66
+  },
+  {
+   "type": "DO",
+   "text": "Post deployment progress update in TeamChat #launch-war-room",
+   "verdict": "proven",
+   "claim": "Deployment progress update: rollout at 10% and holding",
+   "frame": 51
+  },
+  {
+   "type": "KNOW",
+   "text": "Announcements in #general",
+   "verdict": "proven",
+   "claim": "Heads-up: TeamChat maintenance window tonight between 11pm-1am, messages may be delayed. @jordana",
+   "frame": 59
+  }
+ ]
+}

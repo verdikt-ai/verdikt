@@ -1,0 +1,61 @@
+{
+ "id": "SportsTrackerActivitiesCountForWeek",
+ "app": "Opentracks",
+ "goal": "How many running activities did I do this week in the OpenTracks app? Assume the week starts from Monday. Express your answer as a single integer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 4,
+ "budget": 10,
+ "seconds": 23.0,
+ "cost": 0.1650734,
+ "answer": "2",
+ "summary": "I answered **2**: you did two running activities this week (Monday Oct 9 to today, Sunday Oct 15) in OpenTracks. I counted them from the track list, using the activity icon on each track because the list doesn't show the activity type as text. I didn't open the tracks to confirm.\n\n- **Trying and failing to keep up with John** (Saturday): running icon.\n- **Active Rest Day** (Friday): running icon, the same one as \"Off-road Run\" from Oct 6.\n\nI left out \"Trail Hike\" (Friday) and \"Hill Walk\" (Tuesday) because they have the walking icon. The rest of the week was cycling, mountain biking, skiing, skateboarding and climbing. \"Off-road Run\" and \"Running Challenge\" (both Oct 6) are runs but fall before this week.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "OpenTracks"
+   },
+   "result": "opened OpenTracks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/SportsTrackerActivitiesCountForWeek/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "index": 4,
+    "amount": "half"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/SportsTrackerActivitiesCountForWeek/001.webp"
+  },
+  {
+   "n": 3,
+   "tool": "answer",
+   "args": {
+    "text": "2"
+   },
+   "result": "answer recorded: \"2\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/SportsTrackerActivitiesCountForWeek/002.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run4-opus-skills/SportsTrackerActivitiesCountForWeek/002.webp"
+  }
+ ]
+}

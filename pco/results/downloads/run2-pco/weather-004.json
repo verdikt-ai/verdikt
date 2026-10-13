@@ -1,0 +1,306 @@
+{
+ "id": "weather-004",
+ "app": "weather",
+ "category": "single_app",
+ "goal": "Check the 7-day forecast in the Weather app for both San Francisco and Dallas. Which city will be warmer this weekend? Give me the weekend high temperatures for both.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 17,
+ "budget": 50,
+ "seconds": 111.2,
+ "cost": 0.551,
+ "answer": "Dallas will be warmer this weekend. San Francisco: Sat high 73\u00b0, Sun high 66\u00b0. Dallas: Sat high 74\u00b0, Sun high 80\u00b0.; San Francisco Saturday high: High 73\u00b0  Low 57\u00b0; San Francisco Sunday high: High 66\u00b0  Low 56\u00b0; Dallas Saturday high: High 74\u00b0  Low 55\u00b0; Dallas Sunday high: High 80\u00b0  Low 60\u00b0",
+ "summary": "Dallas will be warmer than San Francisco this weekend, by 1\u00b0 on Saturday and 14\u00b0 on Sunday. These are the highs from the Weather app's 10-day forecast:\n\n| City | Saturday high | Sunday high |\n|---|---|---|\n| San Francisco | 73\u00b0 | 66\u00b0 |\n| Dallas | 74\u00b0 | 80\u00b0 |\n\nANSWER: Dallas will be warmer this weekend. San Francisco: Sat high 73\u00b0, Sun high 66\u00b0. Dallas: Sat high 74\u00b0, Sun high 80\u00b0.",
+ "rubric": [
+  {
+   "criterion": "Open Weather app and navigate to San Francisco",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Weather app open with San Francisco displayed at 62\u00b0, Clear."
+  },
+  {
+   "criterion": "Scroll to view the 7-day forecast for San Francisco",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the 10-Day Forecast section for San Francisco with all days visible including Sat (73\u00b0) and Sun (66\u00b0)."
+  },
+  {
+   "criterion": "Note the weekend high temperatures for San Francisco",
+   "satisfied": true,
+   "reasoning": "Screenshots 3-7 show the agent tapping on San Francisco Sat (High 73\u00b0, Low 57\u00b0) and San Francisco Sun (High 66\u00b0, Low 56\u00b0) detail panels."
+  },
+  {
+   "criterion": "Navigate to Dallas weather page",
+   "satisfied": true,
+   "reasoning": "Screenshot 9 shows the agent tapping on Dallas in the My Locations list, and screenshots 14-15 show the Dallas weather page with 84\u00b0 current temperature."
+  },
+  {
+   "criterion": "Scroll to view the 7-day forecast for Dallas",
+   "satisfied": true,
+   "reasoning": "Screenshots 15-16 show the Dallas 10-Day Forecast with Sat and Sun visible, and the agent scrolled to see the forecast section."
+  },
+  {
+   "criterion": "Note the weekend high temperatures for Dallas",
+   "satisfied": true,
+   "reasoning": "Screenshots 16 and 18 show Dallas Sat detail (High 74\u00b0, Low 55\u00b0) and Dallas Sun detail (High 80\u00b0, Low 60\u00b0)."
+  },
+  {
+   "criterion": "Report weekend high temperatures for San Francisco",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports San Francisco Saturday high 73\u00b0 and Sunday high 66\u00b0, matching the screenshots."
+  },
+  {
+   "criterion": "Report weekend high temperatures for Dallas",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports Dallas Saturday high 74\u00b0 and Sunday high 80\u00b0, matching the screenshots."
+  },
+  {
+   "criterion": "Report which city will be warmer this weekend",
+   "satisfied": true,
+   "reasoning": "The agent correctly identified Dallas as warmer this weekend (Sat 74\u00b0 vs SF 73\u00b0, Sun 80\u00b0 vs SF 66\u00b0), which is accurate based on the data shown in the screenshots."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps. It opened the Weather app showing San Francisco, scrolled to view the 10-day forecast, tapped on Saturday and Sunday to get detailed forecasts (SF Sat: High 73\u00b0, SF Sun: High 66\u00b0), navigated to Dallas via the city list, scrolled to view the Dallas forecast, and tapped on Saturday and Sunday for Dallas (Dallas Sat: High 74\u00b0, Dallas Sun: High 80\u00b0). The agent correctly identified Dallas as warmer this weekend and reported accurate temperatures from the screenshots.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 45,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,633)->(201,241) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sat"
+    }
+   },
+   "result": "tapped at (201, 438) via id",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 451) via text",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sat"
+    }
+   },
+   "result": "tapped at (201, 438) via id",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0008.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 451) via text",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sun"
+    }
+   },
+   "result": "tapped at (201, 480) via id",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0011.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 451) via text",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0014.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_location_list"
+    }
+   },
+   "result": "tapped at (370, 817) via id",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0014.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (201, 292) via index",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0017.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 45,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (201,633)->(201,241) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0017.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 90,
+    "x2": 201,
+    "y2": 700,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,90)->(201,700) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0020.webp"
+  },
+  {
+   "n": 12,
+   "tool": "swipe",
+   "args": {
+    "x1": 350,
+    "y1": 400,
+    "x2": 40,
+    "y2": 400,
+    "duration_ms": 250
+   },
+   "result": "swiped (350,400)->(40,400) in 250ms",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0023.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "x1": 350,
+    "y1": 400,
+    "x2": 40,
+    "y2": 400,
+    "duration_ms": 250
+   },
+   "result": "swiped (350,400)->(40,400) in 250ms",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0023.webp"
+  },
+  {
+   "n": 14,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 45,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,633)->(201,241) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0026.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sat"
+    }
+   },
+   "result": "tapped at (201, 438) via id",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0026.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 451) via text",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0029.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sun"
+    }
+   },
+   "result": "tapped at (201, 480) via id",
+   "refused": false,
+   "frame": "media/run2-pco/weather-004/0029.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "San Francisco Saturday high",
+   "verdict": "proven",
+   "claim": "High 73\u00b0  Low 57\u00b0",
+   "frame": 8
+  },
+  {
+   "type": "KNOW",
+   "text": "San Francisco Sunday high",
+   "verdict": "proven",
+   "claim": "High 66\u00b0  Low 56\u00b0",
+   "frame": 11
+  },
+  {
+   "type": "KNOW",
+   "text": "Dallas Saturday high",
+   "verdict": "proven",
+   "claim": "High 74\u00b0  Low 55\u00b0",
+   "frame": 26
+  },
+  {
+   "type": "KNOW",
+   "text": "Dallas Sunday high",
+   "verdict": "proven",
+   "claim": "High 80\u00b0  Low 60\u00b0",
+   "frame": 29
+  }
+ ]
+}

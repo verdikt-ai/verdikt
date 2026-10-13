@@ -1,0 +1,100 @@
+{
+ "id": "MarkorDeleteNote",
+ "app": "Markor",
+ "goal": "Delete the note in Markor named strong_house_I9h1.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 39.9,
+ "cost": 0.1085778,
+ "answer": null,
+ "summary": "I deleted the note strong_house_I9h1 from Markor's Documents/markor folder. After I confirmed the delete, the file list no longer showed it. The other four notes are still there.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorDeleteNote/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"strong_house_I9h1\" absent",
+     "text \"backup_garden_layout_plan.md\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorDeleteNote/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "long_press",
+   "args": {
+    "index": 16,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,990) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorDeleteNote/002.webp"
+  },
+  {
+   "n": 2,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"strong_house_I9h1\" absent",
+     "Button ~\"backup_garden_layout_plan.md\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorDeleteNote/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (922,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorDeleteNote/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "x": 801,
+    "y": 1445
+   },
+   "result": "tapped (801,1445)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorDeleteNote/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorDeleteNote/006.webp"
+  }
+ ]
+}

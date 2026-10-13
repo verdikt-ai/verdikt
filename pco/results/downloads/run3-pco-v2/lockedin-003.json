@@ -1,0 +1,160 @@
+{
+ "id": "lockedin-003",
+ "app": "lockedin",
+ "category": "single_app",
+ "goal": "Search lockedin for a platform engineer and send them a message saying I admire their experience and would like to connect. Who did you message?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 7,
+ "budget": 50,
+ "seconds": 53.8,
+ "cost": 0.3715,
+ "answer": "Aiden Cross",
+ "summary": "I messaged Aiden Cross, a Platform Engineer at HashiCorp. He was the only person who came up when I searched LockedIn for \"Platform Engineer.\"\n\nI sent: \"Hi Aiden, I admire your experience and would like to connect.\" The chat shows it went through. He has already replied: \"Hi Jordan, I appreciate the kind words! I'd love to connect and learn more about your work at Meridian Technologies.\"\n\nI only sent a message. You haven't sent him a connection request yet, so tap \"Connect\" on his profile if you want to send one.\n\nANSWER: Aiden Cross",
+ "rubric": [
+  {
+   "criterion": "Open LockedIn app and navigate to the search function",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the LockedIn app open on the home feed, and Step 1 shows the agent tapping the search bar to navigate to the search function."
+  },
+  {
+   "criterion": "Search for 'platform engineers'",
+   "satisfied": true,
+   "reasoning": "Screenshots 2-4 show 'Platform Engineer' typed in the search bar with results displayed, including Aiden Cross as a Platform Engineer at HashiCorp."
+  },
+  {
+   "criterion": "Select a platform engineer from the search results",
+   "satisfied": true,
+   "reasoning": "Step 4 shows the agent tapping on Aiden Cross from the search results, and Screenshot 5 shows Aiden Cross's profile loaded."
+  },
+  {
+   "criterion": "Open the platform engineer's profile to view their experience",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows Aiden Cross's full profile with their title (Platform Engineer at HashiCorp), education (MIT), location (San Francisco, CA), and connections information visible."
+  },
+  {
+   "criterion": "Navigate to messaging or find the message option",
+   "satisfied": true,
+   "reasoning": "Step 5 shows the agent tapping the 'Message' button on Aiden Cross's profile, and Screenshot 6 shows the messaging interface opened with Aiden Cross."
+  },
+  {
+   "criterion": "Compose an introductory message expressing admiration for their experience and desire to connect",
+   "satisfied": true,
+   "reasoning": "Screenshots 6-7 show the message 'Hi Aiden, I admire your experience and would like to connect.' typed in the message field, which expresses admiration for their experience and desire to connect."
+  },
+  {
+   "criterion": "Send the message",
+   "satisfied": true,
+   "reasoning": "Step 7 shows the agent tapping the send button, and the final screenshot (Screenshot 8) confirms the message was sent, showing it in the conversation with Aiden Cross's reply visible."
+  },
+  {
+   "criterion": "Report the name of the person messaged",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly identifies 'Aiden Cross' as the person messaged, which is confirmed by the screenshots showing the conversation with Aiden Cross."
+  }
+ ],
+ "judge": "The agent successfully completed all steps of the task: opened the LockedIn app, navigated to search, searched for 'Platform Engineer', found Aiden Cross (Platform Engineer at HashiCorp), viewed their profile, opened messaging, composed a message expressing admiration for their experience and desire to connect, sent the message (confirmed by the final screenshot showing the sent message and Aiden's reply), and correctly reported the name 'Aiden Cross'.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "140,62,260,108"
+    }
+   },
+   "result": "tapped at (200, 85) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/lockedin-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Platform Engineer"
+   },
+   "result": "typed 'Platform Engineer'; verified: true; field value now 'Platform Engineer'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/lockedin-003/0007.webp"
+  },
+  {
+   "n": 3,
+   "tool": "press",
+   "args": {
+    "key": "enter"
+   },
+   "result": "pressed enter",
+   "refused": false,
+   "frame": "media/run3-pco-v2/lockedin-003/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 205) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/lockedin-003/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 22
+    }
+   },
+   "result": "tapped at (259, 492) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/lockedin-003/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 8
+    },
+    "text": "Hi Aiden, I admire your experience and would like to connect."
+   },
+   "result": "typed 'Hi Aiden, I admire your experience and would like to connect.'; verified: false; field value now ''",
+   "refused": false,
+   "frame": "media/run3-pco-v2/lockedin-003/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_send_button"
+    }
+   },
+   "result": "tapped at (373, 510) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/lockedin-003/0016.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "name of the platform engineer found via search",
+   "verdict": "proven",
+   "claim": "Aiden Cross",
+   "frame": 7
+  },
+  {
+   "type": "DO",
+   "text": "send message saying I admire their experience and would like to connect",
+   "verdict": "proven",
+   "claim": "Hi Aiden, I admire your experience and would like to connect.",
+   "frame": 16
+  }
+ ]
+}

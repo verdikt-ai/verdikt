@@ -1,0 +1,185 @@
+{
+ "id": "scorezone-003",
+ "app": "scorezone",
+ "category": "single_app",
+ "goal": "Read a top headline article from the ScoreZone home feed, then check the Scores tab to see if the team mentioned in the article has a game scheduled today. What's the headline, the team name, and do they have a game today?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 8,
+ "budget": 50,
+ "seconds": 70.7,
+ "cost": 0.4781,
+ "answer": "Headline: \"LCS Day 2: Updates, takeaways from Dodgers-Brewers, Guardians-Rays\"; Teams: Dodgers, Brewers, Guardians, Rays (MLB); Game today: No, the Scores tab shows \"MLB \u2022 No games scheduled\" for Oct 12, 2026.",
+ "summary": "None of the teams in the top headline have a game today (Oct 12, 2026).\n\n- **Headline:** The first story under Top Stories is \"LCS Day 2: Updates, takeaways from Dodgers-Brewers, Guardians-Rays\" (MLB). The article says the Brewers lead the NLCS two games to none and the Guardians beat the Rays at home.\n- **Team:** The article covers four MLB teams rather than one: the Los Angeles Dodgers, Milwaukee Brewers, Cleveland Guardians and Tampa Bay Rays.\n- **Game today:** No. On the Scores tab for today, with MLB selected, it says \"MLB \u2022 No games scheduled\" and \"NO GAMES FOR THIS DATE.\" The Upcoming list on the home feed doesn't show any MLB games either; today's games there are NFL only.\n\nANSWER: Headline: \"LCS Day 2: Updates, takeaways from Dodgers-Brewers, Guardians-Rays\"; Teams: Dodgers, Brewers, Guardians, Rays (MLB); Game today: No, the Scores tab shows \"MLB \u2022 No games scheduled\" for Oct 12, 2026.",
+ "rubric": [
+  {
+   "criterion": "Open ScoreZone app and navigate to the Home feed",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the ScoreZone app open on the Home feed with 'For You' section visible and the Home tab selected at the bottom."
+  },
+  {
+   "criterion": "Browse top headlines on the home feed",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the agent scrolled up to reveal the top headline 'LCS Day 2: Updates, takeaways from Dodgers-Brewers, Guardians-Rays' prominently displayed on the home feed."
+  },
+  {
+   "criterion": "Tap a top headline article to read the full content",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 shows the article detail view opened with the full headline and content visible, including the subtitle 'The Brewers take a two-game lead in the NLCS, while the Guardians stun the Rays at home.'"
+  },
+  {
+   "criterion": "Identify and note the team mentioned in the article",
+   "satisfied": true,
+   "reasoning": "The article clearly mentions four teams: Dodgers, Brewers, Guardians, and Rays. The agent correctly identified all of them in the final answer."
+  },
+  {
+   "criterion": "Navigate to the Scores tab",
+   "satisfied": true,
+   "reasoning": "Screenshots 6-8 show the Scores tab is active (highlighted in red at the bottom), with the scoreboard visible showing Oct 12, 2026."
+  },
+  {
+   "criterion": "Search for the mentioned team's game schedule for today",
+   "satisfied": true,
+   "reasoning": "The agent navigated to the MLB section in the Scores tab (step 6 tapped the MLB chip), and screenshots 7-8 show 'MLB \u2022 No games scheduled' and 'NO GAMES FOR THIS DATE' message for Oct 12, 2026."
+  },
+  {
+   "criterion": "Report the headline of the article read",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported the headline as 'LCS Day 2: Updates, takeaways from Dodgers-Brewers, Guardians-Rays' which matches what is shown in the screenshots."
+  },
+  {
+   "criterion": "Report the team name",
+   "satisfied": true,
+   "reasoning": "The agent reported all four teams mentioned in the article: Dodgers, Brewers, Guardians, and Rays, which are all visible in the article screenshots."
+  },
+  {
+   "criterion": "Report whether the team has a game today",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported that the teams do not have a game today, as evidenced by the Scores tab showing 'MLB \u2022 No games scheduled' and 'NO GAMES FOR THIS DATE' for Oct 12, 2026."
+  }
+ ],
+ "judge": "The agent successfully completed all aspects of the task: opened the ScoreZone app on the home feed, browsed top headlines, tapped the top headline article about LCS Day 2 to read it, identified the teams mentioned (Dodgers, Brewers, Guardians, Rays), navigated to the Scores tab, checked the MLB section for today's games (Oct 12, 2026), and correctly reported that there are no MLB games scheduled for that date. The final answer accurately captures the headline, team names, and game status.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/scorezone-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_open_headline_001"
+    }
+   },
+   "result": "tapped at (201, 132) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/scorezone-003/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "headline_detail_done_button"
+    }
+   },
+   "result": "tapped at (349, 100) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/scorezone-003/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Scores"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Scores)",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/scorezone-003/0008.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "105,805,150,855"
+    }
+   },
+   "result": "tapped at (127, 830) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/scorezone-003/0010.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "scores_league_chip_mlb"
+    }
+   },
+   "result": "tapped at (384, 161) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/scorezone-003/0012.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "scores_top_events_chip"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (79, 160) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/scorezone-003/0014.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "30,805,80,855"
+    }
+   },
+   "result": "tapped at (55, 830) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/scorezone-003/0016.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "top headline",
+   "verdict": "proven",
+   "claim": "LCS Day 2: Updates, takeaways from Dodgers-Brewers, Guardians-Rays",
+   "frame": 5
+  },
+  {
+   "type": "KNOW",
+   "text": "team mentioned in the article",
+   "verdict": "proven",
+   "claim": "Dodgers-Brewers, Guardians-Rays",
+   "frame": 16
+  },
+  {
+   "type": "KNOW",
+   "text": "whether that team has a game today on Scores tab",
+   "verdict": "proven",
+   "claim": "MLB \u2022 No games scheduled",
+   "frame": 14
+  }
+ ]
+}

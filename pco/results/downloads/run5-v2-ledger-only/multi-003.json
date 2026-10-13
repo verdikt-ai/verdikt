@@ -1,0 +1,582 @@
+{
+ "id": "multi-003",
+ "app": "freshcart, splitpay",
+ "category": "multi_app",
+ "goal": "Open FreshCart and order salmon, spinach, and blueberries from Natural Foods Market. Calculate a 20% tip on the grocery total, then send a SplitPay request to Leo Chen for half the total (including tip) with the note 'dinner party groceries'. What's the grocery total and tip amount, and confirm the SplitPay request was sent.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 41,
+ "budget": 50,
+ "seconds": 284.5,
+ "cost": 1.1994,
+ "answer": "Grocery total $22.97; 20% tip $4.59; SplitPay request for $13.78 sent to Leo Chen with note \"dinner party groceries\" (confirmed, awaiting payment).; 20% tip amount and half of total incl. tip: 20% tip on $22.97 is $4.59; total incl. tip $27.56, half is $13.78.",
+ "summary": "I placed the FreshCart order and sent the SplitPay request to Leo Chen.\n\n- **Order:** The Natural Foods Market cart already had other items in it. I removed those and changed the salmon from 2 to 1. The order (NF-2083) then had one each of Wild Caught Sockeye Salmon ($14.99), Organic Baby Spinach ($2.99) and Organic Blueberries ($4.99). The app showed \"Order confirmed!\"\n- **Grocery total:** $22.97, which is the cost of the items. With service fee, tax and tip, the amount charged to the card was $30.84.\n- **Tip:** 20% of $22.97 is $4.59. I also picked the 20% shopper tip at checkout, in place of the $5.00 that was preset.\n- **SplitPay request:** Half of $27.56 (groceries plus tip) is $13.78. The request to Leo Chen with the note \"dinner party groceries\" is listed under \"Awaiting payment\" in SplitPay.\n\nANSWER: Grocery total $22.97; 20% tip $4.59; SplitPay request for $13.78 sent to Leo Chen with note \"dinner party groceries\" (confirmed, awaiting payment).",
+ "rubric": [
+  {
+   "criterion": "Open FreshCart and select Natural Foods Market store",
+   "satisfied": true,
+   "reasoning": "The agent opened FreshCart (visible in screenshots 1-2), searched for Natural Foods Market, and the cart view in screenshot 16 shows 'Natural Foods Market' as the store header, confirming the store was selected."
+  },
+  {
+   "criterion": "Search for and add salmon to the cart",
+   "satisfied": true,
+   "reasoning": "Screenshots 8-10 show the agent searching for 'salmon' and finding 'Wild Caught Sockeye Salmon' ($14.99). The cart in screenshot 16 shows salmon was added. The cart counter increased from 7 to 8 items after adding salmon."
+  },
+  {
+   "criterion": "Search for and add spinach to the cart",
+   "satisfied": true,
+   "reasoning": "Screenshots 11-13 show the agent searching for 'spinach' and finding 'Organic Baby Spinach' ($2.99). The cart counter increased from 8 to 9 items after adding spinach, and spinach appears in the cart in later screenshots."
+  },
+  {
+   "criterion": "Search for and add blueberries to the cart",
+   "satisfied": true,
+   "reasoning": "Screenshots 14-15 show the agent searching for 'blueberries' and finding 'Organic Blueberries' ($4.99). The cart in screenshot 25 shows blueberries ($4.99) along with spinach ($2.99) and salmon ($14.99), totaling $22.97."
+  },
+  {
+   "criterion": "Calculate 20% tip on the grocery total",
+   "satisfied": true,
+   "reasoning": "Screenshot 27 shows the checkout page with the Shopper tip section displaying '20% $4.59' selected (highlighted in green). The grocery subtotal was $22.97, and 20% of $22.97 = $4.594 \u2248 $4.59, which matches."
+  },
+  {
+   "criterion": "Open SplitPay and send a request to Leo Chen for half the total with tip",
+   "satisfied": true,
+   "reasoning": "The agent opened SplitPay (screenshot 30), selected Leo Chen (screenshot 31), and entered $13.78 (half of $22.97 + $4.59 = $27.56 / 2 = $13.78). Screenshot 38 shows the confirmation dialog 'Request from Leo Chen' for $13.78 with the note 'dinner party groceries'."
+  },
+  {
+   "criterion": "Include the note 'dinner party groceries' on the SplitPay request",
+   "satisfied": true,
+   "reasoning": "Screenshot 37 shows the memo field filled with 'dinner party groceries', and screenshot 38 shows the confirmation dialog displaying 'dinner party groceries' as the note for the $13.78 request to Leo Chen."
+  },
+  {
+   "criterion": "Report the grocery total and tip amount",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports: grocery total $22.97 (confirmed in screenshot 25 showing item subtotal $22.97), and 20% tip $4.59 (confirmed in screenshots 27 and 29 showing tip $4.59)."
+  },
+  {
+   "criterion": "Confirm the SplitPay request was sent",
+   "satisfied": true,
+   "reasoning": "Screenshot 38 shows the 'Confirm Request' dialog with 'Request $13.78' button. The agent tapped the request button (step 38 action), and the final screenshot 42 shows the SplitPay 'Me' tab with 'Pending requests' section visible, indicating the request was sent successfully."
+  }
+ ],
+ "judge": "The agent successfully completed all major steps of the task. It opened FreshCart, navigated to Natural Foods Market, searched for and added salmon, spinach, and blueberries to the cart (removing other pre-existing items), proceeded to checkout, selected the 20% tip option ($4.59 on a $22.97 grocery subtotal), placed the order, then opened SplitPay, selected Leo Chen, entered $13.78 (half of $22.97 + $4.59 = $27.56, divided by 2 = $13.78), added the note 'dinner party groceries', and sent the request. The confirmation screen showed 'Request from Leo Chen' for $13.78 with the note 'dinner party groceries'. The final screenshot shows the Transactions tab with 'Pending requests' visible, confirming the request was sent.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 83
+    }
+   },
+   "result": "tapped at (360, 612) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (201, 140) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0004.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Natural Foods Market"
+   },
+   "result": "typed 'Natural Foods Market'; verified: true; field value now 'Natural Foods Market'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "20,540,200,570"
+    }
+   },
+   "result": "tapped at (110, 555) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "press",
+   "args": {
+    "key": "enter"
+   },
+   "result": "pressed enter",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (113, 524) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "sent 21 deletes; cleared: true; field value now ' '",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "salmon\n"
+   },
+   "result": "typed 'salmon\\n'; verified: false; field value now 'salmon '",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "155,380,185,410"
+    }
+   },
+   "result": "tapped at (170, 395) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "sent 7 deletes; cleared: false; field value now 'Search products and stores'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0023.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "spinach\n"
+   },
+   "result": "typed 'spinach\\n'; verified: false; field value now 'spinach'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "155,380,185,410"
+    }
+   },
+   "result": "tapped at (170, 395) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0027.webp"
+  },
+  {
+   "n": 13,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "sent 7 deletes; cleared: false; field value now 'Search products and stores'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0029.webp"
+  },
+  {
+   "n": 14,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "blueberries\n"
+   },
+   "result": "typed 'blueberries\\n'; verified: false; field value now 'blueberries'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0031.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "155,380,185,410"
+    }
+   },
+   "result": "tapped at (170, 395) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0034.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "250,710,380,770"
+    }
+   },
+   "result": "tapped at (315, 740) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0034.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_quantity_decrement_wf_salmon_401"
+    }
+   },
+   "result": "tapped at (55, 495) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0037.webp"
+  },
+  {
+   "n": 18,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 25,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,546)->(201,328) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0037.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_quantity_decrement_wf_avocado_402"
+    }
+   },
+   "result": "tapped at (55, 284) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0040.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_quantity_decrement_wf_kale_403"
+    }
+   },
+   "result": "tapped at (55, 284) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0040.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,270,70,300"
+    }
+   },
+   "result": "tapped at (55, 285) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0043.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,270,70,300"
+    }
+   },
+   "result": "tapped at (55, 285) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0043.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,270,70,300"
+    }
+   },
+   "result": "tapped at (55, 285) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0046.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,270,70,300"
+    }
+   },
+   "result": "tapped at (55, 285) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0046.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "checkout_place_order_button"
+    }
+   },
+   "result": "tapped at (201, 755) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0048.webp"
+  },
+  {
+   "n": 26,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 30,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,568)->(201,306) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0050.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 21
+    }
+   },
+   "result": "tapped at (243, 338) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0052.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "checkout_place_order_button"
+    }
+   },
+   "result": "tapped at (201, 755) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0054.webp"
+  },
+  {
+   "n": 29,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.splitpay"
+   },
+   "result": "launched com.iosworld.benchmark.splitpay",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0056.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "pay_or_request_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0058.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "recipient_row_leo_chen"
+    }
+   },
+   "result": "tapped at (201, 348) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0060.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_1"
+    }
+   },
+   "result": "tapped at (76, 610) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0066.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_3"
+    }
+   },
+   "result": "tapped at (325, 610) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0066.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_decimal"
+    }
+   },
+   "result": "tapped at (76, 802) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0066.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_7"
+    }
+   },
+   "result": "tapped at (76, 738) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0066.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_8"
+    }
+   },
+   "result": "tapped at (200, 738) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0066.webp"
+  },
+  {
+   "n": 37,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "memo_field"
+    },
+    "text": "dinner party groceries"
+   },
+   "result": "typed 'dinner party groceries'; verified: true; field value now 'dinner party groceries'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0068.webp"
+  },
+  {
+   "n": 38,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "request_button"
+    }
+   },
+   "result": "tapped at (105, 347) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0070.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "220,725,365,760"
+    }
+   },
+   "result": "tapped at (292, 742) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0072.webp"
+  },
+  {
+   "n": 40,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "splitpay_tab_me"
+    }
+   },
+   "result": "tapped at (346, 804) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0074.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 16
+    }
+   },
+   "result": "tapped at (287, 494) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-003/0076.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Order salmon, spinach, blueberries from Natural Foods Market in FreshCart",
+   "verdict": "proven",
+   "claim": "Order confirmed!",
+   "frame": 54
+  },
+  {
+   "type": "KNOW",
+   "text": "Grocery total",
+   "verdict": "proven",
+   "claim": "$22.97",
+   "frame": 46
+  },
+  {
+   "type": "SAY",
+   "text": "20% tip amount and half of total incl. tip",
+   "verdict": "proven",
+   "claim": "20% tip on $22.97 is $4.59; total incl. tip $27.56, half is $13.78.",
+   "frame": 52
+  },
+  {
+   "type": "DO",
+   "text": "Send SplitPay request to Leo Chen for half total with note 'dinner party groceries'",
+   "verdict": "proven",
+   "claim": "1m \u00b7 dinner party groceries",
+   "frame": 76
+  }
+ ]
+}

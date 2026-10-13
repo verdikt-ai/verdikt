@@ -1,0 +1,108 @@
+{
+ "id": "megamart-001",
+ "app": "megamart",
+ "category": "single_app",
+ "goal": "Search for 'PS5 Controller' on MegaMart and add one to my cart. What's the product name and price?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 71.0,
+ "cost": 0.3501,
+ "answer": "DualSense Wireless Controller for PlayStation 5, $69.99",
+ "summary": "I added one PS5 controller to your MegaMart cart. Searching \"PS5 Controller\" brought up the DualSense Wireless Controller for PlayStation 5 by Sony as the top result, priced at $69.99. After I tapped \"Add to cart\", the app showed \"Added to cart\" and your cart count went from 19 to 20.\n\nANSWER: DualSense Wireless Controller for PlayStation 5, $69.99",
+ "rubric": [
+  {
+   "criterion": "Open MegaMart app and tap the search field",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the MegaMart app home screen, and the agent tapped the 'Search MegaMart' field. Screenshot 2 shows the search field is now active with 'PS5 Controller' typed in it."
+  },
+  {
+   "criterion": "Type 'PS5 Controller' in the search field",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 clearly shows 'PS5 Controller' typed in the search field, and search results for PS5 controllers are displayed."
+  },
+  {
+   "criterion": "Select a PS5 Controller from search results",
+   "satisfied": true,
+   "reasoning": "The search results show the DualSense Wireless Controller for PlayStation 5 as the first result. The agent tapped 'Add to cart' directly from the search results page for this product, which effectively selected it."
+  },
+  {
+   "criterion": "Tap 'Add to Cart' button",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 (final state) shows 'Added to cart' confirmation banner at the top of the screen, and the cart count increased from 19 to 20, confirming the 'Add to cart' button was successfully tapped."
+  },
+  {
+   "criterion": "Report the product name",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported 'DualSense Wireless Controller for PlayStation 5' which matches what is shown in the screenshots."
+  },
+  {
+   "criterion": "Report the product price",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported '$69.99' which matches the price shown in the screenshots for the DualSense Wireless Controller for PlayStation 5."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened the MegaMart app, tapped the search field, typed 'PS5 Controller', found the DualSense Wireless Controller for PlayStation 5 at $69.99, tapped 'Add to cart', and the final screenshot shows 'Added to cart' confirmation with the cart count increasing from 19 to 20. The agent correctly reported the product name and price.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (201, 64) via index",
+   "refused": false,
+   "frame": "media/run2-pco/megamart-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "PS5 Controller\n"
+   },
+   "result": "typed 'PS5 Controller\\n'; verified: false; field value now 'PS5 Controller'",
+   "refused": false,
+   "frame": "media/run2-pco/megamart-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 22
+    }
+   },
+   "result": "tapped at (292, 672) via index",
+   "refused": false,
+   "frame": "media/run2-pco/megamart-001/0007.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "product name of PS5 Controller result",
+   "verdict": "proven",
+   "claim": "DualSense Wireless Controller for PlayStation 5",
+   "frame": 7
+  },
+  {
+   "type": "KNOW",
+   "text": "price of PS5 Controller",
+   "verdict": "proven",
+   "claim": "$69.99",
+   "frame": 7
+  },
+  {
+   "type": "DO",
+   "text": "add one PS5 Controller to cart",
+   "verdict": "proven",
+   "claim": "Added to cart",
+   "frame": 7
+  }
+ ]
+}

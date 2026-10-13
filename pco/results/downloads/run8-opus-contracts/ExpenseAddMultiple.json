@@ -1,0 +1,429 @@
+{
+ "id": "ExpenseAddMultiple",
+ "app": "Pro Expense",
+ "goal": "Add the following expenses into the pro expense:\nExpense: Social Club Dues\n amount_dollars: $67.41\n category_name: Social\n note: Monthly recurring\n\nExpense: Legal Fees\n amount_dollars: $10.14\n category_name: Others\n note: Monthly recurring\n\nExpense: Stationery\n amount_dollars: $118.93\n category_name: Others\n note: Remember to transfer funds\n",
+ "success": true,
+ "score": 1.0,
+ "steps": 32,
+ "budget": 60,
+ "seconds": 156.8,
+ "cost": 1.2494598,
+ "answer": null,
+ "summary": "I added all three expenses in Pro Expense, and they now appear in the Recent list:\n\n| Expense | Amount | Category | Note |\n|---|---|---|---|\n| Social Club Dues | $67.41 | Social | Monthly recurring |\n| Legal Fees | $10.14 | Others | Monthly recurring |\n| Stationery | $118.93 | Others | Remember to transfer funds |\n\nThe amount, category and note were each confirmed in the form before saving. The list shows only names, amounts and dates, so the categories and notes weren't re-checked after saving. The week's spending total is now $196.48, which matches the three amounts. All three are dated today, since I didn't change the date.\n\nOn the first expense, filling the fields too quickly sent the amount and note into the name field. I re-entered each value in its own field before saving it, so nothing wrong was saved.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Pro Expense"
+   },
+   "result": "opened Pro Expense",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Social Club Dues\" visible",
+     "text \"Legal Fees\" visible",
+     "text \"Stationery\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "Social Club Dues",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Social Club Dues\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Social Club Dues\" -> TextField \"Name\" value=\"Social Club Dues\" [5] has value \"Social Club Dues\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "67.41",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"67.41\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \"Amount\" value \"67.41\" -> TextField \"Amount\" value=\"Amount\" [6] has value \"Amount\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "Monthly recurring",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Monthly recurring\" WARNING: the target field shows \"SAVE\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \"Note\" value \"Monthly recurring\" -> TextField \"Note\" value=\"Note\" [8] has value \"Note\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 15
+   },
+   "result": "tapped (943,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": "Social Club Dues",
+    "index": 5,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Social Club Dues\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Social Club Dues\" -> TextField \"Name\" value=\"Social Club Dues\" [5] has value \"Social Club Dues\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "x": 540,
+    "y": 577
+   },
+   "result": "tapped (540,577)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "text": "67.41",
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"67.41\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"67.41\" -> TextField \"Amount\" value=\"67.41\" [6] has value \"67.41\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "x": 540,
+    "y": 995
+   },
+   "result": "tapped (540,995)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "text": "Monthly recurring",
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Monthly recurring\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"Monthly recurring\" -> TextField \"Note\" value=\"Monthly recurring\" [9] has value \"Monthly recurring\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "x": 710,
+    "y": 750
+   },
+   "result": "tapped (710,750)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/014.webp"
+  },
+  {
+   "n": 15,
+   "tool": "type",
+   "args": {
+    "text": "Legal Fees",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Legal Fees\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Legal Fees\" -> TextField \"Name\" value=\"Legal Fees\" [5] has value \"Legal Fees\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/015.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "x": 540,
+    "y": 577
+   },
+   "result": "tapped (540,577)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/016.webp"
+  },
+  {
+   "n": 17,
+   "tool": "type",
+   "args": {
+    "text": "10.14",
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"10.14\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"10.14\" -> TextField \"Amount\" value=\"10.14\" [6] has value \"10.14\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/017.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "x": 540,
+    "y": 995
+   },
+   "result": "tapped (540,995)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/018.webp"
+  },
+  {
+   "n": 19,
+   "tool": "type",
+   "args": {
+    "text": "Monthly recurring",
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Monthly recurring\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"Monthly recurring\" -> TextField \"Note\" value=\"Monthly recurring\" [9] has value \"Monthly recurring\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/019.webp"
+  },
+  {
+   "n": 20,
+   "tool": "swipe",
+   "args": {
+    "x1": 1000,
+    "y1": 750,
+    "x2": 100,
+    "y2": 750,
+    "duration_ms": 300
+   },
+   "result": "swiped (1000,750)->(100,750) in 300ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/020.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "x": 984,
+    "y": 750
+   },
+   "result": "tapped (984,750)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/021.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Legal Fees\" visible -> StaticText \"Legal Fees\" [15]",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/022.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/023.webp"
+  },
+  {
+   "n": 24,
+   "tool": "type",
+   "args": {
+    "text": "Stationery",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Stationery\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Stationery\" -> TextField \"Name\" value=\"Stationery\" [5] has value \"Stationery\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/024.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "x": 540,
+    "y": 577
+   },
+   "result": "tapped (540,577)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/025.webp"
+  },
+  {
+   "n": 26,
+   "tool": "type",
+   "args": {
+    "text": "118.93",
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"118.93\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"118.93\" -> TextField \"Amount\" value=\"118.93\" [6] has value \"118.93\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/026.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "x": 540,
+    "y": 995
+   },
+   "result": "tapped (540,995)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/027.webp"
+  },
+  {
+   "n": 28,
+   "tool": "type",
+   "args": {
+    "text": "Remember to transfer funds",
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Remember to transfer funds\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"Remember to transfer funds\" -> TextField \"Note\" value=\"Remember to transfer funds\" [9] has value \"Remember to transfer funds\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/028.webp"
+  },
+  {
+   "n": 29,
+   "tool": "swipe",
+   "args": {
+    "x1": 1000,
+    "y1": 750,
+    "x2": 100,
+    "y2": 750,
+    "duration_ms": 300
+   },
+   "result": "swiped (1000,750)->(100,750) in 300ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/029.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "x": 990,
+    "y": 750
+   },
+   "result": "tapped (990,750)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/030.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Stationery\" visible -> StaticText \"Stationery\" [15]\n  ok   text \"Legal Fees\" visible -> StaticText \"Legal Fees\" [19]\n  ok   text \"Social Club Dues\" visible -> StaticText \"Social Club Dues\" [23]",
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/031.webp"
+  },
+  {
+   "n": 32,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddMultiple/032.webp"
+  }
+ ]
+}

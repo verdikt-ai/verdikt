@@ -1,0 +1,111 @@
+{
+ "id": "MarkorEditNote",
+ "app": "Markor",
+ "goal": "Edit note_SiFbv.txt in Markor. Add to the top of the note Hello, World!",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 12,
+ "seconds": 63.6,
+ "cost": 0.1585756,
+ "answer": null,
+ "summary": "I added \"Hello, World!\" as a new first line in note_SiFbv.txt in Markor, and the change is saved. The note now reads:\n\nHello, World!\nDon't forget to water the plants while I'm away.\n\nTo make the change, I replaced the whole note with the new line followed by the original text, typed back exactly. The editor showed this content when I saved, and the save button greyed out, which means the save went through. I didn't reopen the file afterwards to check it again.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorEditNote/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"note_SiFbv.txt\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorEditNote/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 16
+   },
+   "result": "tapped (540,1048)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorEditNote/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "Hello, World!\nDon't forget to water the plants while I'm away.\n",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Hello, World!\\nDon't forget to water the plants while I'm away.\\n\"",
+   "refused": false,
+   "expect": "\n  unparsable expect 'TextField value \"Hello, World!\\\\nDon\\'t forget to water the plants while I\\'m away.\\\\n\"': TextField needs a label: a quoted string, ~\"substring\" or /regex/",
+   "frame": "media/run8-opus-contracts/MarkorEditNote/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (817,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorEditNote/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 2
+   },
+   "result": "pressed back x2",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorEditNote/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Button \"File note_SiFbv.txt \" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorEditNote/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorEditNote/007.webp"
+  }
+ ]
+}

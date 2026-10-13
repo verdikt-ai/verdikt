@@ -1,0 +1,193 @@
+{
+ "id": "freshcart-001",
+ "app": "freshcart",
+ "category": "single_app",
+ "goal": "Order salmon and avocados from Natural Foods Market on FreshCart. Confirm the items were added to my cart and give me the total.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 9,
+ "budget": 50,
+ "seconds": 87.6,
+ "cost": 0.4314,
+ "answer": "Wild Caught Sockeye Salmon and Organic Hass Avocados were added to the Natural Foods Market cart; the estimated total is $85.56",
+ "summary": "I added salmon and avocados from Natural Foods Market to your FreshCart cart, and the cart shows both. The estimated total is **$85.56**. I haven't placed the order; it's ready at \"Go to checkout\" whenever you want to finish.\n\nBoth items were already in the cart once, so adding them made it 2 of each. Lower them in the cart if you only wanted one:\n- **Wild Caught Sockeye Salmon:** quantity 2, $29.98\n- **Organic Hass Avocados:** quantity 2, $11.98\n\nThe cart also has four other items you added earlier: Organic Baby Kale, Ginger Lemon Kombucha, Pasture Raised Eggs and Creamy Almond Butter. They're part of the total, which breaks down as:\n\n| | |\n|---|---|\n| Items | $70.51 |\n| Delivery fee | $0.00 |\n| Service fee | $4.23 |\n| Estimated tax | $5.82 |\n| Tip | $5.00 |\n| **Estimated total** | **$85.56** |\n\nANSWER: Wild Caught Sockeye Salmon and Organic Hass Avocados were added to the Natural Foods Market cart; the estimated total is $85.56",
+ "rubric": [
+  {
+   "criterion": "Open FreshCart app and select Natural Foods Market store",
+   "satisfied": true,
+   "reasoning": "The agent started in the FreshCart app and searched for 'Natural Foods Market', then tapped on the Natural Foods Market store card (shown in screenshot 4), which navigated to the store's product listing."
+  },
+  {
+   "criterion": "Search for 'salmon'",
+   "satisfied": true,
+   "reasoning": "In step 7, the agent typed 'salmon' in the search field, and screenshot 7 shows 'Results for \"salmon\"' with Wild Caught Sockeye Salmon displayed."
+  },
+  {
+   "criterion": "Add salmon to cart",
+   "satisfied": true,
+   "reasoning": "In step 8, the agent tapped the add button for the salmon product. The cart count increased from 8 to 9 items (visible in screenshot 9), confirming salmon was added."
+  },
+  {
+   "criterion": "Search for 'avocados'",
+   "satisfied": true,
+   "reasoning": "The agent navigated to Natural Foods Market (step 4) which showed avocados in the product listing. The avocado (Organic Hass Avocados) was visible in screenshot 5 before being added to cart."
+  },
+  {
+   "criterion": "Add avocados to cart",
+   "satisfied": true,
+   "reasoning": "In step 5, the agent tapped the add button for avocados. The cart count increased from 7 to 8 items (visible in screenshot 6), confirming avocados were added."
+  },
+  {
+   "criterion": "Navigate to cart to verify both items are present",
+   "satisfied": true,
+   "reasoning": "In step 9, the agent tapped the Cart button. The final screenshot (step 10) shows the cart with both 'Wild Caught Sockeye Salmon' and 'Organic Hass Avocados' listed under Natural Foods Market."
+  },
+  {
+   "criterion": "Proceed to checkout or confirm items in cart",
+   "satisfied": true,
+   "reasoning": "The final screenshot shows the cart page with both items confirmed present, and a 'Go to checkout' button visible at the bottom showing $85.56."
+  },
+  {
+   "criterion": "Report the cart total",
+   "satisfied": true,
+   "reasoning": "The agent reported the total as $85.56, which matches the 'Go to checkout $85.56' button visible in the final screenshot."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened FreshCart, navigated to Natural Foods Market, added avocados (Organic Hass Avocados) and salmon (Wild Caught Sockeye Salmon) to the cart, navigated to the cart to verify both items were present, and reported the correct total of $85.56 as shown in the final screenshot.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 83
+    }
+   },
+   "result": "tapped at (360, 612) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/freshcart-001/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (201, 140) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/freshcart-001/0004.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Natural Foods Market"
+   },
+   "result": "typed 'Natural Foods Market'; verified: true; field value now 'Natural Foods Market'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/freshcart-001/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (113, 524) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/freshcart-001/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "345,670,377,700"
+    }
+   },
+   "result": "tapped at (361, 685) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/freshcart-001/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "sent 20 deletes; cleared: false; field value now 'Search products and stores'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/freshcart-001/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "salmon"
+   },
+   "result": "typed 'salmon'; verified: true; field value now 'salmon'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/freshcart-001/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "152,378,184,408"
+    }
+   },
+   "result": "tapped at (168, 393) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/freshcart-001/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 15
+    }
+   },
+   "result": "tapped at (201, 740) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/freshcart-001/0020.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Add salmon from Natural Foods Market to cart",
+   "verdict": "proven",
+   "claim": "Wild Caught Sockeye Salmon",
+   "frame": 20
+  },
+  {
+   "type": "DO",
+   "text": "Add avocados from Natural Foods Market to cart",
+   "verdict": "proven",
+   "claim": "Organic Hass Avocados",
+   "frame": 20
+  },
+  {
+   "type": "KNOW",
+   "text": "Cart total",
+   "verdict": "proven",
+   "claim": "$85.56",
+   "frame": 20
+  }
+ ]
+}

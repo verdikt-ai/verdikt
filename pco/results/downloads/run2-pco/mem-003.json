@@ -1,0 +1,337 @@
+{
+ "id": "mem-003",
+ "app": "quickbite",
+ "category": "memory",
+ "goal": "Check my QuickBite order history to find my most frequently ordered restaurant and item, then place a reorder of my usual. Let me know the restaurant name, what I usually get, and confirm the order went through.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 22,
+ "budget": 50,
+ "seconds": 189.3,
+ "cost": 0.7021,
+ "answer": "Chipotle Mexican Grill; usual item: Chicken Bowl; reorder placed \u2014 Order confirmed (ETA 19 min, total $20.70)",
+ "summary": "I placed the reorder. Your most frequent restaurant is **Chipotle Mexican Grill**, and your usual there is the **Chicken Bowl**.\n\n- **How I picked it:** Chipotle shows up 4 times in your order history (Oct 11, Sep 9, Aug 20, Jul 9). Starbucks and Panera Bread are next with 3 each. The Chicken Bowl is in two of those four Chipotle orders, more than anything else.\n- **The order:** 1 Chicken Bowl for $20.70 total ($11.75 bowl, $1.99 delivery, $2.99 service fee, $0.97 tax, $3.00 tip). It's paid with your Freedom Unlimited Visa (...2095) and going to 410 Brannan St, Unit 12B.\n- **Confirmation:** The tracking screen shows \"Order confirmed\" with an ETA of 19 minutes.\n\nI reordered only the Chicken Bowl, not the extra items from past orders, such as the Sofritas Bowl or the Chips & Guacamole.\n\nANSWER: Chipotle Mexican Grill; usual item: Chicken Bowl; reorder placed \u2014 Order confirmed (ETA 19 min, total $20.70)",
+ "rubric": [
+  {
+   "criterion": "Open QuickBite and review order history",
+   "satisfied": true,
+   "reasoning": "The agent navigated to the Orders tab (Steps 2-3), then switched to the 'Past' tab (Step 4) and scrolled through the order history across multiple screenshots (Steps 4-11), clearly reviewing the order history."
+  },
+  {
+   "criterion": "Identify the most frequently ordered restaurant",
+   "satisfied": true,
+   "reasoning": "From the order history screenshots, Chipotle Mexican Grill appears multiple times (Oct 11, Sep 9, Aug 20, Jul 9 visible in the screenshots), making it the most frequently ordered restaurant. The agent correctly identified Chipotle Mexican Grill."
+  },
+  {
+   "criterion": "Identify the usual order item",
+   "satisfied": true,
+   "reasoning": "The Chicken Bowl appears in multiple Chipotle orders (Oct 11: 'Chicken Bowl, Sofritas Bowl'; Sep 9: 'Chicken Bowl, Chips & Guacamole'). The agent correctly identified the Chicken Bowl as the usual item."
+  },
+  {
+   "criterion": "Place a reorder of the usual item from the identified restaurant",
+   "satisfied": true,
+   "reasoning": "The agent searched for Chipotle Mexican Grill (Step 12-13), added a Chicken Bowl to the cart (Step 14), viewed the cart (Step 15-16), clicked Place Order (Step 17), toggled the MyBank confirmation (Steps 18-21), and clicked Confirm & Place Order (Step 22). The final screenshot shows a Tracking screen with 'Order confirmed' and ETA 19 min."
+  },
+  {
+   "criterion": "Report the restaurant name, usual order, and confirm the order went through",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly states: restaurant = Chipotle Mexican Grill, usual item = Chicken Bowl, and confirms the order went through with ETA 19 min and total $20.70, which matches the tracking screen shown in the final screenshot."
+  }
+ ],
+ "judge": "The agent successfully completed all aspects of the task. It navigated to the Orders tab, reviewed the past order history (scrolling through multiple screens showing orders from various restaurants), identified Chipotle Mexican Grill as the most frequently ordered restaurant (appearing multiple times in the history with Chicken Bowl being the recurring item), navigated to Chipotle Mexican Grill, added a Chicken Bowl to the cart, proceeded through checkout, toggled the MyBank confirmation, placed the order, and received a confirmation screen showing 'Order confirmed' with ETA 19 min. The final answer correctly reported the restaurant name (Chipotle Mexican Grill), usual item (Chicken Bowl), and confirmed the order went through ($20.70 total, ETA 19 min).",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Orders"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Orders)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "225,805,262,840"
+    }
+   },
+   "result": "tapped at (243, 822) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "205,64,258,104"
+    }
+   },
+   "result": "tapped at (231, 84) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0009.webp"
+  },
+  {
+   "n": 4,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0011.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0013.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0015.webp"
+  },
+  {
+   "n": 7,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0017.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,263)->(201,611) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0019.webp"
+  },
+  {
+   "n": 9,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,263)->(201,611) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0021.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,263)->(201,611) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0023.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "140,805,180,840"
+    }
+   },
+   "result": "tapped at (160, 822) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0026.webp"
+  },
+  {
+   "n": 12,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Chipotle"
+   },
+   "result": "typed 'Chipotle'; verified: true; field value now 'Chipotle'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0029.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_chipotle_mexican_grill"
+    }
+   },
+   "result": "tapped at (201, 351) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0031.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "menu_item_add_chicken_bowl"
+    }
+   },
+   "result": "tapped at (382, 632) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0033.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "view_cart_button"
+    }
+   },
+   "result": "tapped at (201, 752) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0035.webp"
+  },
+  {
+   "n": 16,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0037.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0039.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmToggle"
+    }
+   },
+   "result": "tapped at (352, 413) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0042.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0042.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "362,403,380,423"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (371, 413) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0044.webp"
+  },
+  {
+   "n": 21,
+   "tool": "swipe",
+   "args": {
+    "x1": 332,
+    "y1": 413,
+    "x2": 378,
+    "y2": 413,
+    "duration_ms": 300
+   },
+   "result": "swiped (332,413)->(378,413) in 300ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0047.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    }
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-003/0049.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "most frequently ordered restaurant",
+   "verdict": "proven",
+   "claim": "Chipotle Mexican Grill",
+   "frame": 23
+  },
+  {
+   "type": "KNOW",
+   "text": "usual item",
+   "verdict": "proven",
+   "claim": "Chicken Bowl",
+   "frame": 23
+  },
+  {
+   "type": "DO",
+   "text": "place reorder of usual and confirm it went through",
+   "verdict": "proven",
+   "claim": "Order confirmed",
+   "frame": 49
+  }
+ ]
+}

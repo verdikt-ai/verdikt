@@ -1,0 +1,155 @@
+{
+ "id": "ContactsNewContactDraft",
+ "app": "Contacts",
+ "goal": "Go to the new contact screen and enter the following details: First Name: Charlie, Last Name: Smith, Phone: 549-453-7185, Phone Label: Work. Do NOT hit save.",
+ "success": true,
+ "score": 1.0,
+ "steps": 9,
+ "budget": 12,
+ "seconds": 75.8,
+ "cost": 0.2525424,
+ "answer": null,
+ "summary": "I filled in the new contact in Contacts and left it unsaved, as you asked. It's still open on the \"Create contact\" screen with:\n\n- **First name:** Charlie\n- **Last name:** Smith\n- **Phone:** 549-453-7185\n- **Phone label:** Work (changed from the default, Mobile)\n\nContacts first asked whether it could send notifications, and I tapped Allow so I could continue.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Contacts"
+   },
+   "result": "opened Contacts",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "TextField \"First name\" value \"Charlie\"",
+     "TextField \"Last name\" value \"Smith\"",
+     "text ~\"549\" visible",
+     "text \"Work\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (540,1271)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (943,2011)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "Charlie",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Charlie\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"First name\" value \"Charlie\" -> TextField \"First name\" value=\"Charlie\" [7] has value \"Charlie\"",
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "Smith",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Smith\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Last name\" value \"Smith\" -> TextField \"Last name\" value=\"Smith\" [8] has value \"Smith\"",
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "549-453-7185",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"549-453-7185\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 12
+   },
+   "result": "tapped (523,1598)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 19
+   },
+   "result": "tapped (361,399)",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text \"Work\" visible -> no match; nearest: Button \"Work Phone\" [11], Button \"Delete Work Phone\" [13], Image \"More options\" [3], Image \"Back\" [17], Image \"Show more name fields\" [15]",
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/008.webp"
+  },
+  {
+   "n": 8,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "TextField \"First name\" value \"Charlie\"",
+     "TextField \"Last name\" value \"Smith\"",
+     "text ~\"549-453-7185\" visible",
+     "Button \"Work Phone\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsNewContactDraft/010.webp"
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "id": "SimpleCalendarNextMeetingWithPerson",
+ "app": "Simple Calendar",
+ "goal": "When is my next meeting with Amanda in Simple Calendar Pro? Express your answer in the format <month name> <day> <year> <hour in 24-hour format>:<minutes>.",
+ "success": true,
+ "score": 1.0,
+ "steps": 4,
+ "budget": 10,
+ "seconds": 36.3,
+ "cost": 0.1018882,
+ "answer": "October 20 2023 06:30",
+ "summary": "Your next meeting with Amanda is **October 20 2023 06:30**.\n\nSearching Simple Calendar Pro for \"Amanda\" found one event: \"Drinks with Amanda\" on Friday, October 20, from 06:30 to 07:00. The search results didn't show the year. I used 2023 because the calendar is open on October 2023 and the phone's date is October 15, 2023.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Calendar Pro"
+   },
+   "result": "opened Simple Calendar Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarNextMeetingWithPerson/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarNextMeetingWithPerson/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "text": "Amanda",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Amanda\" WARNING: the target field shows \"Search\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarNextMeetingWithPerson/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "answer",
+   "args": {
+    "text": "October 20 2023 06:30",
+    "evidence": [
+     "text \"Drinks with Amanda\" visible",
+     "text \"06:30 - 07:00\" visible"
+    ]
+   },
+   "result": "answer recorded: \"October 20 2023 06:30\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarNextMeetingWithPerson/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SimpleCalendarNextMeetingWithPerson/003.webp"
+  }
+ ]
+}

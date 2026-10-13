@@ -1,0 +1,108 @@
+{
+ "id": "TurnOnWifiAndOpenApp",
+ "app": "Settings",
+ "goal": "Turn on Wifi, then open the dialer app",
+ "success": true,
+ "score": 1.0,
+ "steps": 7,
+ "budget": 20,
+ "seconds": 53.0,
+ "cost": 0.13808340000000002,
+ "answer": null,
+ "summary": "I turned on Wi\u2011Fi, then opened the Phone (dialer) app, which is now on screen.\n\nWi\u2011Fi joined the \"AndroidWifi\" network, but the phone reports it has limited connectivity (\"No internet\").",
+ "step_list": [
+  {
+   "n": 0,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/TurnOnWifiAndOpenApp/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "x1": 540,
+    "y1": 0,
+    "x2": 540,
+    "y2": 1500,
+    "duration_ms": 400
+   },
+   "result": "swiped (540,0)->(540,1500) in 400ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/TurnOnWifiAndOpenApp/002.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (285,205)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/TurnOnWifiAndOpenApp/003.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (869,1154)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   Switch \"Wi\u2011Fi\" checked -> Switch \"Wi\u2011Fi\" value=\"on\" [4] is checked",
+   "frame": "media/run10-contracts-seed8/TurnOnWifiAndOpenApp/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (890,1893)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/TurnOnWifiAndOpenApp/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "open_app",
+   "args": {
+    "name": "Phone"
+   },
+   "result": "opened Phone",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/TurnOnWifiAndOpenApp/006.webp"
+  },
+  {
+   "n": 6,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 1
+   },
+   "result": "pressed back",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/TurnOnWifiAndOpenApp/007.webp"
+  },
+  {
+   "n": 7,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/TurnOnWifiAndOpenApp/007.webp"
+  }
+ ]
+}

@@ -1,0 +1,137 @@
+{
+ "id": "ContactsAddContact",
+ "app": "Contacts",
+ "goal": "Create a new contact for Fatima Pereira. Their number is +14228233170.",
+ "success": true,
+ "score": 1.0,
+ "steps": 8,
+ "budget": 12,
+ "seconds": 67.2,
+ "cost": 0.2113752,
+ "answer": null,
+ "summary": "I created a contact for Fatima Pereira with the mobile number +14228233170. The Contacts app reformatted the number as +1 422-823-3170 and confirmed with \"Fatima Pereira saved\". The contact page now shows both the name and the number.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Contacts"
+   },
+   "result": "opened Contacts",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"Fatima Pereira\" visible",
+     "text /422.?823.?3170/ visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (540,1271)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (943,2011)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "Fatima",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Fatima\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"First name\" value \"Fatima\" -> TextField \"First name\" value=\"Fatima\" [7] has value \"Fatima\"",
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "Pereira",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Pereira\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Last name\" value \"Pereira\" -> TextField \"Last name\" value=\"Pereira\" [8] has value \"Pereira\"",
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "+14228233170",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"+14228233170\" WARNING: the target field shows \"+1 422-823-3170\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Phone\" value /422.?823.?3170/ -> TextField \"Phone\" value=\"+1 422-823-3170\" [10] has value \"+1 422-823-3170\"",
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (838,146)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/007.webp"
+  },
+  {
+   "n": 7,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  ok   text ~\"Fatima Pereira\" visible -> StaticText \"Fatima Pereira\" [10]\n  MISS text /422.?823.?3170/ visible -> ambiguous: text /422.?823.?3170/ matched 3 elements [12] [14] [16]; add a role, id= or a longer text\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/008.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ContactsAddContact/008.webp"
+  }
+ ]
+}

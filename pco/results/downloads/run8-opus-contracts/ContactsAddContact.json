@@ -1,0 +1,140 @@
+{
+ "id": "ContactsAddContact",
+ "app": "Contacts",
+ "goal": "Create a new contact for Hugo Pereira. Their number is +13920741751.",
+ "success": true,
+ "score": 1.0,
+ "steps": 8,
+ "budget": 12,
+ "seconds": 78.9,
+ "cost": 0.20480879999999999,
+ "answer": null,
+ "summary": "I added Hugo Pereira to Contacts with the number +13920741751. The app saved it and now shows the number as +1 392-074-1751, labelled Mobile.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Contacts"
+   },
+   "result": "opened Contacts",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsAddContact/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Hugo Pereira\" visible",
+     "text /392.?074.?1751/ visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsAddContact/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (540,1271)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsAddContact/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (943,2011)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsAddContact/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "Hugo",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Hugo\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"First name\" value \"Hugo\" -> TextField \"First name\" value=\"Hugo\" [7] has value \"Hugo\"",
+   "frame": "media/run8-opus-contracts/ContactsAddContact/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "Pereira",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Pereira\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Last name\" value \"Pereira\" -> TextField \"Last name\" value=\"Pereira\" [8] has value \"Pereira\"",
+   "frame": "media/run8-opus-contracts/ContactsAddContact/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "+13920741751",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"+13920741751\" WARNING: the target field shows \"+1 392-074-1751\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField /392.?074.?1751/ visible -> no match; nearest: TextField \"First name\" [7], TextField \"Last name\" [8], TextField \"Company\" [9], TextField \"Phone\" [10]",
+   "frame": "media/run8-opus-contracts/ContactsAddContact/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (838,146)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Hugo Pereira\" visible -> StaticText \"Hugo Pereira\" [10]",
+   "frame": "media/run8-opus-contracts/ContactsAddContact/007.webp"
+  },
+  {
+   "n": 7,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Hugo Pereira\" visible",
+     "StaticText \"+1 392-074-1751\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsAddContact/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ContactsAddContact/009.webp"
+  }
+ ]
+}

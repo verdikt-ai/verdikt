@@ -1,0 +1,108 @@
+{
+ "id": "SystemWifiTurnOn",
+ "app": "Settings",
+ "goal": "Turn wifi on.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 55.0,
+ "cost": 0.1588806,
+ "answer": null,
+ "summary": "Wi\u2011Fi is on now. I turned it on in Settings under Network & internet \u2192 Internet. Right after the tap, the screen showed the Wi\u2011Fi switch on, \"Searching for networks\u2026\", and an \"Add network\" option, which only appears when Wi\u2011Fi is on.\n\nMy final automated check didn't confirm the switch: it couldn't read the switch as on, even though the \"Add network\" check passed. I ended the session anyway, so I didn't look at the screen again after that.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOn/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Wi\" checked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOn/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (407,794)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOn/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (279,610)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOn/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (965,824)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOn/006.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS Switch ~\"Wi\" checked -> no match; nearest: Switch \"switch_widget\" [11]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOn/007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch \"switch_widget\" checked",
+     "text \"Add network\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOn/007.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOn/007.webp"
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "id": "TurnOnWifiAndOpenApp",
+ "app": "Settings",
+ "goal": "Turn on Wifi, then open the settings app",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 20,
+ "seconds": 33.7,
+ "cost": 0.12352940000000001,
+ "answer": null,
+ "summary": "I turned on Wi-Fi in the Settings app (Network & internet > Internet), and the switch now shows as on. The phone was still searching for networks when I finished, so it wasn't connected yet. Because I used the Settings app to switch Wi-Fi on, it was already open when I ended there, so I didn't open it a second time.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TurnOnWifiAndOpenApp/001.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Wi-Fi\" checked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TurnOnWifiAndOpenApp/001.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (407,794)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TurnOnWifiAndOpenApp/003.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (279,610)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TurnOnWifiAndOpenApp/004.webp"
+  },
+  {
+   "n": 3,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "id=switch_widget checked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TurnOnWifiAndOpenApp/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (965,824)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   id=switch_widget checked -> Switch \"\" value=\"on\" [10] is checked",
+   "frame": "media/run8-opus-contracts/TurnOnWifiAndOpenApp/006.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TurnOnWifiAndOpenApp/007.webp"
+  }
+ ]
+}

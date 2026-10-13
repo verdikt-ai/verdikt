@@ -1,0 +1,100 @@
+{
+ "rounds": 1,
+ "obligations": 9,
+ "proven": 8,
+ "unproven": 0,
+ "absent": 1,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: MyBank checking balance",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$15,621.00",
+   "evidence_frame": 83,
+   "explanation": "MyBank home shows TOTAL CHECKING (...6645) $15,621.00 Available balance",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: MyBank savings balance",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$4,920.50",
+   "evidence_frame": 83,
+   "explanation": "MyBank home shows SAVINGS (...1032) $4,920.50 Available balance",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: MyBank credit card balance",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$4,643.72",
+   "evidence_frame": 83,
+   "explanation": "MyBank home now shows Freedom Unlimited (...2095) $4,643.72 Current balance (was $4,588.98 at session start)",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Pay SplitPay pending requests under $50",
+   "type": "DO",
+   "status": "pass",
+   "claim": "You paid Leo Chen, parking, -$17.00, 1m",
+   "evidence_frame": 28,
+   "explanation": "Recent transactions show \"You paid Leo Chen, parking, -$17.00\", \"You paid Kai Santos, brunch, -$33.00\", \"You paid Maya Patel, dinner split, -$42.00\"; no You owe requests remain.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: MegaMart recent purchases total",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$42.20",
+   "evidence_frame": 34,
+   "explanation": "Past Orders shows most recent delivered orders AMZ100250 Feb 18, 2026 $9.72 and AMZ100249 Feb 6, 2026 $42.20; Active tab had AMZ100251 $151.52, AMZ100253 $313.87, AMZ100252 $227.31 (Feb 26-28, 2026).",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: QuickBite food spending",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Chipotle Mexican Grill, 2 items \u00b7 $28.00 \u00b7 Oct 11, 2026",
+   "evidence_frame": 41,
+   "explanation": "Past orders in October 2026: Chipotle $28.00, Sweetgreen $19.79, Shake Shack $31.88, Starbucks $23.27, Whole Foods $32.31, Sugarfish $57.37 = $192.62 (Panera $20.26 is Sep 30).",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: Device Testing Tasks work-related expenses",
+   "type": "KNOW",
+   "status": "fail",
+   "claim": "No expense entries: Apps tab has only App/Status columns, rows 2-25 all \"In Progress\"",
+   "evidence_frame": null,
+   "explanation": "Reopened Device Testing Tasks and scrolled the Apps tab to the end: only columns A \"App\" and B \"Status\", rows 2-25 (Weather ... CloudDocs) all \"In Progress\", with no amount column. The Tasks tab (checked earlier) has only Task/Owner/Due/Status: \"Match Sheets UI\", \"Seed task workbook\", \"Review cell editing\". These are the workbook's only two tabs (Apps, Tasks). No dollar amounts or expenses anywhere, so $0 in work expenses to include.",
+   "verdict": "absent",
+   "reason": "Reopened Device Testing Tasks and scrolled the Apps tab to the end: only columns A \"App\" and B \"Status\", rows 2-25 (Weather ... CloudDocs) all \"In Progress\", with no amount column. The Tasks tab (checked earlier) has only Task/Owner/Due/Status: \"Match Sheets UI\", \"Seed task workbook\", \"Review cell editing\". These are the workbook's only two tabs (Apps, Tasks). No dollar amounts or expenses anywhere, so $0 in work expenses to include."
+  },
+  {
+   "obligation": "SAY: Monthly discretionary spending total",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "319.61",
+   "evidence_frame": 81,
+   "explanation": "Row 9 amount cell shows \"319.61\" = QuickBite Oct orders $192.62 + MegaMart Oct 9 $34.99 (MyBank) + SplitPay requests paid $92.00; no work expenses in Device Testing Tasks.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Add new row to Monthly Expense Log with this month's totals",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Oct 2026: QuickBite 192.62 + MegaMart 34.99 + SplitPay 92.00",
+   "evidence_frame": 81,
+   "explanation": "Monthly Expense Log row 9 now shows \"Oct 12\", \"Discretionary\", \"319.61\", \"Oct 2026: QuickBite 192.62 + MegaMart 34.99 + SplitPay 92.00\"; Total recalculated to 3072.23.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

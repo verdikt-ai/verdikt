@@ -1,0 +1,200 @@
+{
+ "id": "MarkorTranscribeReceipt",
+ "app": "Simple Gallery",
+ "goal": "Create a file in Markor, called receipt.md with the transactions from the receipt.png. Use Simple Gallery to view the receipt. Please enter transactions in csv format including the header \"Date, Item, Amount\".",
+ "success": true,
+ "score": 1.0,
+ "steps": 14,
+ "budget": 18,
+ "seconds": 103.9,
+ "cost": 0.3965894,
+ "answer": null,
+ "summary": "I created `receipt.md` in Markor and saved it. It now shows in the file list. The receipt in Simple Gallery has only one transaction, so the file has the header plus one line:\n\n```\nDate, Item, Amount\n2023-08-03, USB-C Cable, $16.59\n```\n\nI kept the dollar sign in the amount, the way it appears on the receipt.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Gallery Pro"
+   },
+   "result": "opened Simple Gallery Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "x": 134,
+    "y": 450
+   },
+   "result": "tapped (134,450)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "x": 180,
+    "y": 400
+   },
+   "result": "tapped (180,400)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "receipt",
+    "x": 370,
+    "y": 930,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"receipt\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": ".md",
+    "x": 786,
+    "y": 930,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \".md\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "receipt",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"receipt\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"my_note\" value \"receipt\" -> TextField \"my_note\" value=\"receipt\" [1] has value \"receipt\"",
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "text": ".md",
+    "index": 2,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \".md\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (922,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "text": "Date, Item, Amount\n2023-08-03, USB-C Cable, $16.59",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Date, Item, Amount\\n2023-08-03, USB-C Cable, $16.59\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (817,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 2
+   },
+   "result": "pressed back x2",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorTranscribeReceipt/013.webp"
+  }
+ ]
+}

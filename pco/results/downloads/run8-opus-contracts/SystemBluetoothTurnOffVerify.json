@@ -1,0 +1,96 @@
+{
+ "id": "SystemBluetoothTurnOffVerify",
+ "app": "Settings",
+ "goal": "Turn bluetooth off.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 51.0,
+ "cost": 0.09222780000000001,
+ "answer": null,
+ "summary": "Bluetooth is off. It was already off when I checked, so I didn't change anything. On the Bluetooth settings page (Settings > Connected devices > Connection preferences > Bluetooth), the \"Use Bluetooth\" switch shows as off.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOffVerify/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Bluetooth\" unchecked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOffVerify/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (412,1025)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOffVerify/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (343,1157)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOffVerify/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (302,721)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOffVerify/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "id=switch_widget unchecked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOffVerify/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOffVerify/006.webp"
+  }
+ ]
+}

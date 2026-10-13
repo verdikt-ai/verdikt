@@ -1,0 +1,92 @@
+{
+ "id": "trailblaze-004",
+ "app": "trailblaze",
+ "category": "single_app",
+ "goal": "Browse my recent activities on TrailBlaze and give kudos to a friend's workout. What's the friend's name and activity type?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 2,
+ "budget": 50,
+ "seconds": 43.3,
+ "cost": 0.309,
+ "answer": "Jordan Avery, Run",
+ "summary": "I gave kudos to Jordan Avery's run, \"Presidio Tempo Before Work.\" The kudos count went from 18 to 19 and the button turned orange.\n\nAva Torres's run was first in your feed, but you'd already given it kudos, so I picked the next friend's workout.\n\nANSWER: Jordan Avery, Run",
+ "rubric": [
+  {
+   "criterion": "Open TrailBlaze app and navigate to the Feed tab",
+   "satisfied": true,
+   "reasoning": "The app is open and showing the Home/Feed tab with activity cards visible in screenshots 2 and 3."
+  },
+  {
+   "criterion": "Browse recent activities and find a friend's workout",
+   "satisfied": true,
+   "reasoning": "After scrolling, the agent found Jordan Avery's Run activity 'Presidio Tempo Before Work' posted 13h ago, clearly visible in screenshots 2 and 3."
+  },
+  {
+   "criterion": "Tap the kudos button on the friend's activity",
+   "satisfied": true,
+   "reasoning": "The kudos count on Jordan Avery's activity changed from 18 (screenshot 2) to 19 (screenshot 3), and the thumbs-up icon appears filled/orange in the final state, indicating the kudos button was successfully tapped."
+  },
+  {
+   "criterion": "Report the friend's name",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported 'Jordan Avery' as the friend's name, which matches what is shown in the screenshots."
+  },
+  {
+   "criterion": "Report the activity type",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported 'Run' as the activity type, which matches the 'Run \u00b7 13h ago' label shown under Jordan Avery's name in the screenshots."
+  }
+ ],
+ "judge": "The agent successfully browsed the TrailBlaze app's feed, found Jordan Avery's Run activity ('Presidio Tempo Before Work'), tapped the kudos button (kudos count changed from 18 to 19 in the final screenshot), and correctly reported the friend's name and activity type.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 55,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,677)->(201,197) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/trailblaze-004/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 64
+    }
+   },
+   "result": "tapped at (54, 761) via index",
+   "refused": false,
+   "frame": "media/run2-pco/trailblaze-004/0005.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "friend's name",
+   "verdict": "proven",
+   "claim": "Jordan Avery",
+   "frame": 5
+  },
+  {
+   "type": "KNOW",
+   "text": "friend's activity type",
+   "verdict": "proven",
+   "claim": "Run",
+   "frame": 5
+  },
+  {
+   "type": "DO",
+   "text": "give kudos to friend's workout",
+   "verdict": "proven",
+   "claim": "19",
+   "frame": 5
+  }
+ ]
+}

@@ -1,0 +1,137 @@
+{
+ "id": "notes-001",
+ "app": "notes",
+ "category": "single_app",
+ "goal": "Open the Work folder in Notes, find the 'Team Standup Notes' note, and add a new bullet point about a bug fix completed today. Confirm the note was updated.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 7,
+ "budget": 50,
+ "seconds": 57.4,
+ "cost": 0.3059,
+ "answer": null,
+ "summary": "I added a bullet about a bug fix to the \"Team Standup Notes\" note in the Work folder, and it saved.\n\nThe new line is \"- Fixed login crash bug (completed today)\". It's at the end of the \"Today:\" list, under \"- Design review at 2pm\". The goal didn't name a specific bug, so I made up \"login crash\" as a placeholder. You may want to change it to the real bug.\n\nTo confirm it saved, I left the note and opened it again. The new bullet was still there, and the note's last-edited time had changed to October 12, 2026 at 10:47 PM.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open Notes app and navigate to the Work folder",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Notes app Folders view, and Step 1 taps the Work folder. Screenshot 2 confirms the Work folder is open showing its contents."
+  },
+  {
+   "criterion": "Find and open 'Team Standup Notes'",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the Work folder with 'Team Standup Notes' visible. Step 2 taps it, and Screenshot 3 confirms the note is open."
+  },
+  {
+   "criterion": "Tap to edit the note",
+   "satisfied": true,
+   "reasoning": "Step 3 taps the note body to enter edit mode. Screenshot 4 shows the keyboard is visible and the cursor is active in the note, confirming edit mode was entered."
+  },
+  {
+   "criterion": "Add a new bullet point about a bug fix completed today",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 clearly shows the new bullet point '- Fixed login crash bug (completed today)' was added under the 'Today:' section. The final screenshot (8) also confirms this text is present in the saved note."
+  },
+  {
+   "criterion": "Save and confirm the note was updated",
+   "satisfied": true,
+   "reasoning": "The agent navigated back to the Work folder list (Step 6, Screenshot 7) where the Team Standup Notes timestamp changed from '9:35 AM' to '10:47 PM', confirming the save. Step 7 reopened the note, and the final screenshot (8) shows the updated note with the new bullet point and updated timestamp 'October 12, 2026 at 10:47 PM', confirming the update was saved."
+  }
+ ],
+ "judge": "The agent successfully completed all steps of the task: opened the Work folder in Notes, found and opened 'Team Standup Notes', tapped to edit the note, added a new bullet point '- Fixed login crash bug (completed today)' under the Today section, navigated back to confirm the note was saved (timestamp updated to 10:47 PM), and then reopened the note to confirm the new bullet point persists in the final state.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "notes_folder_work"
+    }
+   },
+   "result": "tapped at (201, 398) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/notes-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (201, 245) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/notes-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "370,420,385,436"
+    }
+   },
+   "result": "tapped at (377, 428) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/notes-001/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "\n- Fixed login crash bug (completed today)"
+   },
+   "result": "typed '\\n- Fixed login crash bug (completed today)'; verified: false; field value now 'Team Standup Notes'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/notes-001/0011.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Done)",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/notes-001/0014.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/notes-001/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (201, 245) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/notes-001/0016.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "add a bullet about a bug fix completed today to 'Team Standup Notes' in Work folder and confirm it's saved",
+   "verdict": "proven",
+   "claim": "- Fixed login crash bug (completed today)",
+   "frame": 16
+  }
+ ]
+}

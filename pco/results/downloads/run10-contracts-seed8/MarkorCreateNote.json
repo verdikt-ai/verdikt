@@ -1,0 +1,175 @@
+{
+ "id": "MarkorCreateNote",
+ "app": "Markor",
+ "goal": "Create a new note in Markor named 2023_03_13_good_goat.txt with the following text: Cleanliness is next to godliness.",
+ "success": true,
+ "score": 1.0,
+ "steps": 11,
+ "budget": 16,
+ "seconds": 101.1,
+ "cost": 0.3687946,
+ "answer": null,
+ "summary": "I created the note `2023_03_13_good_goat.txt` in Markor's Documents folder. It contains \"Cleanliness is next to godliness.\" I saved it and confirmed it shows up in the file list.\n\nWhile I was typing the name, the dialog moved and the template menu opened by mistake. I reselected \"Empty file\", so the note has no template text.\n\nThe file type in the dialog was left as Markdown; only the extension was changed to `.txt`.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"2023_03_13_good_goat.txt\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "2023_03_13_good_goat",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"2023_03_13_good_goat\" WARNING: the target field shows \"my_note\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \"my_note\" value \"2023_03_13_good_goat\" -> no match; nearest: Button \"Empty file\" [0], Button \"zim-wiki-empty.txt\" [7], Button \"sample.csv\" [11], StaticText \"Wifi signal full.,No internet\" [13], Button \"zim-wiki-reference.txt\" [6]",
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (477,828)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "2023_03_13_good_goat",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"2023_03_13_good_goat\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": ".txt",
+    "index": 2,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \".txt\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \".txt\" visible -> TextField \".md\" value=\".txt\" [2]",
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (922,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "Cleanliness is next to godliness.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Cleanliness is next to godliness.\" WARNING: the target field shows \"Cleanliness is next to godlines\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Cleanliness is next to godliness.\" visible -> TextField \"\" value=\"Cleanliness is next to godliness.\" [8]",
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/009.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (817,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/010.webp"
+  },
+  {
+   "n": 10,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 2
+   },
+   "result": "pressed back x2",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text \"2023_03_13_good_goat.txt\" visible -> no match; nearest: Button \"File 2023_03_13_good_goat.txt \" [13], StaticText \"Go to\" [3], Button \"Folder .app \" [12], Image \"More options\" [6], StaticText \"Wifi signal full.,No internet\" [15]",
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/011.webp"
+  },
+  {
+   "n": 10,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Button ~\"2023_03_13_good_goat.txt\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/011.webp"
+  },
+  {
+   "n": 11,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorCreateNote/013.webp"
+  }
+ ]
+}

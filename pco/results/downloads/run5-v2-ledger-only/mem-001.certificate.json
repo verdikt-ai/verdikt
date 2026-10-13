@@ -1,0 +1,60 @@
+{
+ "rounds": 0,
+ "obligations": 5,
+ "proven": 5,
+ "unproven": 0,
+ "absent": 0,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: who sends the recurring monthly payment",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d",
+   "evidence_frame": 45,
+   "explanation": "Recent transactions show \"Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d\"; the feed also shows rent february, january and december payments from Arnav.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: amount of the recurring payment",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "+$650.00",
+   "evidence_frame": 45,
+   "explanation": "The rent row from Arnav Srikanth on screen shows the amount \"+$650.00\" for rent march.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "IF: this month's (October) payment has not arrived yet",
+   "type": "IF",
+   "status": "pass",
+   "claim": "rent march \ud83c\udfe0",
+   "evidence_frame": 45,
+   "explanation": "The newest rent payment from Arnav on screen is \"rent march \ud83c\udfe0, +$650.00, 15d\"; no newer rent payment appears in recent transactions, and the MyBank search for \"Arnav\" showed \"No results\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: send a payment request to the payer for this month's amount",
+   "type": "DO",
+   "status": "pass",
+   "claim": "1m \u00b7 monthly rent",
+   "evidence_frame": 45,
+   "explanation": "Awaiting payment section now lists \"You requested Arnav Srikanth\" \"$650.00\" \"1m \u00b7 monthly rent\"; pending count went from 6 to 7.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "SAY: recurring pattern (who, amount, frequency)",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "Arnav Srikanth pays $650 monthly rent via SplitPay (Dec, Jan, Feb, Mar); the next month's payment hasn't arrived, so a $650 request was sent.",
+   "evidence_frame": 45,
+   "explanation": "The SplitPay history shows Arnav Srikanth paying rent (december, january, february, march), and the March payment on screen is +$650.00. MyBank shows no recurring incoming payments.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

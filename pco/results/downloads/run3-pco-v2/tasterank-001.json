@@ -1,0 +1,151 @@
+{
+ "id": "tasterank-001",
+ "app": "tasterank",
+ "category": "single_app",
+ "goal": "Search for 'Tartine Manufactory' in TasteRank, check out its score and cuisine details, and add it to my 'Want to Try' list. What's the TasteRank score and cuisine type?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 6,
+ "budget": 50,
+ "seconds": 50.7,
+ "cost": 0.3385,
+ "answer": "TasteRank score 9.1; cuisine Bakery, American; cuisine type of Tartine Manufactory: $$$ | Bakery, American",
+ "summary": "Tartine Manufactory has a TasteRank score of 9.1, and its cuisine is listed as Bakery, American ($$$). It's in the Mission District, San Francisco.\n\nI added it to your \"Want to Try\" list. It now shows a checkmark next to \"Want to Try\" in the Save to List sheet. It was already on your \"Mission Crawl\" list, and that hasn't changed.\n\nANSWER: TasteRank score 9.1; cuisine Bakery, American",
+ "rubric": [
+  {
+   "criterion": "Open TasteRank app and tap the search icon",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the TasteRank app open, and the agent tapped the search bar/icon to open the search interface, as evidenced by Screenshot 2 showing the search screen."
+  },
+  {
+   "criterion": "Type 'Tartine Manufactory' in the search field",
+   "satisfied": true,
+   "reasoning": "Screenshots 2 and 3 clearly show 'Tartine Manufactory' typed in the search field, with the restaurant appearing in search results."
+  },
+  {
+   "criterion": "Tap on Tartine Manufactory from search results",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 shows 'Tartine Manufactory, Mission District, San Francisco' in the search results, and Screenshot 4 shows the restaurant detail page, confirming the tap was successful."
+  },
+  {
+   "criterion": "View the restaurant's score and cuisine details",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 (the restaurant detail page) clearly shows the TasteRank score of 9.1 and the cuisine details '$$$ | Bakery, American'."
+  },
+  {
+   "criterion": "Add the restaurant to the 'Want to Try' list",
+   "satisfied": true,
+   "reasoning": "Screenshots 5 and 6 show the 'Save to List' modal. In Screenshot 6, 'Want to Try' has a checkmark (\u2713) next to it, confirming it was added to that list."
+  },
+  {
+   "criterion": "Report the TasteRank score",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported the TasteRank score as 9.1, which matches what is shown in Screenshot 4."
+  },
+  {
+   "criterion": "Report the cuisine type",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported the cuisine type as 'Bakery, American', which matches the '$$$ | Bakery, American' shown in Screenshot 4."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened TasteRank, searched for 'Tartine Manufactory', tapped on the result, viewed the restaurant details showing a score of 9.1 and cuisine type of Bakery, American, added it to the 'Want to Try' list (confirmed by checkmark in screenshot 6), and correctly reported the score and cuisine type.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (201, 146) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/tasterank-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Tartine Manufactory"
+   },
+   "result": "typed 'Tartine Manufactory'; verified: true; field value now 'Tartine Manufactory'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/tasterank-001/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 13
+    }
+   },
+   "result": "tapped at (201, 432) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/tasterank-001/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (295, 516) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/tasterank-001/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (201, 370) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/tasterank-001/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (349, 110) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/tasterank-001/0014.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "TasteRank score of Tartine Manufactory",
+   "verdict": "proven",
+   "claim": "9.1",
+   "frame": 8
+  },
+  {
+   "type": "KNOW",
+   "text": "cuisine type of Tartine Manufactory",
+   "verdict": "proven",
+   "claim": "$$$ | Bakery, American",
+   "frame": 8
+  },
+  {
+   "type": "DO",
+   "text": "add Tartine Manufactory to Want to Try list",
+   "verdict": "proven",
+   "claim": "Want to Try",
+   "frame": 12
+  }
+ ]
+}

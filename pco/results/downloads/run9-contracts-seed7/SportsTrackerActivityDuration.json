@@ -1,0 +1,63 @@
+{
+ "id": "SportsTrackerActivityDuration",
+ "app": "Opentracks",
+ "goal": "How long was my climbing activity October 12 2023 in the OpenTracks app? Express your answer in minutes as a single integer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 3,
+ "budget": 10,
+ "seconds": 25.8,
+ "cost": 0.0883688,
+ "answer": "50",
+ "summary": "Your climbing activity on Thursday lasted **50 minutes**. I've submitted that answer and ended the session.\n\nThe only track on Thursday in your OpenTracks list is \"More tired than usual today\" (\"Embraced the rain and got soaked.\"). The list shows it at 50:00 over 1.86 mi, starting at 14:15.\n\nI didn't open the track to confirm it's recorded as climbing. I went by the climbing figure next to it in the list and the fact that no other track is on Thursday.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "OpenTracks"
+   },
+   "result": "opened OpenTracks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerActivityDuration/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerActivityDuration/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "answer",
+   "args": {
+    "text": "50",
+    "evidence": [
+     "text \"50:00 (1.86 mi)\" visible",
+     "text \"Thursday\" visible"
+    ]
+   },
+   "result": "answer recorded: \"50\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerActivityDuration/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerActivityDuration/002.webp"
+  }
+ ]
+}

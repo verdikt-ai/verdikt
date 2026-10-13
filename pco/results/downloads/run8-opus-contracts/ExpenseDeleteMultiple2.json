@@ -1,0 +1,200 @@
+{
+ "id": "ExpenseDeleteMultiple2",
+ "app": "Pro Expense",
+ "goal": "Delete the following expenses from pro expense: Streaming Services, Unexpected Expenses, Pet Supplies.",
+ "success": true,
+ "score": 1.0,
+ "steps": 15,
+ "budget": 34,
+ "seconds": 74.6,
+ "cost": 0.5199456,
+ "answer": null,
+ "summary": "I deleted all three expenses from Pro Expense: Streaming Services (487.25, today), Pet Supplies (190.95, today) and Unexpected Expenses (269.5, Oct 11). I confirmed each deletion, and each one disappeared from the Expense Logs list.\n\nI scrolled further down the log and didn't see a second copy of any of them. That list covers Oct 1\u201315 only, and I didn't reach the bottom of it.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Pro Expense"
+   },
+   "result": "opened Pro Expense",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Streaming Services\" absent",
+     "text \"Unexpected Expenses\" absent",
+     "text \"Pet Supplies\" absent"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (73,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (367,691)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "long_press",
+   "args": {
+    "index": 26,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,861) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 31
+   },
+   "result": "tapped (971,836)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (540,2221)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Streaming Services\" absent -> absent",
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "long_press",
+   "args": {
+    "index": 26,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,861) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 31
+   },
+   "result": "tapped (971,836)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (540,2221)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Pet Supplies\" absent -> absent",
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "long_press",
+   "args": {
+    "index": 54,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,1570) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "index": 59
+   },
+   "result": "tapped (971,1545)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (540,2221)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Unexpected Expenses\" absent -> absent",
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/014.webp"
+  },
+  {
+   "n": 15,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseDeleteMultiple2/015.webp"
+  }
+ ]
+}

@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Verdikt Benchmark Record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a flight-recorder readout. Hero = a device replaying a real run; then the run matrix
+   (every task x every run); then the task browser; replays open as a full-page instrument view. */
+:root {
+  --bg: #f3f4f1;        /* paper with a faint green-grey bias */
+  --surface: #ffffff;
+  --band: #e9ebe6;
+  --line: #d9ddd5;
+  --ink: #111412;
+  --muted: #5f665f;
+  --faint: #8d948c;
+  --signal: #1f43c8;    /* the one accent: taps, focus, the current step */
+  --pass: #188a43; --part: #c27805; --fail: #cc2f25; --none: #c9cec6;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Hanken Grotesk", -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --r: 14px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0c0e0d; --surface: #141716; --band: #1a1e1c; --line: #272c29; --ink: #e8ebe7; --muted: #a0a8a1; --faint: #727a73;
+  --signal: #7d97ff; --pass: #3fc477; --part: #f0a43a; --fail: #ff6a5e; --none: #2f3531; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #0c0e0d; --surface: #141716; --band: #1a1e1c; --line: #272c29; --ink: #e8ebe7; --muted: #a0a8a1; --faint: #727a73;
+  --signal: #7d97ff; --pass: #3fc477; --part: #f0a43a; --fail: #ff6a5e; --none: #2f3531; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font: 16px/1.55 var(--body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; border-radius: 6px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 0 96px; }
+.mono { font-family: var(--mono); }
+.label { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+
+/* nav */
+nav.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+nav.top .in { max-width: 1240px; margin: 0 auto; padding-inline: 20px; height: 60px; display: flex; align-items: center; gap: 28px; }
+.mark { font-family: var(--display); font-stretch: 125%; font-weight: 800; font-size: 17px; letter-spacing: -.01em; display: flex; align-items: center; gap: 9px; }
+.mark i { width: 10px; height: 10px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 4px color-mix(in srgb, var(--signal) 18%, transparent); }
+nav.top .tab { color: var(--muted); font-size: 14.5px; padding: 18px 0; border-bottom: 2px solid transparent; }
+nav.top .tab.on { color: var(--ink); border-color: var(--ink); }
+nav.top .sp { flex: 1; }
+.kbtn { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--line); background: var(--surface); border-radius: 9px; padding: 6px 8px 6px 12px; color: var(--muted); cursor: pointer; font-size: 14px; }
+.kbtn kbd { font-family: var(--mono); font-size: 11px; border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; color: var(--faint); }
+.ibtn { border: 1px solid var(--line); background: var(--surface); border-radius: 9px; width: 36px; height: 34px; cursor: pointer; }
+@media (max-width: 640px) { nav.top .tab.m { display: none; } .kbtn span { display: none; } }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; padding-block: 48px 28px; }
+.showcase { display: flex; gap: 18px; align-items: center; }
+.showcase .device { width: 212px; border-radius: 36px; padding: 9px; }
+.showcase .screen { border-radius: 28px; }
+.showcase .caption { bottom: 14px; font-size: 11px; }
+.proof { width: 250px; border: 1px solid var(--line); background: var(--surface); border-radius: var(--r); padding: 14px 14px 10px; }
+.proof .label { display: block; margin-bottom: 8px; }
+.proof ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.proof li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 8px; font-size: 12.5px; line-height: 1.35; color: var(--muted); }
+.proof li .ty { font: 500 10px var(--mono); color: var(--faint); letter-spacing: .04em; }
+.proof li .mk { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--line); margin-top: 1px; transition: background .25s, border-color .25s; }
+.proof li.ok { color: var(--ink); }
+.proof li.ok .mk { background: var(--pass); border-color: var(--pass); box-shadow: inset 0 0 0 3px var(--surface); }
+.proof li .cl { display: block; font: 11px var(--mono); color: var(--pass); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.proof .foot2 { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); font: 11px var(--mono); color: var(--faint); }
+@media (max-width: 760px) { .showcase { flex-direction: column; } .proof { width: 100%; } }
+@media (max-width: 1060px) { .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 36px; } .showcase { justify-content: center; } }
+.hero h1 { font-family: var(--display); font-stretch: 118%; font-weight: 800; font-size: clamp(38px, 5.6vw, 68px); line-height: .98; letter-spacing: -.025em; margin: 14px 0 22px; text-wrap: balance; }
+.hero h1 em { font-style: normal; color: var(--signal); }
+.hero p.lede { font-size: 18px; color: var(--muted); max-width: 54ch; margin: 0 0 34px; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+@media (max-width: 640px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stat { padding: 16px 16px 4px 0; display: grid; gap: 4px; align-content: start; }
+.stat b { font-family: var(--display); font-stretch: 112%; font-weight: 700; font-size: 30px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13.5px; color: var(--muted); }
+.spark { margin-top: 26px; display: flex; align-items: center; gap: 14px; color: var(--muted); font-size: 13px; flex-wrap: wrap; }
+.spark svg { overflow: visible; }
+
+/* device */
+.device { position: relative; background: #050605; border-radius: 44px; padding: 12px; box-shadow: 0 30px 80px -30px rgba(10, 20, 15, .45), 0 0 0 1px rgba(255,255,255,.04) inset; }
+.screen { position: relative; border-radius: 33px; overflow: hidden; background: #000; aspect-ratio: 9 / 19.5; }
+.screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .18s ease; }
+.ripple { position: absolute; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; border: 3px solid var(--signal); background: color-mix(in srgb, var(--signal) 28%, transparent); pointer-events: none; animation: ripple .7s ease-out forwards; }
+@keyframes ripple { from { transform: scale(.35); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
+.swipe { position: absolute; height: 4px; background: var(--signal); border-radius: 4px; transform-origin: 0 50%; pointer-events: none; animation: swipe .7s ease-out forwards; opacity: .9; }
+@keyframes swipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); opacity: 0; } }
+.caption { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); max-width: 86%; background: rgba(12, 14, 13, .82); color: #f1f3f0; font: 500 12.5px/1.35 var(--mono); padding: 7px 11px; border-radius: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; backdrop-filter: blur(6px); }
+.caption:empty { display: none; }
+.now { margin-top: 14px; display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--muted); }
+.now a { color: var(--ink); border-bottom: 1px solid var(--line); }
+@media (prefers-reduced-motion: reduce) { .ripple, .swipe { animation-duration: .01s; } .screen img { transition: none; } }
+
+/* sections */
+section.block { padding-block: 44px 0; }
+.bh { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 18px; }
+.bh h2 { font-family: var(--display); font-stretch: 112%; font-weight: 700; font-size: 26px; letter-spacing: -.015em; margin: 0; }
+.bh p { margin: 0; color: var(--muted); font-size: 14.5px; max-width: 60ch; }
+
+/* matrix */
+.matrix { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); padding: 18px 18px 12px; }
+.mx { display: grid; grid-template-columns: 150px 1fr 74px; row-gap: 6px; column-gap: 14px; align-items: center; min-width: 900px; }
+.mx .rl { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mx .rl small { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--faint); }
+.cells { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; height: 26px; }
+.cells a { border-radius: 2px; background: var(--none); transition: transform .1s; }
+.cells a.p { background: var(--pass); } .cells a.f { background: var(--fail); } .cells a.x { background: var(--part); }
+.cells a:hover, .cells a.hl { transform: scaleY(1.35); outline: 2px solid var(--ink); outline-offset: 0; }
+.mx .sc { font-family: var(--mono); font-size: 13px; text-align: right; font-variant-numeric: tabular-nums; }
+.mxk { display: flex; gap: 16px; margin-top: 12px; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; min-width: 0; }
+.mxk i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.tip { position: fixed; z-index: 40; pointer-events: none; background: var(--ink); color: var(--bg); font: 500 12px/1.4 var(--mono); padding: 6px 9px; border-radius: 8px; max-width: 320px; }
+
+/* browser */
+.controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: stretch; }
+.seg { display: inline-flex; padding: 4px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); gap: 4px; }
+.seg button { border: 0; background: transparent; border-radius: 9px; padding: 10px 18px; cursor: pointer; display: inline-flex; gap: 10px; align-items: baseline; font-weight: 600; }
+.seg button small { font-family: var(--mono); font-size: 11.5px; color: var(--faint); font-weight: 400; }
+.seg button.on { background: var(--ink); color: var(--bg); }
+.seg button.on small { color: inherit; opacity: .7; }
+.search { flex: 1 1 280px; min-width: 0; min-height: 52px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 0 16px; font-size: 16px; }
+.sub { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 18px 0 24px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+.sub select { font-family: var(--mono); font-size: 12.5px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 5px 8px; max-width: 100%; }
+.chips { display: inline-flex; gap: 6px; }
+.chips button { font-family: var(--mono); font-size: 12px; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 3px 11px; cursor: pointer; color: var(--muted); }
+.chips button.on { color: var(--ink); border-color: var(--ink); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+.card { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); overflow: hidden; display: flex; flex-direction: column; transition: border-color .15s, transform .15s; }
+.card:hover { border-color: var(--ink); transform: translateY(-2px); }
+.shot { height: 232px; background: var(--band); display: flex; justify-content: center; padding-top: 24px; overflow: hidden; border-bottom: 1px solid var(--line); position: relative; }
+.shot .ph { width: 172px; border-radius: 22px 22px 0 0; background: #050605; padding: 7px 7px 0; height: max-content; box-shadow: 0 14px 30px -14px rgba(0,0,0,.4); }
+.shot img { width: 100%; display: block; border-radius: 16px 16px 0 0; background: #000; }
+.shot .rec { position: absolute; left: 12px; top: 12px; font: 500 10.5px var(--mono); color: var(--muted); display: none; align-items: center; gap: 6px; }
+.shot .rec::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--fail); }
+.card:hover .rec { display: inline-flex; }
+.meta { padding: 20px 22px; display: flex; flex-direction: column; flex: 1; gap: 14px; }
+.head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.tid { font-family: var(--mono); font-size: 13px; word-break: break-all; padding-top: 3px; }
+.score { font-family: var(--mono); font-size: 13px; border: 1px solid var(--line); border-radius: 7px; padding: 3px 9px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.score.p { color: var(--pass); border-color: color-mix(in srgb, var(--pass) 45%, var(--line)); }
+.score.x { color: var(--part); border-color: color-mix(in srgb, var(--part) 45%, var(--line)); }
+.score.f { color: var(--fail); border-color: color-mix(in srgb, var(--fail) 45%, var(--line)); }
+.goal { font-size: 15.5px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; margin: 0; }
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.hist { display: inline-flex; gap: 3px; align-items: center; }
+.hist i { width: 7px; height: 14px; border-radius: 2px; background: var(--none); }
+.hist i.p { background: var(--pass); } .hist i.f { background: var(--fail); } .hist i.x { background: var(--part); }
+.hist i.cur { outline: 1.5px solid var(--ink); outline-offset: 1px; }
+.viewsw { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; background: var(--surface); }
+.viewsw button { border: 0; background: transparent; padding: 4px 11px; cursor: pointer; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.viewsw button.on { background: var(--ink); color: var(--bg); }
+.tlist { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); overflow-x: auto; }
+.tlist table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.tlist th { font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--faint); text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); cursor: pointer; white-space: nowrap; user-select: none; }
+.tlist th[aria-sort="ascending"]::after { content: " ↑"; } .tlist th[aria-sort="descending"]::after { content: " ↓"; }
+.tlist td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; font-size: 14px; }
+.tlist tr:last-child td { border-bottom: 0; }
+.tlist tbody tr { cursor: pointer; } .tlist tbody tr:hover { background: var(--band); }
+.tlist .th img { width: 30px; height: 52px; object-fit: cover; object-position: top; border-radius: 5px; display: block; background: #000; }
+.tlist .id { font-family: var(--mono); font-size: 12.5px; white-space: nowrap; }
+.tlist .ap { white-space: nowrap; width: 1%; }
+.tlist .gl { color: var(--muted); max-width: 64ch; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tlist .nm { font-family: var(--mono); font-size: 12.5px; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (max-width: 700px) { .tlist .gl, .tlist .hc { display: none; } .tlist table { min-width: 0; } }
+.empty { padding: 60px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--r); }
+
+/* replay */
+.back { display: inline-flex; gap: 8px; margin: 28px 0 22px; color: var(--muted); font-size: 14px; }
+.rp { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 40px; align-items: start; }
+@media (max-width: 900px) { .rp { grid-template-columns: 1fr; } .stage { position: static !important; max-width: 360px; width: 100%; margin: 0 auto; } }
+.stage { position: sticky; top: calc(76px + env(safe-area-inset-top, 0px)); }
+.tl { display: flex; gap: 2px; height: 22px; margin-top: 16px; cursor: pointer; }
+.tl i { flex: 1; border-radius: 2px; background: var(--line); position: relative; }
+.tl i.t-tap { background: color-mix(in srgb, var(--signal) 55%, var(--line)); }
+.tl i.t-type { background: color-mix(in srgb, var(--pass) 55%, var(--line)); }
+.tl i.t-nav { background: color-mix(in srgb, var(--faint) 70%, var(--line)); }
+.tl i.t-end { background: var(--ink); }
+.tl i.t-bad { background: var(--fail); }
+.tl i.cur { outline: 2px solid var(--ink); outline-offset: 1px; }
+.ctl { display: flex; gap: 6px; align-items: center; margin-top: 14px; flex-wrap: wrap; }
+.ctl button { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 6px 11px; cursor: pointer; font-family: var(--mono); font-size: 13px; }
+.ctl button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.ctl .pos { margin-left: auto; font-family: var(--mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.links { display: flex; gap: 16px; margin-top: 14px; font-size: 13px; flex-wrap: wrap; color: var(--muted); }
+.links a { border-bottom: 1px solid var(--line); }
+.rh .label { display: block; margin-bottom: 10px; }
+.rh h1 { font-family: var(--display); font-stretch: 112%; font-weight: 700; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -.015em; margin: 0 0 18px; text-wrap: balance; }
+.pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.pill { font-family: var(--mono); font-size: 12.5px; border: 1px solid var(--line); border-radius: 7px; padding: 3px 9px; background: var(--surface); }
+.pill.p { color: var(--pass); } .pill.f { color: var(--fail); } .pill.x { color: var(--part); }
+.ans { margin-top: 16px; padding: 14px 16px; border-left: 3px solid var(--signal); background: var(--surface); border-radius: 0 10px 10px 0; font-size: 15px; }
+.ans .label { display: block; margin-bottom: 4px; }
+.box { margin-top: 26px; }
+.box > .label { display: block; margin-bottom: 10px; }
+.rub { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.rub li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.rub .why { color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+.ok { color: var(--pass); } .no { color: var(--fail); font-weight: 700; }
+.steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.steps li { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 10px; padding: 12px 8px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.steps li:hover { background: var(--surface); }
+.steps li.cur { background: var(--surface); box-shadow: inset 3px 0 0 var(--signal); }
+.steps .n { font-family: var(--mono); font-size: 12px; color: var(--faint); padding-top: 2px; }
+.steps .t { font-family: var(--mono); font-size: 13px; font-weight: 500; }
+.steps .a { font-family: var(--mono); font-size: 12px; color: var(--muted); word-break: break-word; }
+.steps .r { font-size: 14px; margin-top: 3px; white-space: pre-wrap; word-break: break-word; }
+.steps li.refused .t { color: var(--part); }
+.miss { color: var(--fail); font-weight: 700; }
+details summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+.report { white-space: pre-wrap; font-size: 14.5px; margin-top: 12px; max-width: 72ch; }
+
+/* methodology */
+.method { max-width: 760px; padding-top: 48px; }
+.method h1 { font-family: var(--display); font-stretch: 118%; font-weight: 800; font-size: clamp(32px, 4vw, 46px); letter-spacing: -.02em; line-height: 1.05; margin: 10px 0 24px; }
+.method h2 { font-family: var(--display); font-stretch: 112%; font-size: 20px; margin: 36px 0 8px; }
+.method p { margin: 0 0 12px; }
+.tblw { overflow-x: auto; }
+.method table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.method td, .method th { border-bottom: 1px solid var(--line); padding: 10px 8px; text-align: left; vertical-align: top; }
+.method th { font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--faint); font-weight: 500; }
+.method td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* palette */
+.pal { position: fixed; inset: 0; z-index: 50; background: color-mix(in srgb, var(--ink) 30%, transparent); display: flex; justify-content: center; align-items: flex-start; padding: 12vh 16px 16px; }
+.pal .in { width: 100%; max-width: 620px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 30px 80px -20px rgba(0,0,0,.4); overflow: hidden; }
+.pal input { width: 100%; border: 0; border-bottom: 1px solid var(--line); padding: 18px 20px; font-size: 17px; background: transparent; outline: none; }
+.pal ul { list-style: none; margin: 0; padding: 6px; max-height: 50vh; overflow: auto; }
+.pal li a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 10px 14px; border-radius: 10px; }
+.pal li a .g { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pal li a.sel { background: var(--band); }
+.pal .hint { padding: 10px 18px; border-top: 1px solid var(--line); font: 11.5px var(--mono); color: var(--faint); }
+</style>
+</head>
+<body>
+<nav class="top"><div class="in">
+  <a class="mark" href="#/"><i></i>verdikt</a>
+  <a class="tab" id="tab-results" href="#/">Results</a>
+  <a class="tab m" id="tab-data" href="#/data">Data</a>
+  <a class="tab m" id="tab-method" href="#/methodology">Methodology</a>
+  <span class="sp"></span>
+  <button class="kbtn" id="open-pal" type="button"><span>Jump to a task</span><kbd>⌘K</kbd></button>
+  <button class="ibtn" id="theme" type="button" title="Switch light or dark" aria-label="Switch light or dark">◐</button>
+</div></nav>
+<div class="wrap" id="app"></div>
+<div class="tip" id="tip" hidden></div>
+<div class="pal" id="pal" hidden><div class="in" role="dialog" aria-label="Jump to a task">
+  <input id="pal-q" placeholder="Search every task in every run…" autocomplete="off">
+  <ul id="pal-list"></ul>
+  <div class="hint">↑ ↓ to move · Enter to open · Esc to close</div>
+</div></div>
+<script src="data.js?v=1791895565"></script>
+<script>
+const D = window.EXPLORER || {runs: []};
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+const BENCH = {iOS: 'iOSWorld', Android: 'AndroidWorld'};
+const SCREEN = {Android: [1080, 2400], iOS: [402, 874]};   // action coordinates: device pixels / iOS points
+const CHRONO = ['run2-opus', 'run3-opus', 'run4-opus-skills', 'run5-opus-skills', 'run6-opus-skills78', 'run8-opus-contracts'];
+const SHOWCASE = [['run5-opus-skills', 'SimpleCalendarAddOneEvent'], ['run5-opus-skills', 'ExpenseAddSingle'], ['run5-opus-skills', 'MarkorCreateNote']];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const state = {platform: null, run: {}, q: '', filter: 'all', view: null, sort: ['id', 1]};
+const timers = new Set();
+const later = (fn, ms) => { const id = setTimeout(() => { timers.delete(id); fn(); }, ms); timers.add(id); return id; };
+const clearAll = () => { timers.forEach(clearTimeout); timers.clear(); };
+
+function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+if (load('vx-theme')) document.documentElement.dataset.theme = load('vx-theme');
+$('#theme').onclick = () => {
+  const cur = document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const next = cur === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = next; store('vx-theme', next);
+};
+
+const runById = id => D.runs.find(r => r.id === id);
+const platforms = ['Android', 'iOS'].filter(p => D.runs.some(r => r.platform === p));
+const runsOf = p => D.runs.filter(r => r.platform === p);
+const runFor = p => runsOf(p).find(r => r.id === state.run[p]) || runsOf(p)[0];
+const judged = t => t.score !== null && t.score !== undefined;
+const cls = t => !judged(t) ? '' : t.success ? 'p' : t.score > 0 ? 'x' : 'f';
+const scoreText = t => judged(t) ? Math.round(t.score * 100) + '%' : '—';
+const pct = r => r && r.judged ? (100 * r.passed / r.judged) : 0;
+
+/* ---------- player: frames + tap/swipe markers + caption ---------- */
+function point(s, platform) {
+  const r = s.result || '';
+  let m = r.match(/swiped \((\d+),\s*(\d+)\)->\((\d+),\s*(\d+)\)/);
+  if (m) return {swipe: m.slice(1).map(Number)};
+  m = r.match(/(?:tapped|double-tapped|long-pressed)[^(]*\((\d+),\s*(\d+)\)/) || r.match(/ at \((\d+),\s*(\d+)\)/);
+  return m ? {tap: [+m[1], +m[2]]} : null;
+}
+function caption(s) {
+  if (!s || s.start) return '';
+  const a = s.args || {};
+  if (s.refused) return `${s.tool} · refused`;
+  if (s.tool === 'type') return `type “${String(a.text || '').slice(0, 40)}”`;
+  if (s.tool === 'open_app' || s.tool === 'launch') return `open ${a.name || a.bundle_id || ''}`;
+  if (s.tool === 'scroll') return `scroll ${a.direction || ''}`;
+  if (s.tool === 'press') return `press ${a.key || ''}`;
+  if (s.tool === 'answer') return `answer “${String(a.text || '').slice(0, 40)}”`;
+  if (s.tool === 'contract') return 'state goal contract';
+  return s.tool || '';
+}
+function kind(s) {
+  if (s.start) return 'nav';
+  if (s.refused || /MISS|error/.test(s.result || '')) return 'bad';
+  if (['tap', 'double_tap', 'long_press'].includes(s.tool)) return 'tap';
+  if (['type', 'clear'].includes(s.tool)) return 'type';
+  if (['finish', 'answer'].includes(s.tool)) return 'end';
+  return 'nav';
+}
+function Player(screenEl, task, platform, onStep) {
+  const img = $('img', screenEl), cap = $('.caption', screenEl);
+  const frames = [{start: true, frame: task.start}].concat(task.step_list);
+  const frameAt = j => { for (let x = j; x >= 0; x--) if (frames[x].frame) return frames[x].frame; return task.thumb; };
+  let i = 0, playing = false, speed = 1, loop = null, looping = false;
+  const [W, H] = SCREEN[platform];
+  function mark(s) {
+    const p = point(s, platform); if (!p) return;
+    if (p.tap) {
+      const r = document.createElement('span'); r.className = 'ripple';
+      r.style.left = (100 * p.tap[0] / W) + '%'; r.style.top = (100 * p.tap[1] / H) + '%'; screenEl.appendChild(r); later(() => r.remove(), 800);
+    } else if (p.swipe) {
+      const [x1, y1, x2, y2] = p.swipe, box = screenEl.getBoundingClientRect();
+      const ax = x1 / W * box.width, ay = y1 / H * box.height, bx = x2 / W * box.width, by = y2 / H * box.height;
+      const l = document.createElement('span'); l.className = 'swipe';
+      l.style.left = ax + 'px'; l.style.top = ay + 'px'; l.style.width = Math.hypot(bx - ax, by - ay) + 'px';
+      l.style.transform = `rotate(${Math.atan2(by - ay, bx - ax)}rad)`; screenEl.appendChild(l); later(() => l.remove(), 800);
+    }
+  }
+  function show(j, animate) {
+    i = Math.max(0, Math.min(frames.length - 1, j));
+    const s = frames[i];
+    cap.textContent = caption(s);
+    if (animate && i > 0 && !reduce && point(s, platform)) {
+      img.src = frameAt(i - 1) || ''; mark(s);
+      later(() => { if (i === j) img.src = frameAt(i) || ''; }, 420 / speed);
+    } else img.src = frameAt(i) || '';
+    [i + 1, i + 2].forEach(p => { const f = frames[p] && frames[p].frame; if (f) new Image().src = f; });
+    onStep && onStep(i, frames.length);
+  }
+  function tick() { if (i >= frames.length - 1) { if (looping) { loop = later(() => { show(0); tick(); }, 2200); return; } stop(); return; } loop = later(() => { show(i + 1, true); tick(); }, 1300 / speed); }
+  function stop() { playing = false; looping = false; clearTimeout(loop); onStep && onStep(i, frames.length); }
+  return {
+    frames, show, get i() { return i; }, get playing() { return playing; },
+    play(mode) { playing = true; looping = mode === 'loop'; if (i >= frames.length - 1 && !looping) show(0); clearTimeout(loop); tick(); onStep && onStep(i, frames.length); },
+    stop, setSpeed(s) { speed = s; },
+  };
+}
+function deviceHTML(id) { return `<div class="device"><div class="screen" id="${id}"><img alt="Recorded screen"><div class="caption"></div></div></div>`; }
+
+/* ---------- views ---------- */
+function pickShowcase() {
+  const ok = t => t.success && t.ledger && t.ledger.length >= 3 && t.ledger.length <= 6 && t.ledger.every(o => o.verdict === 'proven');
+  for (const r of D.runs.filter(r => r.platform === 'iOS')) {
+    const spread = t => new Set(t.ledger.map(o => o.frame)).size;
+    const c = r.tasks.filter(ok).sort((a, b) => (b.category === 'multi_app') - (a.category === 'multi_app') || spread(b) - spread(a) || b.ledger.length - a.ledger.length);
+    if (c.length) return [r, c[0]];
+  }
+  return SHOWCASE.map(([r, t]) => [runById(r), runById(r) && runById(r).tasks.find(x => x.id === t)]).find(([r, t]) => t) || [];
+}
+function proofHTML(t) {
+  if (!t.ledger) return '';
+  return `<div class="proof"><span class="label">Obligation ledger</span><ol>${t.ledger.map((o, k) => `<li data-k="${k}"><span class="mk"></span><span><span class="ty">${esc(o.type)}</span> ${esc(o.text)}<span class="cl"></span></span></li>`).join('')}</ol><div class="foot2" id="proof-foot">0 of ${t.ledger.length} proven</div></div>`;
+}
+const seqOf = f => { const m = /(\d+)\.(?:jpe?g|webp|png)$/.exec(f || ''); return m ? +m[1] : -1; };
+function tickProof(t, p, i) {
+  if (!t.ledger || !p) return;
+  let seq = -1; for (let x = i; x >= 0 && seq < 0; x--) seq = seqOf(p.frames[x].frame);
+  let n = 0;
+  document.querySelectorAll('.proof li').forEach(li => {
+    const o = t.ledger[+li.dataset.k], done = o.frame !== null && o.frame !== undefined && seq >= o.frame;
+    li.classList.toggle('ok', done); $('.cl', li).textContent = done && o.claim ? o.claim : ''; n += done;
+  });
+  const f = $('#proof-foot'); if (f) f.textContent = `${n} of ${t.ledger.length} proven by the checker`;
+}
+function setTab(t) { $('#tab-results').classList.toggle('on', t === 'results'); $('#tab-method').classList.toggle('on', t === 'method'); $('#tab-data').classList.toggle('on', t === 'data'); }
+
+function sparkline() {
+  const runs = CHRONO.map(runById).filter(Boolean);
+  if (runs.length < 2) return '';
+  const w = 220, h = 44, lo = 85, hi = 100;
+  const xs = runs.map((_, k) => 6 + k * (w - 12) / (runs.length - 1));
+  const ys = runs.map(r => h - 6 - (Math.min(hi, Math.max(lo, pct(r))) - lo) / (hi - lo) * (h - 12));
+  const path = xs.map((x, k) => `${k ? 'L' : 'M'}${x.toFixed(1)},${ys[k].toFixed(1)}`).join('');
+  const last = runs.length - 1;
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="AndroidWorld pass rate by run">
+    <line x1="0" x2="${w}" y1="${h - 6}" y2="${h - 6}" stroke="var(--line)" stroke-width="1"/>
+    <path d="${path} L${xs[last]},${h - 6} L${xs[0]},${h - 6} Z" fill="color-mix(in srgb, var(--signal) 12%, transparent)" stroke="none"/>
+    <path d="${path}" fill="none" stroke="var(--signal)" stroke-width="2" stroke-linejoin="round"/>
+    ${xs.map((x, k) => `<circle cx="${x}" cy="${ys[k]}" r="${k === runs.indexOf(runById('run5-opus-skills')) ? 4.5 : 2.5}" fill="${k === runs.indexOf(runById('run5-opus-skills')) ? 'var(--signal)' : 'var(--surface)'}" stroke="var(--signal)" stroke-width="1.5"/>`).join('')}
+  </svg><span>${runs.map(r => pct(r).toFixed(1)).join(' → ')} % pass@1 across runs ${runs.map(r => r.id.match(/run(\d)/)[1]).join(', ')}</span>`;
+}
+
+function results() {
+  setTab('results');
+  if (!state.platform) state.platform = load('vx-platform') || platforms[0];
+  if (!platforms.includes(state.platform)) state.platform = platforms[0];
+  const best = runById('run5-opus-skills'), zero = runById('run3-opus');
+  const ios = runsOf('iOS').slice().sort((a, b) => b.judged - a.judged)[0];  // the most completely graded run, never a partial one
+  const inter = D.runs.reduce((n, r) => n + r.tasks.reduce((m, t) => m + t.step_list.length, 0), 0);
+  const show = pickShowcase();
+  $('#app').innerHTML = `
+    <section class="hero">
+      <div>
+        <span class="label">Verdikt · benchmark record · Oct 2026</span>
+        <h1>${best ? `${best.passed} of ${best.n} Android tasks, <em>first try</em>.` : 'Operating real apps, on the record.'}</h1>
+        <p class="lede">A general model operating real apps through Verdikt's tools, graded by each benchmark's own checker. One attempt per task, the official step limits, and every step recorded below.</p>
+        <div class="stats">
+          ${best ? `<div class="stat"><b>${pct(best).toFixed(1)}%</b><span>AndroidWorld pass@1, best run</span></div>` : ''}
+          ${zero ? `<div class="stat"><b>${pct(zero).toFixed(1)}%</b><span>with no app knowledge</span></div>` : ''}
+          ${ios ? `<div class="stat"><b>${ios.mean !== null && ios.judged ? (ios.mean * 100).toFixed(0) + '%' : '—'}</b><span>iOSWorld mean rubric, ${esc(ios.label.toLowerCase())}${ios.judged < ios.n ? `, ${ios.judged} of ${ios.n} graded` : ''}</span></div>` : ''}
+          <div class="stat"><b>${inter.toLocaleString()}</b><span>recorded actions</span></div>
+        </div>
+        <div class="spark">${sparkline()}</div>
+      </div>
+      <div>${show[1] ? `<div class="showcase">${deviceHTML('hero-screen')}${proofHTML(show[1])}</div><div class="now"><span class="mono">${esc(show[1].id)} · ${esc(BENCH[show[0].platform])}</span><a href="#/${encodeURIComponent(show[0].id)}/${encodeURIComponent(show[1].id)}">Open replay ↗</a></div>` : ''}</div>
+    </section>
+    ${matrixHTML()}
+    <section class="block" id="browse">
+      <div class="bh"><h2>Browse every task</h2><p>Hover a card to preview its recording, or switch to the list to sort by score and actions. Each task opens a full replay.</p></div>
+      <div class="controls">
+        <div class="seg" role="tablist">${platforms.map(p => `<button type="button" data-p="${p}" class="${p === state.platform ? 'on' : ''}">${BENCH[p]} <small>${runFor(p).n}</small></button>`).join('')}</div>
+        <input class="search" id="q" type="search" placeholder="Search tasks, apps, or goals…" value="${esc(state.q)}" aria-label="Search tasks">
+      </div>
+      <div id="browser"></div>
+    </section>`;
+  if (show[1]) { const p = Player($('#hero-screen'), show[1], show[0].platform, i => tickProof(show[1], p, i)); p.show(0); if (!reduce) later(() => p.play('loop'), 900); }
+  wireMatrix();
+  document.querySelectorAll('.seg button').forEach(b => b.onclick = () => { state.platform = b.dataset.p; store('vx-platform', state.platform); history.replaceState(null, '', '#/' + state.platform.toLowerCase()); document.querySelectorAll('.seg button').forEach(x => x.classList.toggle('on', x === b)); browser(); });
+  $('#q').oninput = e => { state.q = e.target.value; browser(); };
+  browser();
+}
+
+function matrixHTML() {
+  const runs = CHRONO.map(runById).filter(Boolean);
+  if (!runs.length) return '';
+  const ids = [...new Set(runs.flatMap(r => r.tasks.map(t => t.id)))].sort();
+  return `<section class="block">
+    <div class="bh"><h2>Every task, every run</h2><p>Each column is one AndroidWorld task; each row is a full scored run. Point at a cell for the task, click it for that exact replay.</p></div>
+    <div class="matrix"><div class="mx">${runs.map(r => {
+      const by = Object.fromEntries(r.tasks.map(t => [t.id, t]));
+      return `<div class="rl">${esc(r.label)}<small>${esc(r.note.split('·')[0])}</small></div>
+        <div class="cells">${ids.map(id => { const t = by[id]; return t ? `<a href="#/${r.id}/${encodeURIComponent(id)}" class="${cls(t)}" data-tip="${esc(id)} · ${t.success ? 'pass' : 'fail'} · ${esc(r.label)}" aria-label="${esc(id)} in ${esc(r.label)}"></a>` : '<a></a>'; }).join('')}</div>
+        <div class="sc">${r.passed}/${r.judged}</div>`; }).join('')}</div>
+      <div class="mxk"><span><i style="background:var(--pass)"></i>passed</span><span><i style="background:var(--fail)"></i>failed</span><span><i style="background:var(--none)"></i>not run yet</span><span>${ids.length} tasks · ${runs.length} runs · official grader, pass@1</span></div>
+    </div></section>`;
+}
+function wireMatrix() {
+  const tip = $('#tip');
+  document.querySelectorAll('.cells a[data-tip]').forEach(a => {
+    a.onmouseenter = e => { tip.textContent = a.dataset.tip; tip.hidden = false; const id = a.dataset.tip.split(' · ')[0]; document.querySelectorAll(`.cells a[data-tip^="${CSS.escape(id)} ·"]`).forEach(x => x.classList.add('hl')); };
+    a.onmousemove = e => { tip.style.left = Math.min(e.clientX + 14, innerWidth - 330) + 'px'; tip.style.top = (e.clientY + 16) + 'px'; };
+    a.onmouseleave = () => { tip.hidden = true; document.querySelectorAll('.cells a.hl').forEach(x => x.classList.remove('hl')); };
+  });
+}
+
+function history(id, platform) {
+  if (platform !== 'Android') return '';
+  return `<span class="hist" title="Across scored runs">${CHRONO.map(runById).filter(Boolean).map(r => { const t = r.tasks.find(x => x.id === id); return `<i class="${t ? cls(t) : ''} ${r.id === runFor('Android').id ? 'cur' : ''}"></i>`; }).join('')}</span>`;
+}
+
+function browser() {
+  if (!state.view) state.view = load('vx-view') || 'grid';
+  const run = runFor(state.platform);
+  const box = $('#browser');
+  if (!run) { box.innerHTML = '<div class="empty">No runs yet.</div>'; return; }
+  const q = state.q.toLowerCase();
+  const tasks = run.tasks.filter(t => (!q || [t.id, t.app, t.goal].some(x => (x || '').toLowerCase().includes(q))) &&
+    (state.filter === 'all' || (state.filter === 'pass' ? t.success : judged(t) && !t.success)));
+  const [sk, sd] = state.view === 'list' ? state.sort : ['id', 1];
+  const key = {id: t => t.id, app: t => t.app || '', score: t => judged(t) ? t.score : -1, actions: t => t.step_list.length, budget: t => t.step_list.length / (t.budget || 50)}[sk] || (t => t.id);
+  tasks.sort((a, b) => { const x = key(a), y = key(b); return (typeof x === 'string' ? x.localeCompare(y) : x - y) * sd || a.id.localeCompare(b.id); });
+  const grading = run.platform === 'iOS' ? `official rubric scores${run.mean !== null && run.judged ? ` · mean ${(run.mean * 100).toFixed(1)}%` : ''}` : 'official grader · pass@1';
+  box.innerHTML = `
+    <div class="sub"><span>${run.n} tasks · ${grading} · ${run.judged ? `${run.passed}/${run.judged} passed` : 'not graded yet'}</span>
+      <select id="run" aria-label="Run">${runsOf(state.platform).map(r => `<option value="${esc(r.id)}" ${r.id === run.id ? 'selected' : ''}>${esc(r.label)}</option>`).join('')}</select>
+      <span class="chips">${[['all', 'all'], ['pass', 'passed'], ['fail', 'failed']].map(([k, l]) => `<button type="button" data-f="${k}" class="${state.filter === k ? 'on' : ''}">${l}</button>`).join('')}</span>
+      <span>${tasks.length} shown</span>
+      <span class="viewsw" role="group" aria-label="Layout">${['grid', 'list'].map(v => `<button type="button" data-v="${v}" class="${state.view === v ? 'on' : ''}" aria-pressed="${state.view === v}">${v}</button>`).join('')}</span></div>
+    ${!tasks.length ? '<div class="empty">No tasks match that search.</div>' : state.view === 'list' ? listHTML(run, tasks) : `<div class="grid">${tasks.map(t => `
+      <a class="card" href="#/${encodeURIComponent(run.id)}/${encodeURIComponent(t.id)}" data-t="${esc(t.id)}">
+        <div class="shot"><span class="rec">replay</span><div class="ph">${t.thumb ? `<img loading="lazy" src="${esc(t.thumb)}" alt="">` : ''}</div></div>
+        <div class="meta">
+          <div class="head"><span class="tid">${esc(t.id)}</span><span class="score ${cls(t)}">${scoreText(t)}</span></div>
+          <p class="goal">${esc(t.goal)}</p>
+          <div class="foot"><span>${t.step_list.length} actions${t.budget ? ` · budget ${t.budget}` : ''}</span>${history(t.id, run.platform)}<span>Explore replay ↗</span></div>
+        </div></a>`).join('')}</div>`}`;
+  $('#run').onchange = e => { state.run[state.platform] = e.target.value; browser(); };
+  box.querySelectorAll('.chips button').forEach(b => b.onclick = () => { state.filter = b.dataset.f; browser(); });
+  box.querySelectorAll('.viewsw button').forEach(b => b.onclick = () => { state.view = b.dataset.v; store('vx-view', state.view); browser(); });
+  box.querySelectorAll('.tlist th[data-k]').forEach(h => h.onclick = () => { state.sort = [h.dataset.k, state.sort[0] === h.dataset.k ? -state.sort[1] : 1]; browser(); });
+  box.querySelectorAll('.tlist tbody tr').forEach(r => { r.onclick = () => { location.hash = r.dataset.href; }; r.onkeydown = e => { if (e.key === 'Enter') location.hash = r.dataset.href; }; });
+  if (state.view === 'list') return;
+  if (reduce) return;
+  box.querySelectorAll('.card').forEach(c => {
+    const t = run.tasks.find(x => x.id === c.dataset.t), img = $('img', c);
+    const frames = [...new Set([t.start, ...t.step_list.map(s => s.frame)].filter(Boolean))];
+    let k = 0, id = null;
+    c.onmouseenter = () => { if (!img || frames.length < 2) return; k = 0; id = setInterval(() => { k = (k + 1) % frames.length; img.src = frames[k]; }, 380); };
+    c.onmouseleave = () => { clearInterval(id); if (img) img.src = t.thumb; };
+  });
+}
+
+function listHTML(run, tasks) {
+  const cols = [['', null], ['Task', 'id'], ['App', 'app'], ['Goal', null], ['Score', 'score'], ['Actions', 'actions']].concat(run.platform === 'Android' ? [['Runs', null]] : []);
+  const sortAttr = k => k && state.sort[0] === k ? ` aria-sort="${state.sort[1] > 0 ? 'ascending' : 'descending'}"` : '';
+  return `<div class="tlist"><table><thead><tr>${cols.map(([l, k], j) => `<th${k ? ` data-k="${k}"` : ''}${sortAttr(k)}${j === 3 ? ' class="gl"' : j === 6 ? ' class="hc"' : ''}${j >= 4 && j <= 5 ? ' style="text-align:right"' : ''}>${l}</th>`).join('')}</tr></thead><tbody>${tasks.map(t => {
+    const href = `#/${encodeURIComponent(run.id)}/${encodeURIComponent(t.id)}`;
+    return `<tr tabindex="0" data-href="${href}"><td class="th">${t.thumb ? `<img loading="lazy" src="${esc(t.thumb)}" alt="">` : ''}</td><td class="id">${esc(t.id)}</td><td class="ap">${esc(t.app)}</td><td class="gl" title="${esc(t.goal)}">${esc(t.goal)}</td><td class="nm"><span class="score ${cls(t)}">${scoreText(t)}</span></td><td class="nm">${t.step_list.length}${t.budget ? ` / ${t.budget}` : ''}</td>${run.platform === 'Android' ? `<td class="hc">${history(t.id, run.platform)}</td>` : ''}</tr>`; }).join('')}</tbody></table></div>`;
+}
+
+function replay(runId, taskId) {
+  setTab('results');
+  const run = runById(runId), t = run && run.tasks.find(x => x.id === taskId);
+  if (!t) { location.hash = '#/'; return; }
+  state.platform = run.platform; state.run[run.platform] = run.id;
+  const verdict = !judged(t) ? 'not graded' : t.success ? 'passed' : t.score > 0 ? `partial · ${scoreText(t)}` : 'failed';
+  const argText = a => a ? Object.entries(a).map(([x, v]) => `${x}=${JSON.stringify(v)}`).join(' ') : '';
+  const hi = s => esc(s || '').replace(/MISS/g, '<span class="miss">MISS</span>');
+  const frames = [{start: true}].concat(t.step_list);
+  $('#app').innerHTML = `
+    <a class="back" href="#/">← ${esc(BENCH[run.platform])} · ${esc(run.label)}</a>
+    <div class="rp">
+      <div class="stage">
+        ${deviceHTML('rp-screen')}
+        <div class="tl" id="tl" aria-label="Timeline">${frames.map((s, j) => `<i class="t-${kind(s)}" data-j="${j}" title="${j ? esc(caption(s)) : 'initial screen'}"></i>`).join('')}</div>
+        <div class="ctl">
+          <button type="button" id="prev" title="Previous step (←)">‹</button><button type="button" id="play" title="Play (space)">▶</button><button type="button" id="next" title="Next step (→)">›</button>
+          ${[0.5, 1, 2].map(s => `<button type="button" class="spd ${s === 1 ? 'on' : ''}" data-s="${s}">${s}×</button>`).join('')}
+          <span class="pos" id="pos"></span>
+        </div>
+        <div class="links">${t.gif ? `<a href="${esc(t.gif)}" target="_blank" rel="noopener">GIF ↗</a>` : ''}${t.steplog ? `<a href="${esc(t.steplog)}" target="_blank" rel="noopener">Action data ↗</a>` : ''}${t.data ? `<a href="${esc(t.data)}" target="_blank" rel="noopener">Result ↗</a>` : ''}</div>
+      </div>
+      <div class="rh">
+        <span class="label">${esc(t.id)} · ${esc(t.app)}</span>
+        <h1>${esc(t.goal)}</h1>
+        <div class="pills"><span class="pill ${cls(t)}">${verdict}</span><span class="pill">${t.step_list.length} actions${t.budget ? ` / ${t.budget}` : ''}</span>${t.seconds ? `<span class="pill">${Math.round(t.seconds)} s</span>` : ''}${t.cost ? `<span class="pill">$${t.cost.toFixed(2)}</span>` : ''}${t.category ? `<span class="pill">${esc(t.category)}</span>` : ''}${history(t.id, run.platform)}</div>
+        ${t.answer ? `<div class="ans"><span class="label">Agent's answer</span>${esc(t.answer)}</div>` : ''}
+        ${t.rubric ? `<div class="box"><span class="label">Rubric · judge</span><ul class="rub">${t.rubric.map(r => `<li><span class="${r.satisfied ? 'ok' : 'no'}">${r.satisfied ? '✓' : '✕'}</span><div>${esc(r.criterion)}<div class="why">${esc(r.reasoning)}</div></div></li>`).join('')}</ul></div>` : ''}
+        <div class="box"><span class="label">Actions</span><ol class="steps" id="steps">${frames.map((s, j) => `
+          <li data-j="${j}" class="${s.refused ? 'refused' : ''}"><span class="n">${j ? esc(s.n ?? j) : '—'}</span><div>${j === 0 ? '<span class="t">initial screen</span>' :
+          `<span class="t">${esc(s.tool)}${s.refused ? ' · refused' : ''}</span> <span class="a">${esc(argText(s.args))}</span><div class="r">${hi(s.result)}</div>${s.expect ? `<div class="r">${hi(s.expect)}</div>` : ''}`}</div></li>`).join('')}</ol></div>
+        ${t.summary ? `<div class="box"><details><summary>Agent's final report</summary><div class="report">${esc(t.summary)}</div></details></div>` : ''}
+      </div>
+    </div>`;
+  const list = $('#steps'), tl = $('#tl');
+  const P = Player($('#rp-screen'), t, run.platform, (i, n) => {
+    $('#pos').textContent = `${i} / ${n - 1}`;
+    $('#play').textContent = P && P.playing ? '❚❚' : '▶';
+    list.querySelectorAll('li').forEach(li => li.classList.toggle('cur', +li.dataset.j === i));
+    tl.querySelectorAll('i').forEach(x => x.classList.toggle('cur', +x.dataset.j === i));
+    const cur = list.querySelector('li.cur'); if (cur && P && P.playing) cur.scrollIntoView({block: 'nearest', behavior: reduce ? 'auto' : 'smooth'});
+  });
+  $('#prev').onclick = () => { P.stop(); P.show(P.i - 1); };
+  $('#next').onclick = () => { P.stop(); P.show(P.i + 1, true); };
+  $('#play').onclick = () => P.playing ? P.stop() : P.play();
+  document.querySelectorAll('.spd').forEach(b => b.onclick = () => { P.setSpeed(+b.dataset.s); document.querySelectorAll('.spd').forEach(x => x.classList.toggle('on', x === b)); });
+  list.querySelectorAll('li').forEach(li => li.onclick = () => { P.stop(); P.show(+li.dataset.j, true); });
+  tl.querySelectorAll('i').forEach(x => x.onclick = () => { P.stop(); P.show(+x.dataset.j, true); });
+  document.onkeydown = e => {
+    if (!$('#pal').hidden || ['INPUT', 'SELECT'].includes(e.target.tagName)) return;
+    if (e.key === 'ArrowRight') { P.stop(); P.show(P.i + 1, true); }
+    else if (e.key === 'ArrowLeft') { P.stop(); P.show(P.i - 1); }
+    else if (e.key === ' ') { e.preventDefault(); P.playing ? P.stop() : P.play(); }
+    else if (e.key === 'Escape') location.hash = '#/';
+  };
+  P.show(0);
+}
+
+function methodology() {
+  setTab('method');
+  const rows = D.runs.map(r => `<tr><td>${esc(BENCH[r.platform])}</td><td>${esc(r.label)}</td><td>${esc(r.note)}</td><td class="n">${r.judged ? `${r.passed}/${r.judged}` : '—'}</td></tr>`).join('');
+  $('#app').innerHTML = `<div class="method">
+    <span class="label">Methodology</span>
+    <h1>How these numbers were made</h1>
+    <h2>The agent</h2>
+    <p>One general model, Claude Opus, operates the device through Verdikt's tools. It sees the accessibility tree and a screenshot and acts only by tapping, typing, swiping and pressing keys. There are no hand-written app routines, and every task starts a fresh session with no memory of other tasks.</p>
+    <h2>AndroidWorld</h2>
+    <p>The official 116-task suite from google-research/android_world on suite seed 30, with each task's official step budget (10 × complexity) and the official grader. One attempt per task, no retries. Pixel 6 profile, Android 13, arm64 emulator. When the official setup silently skips a step it intends, the runner completes it: all-files access for Markor, Simple Gallery and VLC, VLC's media library, and the OsmAnd offline map. No grading logic is changed.</p>
+    <p>Configuration A is the operator alone. B adds app playbooks distilled automatically from practice runs on other suite seeds. C adds enforced contracts: before acting, the agent states checks in Verdikt's check language, and code decides whether they hold.</p>
+    <h2>iOSWorld</h2>
+    <p>The 133-task iOSWorld suite on an iPhone 17 Pro simulator running iOS 26.5, driven by Verdikt's product iOS session. Each task starts from iOSWorld's own data reset and reseed, with a 50-action budget and a 30-minute limit. Scores come from iOSWorld's unchanged rubric judge, run with Claude Sonnet 4.6 instead of the default GPT-5.4-mini.</p>
+    <h2>Runs</h2>
+    <div class="tblw"><table><thead><tr><th>Benchmark</th><th>Run</th><th>Configuration</th><th>Passed</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <h2>Replays</h2>
+    <p>Every replay is rebuilt from what the run recorded: the screen after each action, the action and its arguments, the tool's reply, and for iOS the judge's decision on each rubric line. Tap and swipe markers are drawn at the coordinates the device received.</p>
+  </div>`;
+}
+
+
+function dataView() {
+  setTab('data');
+  const S = D.stats, pc = x => (100 * x).toFixed(1) + '%', ci = c => c ? `${pc(c[0])}–${pc(c[1])}` : '—';
+  const dl = D.published ? (id, ext) => `<a href="downloads/${esc(id)}.${ext}">${ext.toUpperCase()}</a>` : () => '';
+  if (!S) { $('#app').innerHTML = '<div class="method"><h1>Data</h1><p>Statistics have not been generated yet.</p></div>'; return; }
+  const and = Object.entries(S.android || {}).map(([id, s]) => `<tr><td class="n">${esc(id)}</td><td>${esc(s.config)}</td><td class="n">${s.seed}</td><td class="n">${s.passed}/${s.tasks}</td><td class="n">${pc(s.pass_rate)}</td><td class="n">${ci(s.pass_ci95)}</td><td class="n">$${s.cost_usd}</td><td>${dl(id, 'csv')}</td></tr>`).join('');
+  const ios = Object.entries(S.ios || {}).map(([id, s]) => `<tr><td class="n">${esc(id)}</td><td>${esc(s.config)}</td><td class="n">${s.passed}/${s.tasks}</td><td class="n">${ci(s.pass_ci95)}</td><td class="n">${s.mean_score.toFixed(3)}</td><td class="n">${s.mean_score_ci95[0].toFixed(3)}–${s.mean_score_ci95[1].toFixed(3)}</td><td class="n">$${s.cost_usd}</td><td>${dl(id, 'csv')}</td></tr>`).join('');
+  const pairs = Object.entries({...(S.paired_android || {}), ...(S.paired_ios || {})}).map(([k, p]) => `<tr><td class="n">${esc(k)}</td><td class="n">${p.tasks}</td><td class="n">${p.b_only_passes}</td><td class="n">${p.a_only_passes}</td><td class="n">${p.mcnemar_exact_p}</td><td class="n">${p.mean_score_diff !== undefined ? (p.mean_score_diff >= 0 ? '+' : '') + p.mean_score_diff.toFixed(3) : '—'}</td><td class="n">${p.sign_test_p ?? '—'}</td></tr>`).join('');
+  $('#app').innerHTML = `<div class="method" style="max-width:1000px">
+    <span class="label">Data</span><h1>Every number, with its uncertainty</h1>
+    <p>Generated from the run folders by one script; nothing is typed by hand. Intervals are 95% (Wilson for pass rates, bootstrap for mean rubric scores). Paired tests compare the same tasks across two runs.</p>
+    <h2>AndroidWorld · official grader · pass@1</h2>
+    <div class="tblw"><table><thead><tr><th>Run</th><th>Config</th><th>Seed</th><th>Passed</th><th>Rate</th><th>95% CI</th><th>Cost</th><th></th></tr></thead><tbody>${and}</tbody></table></div>
+    <h2>iOSWorld · rubric judge</h2>
+    <div class="tblw"><table><thead><tr><th>Run</th><th>Config</th><th>Fully passed</th><th>95% CI</th><th>Mean rubric</th><th>95% CI</th><th>Cost</th><th></th></tr></thead><tbody>${ios}</tbody></table></div>
+    <h2>Paired comparisons</h2>
+    <p>“Only 2nd” counts tasks the second run passed and the first did not. McNemar's exact test asks whether that imbalance could be chance.</p>
+    <div class="tblw"><table><thead><tr><th>First vs second</th><th>Tasks</th><th>Only 2nd</th><th>Only 1st</th><th>McNemar p</th><th>Mean score Δ</th><th>Sign test p</th></tr></thead><tbody>${pairs}</tbody></table></div>
+    ${D.published ? '<h2>Downloads</h2><p><a href="downloads/stats.json">stats.json</a> · <a href="downloads/STATS.md">STATS.md</a> · per-task JSON and iOS certificates under <span class="mono">downloads/&lt;run&gt;/</span>.</p>' : ''}
+  </div>`;
+}
+
+/* ---------- command palette ---------- */
+const all = D.runs.flatMap(r => r.tasks.map(t => ({r, t})));
+let palSel = 0, palItems = [];
+function openPal() { $('#pal').hidden = false; $('#pal-q').value = ''; renderPal(); $('#pal-q').focus(); }
+function closePal() { $('#pal').hidden = true; }
+function renderPal() {
+  const q = $('#pal-q').value.toLowerCase().trim();
+  const best = new Map();
+  for (const x of all) { if (q && ![x.t.id, x.t.goal, x.t.app].some(v => (v || '').toLowerCase().includes(q))) continue; const k = x.r.platform + x.t.id; if (!best.has(k)) best.set(k, x); }
+  palItems = [...best.values()].slice(0, 40); palSel = 0;
+  $('#pal-list').innerHTML = palItems.map(({r, t}, k) => `<li><a href="#/${encodeURIComponent(r.id)}/${encodeURIComponent(t.id)}" class="${k === 0 ? 'sel' : ''}"><span><span class="mono">${esc(t.id)}</span><div class="g">${esc(t.goal)}</div></span><span class="score ${cls(t)}">${scoreText(t)}</span></a></li>`).join('') || '<li style="padding:14px;color:var(--muted)">No task matches.</li>';
+  $('#pal-list').querySelectorAll('a').forEach(a => a.onclick = closePal);
+}
+$('#open-pal').onclick = openPal;
+$('#pal').onclick = e => { if (e.target.id === 'pal') closePal(); };
+$('#pal-q').oninput = renderPal;
+$('#pal-q').onkeydown = e => {
+  const links = $('#pal-list').querySelectorAll('a');
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); palSel = Math.max(0, Math.min(links.length - 1, palSel + (e.key === 'ArrowDown' ? 1 : -1))); links.forEach((a, k) => a.classList.toggle('sel', k === palSel)); links[palSel] && links[palSel].scrollIntoView({block: 'nearest'}); }
+  else if (e.key === 'Enter' && links[palSel]) { location.hash = links[palSel].getAttribute('href'); closePal(); }
+  else if (e.key === 'Escape') closePal();
+};
+addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); $('#pal').hidden ? openPal() : closePal(); }
+  else if (e.key === '/' && $('#pal').hidden && !['INPUT', 'SELECT', 'TEXTAREA'].includes(e.target.tagName)) { e.preventDefault(); openPal(); }
+});
+
+function route() {
+  clearAll(); document.onkeydown = null; $('#tip').hidden = true;
+  const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
+  if (parts[0] === 'android' || parts[0] === 'ios') { state.platform = parts[0] === 'ios' ? 'iOS' : 'Android'; results(); const b = $('#browse'); if (b) b.scrollIntoView(); return; }
+  if (parts[0] === 'methodology') methodology();
+  else if (parts[0] === 'data') dataView();
+  else if (parts.length === 2) replay(parts[0], parts[1]);
+  else results();
+  scrollTo(0, 0);
+}
+addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>

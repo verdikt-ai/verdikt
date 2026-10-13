@@ -1,0 +1,110 @@
+{
+ "rounds": 2,
+ "obligations": 10,
+ "proven": 7,
+ "unproven": 0,
+ "absent": 3,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "DO: Alarm 5:45 AM labeled Training Day",
+   "type": "DO",
+   "status": "pass",
+   "claim": "5:45, Training Day",
+   "evidence_frame": 101,
+   "explanation": "Alarms list shows enabled row \"5:45, Training Day\" with toggle value 1.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: SF weather forecast",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Sunny. High near 71, with temperatures falling to around 67 in the afternoon. North northeast wind 2 to 14 mph, with gusts as high as 21 mph.",
+   "evidence_frame": 35,
+   "explanation": "Weather shows San Francisco 59\u00b0 Mostly Clear, detail \"Sunny. High near 71...\" with 0% precip.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Log protein shake in CalTrack",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Protein shake added to Breakfast.",
+   "evidence_frame": 52,
+   "explanation": "Breakfast now lists \"Protein shake, 1 1 bottle, 160\" and toast \"Protein shake added to Breakfast.\"",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Log oatmeal in CalTrack",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Oatmeal, 1 1 cup cooked, 150",
+   "evidence_frame": 52,
+   "explanation": "Breakfast now has a second \"Oatmeal, 1 1 cup cooked, 150\" row; breakfast total went 385 to 695.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: protein progress vs 170g",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "160.8 / 170 g",
+   "evidence_frame": 52,
+   "explanation": "Protein bar on dashboard reads \"160.8 / 170 g\" at 95% progress.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: Order Sugarfish Trust Me set on QuickBite",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Order confirmed",
+   "evidence_frame": 84,
+   "explanation": "Tracking screen shows \"Order confirmed\", ETA 18 min, Sugarfish 1 item.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: lunch order total",
+   "type": "KNOW",
+   "status": "blocked",
+   "claim": "$40.45 (seen at steps 67 and 82; cannot re-display, budget spent)",
+   "evidence_frame": null,
+   "explanation": "The total exists. The MyBank Checkout summary at step 82 read \"Subtotal: $30.00 Delivery fee: $1.99 Service fee: $2.99 Taxes: $2.48 Tip: $3.00 Total: $40.45\", and the Cart at step 67 showed \"Total $40.45\". Reopening QuickBite was refused because the 50-action budget is spent, so the current screen (Clock) cannot show it.",
+   "verdict": "absent",
+   "reason": "The total exists. The MyBank Checkout summary at step 82 read \"Subtotal: $30.00 Delivery fee: $1.99 Service fee: $2.99 Taxes: $2.48 Tip: $3.00 Total: $40.45\", and the Cart at step 67 showed \"Total $40.45\". Reopening QuickBite was refused because the 50-action budget is spent, so the current screen (Clock) cannot show it."
+  },
+  {
+   "obligation": "DO: Add salmon and spinach to FreshCart cart at Natural Foods Market",
+   "type": "DO",
+   "status": "blocked",
+   "claim": "Action budget exhausted before adding items",
+   "evidence_frame": null,
+   "explanation": "All 50 actions used; it is not missing from the app. FreshCart search only got as far as \"salmon\" results; Natural Foods Market was never opened.",
+   "verdict": "absent",
+   "reason": "All 50 actions used; it is not missing from the app. FreshCart search only got as far as \"salmon\" results; Natural Foods Market was never opened."
+  },
+  {
+   "obligation": "KNOW: grocery total",
+   "type": "KNOW",
+   "status": "blocked",
+   "claim": "Action budget exhausted",
+   "evidence_frame": null,
+   "explanation": "All 50 actions used before a Natural Foods Market cart could be built, so no grocery total was ever shown. This is a budget block, not something missing from the app.",
+   "verdict": "absent",
+   "reason": "All 50 actions used before a Natural Foods Market cart could be built, so no grocery total was ever shown. This is a budget block, not something missing from the app."
+  },
+  {
+   "obligation": "DO: Create Training Day Log note",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Training Day Log",
+   "evidence_frame": 93,
+   "explanation": "Note editor shows title \"Training Day Log\" with body \"Alarm 5:45 AM. SF: Mostly Clear 59F...\" (Notes autosaves).",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

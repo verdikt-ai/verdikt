@@ -1,0 +1,749 @@
+{
+ "id": "multi-035",
+ "app": "tasterank, dinespot, cinephile, cityride, quickchat",
+ "category": "multi_app",
+ "goal": "Browse DineSpot for a restaurant in San Francisco with outdoor seating and make a reservation for 2 at 7 PM Saturday. Check TasteRank to see if any friends have reviewed restaurants in that neighborhood. Search Cinephile for a movie to watch afterward and add it to a 'Date Night' list. Compare CityRide prices (CityRideX vs Comfort) for the ride to the restaurant and estimate the total evening cost covering dinner and ride. Message Maya Patel in QuickChat with the full plan. What's the restaurant name, movie title, ride estimate, and total evening cost estimate?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 50,
+ "budget": 50,
+ "seconds": 346.7,
+ "cost": 1.7601,
+ "answer": "Restaurant: SoMa Rooftop (Sat Oct 17, 7:00 PM, party of 2, RSV2007); Movie: Runner; Ride estimate: CityRideX $8.31 (Comfort $10.64); Total evening cost estimate: about $70\u2013$108 (\u2248$89), dinner $62\u2013$100 + ride $8.31; friends' reviews in that neighborhood (TasteRank): Your latest note; total evening cost estimate (dinner + ride): Dinner for 2 at $31\u2013$50 pp = $62\u2013$100, plus CityRideX $8.31 \u2192 about $70\u2013$108 (~$89 midpoint); with Comfort ($10.64) about $73\u2013$111.",
+ "summary": "Dinner is booked, the movie is on your Date Night list and Maya has the plan. One gap: I never confirmed in the app that the restaurant has outdoor seating.\n\n- **Restaurant:** I booked SoMa Rooftop (888 Brannan St, $31\u2013$50 per person) in DineSpot for 2 at 7:00 PM on Sat, Oct 17. Confirmation code is RSV2007, and I asked for patio seating. DineSpot's \"Outdoor Seating\" filter didn't respond, so I picked this place because of its rooftop name. Its listing doesn't actually say it has outdoor seating.\n- **TasteRank:** I found no friend reviews of SoMa restaurants. The only SoMa reviews were your own (Sightglass Coffee, Dumpling Home). Your friend Ari Mercer reviewed Zuni Cafe, which is in Hayes Valley. The feed wouldn't scroll, so I only saw the top few posts.\n- **Movie:** I searched Cinephile and added Runner (2026, 83%, 97 min) to a new \"Date Night\" list. It's an action-comedy, not an obviously romantic pick.\n- **Ride:** From your saved Home address to the restaurant, CityRideX is $8.31 and Comfort is $10.64. I went with CityRideX.\n- **Total:** Dinner for two at $31\u2013$50 each is $62\u2013$100. Adding the CityRideX fare gives about **$70\u2013$108** (around $89 in the middle). With Comfort it would be about $73\u2013$111. This leaves out the movie tickets and the ride home.\n- **Maya:** I sent her the full plan in QuickChat and she replied \"Sounds perfect!\"\n\nI used all 50 of the actions I was allowed.\n\nANSWER: Restaurant: SoMa Rooftop (Sat Oct 17, 7:00 PM, party of 2, RSV2007); Movie: Runner; Ride estimate: CityRideX $8.31 (Comfort $10.64); Total evening cost estimate: about $70\u2013$108 (\u2248$89), dinner $62\u2013$100 + ride $8.31",
+ "rubric": [
+  {
+   "criterion": "Open DineSpot and search for San Francisco restaurants with outdoor seating",
+   "satisfied": true,
+   "reasoning": "The agent launched DineSpot, navigated to the search/discover screen, accessed filters, and searched for 'Rooftop' to find SoMa Rooftop. The filter panel was opened showing Outdoor Seating toggle, though it's unclear if the toggle was successfully enabled (screenshots 7-10 show the toggle appearing off). However, the agent did search within DineSpot for San Francisco restaurants and found one with outdoor/rooftop seating."
+  },
+  {
+   "criterion": "Make a reservation for 2 at 7 PM Saturday at a restaurant with outdoor seating",
+   "satisfied": true,
+   "reasoning": "Screenshot 23 shows 'Reservation Confirmed' for SoMa Rooftop on Sat, Oct 17 at 7:00 PM with code RSV2007. The reservation was for 2 guests. The agent also selected 'Patio seating' as the dining preference, confirming outdoor seating."
+  },
+  {
+   "criterion": "Open TasteRank and check for friend reviews in the restaurant's neighborhood",
+   "satisfied": true,
+   "reasoning": "The agent launched TasteRank (screenshots 24-27) and browsed the app. The TasteRank home screen showed 'Recs Nearby' with Dumpling Home in SoMa, San Francisco - the same neighborhood as SoMa Rooftop. The agent tapped on Dumpling Home and saw 'Your latest note' section, checking for reviews in the SoMa neighborhood."
+  },
+  {
+   "criterion": "Open Cinephile and search for a movie to watch afterward",
+   "satisfied": true,
+   "reasoning": "The agent launched Cinephile (screenshot 28) and searched for 'Runner', finding the movie 'Runner' (2026, 83% rating, Action/Comedy) as shown in screenshots 29-31."
+  },
+  {
+   "criterion": "Add the movie to a 'Date Night' list",
+   "satisfied": true,
+   "reasoning": "Screenshots 36-41 show the agent creating a 'Date Night' custom list in Cinephile and adding Runner to it. Screenshot 41 shows the 'Date Night' list with a checkmark, confirming Runner was added to the Date Night list."
+  },
+  {
+   "criterion": "Open CityRide and compare CityRideX vs Comfort prices to the restaurant",
+   "satisfied": true,
+   "reasoning": "Screenshot 46 shows CityRide with destination '888 Brannan St' (SoMa Rooftop's address) and displays CityRideX at $8.31 and CityRide Green at $9.14. The agent needed to scroll to see Comfort pricing. The agent's message to Maya mentions 'CityRideX $8.31 vs Comfort $10.64', indicating they saw the Comfort price of $10.64 even if not captured in a screenshot."
+  },
+  {
+   "criterion": "Estimate total evening cost covering dinner and ride (excluding movie ticket)",
+   "satisfied": true,
+   "reasoning": "The agent estimated dinner at $62-$100 (based on SoMa Rooftop's $31-$50 per person price range for 2 people) plus ride ~$8 (CityRideX $8.31) = about $70-$108 total. This was included in the message to Maya Patel."
+  },
+  {
+   "criterion": "Message Maya Patel in QuickChat with the full plan",
+   "satisfied": true,
+   "reasoning": "Screenshot 50 shows the message was sent to Maya Patel in QuickChat with the full plan including restaurant (SoMa Rooftop), date/time (Sat Oct 17 at 7:00 PM), movie (Runner in Date Night list), ride comparison (CityRideX $8.31 vs Comfort $10.64), and total cost estimate ($70-$108). Maya even responded positively."
+  },
+  {
+   "criterion": "Report the restaurant name and reservation details",
+   "satisfied": true,
+   "reasoning": "The agent reported: Restaurant: SoMa Rooftop, Sat Oct 17, 7:00 PM, party of 2, reservation code RSV2007."
+  },
+  {
+   "criterion": "Report the movie title",
+   "satisfied": true,
+   "reasoning": "The agent reported the movie title as 'Runner'."
+  },
+  {
+   "criterion": "Report the ride estimate (CityRideX vs Comfort comparison)",
+   "satisfied": true,
+   "reasoning": "The agent reported CityRideX at $8.31 and Comfort at $10.64, which matches what was shown in CityRide (CityRideX $8.31 confirmed in screenshot 46; Comfort $10.64 mentioned in the message)."
+  },
+  {
+   "criterion": "Report the total evening cost estimate",
+   "satisfied": true,
+   "reasoning": "The agent reported total evening cost estimate of about $70-$108 (dinner $62-$100 + ride ~$8)."
+  },
+  {
+   "criterion": "Confirm the reservation and message were completed",
+   "satisfied": true,
+   "reasoning": "Screenshot 23 shows 'Reservation Confirmed' with code RSV2007 for SoMa Rooftop on Sat, Oct 17 at 7:00 PM. Screenshot 50 shows the message was sent to Maya Patel and she responded, confirming both were completed."
+  }
+ ],
+ "judge": "The agent successfully completed all major steps of the task: opened DineSpot and searched for San Francisco restaurants with outdoor seating (searched 'Rooftop' and found SoMa Rooftop in SoMa neighborhood), made a reservation for 2 at 7 PM on Saturday Oct 17 at SoMa Rooftop (confirmed with code RSV2007), opened TasteRank and checked for friend reviews in the SoMa neighborhood, opened Cinephile and searched for the movie 'Runner', added Runner to a newly created 'Date Night' list, opened CityRide and compared CityRideX ($8.31) vs Comfort ($10.64) prices to 888 Brannan St, estimated total evening cost (dinner $62-$100 + ride ~$8 = about $70-$108), and messaged Maya Patel in QuickChat with the full plan. The final screenshot shows the message was sent and Maya responded positively.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.dinespot"
+   },
+   "result": "launched com.iosworld.benchmark.dinespot",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0002.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Search"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Search)",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0004.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "105,815,150,850"
+    }
+   },
+   "result": "tapped at (127, 832) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0006.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "featured_collection_outdoor"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (790, 124) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "discover_filter_button"
+    }
+   },
+   "result": "tapped at (341, 124) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,742)->(201,132) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,742)->(201,132) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "filter_outdoor"
+    }
+   },
+   "result": "tapped at (201, 638) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "filter_bookable_online"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 742) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0018.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,620,380,656"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (355, 638) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0020.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 90,
+    "x2": 200,
+    "y2": 800,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,90)->(200,800) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0022.webp"
+  },
+  {
+   "n": 12,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 2
+    },
+    "text": "Rooftop"
+   },
+   "result": "typed 'Rooftop'; verified: true; field value now 'Rooftop'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0025.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_restaurant_sf_soma_rooftop"
+    }
+   },
+   "result": "tapped at (205, 596) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0027.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "delete"
+    }
+   },
+   "result": "tapped at (373, 725) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0030.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "Return"
+    }
+   },
+   "result": "tapped at (349, 779) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0030.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_restaurant_sf_soma_rooftop"
+    }
+   },
+   "result": "tapped at (205, 596) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0032.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (79, 725) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0034.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,762,370,792"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (350, 777) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0036.webp"
+  },
+  {
+   "n": 19,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 422,
+    "x2": 200,
+    "y2": 860,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,422)->(200,860) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0038.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_slot_20261017_1900"
+    }
+   },
+   "result": "tapped at (73, 779) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0040.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "booking_preference_picker"
+    }
+   },
+   "result": "tapped at (201, 634) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0042.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Patio seating"
+    }
+   },
+   "result": "tapped at (245, 537) via text",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0045.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 779) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0045.webp"
+  },
+  {
+   "n": 24,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.tasterank"
+   },
+   "result": "launched com.iosworld.benchmark.tasterank",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0047.webp"
+  },
+  {
+   "n": 25,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 90,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (201,830)->(201,44) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0049.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "card_name_dumpling_home"
+    }
+   },
+   "result": "tapped at (125, 383) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0051.webp"
+  },
+  {
+   "n": 27,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 700,
+    "x2": 200,
+    "y2": 150,
+    "duration_ms": 600
+   },
+   "result": "swiped (200,700)->(200,150) in 600ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0053.webp"
+  },
+  {
+   "n": 28,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cinephile"
+   },
+   "result": "launched com.iosworld.benchmark.cinephile",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0055.webp"
+  },
+  {
+   "n": 29,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 7
+    },
+    "text": "Runner"
+   },
+   "result": "typed 'Runner'; verified: true; field value now 'Runner'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0058.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "Return"
+    }
+   },
+   "result": "tapped at (349, 779) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0060.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "120,650,380,700"
+    }
+   },
+   "result": "tapped at (250, 675) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0062.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "List"
+    }
+   },
+   "result": "tapped at (278, 405) via text",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0064.webp"
+  },
+  {
+   "n": 33,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 100,
+    "x2": 200,
+    "y2": 800,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,100)->(200,800) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0067.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "265,815,315,850"
+    }
+   },
+   "result": "tapped at (290, 832) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0067.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "300,815,360,850"
+    }
+   },
+   "result": "tapped at (330, 832) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0069.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Create custom list"
+    }
+   },
+   "result": "tapped at (201, 238) via text",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0071.webp"
+  },
+  {
+   "n": 37,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 5
+    },
+    "text": "Date Night"
+   },
+   "result": "typed 'Date Night'; verified: true; field value now 'Date Night'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0076.webp"
+  },
+  {
+   "n": 38,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Create"
+    }
+   },
+   "result": "tapped at (201, 473) via text",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0076.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,815,90,850"
+    }
+   },
+   "result": "tapped at (65, 832) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0076.webp"
+  },
+  {
+   "n": 40,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "List"
+    }
+   },
+   "result": "tapped at (278, 405) via text",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0078.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Date Night"
+    }
+   },
+   "result": "tapped at (201, 360) via text",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0080.webp"
+  },
+  {
+   "n": 42,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cityride"
+   },
+   "result": "launched com.iosworld.benchmark.cityride",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0082.webp"
+  },
+  {
+   "n": 43,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_where_to_button"
+    }
+   },
+   "result": "tapped at (101, 320) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0084.webp"
+  },
+  {
+   "n": 44,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "id": "request_destination_chip_button"
+    }
+   },
+   "result": "sent 4 deletes; cleared: false; field value now 'Where to?'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0087.webp"
+  },
+  {
+   "n": 45,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "888 Brannan St"
+   },
+   "result": "typed '888 Brannan St'; verified: false; field value now 'Home'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0089.webp"
+  },
+  {
+   "n": 46,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (134, 334) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0091.webp"
+  },
+  {
+   "n": 47,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0093.webp"
+  },
+  {
+   "n": 48,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 15
+    }
+   },
+   "result": "tapped at (201, 467) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0095.webp"
+  },
+  {
+   "n": 49,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "chat_compose_field"
+    },
+    "text": "Saturday plan: dinner for 2 at SoMa Rooftop (888 Brannan St), Sat Oct 17 at 7:00 PM, booked (RSV2007). After, the movie Runner (in our Date Night list). Ride there: CityRideX $8.31 vs Comfort $10.64, going CityRideX. Estimated total: dinner $62-$100 + ride ~$8 = about $70-$108."
+   },
+   "result": "typed 'Saturday plan: dinner for 2 at SoMa Rooftop (888 Brannan St), Sat Oct 17 at 7:00 PM, booked (RSV2007). After, the movie Runner (in our Date Night list). Ride there: CityRideX $8.31 vs Comfort $10.64, going CityRideX. Estimated total: dinner $62-$100 + ride ~$8 = about $70-$108.'; verified: true; field value now 'Saturday plan: dinner for 2 at SoMa Rooftop (888 Brannan St), Sat Oct 17 at 7:00 PM, booked (RSV2007). After, the movie Runner (in our Date Night list). Ride there: CityRideX $8.31 vs Comfort $10.64, going CityRideX. Estimated total: dinner $62-$100 + ride ~$8 = about $70-$108.'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0098.webp"
+  },
+  {
+   "n": 50,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_send_button"
+    }
+   },
+   "result": "tapped at (360, 432) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-035/0100.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "SF restaurant with outdoor seating name (DineSpot)",
+   "verdict": "proven",
+   "claim": "SoMa Rooftop",
+   "frame": 38
+  },
+  {
+   "type": "DO",
+   "text": "reserve for 2 at 7 PM Saturday in DineSpot",
+   "verdict": "proven",
+   "claim": "Sat, Oct 17 \u2022 7:00 PM",
+   "frame": 45
+  },
+  {
+   "type": "KNOW",
+   "text": "friends' reviews in that neighborhood (TasteRank)",
+   "verdict": "proven",
+   "claim": "Your latest note",
+   "frame": 53
+  },
+  {
+   "type": "DO",
+   "text": "add a movie to 'Date Night' list in Cinephile",
+   "verdict": "proven",
+   "claim": "Date Night",
+   "frame": 80
+  },
+  {
+   "type": "KNOW",
+   "text": "CityRideX price",
+   "verdict": "proven",
+   "claim": "$8.31",
+   "frame": 91
+  },
+  {
+   "type": "KNOW",
+   "text": "Comfort price",
+   "verdict": "proven",
+   "claim": "$10.64",
+   "frame": 91
+  },
+  {
+   "type": "SAY",
+   "text": "total evening cost estimate (dinner + ride)",
+   "verdict": "proven",
+   "claim": "Dinner for 2 at $31\u2013$50 pp = $62\u2013$100, plus CityRideX $8.31 \u2192 about $70\u2013$108 (~$89 midpoint); with Comfort ($10.64) about $73\u2013$111.",
+   "frame": 91
+  },
+  {
+   "type": "DO",
+   "text": "message Maya Patel in QuickChat with full plan",
+   "verdict": "proven",
+   "claim": "Saturday plan: dinner for 2 at SoMa Rooftop (888 Brannan St)",
+   "frame": 100
+  }
+ ]
+}

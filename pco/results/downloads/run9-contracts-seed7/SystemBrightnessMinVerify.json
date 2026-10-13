@@ -1,0 +1,86 @@
+{
+ "id": "SystemBrightnessMinVerify",
+ "app": "Settings",
+ "goal": "Turn brightness to the min value.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 52.0,
+ "cost": 0.1340694,
+ "answer": null,
+ "summary": "Brightness was already at its minimum, so I didn't change anything. Settings > Display showed \"Brightness level\" at 0%. I first tried to open the quick-settings panel but it didn't open, so I checked in Settings instead.",
+ "step_list": [
+  {
+   "n": 0,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBrightnessMinVerify/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "x1": 540,
+    "y1": 5,
+    "x2": 540,
+    "y2": 1500,
+    "duration_ms": 400
+   },
+   "result": "swiped (540,5)->(540,1500) in 400ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBrightnessMinVerify/002.webp"
+  },
+  {
+   "n": 2,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBrightnessMinVerify/003.webp"
+  },
+  {
+   "n": 3,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "half"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBrightnessMinVerify/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 12
+   },
+   "result": "tapped (275,1483)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBrightnessMinVerify/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBrightnessMinVerify/006.webp"
+  }
+ ]
+}

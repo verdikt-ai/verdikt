@@ -1,0 +1,386 @@
+{
+ "id": "dinespot-001",
+ "app": "dinespot",
+ "category": "single_app",
+ "goal": "Search for restaurants in San Francisco with the 'Outdoor Seating' tag on DineSpot and make a reservation at Harborline Seafood. Confirm the reservation and give me the date, time, and party size.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 23,
+ "budget": 50,
+ "seconds": 185.7,
+ "cost": 0.8433,
+ "answer": "Mon, Oct 12, 7:30 PM, 2 guests; reservation date: Mon, Oct 12 \u2022 7:30 PM; reservation time: Mon, Oct 12 \u2022 7:30 PM",
+ "summary": "I booked and confirmed a table at Harborline Seafood for Monday, Oct 12 at 7:30 PM for 2 guests (confirmation code RSV2007). It now shows as Upcoming in your reservations.\n\n- **Search:** I searched San Francisco using the \"Outdoor\" collection, which listed 10 restaurants, including Harborline Seafood. The \"Outdoor Seating\" switch in Filters wouldn't turn on when I tapped it.\n- **Time:** 7:00 PM wasn't available, so I picked the nearest later slot, 7:30 PM. The date and party size were the app's defaults (today, 2 guests).\n\nANSWER: Mon, Oct 12, 7:30 PM, 2 guests",
+ "rubric": [
+  {
+   "criterion": "Open DineSpot app",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the DineSpot app is open with the home screen visible showing 'Good afternoon, Jordan' and San Francisco location."
+  },
+  {
+   "criterion": "Set location to San Francisco or verify location is San Francisco",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 clearly shows 'San Francisco' as the location on the home screen. The search bar in later screenshots also shows 'Search San Francisco', confirming the location is set to San Francisco."
+  },
+  {
+   "criterion": "Apply the 'Outdoor Seating' tag or filter",
+   "satisfied": true,
+   "reasoning": "In Step 13, the agent tapped the 'Outdoor' featured collection filter (id: featured_collection_outdoor), which filtered results to show 10 restaurants with outdoor seating including Harborline Seafood visible on the map. The filter panel showed 'Outdoor Seating' toggle but the agent used the 'Outdoor' collection tag instead, which achieved the same result."
+  },
+  {
+   "criterion": "Find and select Harborline Seafood from the results",
+   "satisfied": true,
+   "reasoning": "In Step 14, the agent tapped on the Harborline Seafood map marker (map_marker_restaurant_005), and Screenshot 15 shows the Harborline Seafood restaurant page was opened successfully."
+  },
+  {
+   "criterion": "Select a date for the reservation",
+   "satisfied": true,
+   "reasoning": "The reservation booking screen (Screenshot 16) shows 'Date: Mon, Oct 12' was selected. The date Mon, Oct 12 was pre-selected from the search filters and confirmed in the Review Booking screen."
+  },
+  {
+   "criterion": "Select a time for the reservation",
+   "satisfied": true,
+   "reasoning": "In Step 15, the agent tapped the '7:30 PM' reservation slot (id: reservation_slot_20261012_1930), and the Review Booking screen confirms 'Time: 7:30 PM'."
+  },
+  {
+   "criterion": "Set the party size",
+   "satisfied": true,
+   "reasoning": "The party size of 2 guests was set (visible in the search filters as '2 guests' and confirmed in the Review Booking screen showing 'Party: 2 guests'). The final reservation details screen also shows '2 guests'."
+  },
+  {
+   "criterion": "Confirm the reservation",
+   "satisfied": true,
+   "reasoning": "In Step 18, the agent tapped 'Confirm Reservation' button, and Screenshot 19 shows the 'Reservation Confirmed' screen for Harborline Seafood with code RSV2007, Mon, Oct 12 \u2022 7:30 PM."
+  },
+  {
+   "criterion": "Report the reservation date, time, and party size",
+   "satisfied": true,
+   "reasoning": "The agent's final answer reported: date Mon, Oct 12; time 7:30 PM; party size 2 guests. This matches the confirmed reservation details visible in the screenshots (final screenshot shows Mon, Oct 12, 7:30 PM, 2 guests)."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened DineSpot, verified San Francisco location, applied the Outdoor filter (via the 'Outdoor' collection tag), found and selected Harborline Seafood, selected a date (Mon, Oct 12), selected a time (7:30 PM), had a party size of 2 guests, confirmed the reservation (RSV2007), and reported the details correctly.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Search"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Search)",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "105,805,145,845"
+    }
+   },
+   "result": "tapped at (125, 825) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "discover_filter_button"
+    }
+   },
+   "result": "tapped at (344, 124) via id",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 80,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,786)->(201,88) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "filter_outdoor"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 638) via id",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,625,380,652"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (355, 638) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "check",
+   "args": {
+    "expression": "id=filter_outdoor checked"
+   },
+   "result": "fail: CheckBox \"Outdoor Seating\" value=\"0\" [17] is unchecked after 5.1s",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0019.webp"
+  },
+  {
+   "n": 9,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0019.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "filter_outdoor"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 638) via id",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 90,
+    "x2": 201,
+    "y2": 800,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,90)->(201,800) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0024.webp"
+  },
+  {
+   "n": 12,
+   "tool": "swipe",
+   "args": {
+    "x1": 350,
+    "y1": 124,
+    "x2": 20,
+    "y2": 124,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (350,124)->(20,124) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0026.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "featured_collection_outdoor"
+    }
+   },
+   "result": "tapped at (294, 124) via id",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "map_marker_restaurant_005"
+    }
+   },
+   "result": "tapped at (182, 319) via id",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0030.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_slot_20261012_1930"
+    }
+   },
+   "result": "tapped at (199, 862) via id",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0032.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "booking_preference_picker"
+    }
+   },
+   "result": "tapped at (201, 644) via id",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0034.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "No preference"
+    }
+   },
+   "result": "tapped at (245, 463) via text",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0037.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 789) via id",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0037.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (201, 580) via text",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0040.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "245,805,285,845"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (265, 825) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0040.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Back"
+    }
+   },
+   "result": "tapped at (55, 140) via text",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0042.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "245,805,285,845"
+    }
+   },
+   "result": "tapped at (265, 825) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0044.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_card_RSV2007"
+    }
+   },
+   "result": "tapped at (200, 278) via id",
+   "refused": false,
+   "frame": "media/run2-pco/dinespot-001/0046.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "search San Francisco restaurants with Outdoor Seating tag",
+   "verdict": "proven",
+   "claim": "10 restaurants nearby",
+   "frame": 42
+  },
+  {
+   "type": "DO",
+   "text": "confirm reservation at Harborline Seafood",
+   "verdict": "proven",
+   "claim": "Reservation Confirmed",
+   "frame": 37
+  },
+  {
+   "type": "KNOW",
+   "text": "reservation date",
+   "verdict": "proven",
+   "claim": "Mon, Oct 12 \u2022 7:30 PM",
+   "frame": 37
+  },
+  {
+   "type": "KNOW",
+   "text": "reservation time",
+   "verdict": "proven",
+   "claim": "Mon, Oct 12 \u2022 7:30 PM",
+   "frame": 37
+  },
+  {
+   "type": "KNOW",
+   "text": "reservation party size",
+   "verdict": "proven",
+   "claim": "2 guests",
+   "frame": 46
+  }
+ ]
+}

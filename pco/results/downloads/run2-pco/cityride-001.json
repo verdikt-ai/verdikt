@@ -1,0 +1,149 @@
+{
+ "id": "cityride-001",
+ "app": "cityride",
+ "category": "single_app",
+ "goal": "Request a CityRideX ride in CityRide from Home (410 Brannan St) to Oracle Park. What's the estimated fare and ETA?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 6,
+ "budget": 50,
+ "seconds": 58.4,
+ "cost": 0.3408,
+ "answer": "$9.80, ETA 14 min",
+ "summary": "I requested a CityRideX ride from Home to Oracle Park. The estimated fare is $9.80 and the ETA is 14 minutes.\n\nThe app filled in the pickup as \"Home\"; I didn't check that it uses 410 Brannan St, though that is the address your saved Home place has. The ride shows as \"Requesting\" and the app is still finding a driver.\n\nANSWER: $9.80, ETA 14 min",
+ "rubric": [
+  {
+   "criterion": "Open CityRide app",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the CityRide app is open with the home screen visible showing 'Good afternoon' and the map."
+  },
+  {
+   "criterion": "Set pickup location to Home (410 Brannan St)",
+   "satisfied": true,
+   "reasoning": "Throughout the trajectory, the pickup is shown as 'Home' in the route fields. The final screenshot confirms 'Home to Oracle Park' as the trip route, and the map shows the pickup near Brannan St area."
+  },
+  {
+   "criterion": "Set destination to Oracle Park",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows 'Oracle Park' typed in the destination field, and Screenshot 5 shows Oracle Park (24 Willie Mays Plaza) selected. The final screenshot confirms 'Home to Oracle Park' as the trip."
+  },
+  {
+   "criterion": "Select the CityRideX ride option",
+   "satisfied": true,
+   "reasoning": "Screenshot 6 shows CityRideX is selected (highlighted with a border) at $9.80, and the request button says 'Request CityRideX \u00b7 $9.80'. The final screenshot confirms the ride type is CityRideX."
+  },
+  {
+   "criterion": "Confirm the ride request",
+   "satisfied": true,
+   "reasoning": "Step 6 tapped the 'Request CityRideX \u00b7 $9.80' button, and the final screenshot shows the Trip Status page with 'Requesting' status for 'Home to Oracle Park' via CityRideX."
+  },
+  {
+   "criterion": "Report the estimated fare",
+   "satisfied": true,
+   "reasoning": "The agent reported '$9.80' which matches the price shown in Screenshot 6 ($9.80 for CityRideX) and confirmed in the final screenshot (Price: $9.80)."
+  },
+  {
+   "criterion": "Report the estimated ETA",
+   "satisfied": true,
+   "reasoning": "The agent reported '14 min' which matches the ETA shown in Screenshot 6 ('14 min away' for CityRideX) and confirmed in the final screenshot ('ETA 14 min')."
+  }
+ ],
+ "judge": "The agent successfully opened the CityRide app, set the pickup to Home, set the destination to Oracle Park, selected CityRideX, confirmed the ride request, and correctly reported the fare ($9.80) and ETA (14 min) as shown in the final screenshot.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_where_to_button"
+    }
+   },
+   "result": "tapped at (101, 320) via id",
+   "refused": false,
+   "frame": "media/run2-pco/cityride-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "request_destination_chip_button"
+    }
+   },
+   "result": "tapped at (235, 191) via id",
+   "refused": false,
+   "frame": "media/run2-pco/cityride-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "id": "request_destination_chip_button"
+    }
+   },
+   "result": "sent 4 deletes; cleared: false; field value now 'Where to?'",
+   "refused": false,
+   "frame": "media/run2-pco/cityride-001/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Oracle Park"
+   },
+   "result": "typed 'Oracle Park'; verified: false; field value now 'Home'",
+   "refused": false,
+   "frame": "media/run2-pco/cityride-001/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "request_search_result_oracle_park"
+    }
+   },
+   "result": "tapped at (153, 303) via id",
+   "refused": false,
+   "frame": "media/run2-pco/cityride-001/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "request_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 773) via id",
+   "refused": false,
+   "frame": "media/run2-pco/cityride-001/0014.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "estimated fare for CityRideX from Home to Oracle Park",
+   "verdict": "proven",
+   "claim": "$9.80",
+   "frame": 14
+  },
+  {
+   "type": "KNOW",
+   "text": "ETA for CityRideX from Home to Oracle Park",
+   "verdict": "proven",
+   "claim": "ETA 14 min",
+   "frame": 14
+  },
+  {
+   "type": "DO",
+   "text": "request CityRideX ride from Home (410 Brannan St) to Oracle Park",
+   "verdict": "proven",
+   "claim": "Home to Oracle Park",
+   "frame": 14
+  }
+ ]
+}

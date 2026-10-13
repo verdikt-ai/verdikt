@@ -1,0 +1,108 @@
+{
+ "id": "SystemBluetoothTurnOff",
+ "app": "Settings",
+ "goal": "Turn bluetooth off.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 55.2,
+ "cost": 0.1510026,
+ "answer": null,
+ "summary": "Bluetooth is now off. I went to Settings > Connected devices > Connection preferences > Bluetooth and switched off \"Use Bluetooth\"; the screen now shows it off.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBluetoothTurnOff/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Bluetooth\" unchecked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBluetoothTurnOff/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (412,1025)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBluetoothTurnOff/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (343,1055)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBluetoothTurnOff/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (302,721)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBluetoothTurnOff/006.webp"
+  },
+  {
+   "n": 4,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "count Switch == 1",
+     "id=switch_widget unchecked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBluetoothTurnOff/006.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (912,673)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBluetoothTurnOff/008.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemBluetoothTurnOff/009.webp"
+  }
+ ]
+}

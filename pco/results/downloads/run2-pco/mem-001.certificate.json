@@ -1,0 +1,50 @@
+{
+ "rounds": 0,
+ "obligations": 4,
+ "proven": 4,
+ "unproven": 0,
+ "absent": 0,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: who sends the recurring monthly payment",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Arnav Srikanth",
+   "evidence_frame": 29,
+   "explanation": "Recent transactions list shows \"Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d\", and the feed also shows rent february/january/december from Arnav.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: amount of the recurring payment",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "+$650.00",
+   "evidence_frame": 29,
+   "explanation": "Row reads \"Arnav Srikanth paid you, rent march \ud83c\udfe0, +$650.00, 15d\" in Recent transactions.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "IF: this month's payment has not come in yet",
+   "type": "IF",
+   "status": "pass",
+   "claim": "rent march \ud83c\udfe0, +$650.00, 15d",
+   "evidence_frame": 29,
+   "explanation": "Latest rent payment from Arnav is \"rent march \ud83c\udfe0, +$650.00, 15d\" (before October 1, today is Oct 12); no Arnav rent payment within the last 12 days and no pending request to Arnav under Awaiting payment.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: send payment request for this month's payment",
+   "type": "DO",
+   "status": "pass",
+   "claim": "1m \u00b7 rent april",
+   "evidence_frame": 43,
+   "explanation": "Awaiting payment now lists \"You requested Arnav Srikanth\", \"$650.00\", \"1m \u00b7 rent april\"; pending count went from 6 to 7.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

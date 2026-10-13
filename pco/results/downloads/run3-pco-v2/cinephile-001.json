@@ -1,0 +1,110 @@
+{
+ "id": "cinephile-001",
+ "app": "cinephile",
+ "category": "single_app",
+ "goal": "Search for 'The Godfather' in Cinephile and add it to my Wishlist. What's the year and rating?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 61.2,
+ "cost": 0.3059,
+ "answer": "1972, 87%",
+ "summary": "I added The Godfather to your Wishlist in Cinephile; its button now says \"In wishlist\". The film is from 1972 and has an 87% rating, based on 23,744 ratings.\n\nANSWER: 1972, 87%",
+ "rubric": [
+  {
+   "criterion": "Open Cinephile app and navigate to search",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Cinephile app is open with the search interface active, showing a search field with 'The Godfather' typed and search results visible."
+  },
+  {
+   "criterion": "Type 'The Godfather' in the search field",
+   "satisfied": true,
+   "reasoning": "Screenshots 1 and 2 clearly show 'The Godfather' typed in the search field, with search results appearing below."
+  },
+  {
+   "criterion": "Tap 'The Godfather' from search results",
+   "satisfied": true,
+   "reasoning": "Step 2 tapped on The Godfather result (accessibility id 'cinephile_movie_row_238'), and Screenshot 3 shows the movie detail page for The Godfather loaded successfully."
+  },
+  {
+   "criterion": "Add the movie to Wishlist",
+   "satisfied": true,
+   "reasoning": "Step 3 tapped the Wishlist button, and the final screenshot (Screenshot 4) shows the button changed from 'Wishlist' to 'In wishlist', confirming the movie was successfully added to the Wishlist."
+  },
+  {
+   "criterion": "Report the release year of the movie",
+   "satisfied": true,
+   "reasoning": "The agent reported '1972' as the release year, which matches what is shown in the movie detail page (Screenshot 3 and 4 show '1972 \u2022 175 minutes \u2022 Released United States of America')."
+  },
+  {
+   "criterion": "Report the rating of the movie",
+   "satisfied": true,
+   "reasoning": "The agent reported '87%' as the rating, which matches the 87% shown in the rating circle on the movie detail page in Screenshots 3 and 4."
+  }
+ ],
+ "judge": "The agent successfully completed all required tasks: opened the Cinephile app with search already active, typed 'The Godfather' in the search field, tapped on The Godfather from search results, added it to the Wishlist (confirmed by the button changing to 'In wishlist' in the final screenshot), and correctly reported the year (1972) and rating (87%).",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 7
+    },
+    "text": "The Godfather"
+   },
+   "result": "typed 'The Godfather'; verified: true; field value now 'The Godfather'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/cinephile-001/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "200,485,380,500"
+    }
+   },
+   "result": "tapped at (290, 492) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/cinephile-001/0007.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 13
+    }
+   },
+   "result": "tapped at (80, 406) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/cinephile-001/0009.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "year of The Godfather",
+   "verdict": "proven",
+   "claim": "1972",
+   "frame": 9
+  },
+  {
+   "type": "KNOW",
+   "text": "rating of The Godfather",
+   "verdict": "proven",
+   "claim": "87%",
+   "frame": 9
+  },
+  {
+   "type": "DO",
+   "text": "add The Godfather to Wishlist",
+   "verdict": "proven",
+   "claim": "In wishlist",
+   "frame": 9
+  }
+ ]
+}

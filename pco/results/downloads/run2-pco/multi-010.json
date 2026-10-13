@@ -1,0 +1,317 @@
+{
+ "id": "multi-010",
+ "app": "megamart, mybank, clouddocs",
+ "category": "multi_app",
+ "goal": "Search MegaMart for a PS5 headset and note the price. Open the 'Budget Tracker' document in CloudDocs and add a new row with the potential purchase. Check my MyBank credit card balance to see if I can afford it \u2014 if so, go back to MegaMart and add it to my cart. What's the headset price, my credit card balance, and did you add it to cart?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 18,
+ "budget": 50,
+ "seconds": 128.4,
+ "cost": 0.7329,
+ "answer": "Headset price $89.99 (Sony PULSE 3D Wireless Headset); credit card balance $4,588.98; yes, the headset was added to the cart.",
+ "summary": "I searched MegaMart for a PS5 headset and found the Sony PULSE 3D Wireless Headset for PlayStation 5 at $89.99. I added this line to the \"Budget Tracker\" document in CloudDocs, under Entertainment, and saved it: \"PS5 Headset (potential purchase): $89.99\". The Total Spent and Remaining lines in that document haven't been changed.\n\nYour Freedom Unlimited credit card in MyBank has a current balance of $4,588.98. You have $3,411.02 of credit left, which is more than enough for the headset. So I went back to MegaMart and added it to your cart. The app confirmed \"Added to cart\", and your cart count went from 19 to 20.\n\nANSWER: Headset price $89.99 (Sony PULSE 3D Wireless Headset); credit card balance $4,588.98; yes, the headset was added to the cart.",
+ "rubric": [
+  {
+   "criterion": "Open MegaMart and search for a PS5 headset",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-2 show the agent tapping the MegaMart search bar and typing 'PS5 headset', with screenshot 2 showing search results for PS5 headset."
+  },
+  {
+   "criterion": "Note the headset price",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 clearly shows the Sony PULSE 3D Wireless Headset for PlayStation 5 priced at $89.99 (with -18% discount from $109.99). The agent noted this price."
+  },
+  {
+   "criterion": "Open CloudDocs and find the 'Budget Tracker' document",
+   "satisfied": true,
+   "reasoning": "Screenshots 4-11 show the agent opening CloudDocs, searching for documents, scrolling to find Budget Tracker, and successfully opening it (screenshot 12 shows the Budget Tracker document content)."
+  },
+  {
+   "criterion": "Add a new row to the Budget Tracker with the potential purchase",
+   "satisfied": true,
+   "reasoning": "Screenshots 13-15 show the agent editing the Budget Tracker document and adding 'PS5 Headset (potential purchase): $89.99' as a new line. Screenshot 14 shows the text was successfully added to the document."
+  },
+  {
+   "criterion": "Open MyBank and check the credit card balance",
+   "satisfied": true,
+   "reasoning": "Screenshot 16 shows the MyBank app with the credit card section showing 'Freedom Unlimited (...2095)' with a current balance of $4,588.98."
+  },
+  {
+   "criterion": "Determine if the credit card balance allows the purchase",
+   "satisfied": true,
+   "reasoning": "The agent determined that with a credit card balance of $4,588.98 (current balance owed), the card can still be used to make a $89.99 purchase. The agent proceeded to add the item to cart, indicating it determined the purchase was affordable."
+  },
+  {
+   "criterion": "If affordable, return to MegaMart and add the headset to cart",
+   "satisfied": true,
+   "reasoning": "Screenshots 17-19 show the agent returning to MegaMart and tapping 'Add to cart'. The final screenshot (19) shows an 'Added to cart' confirmation notification and the cart count increased from 19 to 20."
+  },
+  {
+   "criterion": "Report the headset price",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly states the headset price as $89.99 (Sony PULSE 3D Wireless Headset)."
+  },
+  {
+   "criterion": "Report the credit card balance",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly states the credit card balance as $4,588.98, which matches what was shown in the MyBank screenshot."
+  },
+  {
+   "criterion": "Report whether the headset was added to cart",
+   "satisfied": true,
+   "reasoning": "The agent's final answer states 'yes, the headset was added to the cart', which is confirmed by the 'Added to cart' notification in the final screenshot."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: searched MegaMart for PS5 headset and found the Sony PULSE 3D at $89.99, opened CloudDocs and found the Budget Tracker document, added a new row with 'PS5 Headset (potential purchase): $89.99', opened MyBank and checked the credit card balance ($4,588.98 current balance on Freedom Unlimited card), determined the purchase was affordable (the credit card has available credit), returned to MegaMart and added the headset to cart (confirmed by 'Added to cart' notification in the final screenshot with cart count going from 19 to 20). The agent's final answer correctly reported all three pieces of information.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (201, 64) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "PS5 headset\n"
+   },
+   "result": "typed 'PS5 headset\\n'; verified: false; field value now 'PS5 headset'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clouddocs"
+   },
+   "result": "launched com.iosworld.benchmark.clouddocs",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (151, 176) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Budget"
+   },
+   "result": "typed 'Budget'; verified: false; field value now 'Search documents'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 16
+    }
+   },
+   "result": "tapped at (201, 1850) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (27, 148) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (151, 176) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0017.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "target": {
+     "bounds": "80,234,360,256"
+    },
+    "text": "Budget"
+   },
+   "result": "typed 'Budget'; verified: false; field value now 'Search documents'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0019.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 750,
+    "x2": 200,
+    "y2": 0,
+    "duration_ms": 800
+   },
+   "result": "swiped (200,750)->(200,0) in 800ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0021.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "24,720,378,800"
+    }
+   },
+   "result": "tapped at (201, 760) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0023.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "docs_edit_button"
+    }
+   },
+   "result": "tapped at (346, 638) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0025.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "296,320,330,334"
+    }
+   },
+   "result": "tapped at (313, 327) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0027.webp"
+  },
+  {
+   "n": 14,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "\nPS5 Headset (potential purchase): $89.99"
+   },
+   "result": "typed '\\nPS5 Headset (potential purchase): $89.99'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0029.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "checkmark"
+    }
+   },
+   "result": "tapped at (31, 147) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0031.webp"
+  },
+  {
+   "n": 16,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.mybank"
+   },
+   "result": "launched com.iosworld.benchmark.mybank",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0033.webp"
+  },
+  {
+   "n": 17,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.megamart"
+   },
+   "result": "launched com.iosworld.benchmark.megamart",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0035.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 22
+    }
+   },
+   "result": "tapped at (292, 672) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-010/0037.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "PS5 headset price in MegaMart",
+   "verdict": "proven",
+   "claim": "$89.99",
+   "frame": 5
+  },
+  {
+   "type": "DO",
+   "text": "add row with headset purchase to Budget Tracker in CloudDocs",
+   "verdict": "proven",
+   "claim": "PS5 Headset (potential purchase): $89.99",
+   "frame": 31
+  },
+  {
+   "type": "KNOW",
+   "text": "MyBank credit card balance",
+   "verdict": "proven",
+   "claim": "$4,588.98",
+   "frame": 33
+  },
+  {
+   "type": "IF",
+   "text": "can afford headset",
+   "verdict": "proven",
+   "claim": "$3,411.02",
+   "frame": 33
+  },
+  {
+   "type": "DO",
+   "text": "add PS5 headset to MegaMart cart",
+   "verdict": "proven",
+   "claim": "Added to cart",
+   "frame": 37
+  }
+ ]
+}

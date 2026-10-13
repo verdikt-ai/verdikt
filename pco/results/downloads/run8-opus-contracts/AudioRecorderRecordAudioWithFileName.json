@@ -1,0 +1,141 @@
+{
+ "id": "AudioRecorderRecordAudioWithFileName",
+ "app": "Audio Recorder",
+ "goal": "Record an audio clip and save it with name \"presentation_fGwr.m4a\" using Audio Recorder app.",
+ "success": true,
+ "score": 1.0,
+ "steps": 10,
+ "budget": 20,
+ "seconds": 59.7,
+ "cost": 0.22417119999999996,
+ "answer": null,
+ "summary": "I recorded an 8-second audio clip in Audio Recorder and saved it as \"presentation_fGwr.m4a\". The app's main screen now shows the recording under that name, in M4a format.\n\nI typed the name with the \".m4a\" ending, exactly as you gave it. The app may add its own \".m4a\" when it stores the file, so on disk it could end up as \"presentation_fGwr.m4a.m4a\". I didn't check the file in storage.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Audio Recorder"
+   },
+   "result": "opened Audio Recorder",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"presentation_fGwr\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (539,2148)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (807,2253)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (539,2184)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "wait",
+   "args": {
+    "seconds": 2
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (742,2184)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "wait",
+   "args": {
+    "seconds": 2
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "presentation_fGwr.m4a",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"presentation_fGwr.m4a\"",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField ~\"presentation\" value \"presentation_fGwr.m4a\" -> no match; nearest: TextField \"input_name\" [1]",
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (820,967)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/AudioRecorderRecordAudioWithFileName/010.webp"
+  }
+ ]
+}

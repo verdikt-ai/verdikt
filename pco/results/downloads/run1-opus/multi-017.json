@@ -1,0 +1,230 @@
+{
+ "id": "multi-017",
+ "app": "clock, weather, trailblaze, caltrack",
+ "category": "multi_app",
+ "goal": "Set a 6:30 AM alarm in Clock labeled 'Morning Run'. Check the Weather in San Francisco for tomorrow morning. Open TrailBlaze and find a running route in the Presidio area. Then check CalTrack for my calorie goal for tomorrow. What's the weather forecast, the route you found, and my daily calorie goal?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 14,
+ "budget": 50,
+ "seconds": 135.3,
+ "cost": 0.5926694,
+ "answer": "Tomorrow in San Francisco: sunny, high 71\u00b0/low 53\u00b0, morning around 52\u201353\u00b0 and partly cloudy to cloudy; route: Presidio Tempo Loop (Crissy Field, 6.3 mi, 486 ft gain, easy); daily calorie goal: 2450 calories",
+ "summary": "I set a new 6:30 AM alarm labeled \"Morning Run\" in Clock, and it's on.\n\n- **Weather:** San Francisco tomorrow (Tuesday) will be sunny, with a high of 71\u00b0 and a low of 53\u00b0. The morning will be partly cloudy to cloudy and 52\u201353\u00b0 (53\u00b0 at 6 AM, 52\u00b0 at 7 AM). Wind will be from the west-northwest at 2\u201313 mph, with gusts up to 21 mph.\n- **Route:** TrailBlaze's map suggests the Presidio Tempo Loop near Crissy Field. It's an easy 6.3-mile run with 486 ft of climbing, and 86% of it is paved.\n- **Calorie goal:** CalTrack shows a daily goal of 2,450 calories. I read this on today's screen and didn't open tomorrow's.\n\nANSWER: Tomorrow in San Francisco: sunny, high 71\u00b0/low 53\u00b0, morning around 52\u201353\u00b0 and partly cloudy to cloudy; route: Presidio Tempo Loop (Crissy Field, 6.3 mi, 486 ft gain, easy); daily calorie goal: 2450 calories",
+ "rubric": [
+  {
+   "criterion": "Open Clock and set a 6:30 AM alarm labeled 'Morning Run'",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-8 show the agent navigating to Clock, going to Alarms, opening Add Alarm, setting the time to 6:30 AM, and entering 'Morning Run' as the label. Screenshot 7 clearly shows the picker at 6:30 AM with 'Morning Run' in the label field."
+  },
+  {
+   "criterion": "Open Weather and check San Francisco forecast for tomorrow morning",
+   "satisfied": true,
+   "reasoning": "Screenshots 9-11 show the Weather app opened for San Francisco. The agent scrolled to the 10-Day Forecast and tapped on Tuesday (tomorrow), which showed a detail panel with High 71\u00b0, Low 53\u00b0, Sunny, and hourly data starting at 12AM showing 55\u00b0 Partly Cloudy."
+  },
+  {
+   "criterion": "Open TrailBlaze and find a running route in the Presidio area",
+   "satisfied": true,
+   "reasoning": "Screenshots 12-13 show TrailBlaze launched and the Maps tab showing a route called 'Presidio Tempo Loop' at Crissy Field, 6.3 mi, 486 ft elevation gain, Easy difficulty, 86% Paved."
+  },
+  {
+   "criterion": "Open CalTrack and check the calorie goal (via settings or profile for daily target)",
+   "satisfied": true,
+   "reasoning": "Screenshot 14 (final state) shows CalTrack opened with the Today view clearly displaying a Goal of 2450 calories."
+  },
+  {
+   "criterion": "Report the weather forecast for tomorrow morning",
+   "satisfied": true,
+   "reasoning": "The agent's final answer states 'sunny, high 71\u00b0/low 53\u00b0, morning around 52\u201353\u00b0 and partly cloudy to cloudy' which matches the Tuesday forecast shown in screenshot 11 (High 71\u00b0, Low 53\u00b0, Sunny overall, with hourly showing 55\u00b0 Partly Cloudy at midnight/1AM)."
+  },
+  {
+   "criterion": "Report the running route found in the Presidio",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported 'Presidio Tempo Loop (Crissy Field, 6.3 mi, 486 ft gain, easy)' which exactly matches what's shown in screenshot 13."
+  },
+  {
+   "criterion": "Report the daily calorie goal from CalTrack",
+   "satisfied": true,
+   "reasoning": "The agent reported '2450 calories' which matches the Goal shown in the CalTrack screenshot (2450 Goal)."
+  },
+  {
+   "criterion": "Confirm the alarm was set",
+   "satisfied": true,
+   "reasoning": "Screenshot 9 (the alarm list after saving) clearly shows a 6:30 alarm labeled 'Morning Run' at the top of the list, enabled (green toggle)."
+  }
+ ],
+ "judge": "The agent successfully completed all required tasks: (1) Set a 6:30 AM alarm labeled 'Morning Run' in Clock (visible in screenshot 9 showing the alarm list with 6:30 Morning Run); (2) Opened Weather app and checked San Francisco forecast for tomorrow (Tuesday), finding sunny, high 71\u00b0/low 53\u00b0; (3) Opened TrailBlaze and found the Presidio Tempo Loop route (6.3 mi, 486 ft elevation, Easy, Crissy Field); (4) Opened CalTrack and found the daily calorie goal of 2450 calories. The final answer correctly reports all three pieces of information.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "130,800,170,840"
+    }
+   },
+   "result": "tapped at (150, 820) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "345,65,385,105"
+    }
+   },
+   "result": "tapped at (365, 85) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "swipe",
+   "args": {
+    "x1": 127,
+    "y1": 200,
+    "x2": 127,
+    "y2": 386,
+    "duration_ms": 1500
+   },
+   "result": "swiped (127,200)->(127,386) in 1500ms",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "120,207,145,227"
+    }
+   },
+   "result": "tapped at (132, 217) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0011.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 150,
+    "x2": 196,
+    "y2": 500,
+    "duration_ms": 1500
+   },
+   "result": "swiped (196,150)->(196,500) in 1500ms",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 150,
+    "x2": 196,
+    "y2": 566,
+    "duration_ms": 1500
+   },
+   "result": "swiped (196,150)->(196,566) in 1500ms",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "target": {
+     "bounds": "20,405,382,448"
+    },
+    "text": "Morning Run"
+   },
+   "result": "typed 'Morning Run'; verified: true; field value now 'Morning Run'",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "320,80,385,125"
+    }
+   },
+   "result": "tapped at (352, 102) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.weather"
+   },
+   "result": "launched com.iosworld.benchmark.weather",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 87
+    }
+   },
+   "result": "tapped at (201, 269) via index",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.trailblaze"
+   },
+   "result": "launched com.iosworld.benchmark.trailblaze",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0027.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "112,810,152,850"
+    }
+   },
+   "result": "tapped at (132, 830) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0029.webp"
+  },
+  {
+   "n": 14,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.caltrack"
+   },
+   "result": "launched com.iosworld.benchmark.caltrack",
+   "refused": false,
+   "frame": "media/run1-opus/multi-017/0031.webp"
+  }
+ ],
+ "ledger": null
+}

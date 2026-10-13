@@ -1,0 +1,405 @@
+{
+ "id": "ExpenseAddMultipleFromGallery",
+ "app": "Simple Gallery",
+ "goal": "Add the expenses from expenses.jpg in Simple Gallery Pro to pro expense.",
+ "success": true,
+ "score": 1.0,
+ "steps": 30,
+ "budget": 60,
+ "seconds": 136.8,
+ "cost": 0.9652776,
+ "answer": null,
+ "summary": "I added all three expenses from expenses.jpg to Pro Expense, and they show under Recent on the Home screen:\n\n| Name | Amount (USD) | Category | Note |\n|---|---|---|---|\n| Wedding Gift | 353.38 | Social | I may repeat this |\n| Movie Night | 195.55 | Entertainment | Monthly recurring |\n| Fundraising Events | 451.79 | Donation | Paid by card |\n\nThe image didn't include dates, so each one is dated today (Oct 15, 2023), which was the form's default.\n\nAt first, typing several fields in one go sent the text into the Name field, so Wedding Gift's name briefly read \"I may repeat this\". I fixed it before saving. Its saved name and amount show correctly in the list; its note and category were right in the form before I saved, but I didn't reopen it afterwards to check them.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Gallery Pro"
+   },
+   "result": "opened Simple Gallery Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "x": 270,
+    "y": 500
+   },
+   "result": "tapped (270,500)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (731,147)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "x": 900,
+    "y": 1100
+   },
+   "result": "tapped (900,1100)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "open_app",
+   "args": {
+    "name": "Pro Expense"
+   },
+   "result": "opened Pro Expense",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": "Wedding Gift",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Wedding Gift\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "353.38",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"353.38\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "text": "I may repeat this",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"I may repeat this\" WARNING: the target field shows \"SAVE\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "index": 15
+   },
+   "result": "tapped (943,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "text": "Wedding Gift",
+    "index": 5,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Wedding Gift\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Wedding Gift\" -> TextField \"Name\" value=\"Wedding Gift\" [5] has value \"Wedding Gift\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "type",
+   "args": {
+    "text": "353.38",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"353.38\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"353.38\" -> TextField \"Amount\" value=\"353.38\" [6] has value \"353.38\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "type",
+   "args": {
+    "text": "I may repeat this",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"I may repeat this\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"I may repeat this\" -> TextField \"Note\" value=\"I may repeat this\" [9] has value \"I may repeat this\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "index": 15
+   },
+   "result": "tapped (710,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/014.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/015.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/016.webp"
+  },
+  {
+   "n": 17,
+   "tool": "type",
+   "args": {
+    "text": "Movie Night",
+    "x": 540,
+    "y": 363,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Movie Night\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Movie Night\" -> TextField \"Name\" value=\"Movie Night\" [5] has value \"Movie Night\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/017.webp"
+  },
+  {
+   "n": 18,
+   "tool": "type",
+   "args": {
+    "text": "195.55",
+    "x": 540,
+    "y": 575,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"195.55\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"195.55\" -> TextField \"Amount\" value=\"195.55\" [6] has value \"195.55\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/018.webp"
+  },
+  {
+   "n": 19,
+   "tool": "type",
+   "args": {
+    "text": "Monthly recurring",
+    "x": 540,
+    "y": 995,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Monthly recurring\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"Monthly recurring\" -> TextField \"Note\" value=\"Monthly recurring\" [9] has value \"Monthly recurring\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/019.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "x": 943,
+    "y": 752
+   },
+   "result": "tapped (943,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/020.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Movie Night\" visible -> StaticText \"Movie Night\" [15]",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/021.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/022.webp"
+  },
+  {
+   "n": 23,
+   "tool": "type",
+   "args": {
+    "text": "Fundraising Events",
+    "x": 540,
+    "y": 363,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Fundraising Events\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Fundraising Events\" -> TextField \"Name\" value=\"Fundraising Events\" [5] has value \"Fundraising Events\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/023.webp"
+  },
+  {
+   "n": 24,
+   "tool": "type",
+   "args": {
+    "text": "451.79",
+    "x": 540,
+    "y": 575,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"451.79\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"451.79\" -> TextField \"Amount\" value=\"451.79\" [6] has value \"451.79\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/024.webp"
+  },
+  {
+   "n": 25,
+   "tool": "type",
+   "args": {
+    "text": "Paid by card",
+    "x": 540,
+    "y": 995,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Paid by card\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"Paid by card\" -> TextField \"Note\" value=\"Paid by card\" [9] has value \"Paid by card\"",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/025.webp"
+  },
+  {
+   "n": 26,
+   "tool": "scroll",
+   "args": {
+    "direction": "right",
+    "index": 8,
+    "amount": "half"
+   },
+   "result": "scrolled right (revealing content further right)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/026.webp"
+  },
+  {
+   "n": 27,
+   "tool": "scroll",
+   "args": {
+    "direction": "right",
+    "index": 8,
+    "amount": "page"
+   },
+   "result": "scrolled right (revealing content further right)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/027.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "index": 15
+   },
+   "result": "tapped (748,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/028.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Fundraising Events\" visible -> StaticText \"Fundraising Events\" [15]",
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/029.webp"
+  },
+  {
+   "n": 30,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ExpenseAddMultipleFromGallery/029.webp"
+  }
+ ]
+}

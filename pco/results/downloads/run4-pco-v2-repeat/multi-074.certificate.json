@@ -1,0 +1,60 @@
+{
+ "rounds": 0,
+ "obligations": 5,
+ "proven": 5,
+ "unproven": 0,
+ "absent": 0,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: unrecognized request amount",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$42",
+   "evidence_frame": 47,
+   "explanation": "Maya's message on screen states \"$42 for your half\"; SplitPay pending showed \"Maya Patel requested $42.00\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: unrecognized request memo",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "dinner split",
+   "evidence_frame": 47,
+   "explanation": "Screen shows \"SplitPay request for that dinner split from last night\"; SplitPay memo was \"2h \u00b7 dinner split\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: QuickChat mention by requester",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Oh also \u2014 just sent you a SplitPay request for that dinner split from last night. $42 for your half. No rush!",
+   "evidence_frame": 47,
+   "explanation": "Maya Patel thread shows \"Oh also \u2014 just sent you a SplitPay request for that dinner split from last night. $42 for your half.\" while on Sun Oct 11 she said \"Landed in Seattle.\"",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "IF: matching MyBank credit card charge found",
+   "type": "IF",
+   "status": "pass",
+   "claim": "QuickBite, Chipotle, Oct 12, 2026, -$31.40",
+   "evidence_frame": 41,
+   "explanation": "Freedom Unlimited recent activity shows \"QuickBite, Chipotle, Oct 12, 2026, -$31.40\" then Oct 09 charges; no charge near $42 around Oct 11 (dinner last night). Answer: no match.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: pay request (if match) or message requester (if no match)",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Hi Maya, I got your $42 SplitPay request",
+   "evidence_frame": 52,
+   "explanation": "No matching card charge, so I messaged Maya. The thread shows the sent message \"Hi Maya, I got your $42 SplitPay request for \u201cdinner\u201d but I don\u2019t recognize it...\" at 11:56 PM with a delivered checkmark.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

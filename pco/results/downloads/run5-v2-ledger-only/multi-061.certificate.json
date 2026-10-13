@@ -1,0 +1,60 @@
+{
+ "rounds": 0,
+ "obligations": 5,
+ "proven": 3,
+ "unproven": 0,
+ "absent": 2,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "IF: any NBA, NFL, or MLB game scheduled tonight in ScoreZone",
+   "type": "IF",
+   "status": "pass",
+   "claim": "NBA \u2022 5 games",
+   "evidence_frame": 4,
+   "explanation": "Scores tab for OCT 13, 2026 shows \"NBA \u2022 5 games\", e.g. GSW vs LAL \"Tue, October 13th at 10:00 PM EDT\". Games are scheduled, so the movie branch does not apply.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: add top-rated Thriller from Discover to 'Weeknight Watch' custom list",
+   "type": "DO",
+   "status": "blocked",
+   "claim": "Not applicable: the goal only asks for movies if no NBA/NFL/MLB game is scheduled, and ScoreZone shows \"NBA \u2022 5 games\" tonight (step 4).",
+   "evidence_frame": null,
+   "explanation": "The condition for the movie branch is false because NBA games are scheduled tonight, so no list was created.",
+   "verdict": "absent",
+   "reason": "The condition for the movie branch is false because NBA games are scheduled tonight, so no list was created."
+  },
+  {
+   "obligation": "DO: add a Drama film to 'Weeknight Watch' as backup",
+   "type": "DO",
+   "status": "blocked",
+   "claim": "Not applicable: the movie branch applies only if no game is scheduled, and ScoreZone shows \"NBA \u2022 5 games\" tonight (step 4).",
+   "evidence_frame": null,
+   "explanation": "The condition is false because NBA games are scheduled tonight, so no backup Drama was added.",
+   "verdict": "absent",
+   "reason": "The condition is false because NBA games are scheduled tonight, so no backup Drama was added."
+  },
+  {
+   "obligation": "DO: message Kai Santos in QuickChat asking if he wants to come over and watch",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Hey Kai! There are NBA games on tonight, including Warriors vs Lakers at 10 PM. Want to come over and watch?",
+   "evidence_frame": 18,
+   "explanation": "Kai Santos thread shows sent bubble under \"Tue, Oct 13\" with delivered check, and Kai replied \"Sounds good! I'm in. Can\u2019t wait to see those matchups!\"",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: tonight's NBA schedule",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Tue, October 13th at 10:00 PM EDT",
+   "evidence_frame": 4,
+   "explanation": "Screen lists GSW vs LAL 10:00 PM EDT, CLE vs ORL 7:00 PM, NYK vs TOR 7:00 PM, IND vs OKC 8:00 PM, POR vs SAC 10:00 PM EDT.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

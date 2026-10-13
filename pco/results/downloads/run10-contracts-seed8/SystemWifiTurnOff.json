@@ -1,0 +1,106 @@
+{
+ "id": "SystemWifiTurnOff",
+ "app": "Settings",
+ "goal": "Turn wifi off.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 68.8,
+ "cost": 0.1799288,
+ "answer": null,
+ "summary": "Wi-Fi is now off. I switched it off on the Internet page in Settings. The switch shows as off, the phone is now using mobile data (T-Mobile, 3G), and the Wi-Fi icon is gone from the status bar.\n\nThe automatic check I set up didn't pass because the switch has no name it could match, so I confirmed it from the screen myself. One thing to know: the Wi-Fi preferences say \"Wi-Fi turns back on automatically,\" so the phone may turn Wi-Fi back on by itself later.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOff/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "refused (no step used): state the goal contract first. Call `contract` with checks for every value the goal requires, as they will appear on the screen you end on (or contract([]) if no screen can show the result), then act.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOff/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Wi\" unchecked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOff/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (407,794)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOff/003.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (279,610)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOff/005.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "x": 964,
+    "y": 824
+   },
+   "result": "tapped (964,824)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOff/007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS Switch ~\"Wi\" unchecked -> no match; nearest: Switch \"switch_widget\" [10]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOff/008.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemWifiTurnOff/009.webp"
+  }
+ ]
+}

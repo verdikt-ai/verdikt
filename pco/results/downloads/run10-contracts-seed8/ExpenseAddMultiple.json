@@ -1,0 +1,345 @@
+{
+ "id": "ExpenseAddMultiple",
+ "app": "Pro Expense",
+ "goal": "Add the following expenses into the pro expense:\nExpense: Movie Night\n amount_dollars: $184.34\n category_name: Entertainment\n note: Remember to transfer funds\n\nExpense: School Supplies\n amount_dollars: $142.04\n category_name: Education\n note: I may repeat this\n\nExpense: Books\n amount_dollars: $467.22\n category_name: Entertainment\n note: Paid by card\n",
+ "success": true,
+ "score": 1.0,
+ "steps": 25,
+ "budget": 60,
+ "seconds": 249.5,
+ "cost": 0.9148963999999999,
+ "answer": null,
+ "summary": "I added all three expenses in Pro Expense, and they now show in the Recent list on the home screen:\n\n- **Movie Night**: $184.34, Entertainment, note \"Remember to transfer funds\"\n- **School Supplies**: $142.04, Education, note \"I may repeat this\"\n- **Books**: $467.22, Entertainment, note \"Paid by card\"\n\nOn the first entry, a batch of typing put the amount and note into the Name field, and the category jumped to Housing. I re-typed each field one at a time, set the category back to Entertainment, and checked every value before saving.\n\nAll three are dated today, Oct 15, 2023, since no date was given. The week's total spending went from 24.24 to 817.84 USD.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Pro Expense"
+   },
+   "result": "opened Pro Expense",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Movie Night\" visible",
+     "text \"School Supplies\" visible",
+     "text \"Books\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "Movie Night",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Movie Night\" WARNING: the target field shows \"Movie N\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Movie Night\" -> TextField \"Name\" value=\"Movie Night\" [5] has value \"Movie Night\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "184.34",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"184.34\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "Remember to transfer funds",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Remember to transfer funds\" WARNING: the target field shows \"SAVE\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "Movie Night",
+    "index": 5,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Movie Night\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Movie Night\" -> TextField \"Name\" value=\"Movie Night\" [5] has value \"Movie Night\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": "184.34",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"184.34\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"184.34\" -> TextField \"Amount\" value=\"184.34\" [6] has value \"184.34\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "Remember to transfer funds",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Remember to transfer funds\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"Remember to transfer funds\" -> TextField \"Note\" value=\"Remember to transfer funds\" [9] has value \"Remember to transfer funds\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 16
+   },
+   "result": "tapped (943,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "type",
+   "args": {
+    "text": "School Supplies",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"School Supplies\" WARNING: the target field shows \"School Su\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"School Supplies\" -> TextField \"Name\" value=\"School Supplies\" [5] has value \"School Supplies\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "type",
+   "args": {
+    "text": "142.04",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"142.04\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"142.04\" -> TextField \"Amount\" value=\"142.04\" [6] has value \"142.04\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "type",
+   "args": {
+    "text": "I may repeat this",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"I may repeat this\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"I may repeat this\" -> TextField \"Note\" value=\"I may repeat this\" [9] has value \"I may repeat this\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/014.webp"
+  },
+  {
+   "n": 15,
+   "tool": "scroll",
+   "args": {
+    "direction": "right",
+    "index": 8,
+    "amount": "half"
+   },
+   "result": "scrolled right (revealing content further right)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/015.webp"
+  },
+  {
+   "n": 16,
+   "tool": "scroll",
+   "args": {
+    "direction": "right",
+    "index": 8,
+    "amount": "page"
+   },
+   "result": "scrolled right (revealing content further right)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/016.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "index": 14
+   },
+   "result": "tapped (550,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/017.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"School Supplies\" visible -> StaticText \"School Supplies\" [15]",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/018.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/019.webp"
+  },
+  {
+   "n": 20,
+   "tool": "type",
+   "args": {
+    "text": "Books",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Books\" WARNING: the target field shows \"B\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Books\" -> TextField \"Name\" value=\"Books\" [5] has value \"Books\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/020.webp"
+  },
+  {
+   "n": 21,
+   "tool": "type",
+   "args": {
+    "text": "467.22",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"467.22\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"467.22\" -> TextField \"Amount\" value=\"467.22\" [6] has value \"467.22\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/021.webp"
+  },
+  {
+   "n": 22,
+   "tool": "type",
+   "args": {
+    "text": "Paid by card",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Paid by card\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"Paid by card\" -> TextField \"Note\" value=\"Paid by card\" [9] has value \"Paid by card\"",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/022.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "index": 16
+   },
+   "result": "tapped (943,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/023.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Books\" visible -> StaticText \"Books\" [15]\n  ok   text \"Movie Night\" visible -> StaticText \"Movie Night\" [23]\n  ok   text \"School Supplies\" visible -> StaticText \"School Supplies\" [19]",
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/024.webp"
+  },
+  {
+   "n": 25,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ExpenseAddMultiple/025.webp"
+  }
+ ]
+}

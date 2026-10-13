@@ -1,0 +1,118 @@
+{
+ "id": "SystemBluetoothTurnOn",
+ "app": "Settings",
+ "goal": "Turn bluetooth on.",
+ "success": true,
+ "score": 1.0,
+ "steps": 7,
+ "budget": 10,
+ "seconds": 38.2,
+ "cost": 0.1334578,
+ "answer": null,
+ "summary": "Bluetooth is now on. I turned on the \"Use Bluetooth\" switch in Settings > Connected devices > Connection preferences > Bluetooth. After a short wait it was still on and showed the device name (sdk_gphone64_arm64), so the change took effect.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOn/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Bluetooth\" checked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOn/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (412,1025)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOn/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (343,1157)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOn/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (302,721)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOn/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "id=switch_widget checked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOn/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (912,673)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   id=switch_widget checked -> Switch \"\" value=\"on\" [4] is checked",
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOn/006.webp"
+  },
+  {
+   "n": 6,
+   "tool": "wait",
+   "args": {
+    "seconds": 2
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   id=switch_widget checked -> Switch \"\" value=\"on\" [4] is checked",
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOn/007.webp"
+  },
+  {
+   "n": 7,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemBluetoothTurnOn/008.webp"
+  }
+ ]
+}

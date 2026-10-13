@@ -1,0 +1,185 @@
+{
+ "id": "splitpay-001",
+ "app": "splitpay",
+ "category": "single_app",
+ "goal": "Send $32.50 to Maya Patel on SplitPay for 'dinner split' from my SplitPay balance and confirm the payment was sent.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 10,
+ "budget": 50,
+ "seconds": 48.0,
+ "cost": 0.4533,
+ "answer": null,
+ "summary": "I sent $32.50 to Maya Patel (@Maya-Patel) on SplitPay with the note \"dinner split.\" The confirmation screen showed $32.50, with \"SplitPay balance\" as the funding source and \"Available instantly\" before I confirmed.\n\nThe payment went through: your activity feed now shows \"Jordan Avery paid Maya Patel, 1m, dinner split\" at the top. The feed entry doesn't show the amount, so the $32.50 is confirmed by the confirmation screen.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open SplitPay app and tap pay or send money",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the SplitPay app is open and the agent tapped the Pay/Request button, which navigated to the recipient selection screen in Screenshot 2."
+  },
+  {
+   "criterion": "Search for and select Maya Patel as recipient",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the recipient selection screen with Maya Patel visible at the top of the list. The agent tapped on Maya Patel (@Maya-Patel), and Screenshot 3 shows the payment screen with Maya Patel selected as the recipient."
+  },
+  {
+   "criterion": "Enter $32.50 as the amount",
+   "satisfied": true,
+   "reasoning": "Screenshots 8 and 9 clearly show $32.50 entered as the amount in the payment screen, confirming the correct amount was entered through the digit buttons."
+  },
+  {
+   "criterion": "Add the note 'dinner split'",
+   "satisfied": true,
+   "reasoning": "Screenshot 8 shows 'dinner split' typed in the memo/note field, and the confirmation dialog in Screenshot 10 also shows 'dinner split' as the payment note."
+  },
+  {
+   "criterion": "Select SplitPay balance as the payment source",
+   "satisfied": true,
+   "reasoning": "The confirmation dialog in Screenshot 10 shows 'Funding: SplitPay balance', confirming that SplitPay balance was selected as the payment source."
+  },
+  {
+   "criterion": "Send the payment",
+   "satisfied": true,
+   "reasoning": "The agent tapped the Pay button in Step 9, which brought up the confirmation dialog. The final screenshot (Step 11) shows the home feed with 'Jordan Avery paid Maya Patel - dinner split' appearing 1 minute ago, confirming the payment was sent."
+  },
+  {
+   "criterion": "Confirm the payment was sent successfully",
+   "satisfied": true,
+   "reasoning": "The final screenshot shows the home feed with the transaction 'Jordan Avery paid Maya Patel - dinner split' appearing at the top of the feed with a timestamp of '1m', confirming the payment was successfully sent and processed."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened the SplitPay app, tapped Pay/Request, selected Maya Patel as recipient, entered $32.50 as the amount, added 'dinner split' as the note, used SplitPay balance as the funding source (shown in the confirmation dialog), sent the payment, and the final screenshot confirms the payment was sent with 'Jordan Avery paid Maya Patel - dinner split' appearing in the feed.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "pay_or_request_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "recipient_row_maya_patel"
+    }
+   },
+   "result": "tapped at (201, 282) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_3"
+    }
+   },
+   "result": "tapped at (325, 610) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0011.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_2"
+    }
+   },
+   "result": "tapped at (200, 610) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0011.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_decimal"
+    }
+   },
+   "result": "tapped at (76, 802) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_5"
+    }
+   },
+   "result": "tapped at (200, 674) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0011.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_0"
+    }
+   },
+   "result": "tapped at (200, 802) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0011.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "memo_field"
+    },
+    "text": "dinner split"
+   },
+   "result": "typed 'dinner split'; verified: true; field value now 'dinner split'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0013.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "send_button"
+    }
+   },
+   "result": "tapped at (297, 347) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0015.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "210,770,372,820"
+    }
+   },
+   "result": "tapped at (291, 795) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/splitpay-001/0017.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Send $32.50 to Maya Patel for 'dinner split' from SplitPay balance and confirm sent",
+   "verdict": "proven",
+   "claim": "Jordan Avery paid Maya Patel, 1m, dinner split",
+   "frame": 17
+  }
+ ]
+}

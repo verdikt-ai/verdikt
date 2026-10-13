@@ -1,0 +1,613 @@
+{
+ "id": "RecipeAddMultipleRecipesFromImage",
+ "app": "Simple Gallery",
+ "goal": "Add the recipes from recipes.jpg in Simple Gallery Pro to the Broccoli recipe app.",
+ "success": true,
+ "score": 1.0,
+ "steps": 46,
+ "budget": 60,
+ "seconds": 350.7,
+ "cost": 1.5900133999999997,
+ "answer": null,
+ "summary": "I added all three recipes from recipes.jpg to Broccoli and saved each one, with one small difference. The Lemon Garlic Tilapia directions start with \"Saute\" instead of \"Saut\u00e9\". The accented \"\u00e9\" was turned into a plain \"e\" when I typed it, and the keyboard wouldn't give me the accent.\n\n1. **Lemon Garlic Tilapia**: 2 servings, 4 hrs. Description is \"A delicious and healthy choice for any time of the day.\", ingredients \"to preference\", and the saut\u00e9-in-butter directions.\n2. **Vegetable Stir Fry with Tofu**: 8 servings, 2 hrs. Description is \"An ideal recipe for experimenting with different flavors and ingredients.\", ingredients \"subject to change\", and the stir-fry directions.\n3. **Sweet Potato and Black Bean Tacos**: 3-4 servings, 4 hrs. Same description as the stir fry, ingredients \"n/a\", and the roast-and-fill directions.\n\nThe image wraps the directions over several lines. I entered each one as a single line with spaces where the lines broke. The image gives no category or source, so those fields are empty.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Gallery Pro"
+   },
+   "result": "opened Simple Gallery Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "x": 270,
+    "y": 500
+   },
+   "result": "tapped (270,500)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "x": 180,
+    "y": 400
+   },
+   "result": "tapped (180,400)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "open_app",
+   "args": {
+    "name": "Broccoli"
+   },
+   "result": "opened Broccoli",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (964,2221)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "Lemon Garlic Tilapia",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Lemon Garlic Tilapia\" WARNING: the target field shows \"Lemon \", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Title\" value \"Lemon Garlic Tilapia\" -> TextField \"Title\" value=\"Lemon Garlic Tilapia\" [6] has value \"Lemon Garlic Tilapia\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": "A delicious and healthy choice for any time of the day.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"A delicious and healthy choice for any time of the day.\" WARNING: the target field shows \"A delicious and healthy choice for any time of the da\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Description\" value \"A delicious and healthy choice for any time of the day.\" -> TextField \"Description\" value=\"A delicious and healthy choice for any time of the day.\" [8] has value \"A delicious and healthy choice for any time of the day.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "2 servings",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"2 servings\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \"Servings\" value \"2 servings\" -> no match; nearest: TextField \"Description\" [8], TextField \"Source\" [9], TextField \"Title\" [6], TextField \"Categories\" [7]",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "text": "4 hrs",
+    "index": 11,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"4 hrs\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \"Time\" value \"4 hrs\" -> TextField \"Time\" value=\"Time\" [11] has value \"Time\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "type",
+   "args": {
+    "text": "A delicious and healthy choice for any time of the day.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"A delicious and healthy choice for any time of the day.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Description\" value \"A delicious and healthy choice for any time of the day.\" -> TextField \"Description\" value=\"A delicious and healthy choice for any time of the day.\" [8] has value \"A delicious and healthy choice for any time of the day.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "text": "2 servings",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"2 servings\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Servings\" value \"2 servings\" -> TextField \"Servings\" value=\"2 servings\" [10] has value \"2 servings\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "type",
+   "args": {
+    "text": "4 hrs",
+    "index": 11,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"4 hrs\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Time\" value \"4 hrs\" -> TextField \"Time\" value=\"4 hrs\" [11] has value \"4 hrs\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "type",
+   "args": {
+    "text": "to preference",
+    "index": 12,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"to preference\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Ingredients\" value \"to preference\" -> TextField \"Ingredients\" value=\"to preference\" [12] has value \"to preference\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "index": 3,
+    "amount": "half"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/014.webp"
+  },
+  {
+   "n": 15,
+   "tool": "type",
+   "args": {
+    "text": "Saut\u00e9 tilapia in butter, add lemon juice and garlic. Serve with steamed vegetables. Garnish with fresh herbs for a more vibrant taste.",
+    "index": 13,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Saut\\u00e9 tilapia in butter, add lemon juice and garlic. Serve with steamed vegetables. Garnish with fresh herbs for a more vibrant taste.\" WARNING: the target field shows \"Saute tilapia in butter, add lemon juice and garlic. Serve with steamed vegetabl\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \"Directions\" value \"Saut\u00e9 tilapia in butter, add lemon juice and garlic. Serve with steamed vegetables. Garnish with fresh herbs for a more vibrant taste.\" -> TextField \"Directions\" value=\"Saute tilapia in butter, add lemon juice and garlic. Serve with steamed vegetables. Garnish with fresh herbs for a more vibrant taste.\" [13] has value \"Saute tilapia in butter, add lemon juice and garlic. Serve with steamed vegetables. Garnish with fresh herbs for a more vibrant taste.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/015.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "x": 700,
+    "y": 1935
+   },
+   "result": "tapped (700,1935)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/016.webp"
+  },
+  {
+   "n": 17,
+   "tool": "press",
+   "args": {
+    "key": "move_home",
+    "repeat": 1
+   },
+   "result": "pressed move_home",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/017.webp"
+  },
+  {
+   "n": 18,
+   "tool": "press",
+   "args": {
+    "key": "dpad_right",
+    "repeat": 5
+   },
+   "result": "pressed dpad_right x5",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/018.webp"
+  },
+  {
+   "n": 19,
+   "tool": "press",
+   "args": {
+    "key": "delete",
+    "repeat": 1
+   },
+   "result": "pressed delete",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/019.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "index": 15
+   },
+   "result": "tapped (967,2337)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/020.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (886,1109)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/021.webp"
+  },
+  {
+   "n": 22,
+   "tool": "long_press",
+   "args": {
+    "index": 20,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (272,1731) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/022.webp"
+  },
+  {
+   "n": 23,
+   "tool": "press",
+   "args": {
+    "key": "delete",
+    "repeat": 1
+   },
+   "result": "pressed delete",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/023.webp"
+  },
+  {
+   "n": 24,
+   "tool": "type",
+   "args": {
+    "text": "e",
+    "clear": false,
+    "enter": false
+   },
+   "result": "typed \"e\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Directions\" value \"Saute tilapia in butter, add lemon juice and garlic. Serve with steamed vegetables. Garnish with fresh herbs for a more vibrant taste.\" -> TextField \"Directions\" value=\"Saute tilapia in butter, add lemon juice and garlic. Serve with steamed vegetables. Garnish with fresh herbs for a more vibrant taste.\" [10] has value \"Saute tilapia in butter, add lemon juice and garlic. Serve with steamed vegetables. Garnish with fresh herbs for a more vibrant taste.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/024.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (953,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/025.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (73,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/026.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "x": 964,
+    "y": 2221
+   },
+   "result": "tapped (964,2221)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"New Recipe\" visible -> StaticText \"New Recipe\" [1]",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/027.webp"
+  },
+  {
+   "n": 28,
+   "tool": "type",
+   "args": {
+    "text": "Vegetable Stir Fry with Tofu",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Vegetable Stir Fry with Tofu\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Title\" value \"Vegetable Stir Fry with Tofu\" -> TextField \"Title\" value=\"Vegetable Stir Fry with Tofu\" [6] has value \"Vegetable Stir Fry with Tofu\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/028.webp"
+  },
+  {
+   "n": 29,
+   "tool": "type",
+   "args": {
+    "text": "An ideal recipe for experimenting with different flavors and ingredients.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"An ideal recipe for experimenting with different flavors and ingredients.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Description\" value \"An ideal recipe for experimenting with different flavors and ingredients.\" -> TextField \"Description\" value=\"An ideal recipe for experimenting with different flavors and ingredients.\" [8] has value \"An ideal recipe for experimenting with different flavors and ingredients.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/029.webp"
+  },
+  {
+   "n": 30,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "index": 3,
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/030.webp"
+  },
+  {
+   "n": 31,
+   "tool": "type",
+   "args": {
+    "text": "8 servings",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"8 servings\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Servings\" value \"8 servings\" -> TextField \"Servings\" value=\"8 servings\" [6] has value \"8 servings\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/031.webp"
+  },
+  {
+   "n": 32,
+   "tool": "type",
+   "args": {
+    "text": "2 hrs",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"2 hrs\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Time\" value \"2 hrs\" -> TextField \"Time\" value=\"2 hrs\" [7] has value \"2 hrs\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/032.webp"
+  },
+  {
+   "n": 33,
+   "tool": "type",
+   "args": {
+    "text": "subject to change",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"subject to change\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Ingredients\" value \"subject to change\" -> TextField \"Ingredients\" value=\"subject to change\" [8] has value \"subject to change\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/033.webp"
+  },
+  {
+   "n": 34,
+   "tool": "type",
+   "args": {
+    "text": "Stir-fry tofu cubes until golden, add assorted vegetables and a stir-fry sauce. Serve over rice or noodles. Feel free to substitute with ingredients you have on hand.",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Stir-fry tofu cubes until golden, add assorted vegetables and a stir-fry sauce. Serve over rice or noodles. Feel free to substitute with ingredients you have on hand.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Directions\" value \"Stir-fry tofu cubes until golden, add assorted vegetables and a stir-fry sauce. Serve over rice or noodles. Feel free to substitute with ingredients you have on hand.\" -> TextField \"Directions\" value=\"Stir-fry tofu cubes until golden, add assorted vegetables and a stir-fry sauce. Serve over rice or noodles. Feel free to substitute with ingredients you have on hand.\" [9] has value \"Stir-fry tofu cubes until golden, add assorted vegetables and a stir-fry sauce. Serve over rice or noodles. Feel free to substitute with ingredients you have on hand.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/034.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (953,136)",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text \"Vegetable Stir Fry with Tofu\" visible -> ambiguous: text \"Vegetable Stir Fry with Tofu\" matched 2 elements [1] [7]; add a role, id= or a longer text",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/035.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (73,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/036.webp"
+  },
+  {
+   "n": 37,
+   "tool": "tap",
+   "args": {
+    "x": 964,
+    "y": 2221
+   },
+   "result": "tapped (964,2221)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"New Recipe\" visible -> StaticText \"New Recipe\" [1]",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/037.webp"
+  },
+  {
+   "n": 38,
+   "tool": "type",
+   "args": {
+    "text": "Sweet Potato and Black Bean Tacos",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Sweet Potato and Black Bean Tacos\" WARNING: the target field shows \"Sweet Potato and Black Bean \", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Title\" value \"Sweet Potato and Black Bean Tacos\" -> TextField \"Title\" value=\"Sweet Potato and Black Bean Tacos\" [6] has value \"Sweet Potato and Black Bean Tacos\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/038.webp"
+  },
+  {
+   "n": 39,
+   "tool": "type",
+   "args": {
+    "text": "An ideal recipe for experimenting with different flavors and ingredients.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"An ideal recipe for experimenting with different flavors and ingredients.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Description\" value \"An ideal recipe for experimenting with different flavors and ingredients.\" -> TextField \"Description\" value=\"An ideal recipe for experimenting with different flavors and ingredients.\" [8] has value \"An ideal recipe for experimenting with different flavors and ingredients.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/039.webp"
+  },
+  {
+   "n": 40,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "index": 3,
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/040.webp"
+  },
+  {
+   "n": 41,
+   "tool": "type",
+   "args": {
+    "text": "3-4 servings",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"3-4 servings\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Servings\" value \"3-4 servings\" -> TextField \"Servings\" value=\"3-4 servings\" [6] has value \"3-4 servings\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/041.webp"
+  },
+  {
+   "n": 42,
+   "tool": "type",
+   "args": {
+    "text": "4 hrs",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"4 hrs\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Time\" value \"4 hrs\" -> TextField \"Time\" value=\"4 hrs\" [7] has value \"4 hrs\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/042.webp"
+  },
+  {
+   "n": 43,
+   "tool": "type",
+   "args": {
+    "text": "n/a",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"n/a\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Ingredients\" value \"n/a\" -> TextField \"Ingredients\" value=\"n/a\" [8] has value \"n/a\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/043.webp"
+  },
+  {
+   "n": 44,
+   "tool": "type",
+   "args": {
+    "text": "Roast sweet potato cubes, mix with black beans, and use as filling for tacos. Top with avocado and cilantro lime sauce. Garnish with fresh herbs for a more vibrant taste.",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Roast sweet potato cubes, mix with black beans, and use as filling for tacos. Top with avocado and cilantro lime sauce. Garnish with fresh herbs for a more vibrant taste.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Directions\" value \"Roast sweet potato cubes, mix with black beans, and use as filling for tacos. Top with avocado and cilantro lime sauce. Garnish with fresh herbs for a more vibrant taste.\" -> TextField \"Directions\" value=\"Roast sweet potato cubes, mix with black beans, and use as filling for tacos. Top with avocado and cilantro lime sauce. Garnish with fresh herbs for a more vibrant taste.\" [9] has value \"Roast sweet potato cubes, mix with black beans, and use as filling for tacos. Top with avocado and cilantro lime sauce. Garnish with fresh herbs for a more vibrant taste.\"",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/044.webp"
+  },
+  {
+   "n": 45,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (953,136)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   StaticText \"3-4 servings\" visible -> StaticText \"3-4 servings\" [9]",
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/045.webp"
+  },
+  {
+   "n": 46,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/RecipeAddMultipleRecipesFromImage/045.webp"
+  }
+ ]
+}

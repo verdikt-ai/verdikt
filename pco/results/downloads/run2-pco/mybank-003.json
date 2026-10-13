@@ -1,0 +1,101 @@
+{
+ "id": "mybank-003",
+ "app": "mybank",
+ "category": "single_app",
+ "goal": "Send $50 via Zelle to Maya Patel in MyBank and confirm the payment was sent.",
+ "success": false,
+ "score": 0.8571,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 35.7,
+ "cost": 0.2758,
+ "answer": null,
+ "summary": "I sent $50 to Maya Patel with Zelle in MyBank, and the app confirmed it went through. A \"Zelle sent.\" message appeared, and the payment now shows in Recent activity as Maya Patel, \u2212$50.00 on Oct 12, 2026 from Total Checking (...6645). The Total Checking balance dropped from $15,621.00 to $15,571.00.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open MyBank app and navigate to Pay & Transfer",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the MyBank app is already open on the home screen. The agent accessed Zelle directly from the home screen chip button, which is part of the app's payment functionality."
+  },
+  {
+   "criterion": "Select Zelle as the payment method",
+   "satisfied": true,
+   "reasoning": "In Step 1, the agent tapped the 'Send | Zelle\u00ae' button on the home screen, which opened the 'Send with Zelle' screen as shown in Screenshot 2."
+  },
+  {
+   "criterion": "Choose Maya Patel as the recipient",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the 'Send to' field already populated with 'Maya Patel' as the recipient, indicating she was pre-selected or selected before the trajectory began."
+  },
+  {
+   "criterion": "Enter $50 as the amount",
+   "satisfied": true,
+   "reasoning": "In Step 2, the agent typed '50' into the amount field, and Screenshot 3 confirms the amount field shows '50'."
+  },
+  {
+   "criterion": "Add a memo or note for the payment",
+   "satisfied": false,
+   "reasoning": "The agent did not add any memo or note. The 'Memo (optional)' field remained empty throughout the transaction as visible in Screenshots 2 and 3."
+  },
+  {
+   "criterion": "Send the payment",
+   "satisfied": true,
+   "reasoning": "In Step 3, the agent tapped the 'Send now' button, which triggered the payment to be sent."
+  },
+  {
+   "criterion": "Confirm the payment was sent successfully",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 (final state) shows a green banner at the top reading 'Zelle sent.' confirming the payment was successfully processed. The checking account balance also decreased by $50 (from $15,621.00 to $15,571.00), further confirming the transaction."
+  }
+ ],
+ "judge": "The agent successfully completed the task of sending $50 via Zelle to Maya Patel in MyBank. The final screenshot shows a green 'Zelle sent.' confirmation banner, and the checking account balance decreased by $50 (from $15,621.00 to $15,571.00), confirming the payment was processed. The agent did not add a memo, but the memo field was optional.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_chip_zelle"
+    }
+   },
+   "result": "tapped at (129, 201) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mybank-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "zelle_amount_field"
+    },
+    "text": "50"
+   },
+   "result": "typed '50'; verified: true; field value now '50'",
+   "refused": false,
+   "frame": "media/run2-pco/mybank-003/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "zelle_send_button"
+    }
+   },
+   "result": "tapped at (201, 551) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mybank-003/0008.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Send $50 via Zelle to Maya Patel and confirm sent",
+   "verdict": "proven",
+   "claim": "Zelle sent.",
+   "frame": 8
+  }
+ ]
+}

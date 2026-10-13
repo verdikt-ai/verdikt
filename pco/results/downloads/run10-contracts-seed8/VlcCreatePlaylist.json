@@ -1,0 +1,292 @@
+{
+ "id": "VlcCreatePlaylist",
+ "app": "Vlc",
+ "goal": "Create a playlist titled \"Comedy Marathon\" with the following files in VLC (located in Internal Memory/VLCVideos), in order: recording_48__2023_05_23.mp4, highlight_99_4K_final.mp4, clip_28__PxeP.mp4",
+ "success": true,
+ "score": 1.0,
+ "steps": 22,
+ "budget": 28,
+ "seconds": 173.6,
+ "cost": 0.601369,
+ "answer": null,
+ "summary": "I created the \"Comedy Marathon\" playlist in VLC. When I opened it, the three videos were in the right order:\n\n1. recording_48__2023_05_23.mp4\n2. highlight_99_4K_final.mp4\n3. clip_28__PxeP.mp4\n\nVLC didn't have permission to read storage at first, so I granted it. Its video library still showed no files, so I added the videos from the VLCVideos folder in Browse instead. I accidentally selected final_episode_60_export.mp4 at one point, but unselected it before saving, and it's not in the playlist.\n\nThe automated end-of-task check failed on the first try because my checks were worded too loosely and matched each file name twice on screen. Nothing was wrong with the playlist, so I finished anyway.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "VLC"
+   },
+   "result": "opened VLC",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"recording_48__2023_05_23\" visible",
+     "text ~\"highlight_99_4K_final\" visible",
+     "text ~\"clip_28__PxeP\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (377,1236)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "wait",
+   "args": {
+    "seconds": 2
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (108,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (540,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "x": 377,
+    "y": 1236
+   },
+   "result": "tapped (377,1236)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (108,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (540,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "x": 198,
+    "y": 520
+   },
+   "result": "tapped (198,520)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "x": 400,
+    "y": 2255
+   },
+   "result": "tapped (400,2255)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "long_press",
+   "args": {
+    "index": 14,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,1094) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "index": 17
+   },
+   "result": "tapped (540,798)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "index": 14
+   },
+   "result": "tapped (540,502)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/013.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "index": 14
+   },
+   "result": "tapped (540,502)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"2 selected\" visible -> StaticText \"2 selected\" [6]",
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/014.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "index": 13
+   },
+   "result": "tapped (540,354)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"3 selected\" visible -> StaticText \"3 selected\" [6]",
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/015.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (1006,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/016.webp"
+  },
+  {
+   "n": 17,
+   "tool": "type",
+   "args": {
+    "text": "Comedy Marathon",
+    "x": 444,
+    "y": 2022,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Comedy Marathon\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/017.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (975,1446)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/018.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (73,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/019.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "x": 756,
+    "y": 2263
+   },
+   "result": "tapped (756,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/020.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (231,867)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/021.webp"
+  },
+  {
+   "n": 21,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS text ~\"recording_48__2023_05_23\" visible -> ambiguous: text ~\"recording_48__2023_05_23\" matched 2 elements [7] [11]; add a role, id= or a longer text\n  MISS text ~\"highlight_99_4K_final\" visible -> ambiguous: text ~\"highlight_99_4K_final\" matched 2 elements [8] [14]; add a role, id= or a longer text\n  MISS text ~\"clip_28__PxeP\" visible -> ambiguous: text ~\"clip_28__PxeP\" matched 2 elements [9] [17]; add a role, id= or a longer text\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/022.webp"
+  },
+  {
+   "n": 22,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/VlcCreatePlaylist/022.webp"
+  }
+ ]
+}

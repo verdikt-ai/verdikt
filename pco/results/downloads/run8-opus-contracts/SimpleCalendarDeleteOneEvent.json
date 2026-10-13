@@ -1,0 +1,94 @@
+{
+ "id": "SimpleCalendarDeleteOneEvent",
+ "app": "Simple Calendar",
+ "goal": "In Simple Calendar Pro, delete the calendar event on 2023-10-24 at 23h with the title 'Workshop on Project X'",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 12,
+ "seconds": 39.8,
+ "cost": 0.1408316,
+ "answer": null,
+ "summary": "I deleted the \"Workshop on Project X\" event (Tuesday, October 24, 23:00\u201323:30) from Simple Calendar Pro. It was the only event that day, and after I confirmed the deletion the day view for October 24 showed no events.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Calendar Pro"
+   },
+   "result": "opened Simple Calendar Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleCalendarDeleteOneEvent/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Workshop on Project X\" absent"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleCalendarDeleteOneEvent/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 40
+   },
+   "result": "tapped (386,1864)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleCalendarDeleteOneEvent/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 56
+   },
+   "result": "tapped (571,428)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleCalendarDeleteOneEvent/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (784,146)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleCalendarDeleteOneEvent/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (842,1284)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Workshop on Project X\" absent -> absent",
+   "frame": "media/run8-opus-contracts/SimpleCalendarDeleteOneEvent/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleCalendarDeleteOneEvent/006.webp"
+  }
+ ]
+}

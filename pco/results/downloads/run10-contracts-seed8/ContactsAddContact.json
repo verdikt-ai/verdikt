@@ -1,0 +1,141 @@
+{
+ "id": "ContactsAddContact",
+ "app": "Contacts",
+ "goal": "Create a new contact for Ibrahim Ahmed. Their number is +18889731885.",
+ "success": true,
+ "score": 1.0,
+ "steps": 8,
+ "budget": 12,
+ "seconds": 65.7,
+ "cost": 0.208326,
+ "answer": null,
+ "summary": "I created and saved the contact Ibrahim Ahmed with the number +18889731885. The app saved it as a Mobile number and displays it as +1 888-973-1885. The saved contact's page shows both the name and the number.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Contacts"
+   },
+   "result": "opened Contacts",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"Ibrahim Ahmed\" visible",
+     "text ~\"888\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (540,1271)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "x": 942,
+    "y": 2010
+   },
+   "result": "tapped (942,2010)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "Ibrahim",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Ibrahim\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "Ahmed",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Ahmed\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/006.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "+18889731885",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"+18889731885\" WARNING: the target field shows \"+1 88\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/007.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (838,146)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/008.webp"
+  },
+  {
+   "n": 7,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "StaticText \"Ibrahim Ahmed\" visible",
+     "StaticText \"+1 888-973-1885\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/008.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ContactsAddContact/010.webp"
+  }
+ ]
+}

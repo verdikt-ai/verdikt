@@ -1,0 +1,89 @@
+{
+ "id": "TasksDueOnDate",
+ "app": "Tasks",
+ "goal": "What tasks do I have due October 24 2023 in Tasks app? Answer with the titles only. If there are multiples titles, format your answer in a comma separated list.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 47.0,
+ "cost": 0.1278146,
+ "answer": "Follow up on support tickets, Draft marketing email, Research market trends",
+ "summary": "Follow up on support tickets, Draft marketing email, Research market trends\n\nThese are the three open tasks in the Tasks app with a due date of Oct 24. I scrolled through the whole list. None of the completed tasks further down had Oct 24 as their date either.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Tasks"
+   },
+   "result": "opened Tasks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TasksDueOnDate/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TasksDueOnDate/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TasksDueOnDate/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TasksDueOnDate/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "answer",
+   "args": {
+    "text": "Follow up on support tickets, Draft marketing email, Research market trends",
+    "evidence": [
+     "text \"Follow up on support tickets\" visible",
+     "text \"Draft marketing email\" visible",
+     "text \"Research market trends\" visible",
+     "count StaticText \"Oct 24\" == 3"
+    ]
+   },
+   "result": "answer recorded: \"Follow up on support tickets, Draft marketing email, Research market trends\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TasksDueOnDate/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/TasksDueOnDate/004.webp"
+  }
+ ]
+}

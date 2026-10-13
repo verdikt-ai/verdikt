@@ -1,0 +1,176 @@
+{
+ "id": "clock-001",
+ "app": "clock",
+ "category": "single_app",
+ "goal": "Set a new alarm for 6:45 AM labeled 'Gym' in the Clock app and confirm it's set.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 10,
+ "budget": 50,
+ "seconds": 86.7,
+ "cost": 0.35757639999999996,
+ "answer": null,
+ "summary": "I set a new 6:45 AM alarm labeled \"Gym\" in the Clock app, and it's switched on. After saving, it shows at the top of the Alarms list as \"6:45, Gym\". The list doesn't show AM or PM, so I checked that AM was selected before saving.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open Clock app and navigate to the Alarm tab",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows the Alarms tab is active with the Alarm list visible, confirming the agent successfully opened the Clock app and navigated to the Alarm tab."
+  },
+  {
+   "criterion": "Tap the add alarm button",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows the 'Add Alarm' screen appeared, indicating the agent tapped the '+' button to add a new alarm."
+  },
+  {
+   "criterion": "Set the alarm time to 6:45 AM",
+   "satisfied": true,
+   "reasoning": "Screenshots 6-8 show the agent scrolling the time picker, and by screenshot 9 the time picker shows '6 45 AM' selected, confirming the time was set to 6:45 AM."
+  },
+  {
+   "criterion": "Set the alarm label to 'Gym'",
+   "satisfied": true,
+   "reasoning": "Screenshot 9 shows the label field contains 'Gym', and the action log confirms the text was typed and verified successfully."
+  },
+  {
+   "criterion": "Save the alarm",
+   "satisfied": true,
+   "reasoning": "Step 10 shows the agent tapped the Save button (in the 'Add Alarm' group), and the final screenshot shows the alarm list without the Add Alarm screen, confirming the save was successful."
+  },
+  {
+   "criterion": "Confirm the alarm is set and active",
+   "satisfied": true,
+   "reasoning": "The final screenshot (screenshot 11) shows the Alarms list with '6:45 Gym' at the top with a green toggle (enabled/active), confirming the alarm is set and active."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps. The final screenshot shows the Alarms list with a new '6:45' alarm labeled 'Gym' at the top, with its toggle enabled (green), confirming the alarm was set correctly and is active.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (127, 518) via index",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clock"
+   },
+   "result": "launched com.iosworld.benchmark.clock",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0004.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "120,805,180,850"
+    }
+   },
+   "result": "tapped at (150, 827) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "345,65,385,105"
+    }
+   },
+   "result": "tapped at (365, 85) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "x1": 126,
+    "y1": 200,
+    "x2": 126,
+    "y2": 350,
+    "duration_ms": 1200
+   },
+   "result": "swiped (126,200)->(126,350) in 1200ms",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "115,206,140,226"
+    }
+   },
+   "result": "tapped at (127, 216) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 150,
+    "x2": 196,
+    "y2": 375,
+    "duration_ms": 1200
+   },
+   "result": "swiped (196,150)->(196,375) in 1200ms",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 180,
+    "x2": 196,
+    "y2": 340,
+    "duration_ms": 1200
+   },
+   "result": "swiped (196,180)->(196,340) in 1200ms",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0017.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Gym"
+   },
+   "result": "typed 'Gym'; verified: true; field value now 'Gym'",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0021.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "320,80,380,120"
+    }
+   },
+   "result": "tapped at (350, 100) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/clock-001/0021.webp"
+  }
+ ],
+ "ledger": null
+}

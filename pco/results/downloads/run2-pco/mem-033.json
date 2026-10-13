@@ -1,0 +1,743 @@
+{
+ "id": "mem-033",
+ "app": "mail, mybank, megamart, notes, clouddocs, cloudsheets",
+ "category": "memory",
+ "goal": "Audit all my recurring costs. Check Mail for subscription confirmations and renewal notices, MyBank credit card transactions for recurring monthly charges, and MegaMart order history for Subscribe & Save items. Total all monthly recurring costs and add a 'Subscriptions' row to the Subscription Audit in CloudSheets. Create a 'Subscription Audit' note in Notes listing each subscription, its cost, and whether to keep or cancel. Let me know each subscription found with its monthly cost and the total recurring monthly cost.",
+ "success": false,
+ "score": 0.8889,
+ "judged": true,
+ "steps": 50,
+ "budget": 50,
+ "seconds": 360.7,
+ "cost": 3.0653,
+ "answer": "Netflix $15.99; Spotify Premium $10.99; Apple Music $10.99; YouTube Premium $13.99; Bay Club Fitness $49.99; Apple iCloud $2.99; no MegaMart Subscribe & Save items found; total recurring monthly cost $104.94; YouTube Premium monthly cost: Charge: $13.99; Netflix monthly cost: -$15.99; Spotify Premium monthly cost: -$10.99; Bay Club Fitness monthly cost: -$49.99; Apple iCloud monthly cost: -$2.99; Apple Music monthly cost: Apple Music - $10.99/mo",
+ "summary": "I used my last actions on one more check: searching Mail for \"Subscribe\" found nothing. All 50 actions are now spent, and I still found no MegaMart Subscribe & Save items. I never opened MegaMart's \"Your account\" page, which is the one place left where they could be listed.\n\nYour recurring monthly costs come to **$104.94**:\n\n| Subscription | Monthly cost | Recommendation |\n|---|---|---|\n| Netflix | $15.99 | Keep |\n| Spotify Premium | $10.99 | Keep |\n| Apple Music | $10.99 | Cancel, since it overlaps with Spotify |\n| YouTube Premium | $13.99 | Cancel |\n| Bay Club Fitness | $49.99 | Keep |\n| Apple iCloud storage | $2.99 | Keep |\n\nThe keep or cancel calls are my judgement.\n\n- **Spreadsheet:** the Subscription Audit sheet now has a \"Subscriptions\" row with 104.94. Its existing \"Total monthly\" row still shows 61.95 and doesn't include the new row.\n- **Note:** the \"Subscription Audit\" note lists each subscription, its cost and keep or cancel, plus the total. I couldn't find a Done button to confirm it saved, so please reopen it to make sure.\n- **Bay Club Fitness:** the last charge was Sep 8 and there's no October charge yet, so it may already be cancelled. I still counted it.\n\nANSWER: Netflix $15.99; Spotify Premium $10.99; Apple Music $10.99; YouTube Premium $13.99; Bay Club Fitness $49.99; Apple iCloud $2.99; no MegaMart Subscribe & Save items found; total recurring monthly cost $104.94",
+ "rubric": [
+  {
+   "criterion": "Check Mail for subscription confirmations and renewal notices",
+   "satisfied": true,
+   "reasoning": "The agent searched Mail for 'subscription' and 'renew' terms, found Apple Music renewal email ($10.99/month) and YouTube Premium billing receipt ($13.99/month). The agent opened and read both emails."
+  },
+  {
+   "criterion": "Check MyBank credit card transactions for recurring monthly charges",
+   "satisfied": true,
+   "reasoning": "The agent opened MyBank, navigated to the Freedom Unlimited credit card, and searched for 'subscription', 'membership', and 'monthly' transactions. Found Netflix ($15.99), Spotify Premium ($10.99), Bay Club Fitness ($49.99), and Apple iCloud ($2.99) as recurring monthly charges."
+  },
+  {
+   "criterion": "Check MegaMart order history for Subscribe & Save items",
+   "satisfied": false,
+   "reasoning": "The agent opened MegaMart and checked the order history (Active and Past Orders tabs), but did not specifically look for a 'Subscribe & Save' section. The agent only browsed general order history without finding or specifically searching for Subscribe & Save items. The agent concluded no Subscribe & Save items were found, but didn't thoroughly check the dedicated Subscribe & Save section."
+  },
+  {
+   "criterion": "Identify and list each individual subscription with its monthly cost",
+   "satisfied": true,
+   "reasoning": "The agent identified 6 subscriptions: Netflix ($15.99/mo), Spotify Premium ($10.99/mo), Apple Music ($10.99/mo), YouTube Premium ($13.99/mo), Bay Club Fitness ($49.99/mo), and Apple iCloud ($2.99/mo). These were listed in both the Notes note and reported in the final answer."
+  },
+  {
+   "criterion": "Calculate total monthly recurring cost across all subscriptions",
+   "satisfied": true,
+   "reasoning": "The agent calculated the total as $104.94 ($15.99 + $10.99 + $10.99 + $13.99 + $49.99 + $2.99 = $104.94), which is mathematically correct."
+  },
+  {
+   "criterion": "Add a 'Subscriptions' row to the Subscription Audit in CloudSheets",
+   "satisfied": true,
+   "reasoning": "Screenshots 34-41 show the agent opening the Subscription Audit sheet in CloudSheets and adding 'Subscriptions' in cell A8 and 104.94 in cell B8. Screenshot 41 confirms the row was added with 'Subscriptions' label and 104.94 value."
+  },
+  {
+   "criterion": "Create a 'Subscription Audit' note in Notes listing each subscription, cost, and keep/cancel recommendation",
+   "satisfied": true,
+   "reasoning": "Screenshots 44-47 show the agent creating a note titled 'Subscription Audit' in Notes with all 6 subscriptions listed with their monthly costs and keep/cancel recommendations (Netflix-Keep, Spotify Premium-Keep, Apple Music-Cancel, YouTube Premium-Cancel, Bay Club Fitness-Keep, Apple iCloud-Keep), plus the total monthly recurring cost."
+  },
+  {
+   "criterion": "Report each subscription found with monthly cost and total recurring monthly cost to the user",
+   "satisfied": true,
+   "reasoning": "The agent's final answer listed all 6 subscriptions with their monthly costs and reported the total recurring monthly cost of $104.94."
+  },
+  {
+   "criterion": "Confirm both the CloudSheets update and Notes note were created",
+   "satisfied": true,
+   "reasoning": "Screenshots confirm both were created: the CloudSheets Subscription Audit shows row 8 with 'Subscriptions' and 104.94, and the Notes app shows the 'Subscription Audit' note with all subscription details."
+  }
+ ],
+ "judge": "The agent completed most of the required tasks but had some issues. It checked Mail for subscription confirmations (found Apple Music at $10.99/mo and YouTube Premium at $13.99/mo), checked MyBank credit card transactions (found Netflix $15.99, Spotify Premium $10.99, Bay Club Fitness $49.99, Apple iCloud $2.99), checked MegaMart order history (found no Subscribe & Save items), created a 'Subscription Audit' note in Notes with all subscriptions listed with costs and keep/cancel recommendations, and added a 'Subscriptions' row to the CloudSheets Subscription Audit. However, the CloudSheets row was added in row 8 with the label 'Subscriptions' in column A and value 104.94 in column B, which satisfies the requirement. The Notes note was created with all subscriptions listed. The main issues are: (1) The total of $104.94 doesn't add up correctly from the found subscriptions ($15.99 + $10.99 + $10.99 + $13.99 + $49.99 + $2.99 = $104.94 - this actually does add up correctly). (2) The agent didn't fully explore MegaMart's Subscribe & Save section specifically - it only checked order history tabs. (3) The CloudSheets row was entered but the formula bar still shows it being edited (not confirmed) in some screenshots, though screenshot 41 shows 'Subscriptions' in A8 with 104.94 in B8, indicating it was saved. Overall the task was substantially completed with the key deliverables created.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 16
+    },
+    "text": "subscription"
+   },
+   "result": "typed 'subscription'; verified: true; field value now 'Subscription'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 192) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (38, 84) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (187, 109) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "sent 12 deletes; cleared: true; field value now 'Search Mail'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0013.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 16
+    },
+    "text": "renew"
+   },
+   "result": "typed 'renew'; verified: true; field value now 'Renew'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0016.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 192) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0018.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (38, 84) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0020.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 11
+    }
+   },
+   "result": "tapped at (284, 821) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0022.webp"
+  },
+  {
+   "n": 10,
+   "tool": "type",
+   "args": {
+    "target": {
+     "bounds": "33,803,260,841"
+    },
+    "text": "month"
+   },
+   "result": "typed 'month'; verified: true; field value now 'Month'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0024.webp"
+  },
+  {
+   "n": 11,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.mybank"
+   },
+   "result": "launched com.iosworld.benchmark.mybank",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0026.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 18
+    }
+   },
+   "result": "tapped at (201, 706) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0028.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 800,
+    "x2": 200,
+    "y2": 100,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,800)->(200,100) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0030.webp"
+  },
+  {
+   "n": 14,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 800,
+    "x2": 200,
+    "y2": 100,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,800)->(200,100) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0032.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (52, 100) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0035.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_search_bar"
+    }
+   },
+   "result": "tapped at (200, 141) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0035.webp"
+  },
+  {
+   "n": 17,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 10
+    },
+    "text": "subscription"
+   },
+   "result": "typed 'subscription'; verified: true; field value now 'Subscription'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0038.webp"
+  },
+  {
+   "n": 18,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,742)->(201,132) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0040.webp"
+  },
+  {
+   "n": 19,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "bounds": "32,803,300,841"
+    }
+   },
+   "result": "sent 50 deletes; cleared: false; field value now '?'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0043.webp"
+  },
+  {
+   "n": 20,
+   "tool": "type",
+   "args": {
+    "target": {
+     "bounds": "32,803,300,841"
+    },
+    "text": "membership"
+   },
+   "result": "typed 'membership'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0045.webp"
+  },
+  {
+   "n": 21,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "bounds": "32,803,300,841"
+    }
+   },
+   "result": "sent 50 deletes; cleared: false; field value now '?'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0048.webp"
+  },
+  {
+   "n": 22,
+   "tool": "type",
+   "args": {
+    "target": {
+     "bounds": "32,803,300,841"
+    },
+    "text": "monthly"
+   },
+   "result": "typed 'monthly'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0050.webp"
+  },
+  {
+   "n": 23,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,742)->(201,132) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0052.webp"
+  },
+  {
+   "n": 24,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.megamart"
+   },
+   "result": "launched com.iosworld.benchmark.megamart",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0054.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 16
+    }
+   },
+   "result": "tapped at (116, 482) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0057.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (133, 146) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0059.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 45
+    }
+   },
+   "result": "tapped at (153, 804) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0062.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "tab_menu"
+    }
+   },
+   "result": "tapped at (339, 814) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0064.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "tab_account"
+    }
+   },
+   "result": "tapped at (154, 811) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0066.webp"
+  },
+  {
+   "n": 30,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cloudsheets"
+   },
+   "result": "launched com.iosworld.benchmark.cloudsheets",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0068.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "66,750,334,760"
+    }
+   },
+   "result": "tapped at (200, 755) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0070.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (26, 135) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0073.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "66,855,334,870"
+    }
+   },
+   "result": "tapped at (200, 862) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0073.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_A8"
+    }
+   },
+   "result": "tapped at (174, 564) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0075.webp"
+  },
+  {
+   "n": 35,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    },
+    "text": "Subscriptions"
+   },
+   "result": "typed 'Subscriptions'; verified: true; field value now 'Subscriptions'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0079.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_B8"
+    }
+   },
+   "result": "tapped at (392, 558) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0079.webp"
+  },
+  {
+   "n": 37,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    },
+    "text": "104.94"
+   },
+   "result": "typed '104.94'; verified: true; field value now '104.94'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0083.webp"
+  },
+  {
+   "n": 38,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 75
+    }
+   },
+   "result": "tapped at (368, 806) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0083.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "10,540,95,578"
+    }
+   },
+   "result": "tapped at (52, 559) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0085.webp"
+  },
+  {
+   "n": 40,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    },
+    "text": "Subscriptions"
+   },
+   "result": "typed 'Subscriptions'; verified: true; field value now 'Subscriptions'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0088.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "357,795,379,817"
+    }
+   },
+   "result": "tapped at (368, 806) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0088.webp"
+  },
+  {
+   "n": 42,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "16,125,38,147"
+    }
+   },
+   "result": "tapped at (27, 136) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0091.webp"
+  },
+  {
+   "n": 43,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.notes"
+   },
+   "result": "launched com.iosworld.benchmark.notes",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0091.webp"
+  },
+  {
+   "n": 44,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "notes_new_note_button"
+    }
+   },
+   "result": "tapped at (349, 822) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0093.webp"
+  },
+  {
+   "n": 45,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "notes_title_field"
+    },
+    "text": "Subscription Audit"
+   },
+   "result": "typed 'Subscription Audit'; verified: true; field value now 'Subscription Audit'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0096.webp"
+  },
+  {
+   "n": 46,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "notes_body_editor"
+    },
+    "text": "Netflix - $15.99/mo - Keep\nSpotify Premium - $10.99/mo - Keep\nApple Music - $10.99/mo - Cancel (duplicate of Spotify)\nYouTube Premium - $13.99/mo - Cancel\nBay Club Fitness - $49.99/mo - Keep\nApple iCloud - $2.99/mo - Keep\nTotal monthly recurring: $104.94"
+   },
+   "result": "typed 'Netflix - $15.99/mo - Keep\\nSpotify Premium - $10.99/mo - Keep\\nApple Music - $10.99/mo - Cancel (duplicate of Spotify)\\nYouTube Premium - $13.99/mo - Cancel\\nBay Club Fitness - $49.99/mo - Keep\\nApple iCloud - $2.99/mo - Keep\\nTotal monthly recurring: $104.94'; verified: true; field value now 'Netflix - $15.99/mo - Keep\\nSpotify Premium - $10.99/mo - Keep\\nApple Music - $10.99/mo - Cancel (duplicate of Spotify)\\nYouTube Premium - $13.99/mo - Cancel\\nBay Club Fitness - $49.99/mo - Keep\\nApple iCloud - $2.99/mo - Keep\\nTotal monthly recurring: $104.94'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0098.webp"
+  },
+  {
+   "n": 47,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Done)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0101.webp"
+  },
+  {
+   "n": 48,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.mail"
+   },
+   "result": "launched com.iosworld.benchmark.mail",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0101.webp"
+  },
+  {
+   "n": 49,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (284, 821) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0103.webp"
+  },
+  {
+   "n": 50,
+   "tool": "type",
+   "args": {
+    "target": {
+     "bounds": "33,803,260,841"
+    },
+    "text": "Subscribe"
+   },
+   "result": "typed 'Subscribe'; verified: true; field value now 'Subscribe'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-033/0105.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "YouTube Premium monthly cost",
+   "verdict": "proven",
+   "claim": "Charge: $13.99",
+   "frame": 18
+  },
+  {
+   "type": "KNOW",
+   "text": "Netflix monthly cost",
+   "verdict": "proven",
+   "claim": "-$15.99",
+   "frame": 32
+  },
+  {
+   "type": "KNOW",
+   "text": "Spotify Premium monthly cost",
+   "verdict": "proven",
+   "claim": "-$10.99",
+   "frame": 38
+  },
+  {
+   "type": "KNOW",
+   "text": "Bay Club Fitness monthly cost",
+   "verdict": "proven",
+   "claim": "-$49.99",
+   "frame": 45
+  },
+  {
+   "type": "KNOW",
+   "text": "Apple iCloud monthly cost",
+   "verdict": "proven",
+   "claim": "-$2.99",
+   "frame": 50
+  },
+  {
+   "type": "KNOW",
+   "text": "MegaMart Subscribe & Save items",
+   "verdict": "absent",
+   "claim": "No results for \"Subscribe\"",
+   "frame": 105
+  },
+  {
+   "type": "DO",
+   "text": "Add 'Subscriptions' row to Subscription Audit sheet",
+   "verdict": "proven",
+   "claim": "104.94",
+   "frame": 88
+  },
+  {
+   "type": "DO",
+   "text": "Create 'Subscription Audit' note listing subscriptions with keep/cancel",
+   "verdict": "proven",
+   "claim": "Total monthly recurring: $104.94",
+   "frame": 98
+  },
+  {
+   "type": "KNOW",
+   "text": "Apple Music monthly cost",
+   "verdict": "proven",
+   "claim": "Apple Music - $10.99/mo",
+   "frame": 98
+  },
+  {
+   "type": "KNOW",
+   "text": "Total monthly recurring cost",
+   "verdict": "proven",
+   "claim": "$104.94",
+   "frame": 98
+  }
+ ]
+}

@@ -1,0 +1,732 @@
+{
+ "id": "multi-035",
+ "app": "tasterank, dinespot, cinephile, cityride, quickchat",
+ "category": "multi_app",
+ "goal": "Browse DineSpot for a restaurant in San Francisco with outdoor seating and make a reservation for 2 at 7 PM Saturday. Check TasteRank to see if any friends have reviewed restaurants in that neighborhood. Search Cinephile for a movie to watch afterward and add it to a 'Date Night' list. Compare CityRide prices (CityRideX vs Comfort) for the ride to the restaurant and estimate the total evening cost covering dinner and ride. Message Maya Patel in QuickChat with the full plan. What's the restaurant name, movie title, ride estimate, and total evening cost estimate?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 49,
+ "budget": 50,
+ "seconds": 352.9,
+ "cost": 1.7847,
+ "answer": "Restaurant: Delfina (Mission, booked for 2 on Sat Oct 17 at 7:30 PM because 7:00 wasn't available); Movie: Fall 2: Deadpoint; Ride estimate: CityRideX $11.75 (Comfort $15.04); Total evening cost estimate: about $74\u2013$112 (dinner $62\u2013$100 for two plus $11.75 ride); friends' reviews in that neighborhood on TasteRank: Daily pasta was a mushroom agnolotti that stayed with me.; total evening cost estimate: Dinner for 2 at $31\u2013$50 pp = $62\u2013$100, plus CityRideX $11.75 \u2192 about $74\u2013$112 (~$93 midpoint); with Comfort $15.04 \u2192 $77\u2013$115.",
+ "summary": "I booked dinner, added a movie to a new list and sent Maya the plan, but the reservation is at 7:30 PM, not 7 PM.\n\n- **Restaurant:** Delfina, an Italian place at 3621 18th St in the Mission. It came up under DineSpot's Outdoor filter. The booking is for 2 on Sat, Oct 17 at 7:30 PM, confirmation code RSV2007. Delfina had no 7:00 slot that night; the closest times were 6:30 and 7:30. I only checked Delfina, so another outdoor restaurant might have had 7:00 open.\n- **TasteRank:** I didn't find any friend reviews for the Mission. I searched the neighborhood and opened Flour + Water, which showed only your own note (\"Daily pasta was a mushroom agnolotti that stayed with me.\"). I didn't open the other Mission restaurants' pages (Delfina, Lazy Bear, Tartine, La Taqueria, El Farolito), so friends could have reviewed one of those.\n- **Movie:** Fall 2: Deadpoint. Cinephile had no custom lists, so I created \"Date Night\" and added it.\n- **Ride:** From your saved Home address to Delfina, CityRideX is $11.75 and Comfort is $15.04. I suggested CityRideX in the message to Maya, since it's $3.29 cheaper.\n- **Total:** About $74\u2013$112. That's dinner for two at DineSpot's listed $31\u2013$50 per person ($62\u2013$100) plus the $11.75 CityRideX fare. With Comfort it would be about $77\u2013$115. These numbers cover dinner and one ride there, not tickets or a ride home.\n- **Message to Maya:** Sent in QuickChat with the restaurant, time, code, movie, both ride prices and the estimate. She replied \"Sounds like a solid plan!\"\n\nANSWER: Restaurant: Delfina (Mission, booked for 2 on Sat Oct 17 at 7:30 PM because 7:00 wasn't available); Movie: Fall 2: Deadpoint; Ride estimate: CityRideX $11.75 (Comfort $15.04); Total evening cost estimate: about $74\u2013$112 (dinner $62\u2013$100 for two plus $11.75 ride)",
+ "rubric": [
+  {
+   "criterion": "Open DineSpot and search for San Francisco restaurants with outdoor seating",
+   "satisfied": true,
+   "reasoning": "The agent opened DineSpot (visible in screenshots 1-2), navigated to the Search tab (screenshot 3), applied the Outdoor filter (screenshot 13 shows 'Outdoor' tag selected in the filter bar), and the results showed 10 restaurants with outdoor seating including Delfina (screenshot 13)."
+  },
+  {
+   "criterion": "Make a reservation for 2 at 7 PM Saturday at a restaurant with outdoor seating",
+   "satisfied": true,
+   "reasoning": "The agent selected Delfina (which has outdoor seating as it appeared in the outdoor-filtered results), set the date to Saturday Oct 17, party size 2, and booked the closest available time to 7 PM which was 7:30 PM. The reservation was confirmed (screenshot 25) with code RSV2007 for Delfina, Sat Oct 17, 7:30 PM, 2 guests."
+  },
+  {
+   "criterion": "Open TasteRank and check for friend reviews in the restaurant's neighborhood",
+   "satisfied": true,
+   "reasoning": "The agent opened TasteRank (screenshot 26-27), searched for 'Mission' (screenshots 28-30), and found Flour + Water in the Mission District with a note 'Daily pasta was a mushroom agnolotti that stayed with me' (screenshot 31), indicating a friend review in the neighborhood."
+  },
+  {
+   "criterion": "Open Cinephile and search for a movie to watch afterward",
+   "satisfied": true,
+   "reasoning": "The agent launched Cinephile (screenshot 32) and selected Fall 2: Deadpoint from the Now Playing list (screenshots 33-34)."
+  },
+  {
+   "criterion": "Add the movie to a 'Date Night' list",
+   "satisfied": true,
+   "reasoning": "The agent tapped 'List' on the movie page (step 34), created a new list named 'Date Night' (screenshots 36-37), and then added Fall 2: Deadpoint to the Date Night list (screenshots 38-39 show the checkmark next to 'Date Night')."
+  },
+  {
+   "criterion": "Open CityRide and compare CityRideX vs Comfort prices to the restaurant",
+   "satisfied": true,
+   "reasoning": "The agent opened CityRide (screenshot 40), entered the destination as 3621 18th St (Delfina's address), and the price comparison screen showed CityRideX at $11.75 (screenshot 45). The agent reported Comfort at $15.04 in the message, though the screenshot only shows CityRideX and CityRide Green. The agent did scroll through options and reported a Comfort price, suggesting it was seen during the process."
+  },
+  {
+   "criterion": "Estimate total evening cost covering dinner and ride (excluding movie ticket)",
+   "satisfied": true,
+   "reasoning": "The agent estimated dinner at $62-$100 for 2 (based on Delfina's $31-$50 per person price range) plus CityRideX at $11.75, totaling approximately $74-$112. This was included in the message to Maya Patel."
+  },
+  {
+   "criterion": "Message Maya Patel in QuickChat with the full plan",
+   "satisfied": true,
+   "reasoning": "The agent opened QuickChat (screenshot 46), tapped on Maya Patel's chat (screenshot 47), typed and sent a comprehensive message with the full plan including restaurant, movie, ride comparison, and total cost estimate (screenshot 50 shows the message was sent and Maya responded)."
+  },
+  {
+   "criterion": "Report the restaurant name and reservation details",
+   "satisfied": true,
+   "reasoning": "The agent reported: Restaurant: Delfina, Mission district, 3621 18th St, booked for 2 on Sat Oct 17 at 7:30 PM (7:00 PM wasn't available), reservation code RSV2007."
+  },
+  {
+   "criterion": "Report the movie title",
+   "satisfied": true,
+   "reasoning": "The agent reported the movie title as 'Fall 2: Deadpoint' which was added to the Date Night list in Cinephile."
+  },
+  {
+   "criterion": "Report the ride estimate (CityRideX vs Comfort comparison)",
+   "satisfied": true,
+   "reasoning": "The agent reported CityRideX at $11.75 and Comfort at $15.04. The CityRideX price of $11.75 is confirmed in screenshot 45. The Comfort price of $15.04 was reported by the agent (it may have been visible when scrolling in CityRide)."
+  },
+  {
+   "criterion": "Report the total evening cost estimate",
+   "satisfied": true,
+   "reasoning": "The agent reported total evening cost estimate of approximately $74-$112 (dinner $62-$100 for 2 plus CityRideX $11.75 ride), which is a reasonable estimate based on the data gathered."
+  },
+  {
+   "criterion": "Confirm the reservation and message were completed",
+   "satisfied": true,
+   "reasoning": "The reservation was confirmed with code RSV2007 (screenshot 25 shows 'Reservation Confirmed' for Delfina, Sat Oct 17, 7:30 PM). The message to Maya Patel was sent successfully as shown in screenshot 50 where Maya's response is visible."
+  }
+ ],
+ "judge": "The agent successfully completed all major components of the task: opened DineSpot and searched for SF restaurants with outdoor seating filter, found and booked Delfina (Mission district, outdoor seating) for 2 guests on Sat Oct 17 at 7:30 PM (closest available to 7 PM), checked TasteRank for friend reviews in the Mission neighborhood (found Flour + Water review), opened Cinephile and selected Fall 2: Deadpoint, created a 'Date Night' list and added the movie to it, opened CityRide and compared CityRideX ($11.75) vs Comfort (agent reported $15.04, though the screenshot shows CityRide Green at $12.93 - Comfort wasn't visible in the screenshot but agent scrolled), estimated total evening cost, and messaged Maya Patel in QuickChat with the full plan. The message was sent successfully as confirmed by the final screenshot showing Maya's response. The reservation was confirmed with code RSV2007. The agent reported all required information in the final answer.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Search"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Search)",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "105,815,145,855"
+    }
+   },
+   "result": "tapped at (125, 835) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "featured_collection_outdoor"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (793, 124) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "discover_filter_button"
+    }
+   },
+   "result": "tapped at (344, 124) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 80,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,786)->(201,88) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 80,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,786)->(201,88) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "filter_outdoor"
+    }
+   },
+   "result": "tapped at (201, 638) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "filter_bookable_online"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 742) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0016.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,620,380,656"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (355, 638) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0018.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0020.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 90,
+    "x2": 201,
+    "y2": 800,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,90)->(201,800) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0023.webp"
+  },
+  {
+   "n": 12,
+   "tool": "swipe",
+   "args": {
+    "x1": 350,
+    "y1": 124,
+    "x2": 20,
+    "y2": 124,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (350,124)->(20,124) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0025.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "tapped at (294, 124) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0027.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "14,880,390,950"
+    }
+   },
+   "result": "tapped at (202, 915) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0029.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (85, 808) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0031.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "105,815,145,855"
+    }
+   },
+   "result": "tapped at (125, 835) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0033.webp"
+  },
+  {
+   "n": 17,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0035.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 31
+    }
+   },
+   "result": "tapped at (85, 569) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0037.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "335,762,370,792"
+    }
+   },
+   "result": "tapped at (352, 777) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0040.webp"
+  },
+  {
+   "n": 20,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 425,
+    "x2": 200,
+    "y2": 100,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,425)->(200,100) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0040.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (201, 699) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0042.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 38
+    }
+   },
+   "result": "tapped at (200, 684) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0044.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (348, 100) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0047.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_slot_20261017_1930"
+    }
+   },
+   "result": "tapped at (199, 623) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0047.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 18
+    }
+   },
+   "result": "tapped at (201, 779) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0049.webp"
+  },
+  {
+   "n": 26,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.tasterank"
+   },
+   "result": "launched com.iosworld.benchmark.tasterank",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0051.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (201, 146) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0053.webp"
+  },
+  {
+   "n": 28,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Delfina"
+   },
+   "result": "typed 'Delfina'; verified: false; field value now 'Search restaurant, cuisine, occasion'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0055.webp"
+  },
+  {
+   "n": 29,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Mission"
+   },
+   "result": "typed 'Mission'; verified: true; field value now 'Mission'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0058.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (201, 495) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0060.webp"
+  },
+  {
+   "n": 31,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,742)->(201,132) in 400ms",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0062.webp"
+  },
+  {
+   "n": 32,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cinephile"
+   },
+   "result": "launched com.iosworld.benchmark.cinephile",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0064.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (201, 484) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0066.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (278, 405) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0068.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "340,85,385,125"
+    }
+   },
+   "result": "tapped at (362, 105) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0071.webp"
+  },
+  {
+   "n": 36,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 5
+    },
+    "text": "Date Night"
+   },
+   "result": "typed 'Date Night'; verified: true; field value now 'Date Night'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0075.webp"
+  },
+  {
+   "n": 37,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (201, 473) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0075.webp"
+  },
+  {
+   "n": 38,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 14
+    }
+   },
+   "result": "tapped at (278, 405) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0077.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 360) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0079.webp"
+  },
+  {
+   "n": 40,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cityride"
+   },
+   "result": "launched com.iosworld.benchmark.cityride",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0081.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (101, 320) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0083.webp"
+  },
+  {
+   "n": 42,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "3621 18th St"
+   },
+   "result": "typed '3621 18th St'; verified: false; field value now 'Home'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0085.webp"
+  },
+  {
+   "n": 43,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "sent 4 deletes; cleared: false; field value now 'Where to?'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0088.webp"
+  },
+  {
+   "n": 44,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "3621 18th St"
+   },
+   "result": "typed '3621 18th St'; verified: false; field value now 'Home'",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0090.webp"
+  },
+  {
+   "n": 45,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (134, 334) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0092.webp"
+  },
+  {
+   "n": 46,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0094.webp"
+  },
+  {
+   "n": 47,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 15
+    }
+   },
+   "result": "tapped at (201, 467) via index",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0096.webp"
+  },
+  {
+   "n": 48,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 260
+    },
+    "text": "Date night plan for Sat Oct 17: dinner at Delfina (3621 18th St, Mission, outdoor seating), table for 2 at 7:30 PM (7:00 wasn't available), code RSV2007. Then the movie Fall 2: Deadpoint (on our Date Night list). Ride: CityRideX $11.75 vs Comfort $15.04, going with CityRideX. Est. total ~$74-$112 (dinner $62-$100 for 2 + ride)."
+   },
+   "result": "typed \"Date night plan for Sat Oct 17: dinner at Delfina (3621 18th St, Mission, outdoor seating), table for 2 at 7:30 PM (7:00 wasn't available), code RSV2007. Then the movie Fall 2: Deadpoint (on our Date Night list). Ride: CityRideX $11.75 vs Comfort $15.04, going with CityRideX. Est. total ~$74-$112 (dinner $62-$100 for 2 + ride).\"; verified: false; field value now ''",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0100.webp"
+  },
+  {
+   "n": 49,
+   "tool": "press",
+   "args": {
+    "key": "enter"
+   },
+   "result": "pressed enter",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/multi-035/0100.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "SF restaurant with outdoor seating name",
+   "verdict": "proven",
+   "claim": "Delfina",
+   "frame": 49
+  },
+  {
+   "type": "DO",
+   "text": "reservation for 2 at 7 PM Saturday",
+   "verdict": "proven",
+   "claim": "Sat, Oct 17 \u2022 7:30 PM",
+   "frame": 49
+  },
+  {
+   "type": "KNOW",
+   "text": "friends' reviews in that neighborhood on TasteRank",
+   "verdict": "proven",
+   "claim": "Daily pasta was a mushroom agnolotti that stayed with me.",
+   "frame": 62
+  },
+  {
+   "type": "DO",
+   "text": "add movie to 'Date Night' list in Cinephile",
+   "verdict": "proven",
+   "claim": "Date Night",
+   "frame": 79
+  },
+  {
+   "type": "KNOW",
+   "text": "CityRideX price",
+   "verdict": "proven",
+   "claim": "$11.75",
+   "frame": 92
+  },
+  {
+   "type": "KNOW",
+   "text": "Comfort price",
+   "verdict": "proven",
+   "claim": "$15.04",
+   "frame": 92
+  },
+  {
+   "type": "SAY",
+   "text": "total evening cost estimate",
+   "verdict": "proven",
+   "claim": "Dinner for 2 at $31\u2013$50 pp = $62\u2013$100, plus CityRideX $11.75 \u2192 about $74\u2013$112 (~$93 midpoint); with Comfort $15.04 \u2192 $77\u2013$115.",
+   "frame": 92
+  },
+  {
+   "type": "DO",
+   "text": "message Maya Patel full plan in QuickChat",
+   "verdict": "proven",
+   "claim": "Date night plan for Sat Oct 17: dinner at Delfina",
+   "frame": 100
+  }
+ ]
+}

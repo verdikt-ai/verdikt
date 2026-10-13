@@ -1,0 +1,94 @@
+{
+ "id": "RecipeDeleteSingleRecipe",
+ "app": "Broccoli",
+ "goal": "Delete the following recipes from Broccoli app: Thai Peanut Noodle Salad.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 33.1,
+ "cost": 0.1069182,
+ "answer": null,
+ "summary": "I deleted \"Thai Peanut Noodle Salad\" from Broccoli. It was the only recipe in the app. The app confirmed \"The recipe has been deleted,\" and the recipe list now shows \"No recipes found.\"",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Broccoli"
+   },
+   "result": "opened Broccoli",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteSingleRecipe/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Thai Peanut Noodle Salad\" absent"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteSingleRecipe/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (697,463)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteSingleRecipe/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (1027,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteSingleRecipe/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (812,535)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteSingleRecipe/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (860,1262)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Thai Peanut Noodle Salad\" absent -> absent",
+   "frame": "media/run8-opus-contracts/RecipeDeleteSingleRecipe/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeDeleteSingleRecipe/006.webp"
+  }
+ ]
+}

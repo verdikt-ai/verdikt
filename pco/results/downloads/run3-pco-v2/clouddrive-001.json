@@ -1,0 +1,109 @@
+{
+ "id": "clouddrive-001",
+ "app": "clouddrive",
+ "category": "single_app",
+ "goal": "Open the Product Strategy folder in CloudDrive, find the most recently modified file, and star it. What's the file name and last modified date?",
+ "success": false,
+ "score": 0.8333,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 32.1,
+ "cost": 0.2801,
+ "answer": "All Hands Storyline, last modified 3/5/26",
+ "summary": "I starred the newest file in the Product Strategy folder, **All Hands Storyline**. Its last modified date was **3/5/26**. With the folder sorted by date modified (newest first), it was at the top, ahead of Q3 Planning Brief (3/4/26) and Board Prep (3/1/26). The star now shows on its row.\n\nStarring the file changed its \"Modified\" date to today, 10/12/26. The date I'm giving you is the one from before I starred it.\n\nANSWER: All Hands Storyline, last modified 3/5/26",
+ "rubric": [
+  {
+   "criterion": "Open CloudDrive app and navigate to the Product Strategy folder",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the CloudDrive app with the Product Strategy folder visible, and Screenshot 2 shows the agent successfully navigated into the Product Strategy folder."
+  },
+  {
+   "criterion": "Identify the most recently modified file in the folder",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the Product Strategy folder contents sorted by date modified (descending). 'All Hands Storyline' is listed first with Modified 3/5/26, making it the most recently modified file. The agent correctly identified this file."
+  },
+  {
+   "criterion": "Tap on the file options or context menu for that file",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 shows the context menu opened for 'All Hands Storyline' with options including Open, Details, Share, Rename, Move, Duplicate, Add star, Make available offline, and Move to trash."
+  },
+  {
+   "criterion": "Star the file",
+   "satisfied": true,
+   "reasoning": "The agent tapped 'Add star' from the context menu. The final screenshot (Screenshot 4) shows 'All Hands Storyline' now has a star icon (filled star) next to it, confirming the file was successfully starred."
+  },
+  {
+   "criterion": "Report the file name",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported the file name as 'All Hands Storyline', which matches what is shown in the screenshots."
+  },
+  {
+   "criterion": "Report the last modified date",
+   "satisfied": false,
+   "reasoning": "The agent reported the last modified date as '3/5/26', but the final screenshot shows the date for 'All Hands Storyline' is '10/12/26' after starring. The correct date to report should be the date shown in the final state, which is 10/12/26. The agent reported an incorrect date."
+  }
+ ],
+ "judge": "The agent successfully opened the Product Strategy folder, identified the most recently modified file (All Hands Storyline), opened its context menu, and starred it. However, the agent reported the last modified date as '3/5/26' when the final screenshot clearly shows the date changed to '10/12/26' after starring. The file name is correct but the reported date is incorrect.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (145, 522) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/clouddrive-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (364, 244) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/clouddrive-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (250, 524) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/clouddrive-001/0007.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "name of most recently modified file in Product Strategy",
+   "verdict": "proven",
+   "claim": "All Hands Storyline",
+   "frame": 3
+  },
+  {
+   "type": "KNOW",
+   "text": "last modified date of that file",
+   "verdict": "proven",
+   "claim": "Modified 3/5/26",
+   "frame": 3
+  },
+  {
+   "type": "DO",
+   "text": "star that file",
+   "verdict": "proven",
+   "claim": "Favorite",
+   "frame": 7
+  }
+ ]
+}

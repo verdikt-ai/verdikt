@@ -1,0 +1,171 @@
+{
+ "id": "MarkorTranscribeReceipt",
+ "app": "Simple Gallery",
+ "goal": "Create a file in Markor, called receipt.md with the transactions from the receipt.png. Use Simple Gallery to view the receipt. Please enter transactions in csv format including the header \"Date, Item, Amount\".",
+ "success": true,
+ "score": 1.0,
+ "steps": 12,
+ "budget": 18,
+ "seconds": 84.4,
+ "cost": 0.3141428,
+ "answer": null,
+ "summary": "I created `receipt.md` in Markor's Documents folder, saved it, and it now shows in the file list. It contains:\n\n```\nDate, Item, Amount\n2023-03-23, Monitor Stand, $33.22\n```\n\nI opened `receipt.png` in Simple Gallery and found only one transaction on it: a Monitor Stand bought on 2023-03-23 for $33.22, from Future Tech LLC. I kept the dollar sign because the receipt shows it.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Gallery Pro"
+   },
+   "result": "opened Simple Gallery Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"receipt.md\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "x": 270,
+    "y": 500
+   },
+   "result": "tapped (270,500)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (180,411)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "receipt",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"receipt\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"my_note\" value \"receipt\" -> TextField \"my_note\" value=\"receipt\" [1] has value \"receipt\"",
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": ".md",
+    "index": 2,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \".md\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (922,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "text": "Date, Item, Amount\n2023-03-23, Monitor Stand, $33.22",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Date, Item, Amount\\n2023-03-23, Monitor Stand, $33.22\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (817,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 2
+   },
+   "result": "pressed back x2",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorTranscribeReceipt/012.webp"
+  }
+ ]
+}

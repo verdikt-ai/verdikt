@@ -1,0 +1,238 @@
+{
+ "id": "RecipeAddSingleRecipe",
+ "app": "Broccoli",
+ "goal": "Add the following recipes into the Broccoli app:\nRecipe: Chicken Caesar Salad Wrap\n description: An ideal recipe for experimenting with different flavors and ingredients.\n servings: 3-4 servings\n preparationTime: 2 hrs\n ingredients: as desired\n directions: Toss chopped romaine lettuce with Caesar dressing, grilled chicken strips, and Parmesan cheese. Wrap in a large tortilla. Feel free to substitute with ingredients you have on hand.\n",
+ "success": true,
+ "score": 1.0,
+ "steps": 14,
+ "budget": 24,
+ "seconds": 104.6,
+ "cost": 0.3940764,
+ "answer": null,
+ "summary": "I added the \"Chicken Caesar Salad Wrap\" recipe to Broccoli and saved it, and the app confirmed \"The recipe has been saved.\"\n\nThe saved recipe shows every value you gave:\n- **Description:** An ideal recipe for experimenting with different flavors and ingredients.\n- **Servings:** 3-4 servings\n- **Preparation time:** 2 hrs\n- **Ingredients:** as desired\n- **Directions:** Toss chopped romaine lettuce with Caesar dressing, grilled chicken strips, and Parmesan cheese. Wrap in a large tortilla. Feel free to substitute with ingredients you have on hand.\n\nAt one point the servings and time text went into the Description field by mistake. I replaced it with the correct description before saving, so the saved recipe isn't affected.\n\nWhen I finished, my automatic check of the title flagged a failure. That was only because the title appears twice on the screen, in the top bar and as the heading, so it doesn't mean anything is wrong.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Broccoli"
+   },
+   "result": "opened Broccoli",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Chicken Caesar Salad Wrap\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (964,2221)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "Chicken Caesar Salad Wrap",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Chicken Caesar Salad Wrap\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Title\" value \"Chicken Caesar Salad Wrap\" -> TextField \"Title\" value=\"Chicken Caesar Salad Wrap\" [6] has value \"Chicken Caesar Salad Wrap\"",
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "An ideal recipe for experimenting with different flavors and ingredients.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"An ideal recipe for experimenting with different flavors and ingredients.\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "3-4 servings",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"3-4 servings\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "2 hrs",
+    "index": 11,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"2 hrs\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": "An ideal recipe for experimenting with different flavors and ingredients.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"An ideal recipe for experimenting with different flavors and ingredients.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Description\" value \"An ideal recipe for experimenting with different flavors and ingredients.\" -> TextField \"Description\" value=\"An ideal recipe for experimenting with different flavors and ingredients.\" [8] has value \"An ideal recipe for experimenting with different flavors and ingredients.\"",
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "3-4 servings",
+    "index": 10,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"3-4 servings\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Servings\" value \"3-4 servings\" -> TextField \"Servings\" value=\"3-4 servings\" [10] has value \"3-4 servings\"",
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "text": "2 hrs",
+    "index": 11,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"2 hrs\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Time\" value \"2 hrs\" -> TextField \"Time\" value=\"2 hrs\" [11] has value \"2 hrs\"",
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "type",
+   "args": {
+    "text": "as desired",
+    "index": 12,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"as desired\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Ingredients\" value \"as desired\" -> TextField \"Ingredients\" value=\"as desired\" [12] has value \"as desired\"",
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "index": 3,
+    "amount": "half"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/011.webp"
+  },
+  {
+   "n": 12,
+   "tool": "type",
+   "args": {
+    "text": "Toss chopped romaine lettuce with Caesar dressing, grilled chicken strips, and Parmesan cheese. Wrap in a large tortilla. Feel free to substitute with ingredients you have on hand.",
+    "index": 13,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Toss chopped romaine lettuce with Caesar dressing, grilled chicken strips, and Parmesan cheese. Wrap in a large tortilla. Feel free to substitute with ingredients you have on hand.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Directions\" value \"Toss chopped romaine lettuce with Caesar dressing, grilled chicken strips, and Parmesan cheese. Wrap in a large tortilla. Feel free to substitute with ingredients you have on hand.\" -> TextField \"Directions\" value=\"Toss chopped romaine lettuce with Caesar dressing, grilled chicken strips, and Parmesan cheese. Wrap in a large tortilla. Feel free to substitute with ingredients you have on hand.\" [13] has value \"Toss chopped romaine lettuce with Caesar dressing, grilled chicken strips, and Parmesan cheese. Wrap in a large tortilla. Feel free to substitute with ingredients you have on hand.\"",
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/012.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (953,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/013.webp"
+  },
+  {
+   "n": 13,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "StaticText \"Chicken Caesar Salad Wrap\" visible",
+     "text \"3-4 servings\" visible",
+     "text \"2 hrs\" visible",
+     "text \"as desired\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/013.webp"
+  },
+  {
+   "n": 13,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS StaticText \"Chicken Caesar Salad Wrap\" visible -> ambiguous: StaticText \"Chicken Caesar Salad Wrap\" matched 2 elements [1] [7]; add a role, id= or a longer text\n  ok   text \"3-4 servings\" visible -> StaticText \"3-4 servings\" [9]\n  ok   text \"2 hrs\" visible -> StaticText \"2 hrs\" [11]\n  ok   text \"as desired\" visible -> StaticText \"as desired\" [14]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/015.webp"
+  },
+  {
+   "n": 14,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/RecipeAddSingleRecipe/015.webp"
+  }
+ ]
+}

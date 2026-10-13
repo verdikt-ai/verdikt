@@ -1,0 +1,86 @@
+{
+ "id": "SystemCopyToClipboard",
+ "app": "Settings",
+ "goal": "Copy the following text to the clipboard: Tracking #: 5K672F4C",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 34.4,
+ "cost": 0.112388,
+ "answer": null,
+ "summary": "\"Tracking #: 5K672F4C\" is now on the phone's clipboard. I typed it into the search field in Simple SMS Messenger, selected it all and copied it. Android's clipboard preview then showed exactly \"Tracking #: 5K672F4C\".\n\nThe text is still sitting in that app's search box, and the search found nothing. I left it there because clearing it wasn't needed.",
+ "step_list": [
+  {
+   "n": 0,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemCopyToClipboard/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple SMS Messenger"
+   },
+   "result": "opened Simple SMS Messenger",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemCopyToClipboard/002.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "text": "Tracking #: 5K672F4C",
+    "index": 3,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Tracking #: 5K672F4C\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Search\" value \"Tracking #: 5K672F4C\" -> TextField \"Search\" value=\"Tracking #: 5K672F4C\" [4] has value \"Tracking #: 5K672F4C\"",
+   "frame": "media/run8-opus-contracts/SystemCopyToClipboard/003.webp"
+  },
+  {
+   "n": 3,
+   "tool": "press",
+   "args": {
+    "key": "select_all",
+    "repeat": 1
+   },
+   "result": "pressed select_all",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemCopyToClipboard/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "press",
+   "args": {
+    "key": "copy",
+    "repeat": 1
+   },
+   "result": "pressed copy",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemCopyToClipboard/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemCopyToClipboard/005.webp"
+  }
+ ]
+}

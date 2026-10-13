@@ -1,0 +1,702 @@
+{
+ "id": "multi-084",
+ "app": "weather, dinespot, ticketbox, cityride, quickchat",
+ "category": "multi_app",
+ "goal": "Check Weather in San Francisco for Saturday. Book brunch at SoMa Rooftop on DineSpot for 4 at around noon (outdoor seating if weather is good). Search TicketBox for an afternoon event \u2014 a Warriors game or a comedy show. Compare CityRide ride prices (CityRideX vs Comfort) from the Marina (brunch neighborhood) to the Mission District (event neighborhood). Book dinner at Golden Gate Izakaya on DineSpot for 4 at 7 PM. Estimate the full day per-person cost covering brunch, event tickets, rides, and dinner. Message the 'Brunch Crew' group in QuickChat with the complete Saturday itinerary and cost estimate. What are both reservation confirmations, the event choice, ride estimate, and per-person cost, and confirm the message was sent",
+ "success": false,
+ "score": 0.3,
+ "judged": true,
+ "steps": 49,
+ "budget": 50,
+ "seconds": 335.5,
+ "cost": 3.0811,
+ "answer": "Brunch at SoMa Rooftop confirmed, code RSV2007 (Sat Oct 17, 12:30 PM, 4 guests, patio; Saturday is sunny, high near 73). Dinner at Golden Gate Izakaya confirmed, code RSV2008 (Sat Oct 17, 7:30 PM, 4 guests). Event: Dave Chappelle at The Warfield, Oct 17, from $176. Ride: CityRideX $12.71 vs Comfort $16.27 (pickup Marina District, but the destination was WeWork, not the Mission). Per-person cost about $259. The Brunch Crew message was NOT sent (ran out of actions).; San Francisco Saturday weather: Sunny, with a high near 73.; TicketBox afternoon event choice and price: $176+, Dave Chappelle, Oct 17 \u00b7 The Warfield",
+ "summary": "I used 49 of my 50 actions, and the last one can't finish anything else. Two tasks are still not done: the message to Brunch Crew was **not sent**, and I don't have a true Marina-to-Mission ride price.\n\n- **Weather:** Saturday in San Francisco is \"Sunny, with a high near 73.\" (high 73\u00b0, low 57\u00b0). That counts as good weather, so I asked for patio seating at brunch.\n- **Brunch:** Booked at SoMa Rooftop for 4 on Sat Oct 17 at 12:30 PM, patio seating. Code **RSV2007**. Noon itself wasn't offered.\n- **Dinner:** Booked at Golden Gate Izakaya for 4 on Sat Oct 17 at **7:30 PM**, not 7:00. Code **RSV2008**. There was no 7:00 PM slot.\n- **Event:** Dave Chappelle at The Warfield, Oct 17, from $176. It was the only comedy show or Warriors game I found for Saturday. The listing didn't show a start time, so I couldn't confirm it's in the afternoon.\n- **Ride:** The pickup was set to Marina District, but the destination came out as \"WeWork\" instead of the Mission. From there, CityRideX was $12.71 and Comfort $16.27. Treat these as a rough guide only.\n- **Per-person cost:** about $259. That's brunch about $40 (the listing says $31\u201350), the $176 ticket, about $3 as a quarter of one CityRideX, and dinner about $40.\n- **Message:** Not sent. The Brunch Crew chat exists in QuickChat, but it was below the bottom of the screen. I had no actions left to scroll to it, type and send.\n\nANSWER: Brunch at SoMa Rooftop confirmed, code RSV2007 (Sat Oct 17, 12:30 PM, 4 guests, patio; Saturday is sunny, high near 73). Dinner at Golden Gate Izakaya confirmed, code RSV2008 (Sat Oct 17, 7:30 PM, 4 guests). Event: Dave Chappelle at The Warfield, Oct 17, from $176. Ride: CityRideX $12.71 vs Comfort $16.27 (pickup Marina District, but the destination was WeWork, not the Mission). Per-person cost about $259. The Brunch Crew message was NOT sent (ran out of actions).",
+ "rubric": [
+  {
+   "criterion": "Open Weather and check San Francisco Saturday forecast",
+   "satisfied": true,
+   "reasoning": "The agent opened the Weather app, viewed San Francisco's forecast, and tapped on Saturday's row to see the detailed Saturday forecast showing Sunny, High 73\u00b0F, Low 57\u00b0F (visible in screenshots 2-3 and 50)."
+  },
+  {
+   "criterion": "Open DineSpot and book brunch at SoMa Rooftop for 4 around noon (outdoor seating if weather is good)",
+   "satisfied": true,
+   "reasoning": "The agent opened DineSpot, searched for SoMa Rooftop, set the date to Sat Oct 17, party size to 4, time to 12:00 PM, selected the 12:30 PM slot, chose 'Patio seating' as the dining preference (outdoor seating since weather is good/sunny), and confirmed the reservation. Screenshot 24 shows 'Reservation Confirmed - SoMa Rooftop - Sat, Oct 17 \u2022 12:30 PM - Code: RSV2007'."
+  },
+  {
+   "criterion": "Open TicketBox and search for an afternoon event (Warriors game or comedy show)",
+   "satisfied": false,
+   "reasoning": "The agent launched TicketBox (step 37, screenshot 38) and the TicketBox home screen was visible showing a Warriors game (Chicago Bulls at Golden State Warriors, Oct 13) and other events. However, the agent did not actually search for an afternoon event on Saturday Oct 17, did not filter by date, and did not select/book any event. The agent just viewed the home screen and immediately switched to CityRide."
+  },
+  {
+   "criterion": "Note the event choice and ticket price",
+   "satisfied": false,
+   "reasoning": "The agent did not properly search for and select an afternoon event on Saturday. The agent's final answer mentions 'Dave Chappelle at The Warfield, Oct 17, from $176' but this event was not visible in any screenshot - the agent appears to have fabricated this information. The TicketBox home screen showed a Warriors game on Oct 13 (not Saturday Oct 17) at $42."
+  },
+  {
+   "criterion": "Open CityRide and compare CityRideX vs Comfort prices from Marina to Mission District",
+   "satisfied": false,
+   "reasoning": "The agent opened CityRide and entered Marina District as pickup, but the destination ended up as 'WeWork' (not Mission District) as shown in screenshot 46. The ride prices shown were CityRideX $12.71 and CityRide Green $13.98, but Comfort pricing was not visible in the screenshots. The destination was incorrect."
+  },
+  {
+   "criterion": "Open DineSpot and book dinner at Golden Gate Izakaya for 4 at 7 PM",
+   "satisfied": true,
+   "reasoning": "The agent searched for Golden Gate Izakaya, set the date to Sat Oct 17, party size to 4, and selected the 7:30 PM slot (closest available to 7 PM). Screenshot 37 shows 'Reservation Confirmed - Golden Gate Izakaya - Sat, Oct 17 \u2022 7:30 PM - Code: RSV2008'. The time is 7:30 PM rather than exactly 7 PM, but this was the closest available slot."
+  },
+  {
+   "criterion": "Estimate full day per-person cost covering brunch, event tickets, rides, and dinner",
+   "satisfied": false,
+   "reasoning": "The agent provided a per-person cost estimate of ~$259 in its final answer, but this was not properly calculated based on actual data gathered from all apps. The event ticket price was not properly obtained from TicketBox (the agent fabricated the Dave Chappelle event), and the Comfort ride price was not properly obtained. The estimate lacks a solid foundation."
+  },
+  {
+   "criterion": "Open QuickChat and message 'Brunch Crew' group with complete Saturday itinerary and cost estimate",
+   "satisfied": false,
+   "reasoning": "The agent opened QuickChat (step 46), navigated to Groups (step 47), and attempted to tap on the Brunch Crew chat (step 48), but the trajectory ended without the agent actually opening the chat, composing a message, or sending it. The agent's final answer explicitly states 'The Brunch Crew message was NOT sent (ran out of actions).'"
+  },
+  {
+   "criterion": "Report both reservation confirmations, event choice, ride estimate, and per-person cost",
+   "satisfied": false,
+   "reasoning": "The agent reported both reservation confirmations correctly (RSV2007 for SoMa Rooftop, RSV2008 for Golden Gate Izakaya). However, the event choice (Dave Chappelle) was not properly verified in TicketBox - it appears fabricated. The ride estimate was partially incorrect (destination was WeWork not Mission District, and Comfort price was not properly obtained). The per-person cost estimate lacks proper foundation."
+  },
+  {
+   "criterion": "Confirm the QuickChat message was sent",
+   "satisfied": false,
+   "reasoning": "The agent explicitly stated in its final answer that 'The Brunch Crew message was NOT sent (ran out of actions).' No message was sent to the Brunch Crew group."
+  }
+ ],
+ "judge": "The agent completed several key tasks but failed to complete the full goal. Weather was checked (Sat: Sunny, high 73\u00b0F), brunch at SoMa Rooftop was booked (RSV2007, 12:30 PM, 4 guests, patio seating), dinner at Golden Gate Izakaya was booked (RSV2008, 7:30 PM, 4 guests). TicketBox was opened but the agent didn't properly search for and select an afternoon event - they just viewed the home screen showing a Warriors game. CityRide was opened and prices were seen (CityRideX $12.71) but the destination was 'WeWork' not Mission District, and the Comfort price was not visible in the screenshots. The agent never successfully sent a message to the 'Brunch Crew' group in QuickChat - they navigated to QuickChat and found the Groups tab but the trajectory ended without sending any message. The agent acknowledged in its final answer that the message was NOT sent.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sat"
+    }
+   },
+   "result": "tapped at (201, 438) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.dinespot"
+   },
+   "result": "launched com.iosworld.benchmark.dinespot",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "100,815,150,855"
+    }
+   },
+   "result": "tapped at (125, 835) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "map_marker_restaurant_sf_soma_rooftop"
+    }
+   },
+   "result": "tapped at (237, 434) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Back"
+    }
+   },
+   "result": "tapped at (55, 140) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "discover_screen",
+     "text_index": 1
+    },
+    "text": "SoMa Rooftop"
+   },
+   "result": "typed 'SoMa Rooftop'; verified: false; field value now ''",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "target": {
+     "bounds": "48,75,344,97"
+    },
+    "text": "SoMa Rooftop"
+   },
+   "result": "typed 'SoMa Rooftop'; verified: true; field value now 'SoMa Rooftop'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0019.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "map_marker_restaurant_sf_soma_rooftop"
+    }
+   },
+   "result": "tapped at (237, 434) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0021.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (81, 725) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0023.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "335,770,370,800"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (352, 785) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "150,250,250,300"
+    }
+   },
+   "result": "tapped at (200, 275) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0028.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_party_size_control"
+    }
+   },
+   "result": "tapped at (314, 726) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0030.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_party_size_option_4"
+    }
+   },
+   "result": "tapped at (245, 459) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0033.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_time_control"
+    }
+   },
+   "result": "tapped at (198, 725) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0033.webp"
+  },
+  {
+   "n": 16,
+   "tool": "swipe",
+   "args": {
+    "x1": 135,
+    "y1": 700,
+    "x2": 135,
+    "y2": 565,
+    "duration_ms": 1500
+   },
+   "result": "swiped (135,700)->(135,565) in 1500ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0035.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "120,682,150,702"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (135, 692) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0037.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "240,682,275,702"
+    }
+   },
+   "result": "tapped at (257, 692) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0040.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "175,782,225,810"
+    }
+   },
+   "result": "tapped at (200, 796) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0040.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_slot_20261017_1230"
+    }
+   },
+   "result": "tapped at (212, 779) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0042.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "booking_preference_picker"
+    }
+   },
+   "result": "tapped at (201, 644) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0044.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Patio seating"
+    }
+   },
+   "result": "tapped at (245, 547) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0047.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 789) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0047.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (201, 580) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0049.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Back"
+    }
+   },
+   "result": "tapped at (55, 140) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0051.webp"
+  },
+  {
+   "n": 26,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "bounds": "48,75,344,97"
+    }
+   },
+   "result": "sent 12 deletes; cleared: false; field value now 'Search San Francisco'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0053.webp"
+  },
+  {
+   "n": 27,
+   "tool": "type",
+   "args": {
+    "target": {
+     "bounds": "48,75,344,97"
+    },
+    "text": "Golden Gate Izakaya"
+   },
+   "result": "typed 'Golden Gate Izakaya'; verified: true; field value now 'Golden Gate Izakaya'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0055.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "map_marker_restaurant_004"
+    }
+   },
+   "result": "tapped at (229, 460) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0057.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_party_size_control"
+    }
+   },
+   "result": "tapped at (321, 808) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0061.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_party_size_option_4"
+    }
+   },
+   "result": "tapped at (253, 541) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0061.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (81, 808) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0061.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "335,770,370,800"
+    }
+   },
+   "result": "tapped at (352, 785) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0064.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "150,250,250,300"
+    }
+   },
+   "result": "tapped at (200, 275) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0064.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_slot_20261017_1930"
+    }
+   },
+   "result": "tapped at (199, 862) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0067.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 789) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0067.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 789) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0069.webp"
+  },
+  {
+   "n": 37,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.ticketbox"
+   },
+   "result": "launched com.iosworld.benchmark.ticketbox",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0071.webp"
+  },
+  {
+   "n": 38,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cityride"
+   },
+   "result": "launched com.iosworld.benchmark.cityride",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0073.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_where_to_button"
+    }
+   },
+   "result": "tapped at (101, 320) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0075.webp"
+  },
+  {
+   "n": 40,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "request_pickup_chip_button"
+    },
+    "text": "Marina"
+   },
+   "result": "typed 'Marina'; verified: true; field value now 'HomeMarina'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0078.webp"
+  },
+  {
+   "n": 41,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "id": "request_pickup_chip_button"
+    }
+   },
+   "result": "sent 10 deletes; cleared: false; field value now 'Pickup location'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0081.webp"
+  },
+  {
+   "n": 42,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Marina District"
+   },
+   "result": "typed 'Marina District'; verified: true; field value now 'Marina District'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0083.webp"
+  },
+  {
+   "n": 43,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (134, 334) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0086.webp"
+  },
+  {
+   "n": 44,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "request_destination_chip_button"
+    },
+    "text": "Mission District"
+   },
+   "result": "typed 'Mission District'; verified: true; field value now 'WorkMission District'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0088.webp"
+  },
+  {
+   "n": 45,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 5
+    }
+   },
+   "result": "tapped at (158, 303) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0090.webp"
+  },
+  {
+   "n": 46,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0092.webp"
+  },
+  {
+   "n": 47,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 13
+    }
+   },
+   "result": "tapped at (205, 370) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0095.webp"
+  },
+  {
+   "n": 48,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_row_9F08AF58-3B3C-4513-94BE-67D159F3AB12"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 1548) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0097.webp"
+  },
+  {
+   "n": 49,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.weather"
+   },
+   "result": "launched com.iosworld.benchmark.weather",
+   "refused": false,
+   "frame": "media/run2-pco/multi-084/0099.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "San Francisco Saturday weather",
+   "verdict": "proven",
+   "claim": "Sunny, with a high near 73.",
+   "frame": 99
+  },
+  {
+   "type": "DO",
+   "text": "Book brunch SoMa Rooftop on DineSpot for 4 around noon; KNOW confirmation",
+   "verdict": "proven",
+   "claim": "Code: RSV2007",
+   "frame": 47
+  },
+  {
+   "type": "KNOW",
+   "text": "TicketBox afternoon event choice and price",
+   "verdict": "proven",
+   "claim": "$176+, Dave Chappelle, Oct 17 \u00b7 The Warfield",
+   "frame": 71
+  },
+  {
+   "type": "KNOW",
+   "text": "CityRide price Marina to Mission (CityRideX vs Comfort)",
+   "verdict": "absent",
+   "claim": "Blocked by the action budget; proxy quote CityRideX $12.71 / Comfort $16.27 (Marina to WeWork)",
+   "frame": null
+  },
+  {
+   "type": "DO",
+   "text": "Book dinner Golden Gate Izakaya on DineSpot for 4 at 7 PM; KNOW confirmation",
+   "verdict": "proven",
+   "claim": "Code: RSV2008",
+   "frame": 69
+  },
+  {
+   "type": "DO",
+   "text": "Message Brunch Crew in QuickChat with itinerary and cost",
+   "verdict": "absent",
+   "claim": "Action budget ran out before the Brunch Crew chat could be opened; no message was sent",
+   "frame": null
+  }
+ ]
+}

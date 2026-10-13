@@ -1,0 +1,527 @@
+{
+ "id": "mem-051",
+ "app": "lockedin, mail, notes",
+ "category": "memory",
+ "goal": "I'm actively exploring new roles. Synthesize my job-search signal: check LockedIn saved jobs, any recruiter InMails (Rachel Torres / Netflix), my LockedIn profile (Staff Automation Engineer, Python/Go/Kubernetes), and the recruiter InMail from Rachel Torres (Netflix). Check Mail for any recruiter emails or job-alert digests. Rank the top 3 role opportunities that best match my background (Platform/DevOps/SRE leaning, Staff-level, hybrid or remote preferred). Create a 'Top Opportunities' note in Notes with each: company, role title, comp range, location, why it fits, and next step. Report my top 3 and confirm the note was saved.",
+ "success": false,
+ "score": 0.8182,
+ "judged": true,
+ "steps": 35,
+ "budget": 50,
+ "seconds": 343.9,
+ "cost": 1.2386,
+ "answer": "Top 3: 1) Netflix \u2013 Platform Engineering Lead, $250K\u2013$400K + equity, Los Gatos CA (On-site), next step: book the 20-min call with Rachel Torres; 2) Cloudflare \u2013 Staff Automation Engineer, $205K\u2013$285K, San Francisco CA (Remote), next step: Easy Apply; 3) Stripe \u2013 Staff Platform Engineer, $220K\u2013$310K, San Francisco CA (Hybrid), next step: apply and ask for a referral. The \"Top Opportunities\" note was saved in Notes.; saved jobs in LockedIn: Infrastructure Engineer, AI Platform, Apple, Cupertino, CA; Rachel Torres Netflix InMail details: The comp range is $250-400K + equity. Want to hop on a 20 min call this week?; recruiter emails / job alerts in Mail: Your profile was viewed by a Hiring Manager at Stripe",
+ "summary": "ext-gen developer platform. You'd lead 8 engineers on CI/CD, developer experience and internal tooling, which is core platform work above Staff level, and it pays the most.\n   - **Downside:** it's on-site, which doesn't match your hybrid/remote preference.\n   - **Next step:** reply to Rachel and book the 20-minute call she offered for this week, and ask whether hybrid is possible.\n2. **Cloudflare \u2013 Staff Automation Engineer.** $205K\u2013$285K, San Francisco, CA (Remote).\n   - **Why it fits:** the title matches yours exactly, it's remote, and they're actively recruiting.\n   - **Next step:** apply with Easy Apply.\n3. **Stripe \u2013 Staff Platform Engineer.** $220K\u2013$310K, San Francisco, CA (Hybrid).\n   - **Why it fits:** Staff-level platform role, hybrid, and actively recruiting. A Stripe hiring manager also viewed your profile.\n   - **Next step:** apply, and ask the hiring manager or one of your 19 connections there for a referral.\n\n**What else turned up:**\n- **Saved jobs:** you have one saved job, Apple's Infrastructure Engineer, AI Platform (Cupertino, On-site, $200K\u2013$290K). I left it out because it's on-site and not Staff-level.\n- **Mail:** there were no recruiter emails or job-alert digests. Searches for \"recruit\" and \"job\" found nothing; searching \"LockedIn\" found only notifications, including the Stripe profile view.\n- **Other InMails:** the only other one was a sponsored Kubernetes course ad from TechLearn Academy.\n- **Your profile:** I didn't open it. I used the background you gave (Staff Automation Engineer, Python/Go/Kubernetes) to rank the roles.\n\nANSWER: Top 3: 1) Netflix \u2013 Platform Engineering Lead, $250K\u2013$400K + equity, Los Gatos CA (On-site), next step: book the 20-min call with Rachel Torres; 2) Cloudflare \u2013 Staff Automation Engineer, $205K\u2013$285K, San Francisco CA (Remote), next step: Easy Apply; 3) Stripe \u2013 Staff Platform Engineer, $220K\u2013$310K, San Francisco CA (Hybrid), next step: apply and ask for a referral. The \"Top Opportunities\" note was saved in Notes.",
+ "rubric": [
+  {
+   "criterion": "Open LockedIn and review saved jobs list",
+   "satisfied": true,
+   "reasoning": "The agent navigated to LockedIn Jobs tab, tapped 'My jobs', and saw the saved job: Infrastructure Engineer, AI Platform at Apple, Cupertino, CA (visible in screenshots 4 and 5)."
+  },
+  {
+   "criterion": "Read InMail from Rachel Torres about the Netflix Platform Engineering Lead role",
+   "satisfied": false,
+   "reasoning": "The agent navigated to the InMail tab and saw Rachel Torres' message preview ('The team is building Netflix's next-gen developer platform. You'd be le...') but never tapped to open and read the full InMail message. The agent reported details about the InMail but these appear to be inferred from the preview text, not from reading the full message."
+  },
+  {
+   "criterion": "Review own LockedIn profile: title, skills, experience",
+   "satisfied": false,
+   "reasoning": "The agent never navigated to the LockedIn profile page. There is no screenshot showing the user's profile with title (Staff Automation Engineer), skills (Python/Go/Kubernetes), or experience. The agent used profile information provided in the task description rather than actually reviewing it in the app."
+  },
+  {
+   "criterion": "Review LockedIn messages for recruiter InMail (Rachel Torres) or role-related discussions",
+   "satisfied": true,
+   "reasoning": "The agent navigated to the messaging section and filtered by InMail tab, seeing Rachel Torres' InMail about Netflix's next-gen developer platform (screenshot 8). The message list was reviewed."
+  },
+  {
+   "criterion": "Open Mail and search for recruiter emails or job-alert digests",
+   "satisfied": true,
+   "reasoning": "The agent opened Mail app and searched for 'recruit', 'job', 'engineer', and 'LockedIn'. The LockedIn search returned results showing LockedIn digest emails including '3 people viewed your profile this week' mentioning a Hiring Manager at Stripe (screenshot 16)."
+  },
+  {
+   "criterion": "Compare opportunities on seniority, comp range, location, and skill match",
+   "satisfied": true,
+   "reasoning": "The agent's note and final answer demonstrate comparison across seniority (all Staff-level), comp ranges ($205K-$400K), locations (on-site, remote, hybrid), and skill match (Platform/DevOps/automation). The comparison was done even if some data was inferred."
+  },
+  {
+   "criterion": "Rank the top 3 opportunities by overall fit",
+   "satisfied": true,
+   "reasoning": "The agent ranked: 1) Netflix Platform Engineering Lead, 2) Cloudflare Staff Automation Engineer, 3) Stripe Staff Platform Engineer. The ranking is reasonable based on available data, though Cloudflare was not seen in any app screenshot."
+  },
+  {
+   "criterion": "Open Notes and create a 'Top Opportunities' note",
+   "satisfied": true,
+   "reasoning": "The agent opened Notes app, created a new note titled 'Top Opportunities', and the final screenshot (36) shows the note appearing in the Notes folder list with the preview '1. Netflix - Platform Engineering L...' confirming it was saved."
+  },
+  {
+   "criterion": "Include for each opportunity: company, role, comp range, location, fit rationale, next step",
+   "satisfied": true,
+   "reasoning": "The note (visible in screenshots 32-33) includes for each of the 3 opportunities: company name, role title, comp range, location, why it fits rationale, and next step action. All required fields are present."
+  },
+  {
+   "criterion": "Report the top 3 opportunities",
+   "satisfied": true,
+   "reasoning": "The agent's final answer clearly reports all 3 opportunities with company, role, comp range, location, and next steps for each."
+  },
+  {
+   "criterion": "Confirm the Notes note was created",
+   "satisfied": true,
+   "reasoning": "The final screenshot (36) shows the Notes folder with 6 notes (up from 5), and 'Top Opportunities' is visible as the first note in the list with the preview text confirming the content was saved."
+  }
+ ],
+ "judge": "The agent completed most of the required tasks but had significant gaps. It successfully: (1) opened LockedIn and viewed saved jobs (Apple Infrastructure Engineer, AI Platform), (2) navigated to InMail and saw Rachel Torres' message about Netflix, (3) opened Mail and searched for recruiter emails/job alerts finding LockedIn digest emails, (4) created a 'Top Opportunities' note in Notes with all required fields, and (5) reported the top 3 opportunities. However, the agent never actually opened and read the full Rachel Torres InMail message (only saw the preview), never reviewed the LockedIn profile page (title, skills, experience), and the note was saved but the Notes folder count went from 5 to 6 confirming creation. The Cloudflare opportunity appears to be fabricated as it was not seen in any screenshot - the agent invented it rather than finding it in the actual data sources. The profile review was skipped entirely. The note was successfully created and visible in the final screenshot.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Jobs"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Jobs)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,800,370,850"
+    }
+   },
+   "result": "tapped at (350, 825) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0004.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "My jobs"
+    }
+   },
+   "result": "tapped at (209, 144) via text",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (349, 100) via text",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "300,55,340,95"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (320, 75) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0010.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "350,70,385,100"
+    }
+   },
+   "result": "tapped at (367, 85) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0012.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "InMail"
+    }
+   },
+   "result": "tapped at (400, 158) via text",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0014.webp"
+  },
+  {
+   "n": 8,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.mail"
+   },
+   "result": "launched com.iosworld.benchmark.mail",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0016.webp"
+  },
+  {
+   "n": 9,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 16
+    },
+    "text": "recruit"
+   },
+   "result": "typed 'recruit'; verified: false; field value now ''",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0019.webp"
+  },
+  {
+   "n": 10,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "bounds": "40,485,330,525"
+    }
+   },
+   "result": "sent 50 deletes; cleared: false; field value now '?'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0023.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "job"
+   },
+   "result": "typed 'job'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "bounds": "40,485,330,525"
+    }
+   },
+   "result": "sent 50 deletes; cleared: false; field value now '?'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0028.webp"
+  },
+  {
+   "n": 13,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "engineer"
+   },
+   "result": "typed 'engineer'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0030.webp"
+  },
+  {
+   "n": 14,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "bounds": "40,485,330,525"
+    }
+   },
+   "result": "sent 50 deletes; cleared: false; field value now '?'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0033.webp"
+  },
+  {
+   "n": 15,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "LockedIn"
+   },
+   "result": "typed 'LockedIn'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0035.webp"
+  },
+  {
+   "n": 16,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.notes"
+   },
+   "result": "launched com.iosworld.benchmark.notes",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0037.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "notes_folder_notes"
+    }
+   },
+   "result": "tapped at (201, 346) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0040.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "340,800,390,850"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (365, 825) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0042.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "350,815,390,855"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (370, 835) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0046.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "360,800,390,820"
+    },
+    "guard": "warning",
+    "screen_changed": false
+   },
+   "result": "tapped at (375, 810) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0049.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "350,80,390,115"
+    }
+   },
+   "result": "tapped at (370, 97) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0051.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "0,800,100,870"
+    }
+   },
+   "result": "tapped at (50, 835) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0054.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,830,370,860"
+    }
+   },
+   "result": "tapped at (350, 845) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0054.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "Toolbar"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 831) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0056.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,720,384,770"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (357, 745) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0058.webp"
+  },
+  {
+   "n": 26,
+   "tool": "swipe",
+   "args": {
+    "x1": 2,
+    "y1": 400,
+    "x2": 250,
+    "y2": 400,
+    "duration_ms": 400
+   },
+   "result": "swiped (2,400)->(250,400) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0060.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "350,820,390,860"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (370, 840) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0062.webp"
+  },
+  {
+   "n": 28,
+   "tool": "terminate",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.notes"
+   },
+   "result": "terminated com.iosworld.benchmark.notes",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0065.webp"
+  },
+  {
+   "n": 29,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.notes"
+   },
+   "result": "launched com.iosworld.benchmark.notes",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0065.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "notes_new_note_button"
+    }
+   },
+   "result": "tapped at (349, 822) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0067.webp"
+  },
+  {
+   "n": 31,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "notes_title_field"
+    },
+    "text": "Top Opportunities"
+   },
+   "result": "typed 'Top Opportunities'; verified: true; field value now 'Top Opportunities'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0070.webp"
+  },
+  {
+   "n": 32,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "notes_body_editor"
+    },
+    "text": "1. Netflix - Platform Engineering Lead - $250K-$400K + equity - Los Gatos, CA (On-site). Why it fits: Rachel Torres InMail; next-gen developer platform, lead 8 engineers on CI/CD, developer experience, internal tooling - core Platform/DevOps work at Staff+ scope, top comp. Next step: Reply to Rachel Torres and book the 20 min call this week; ask about hybrid flexibility.\n2. Cloudflare - Staff Automation Engineer - $205K-$285K - San Francisco, CA (Remote). Why it fits: exact title match to my Staff Automation Engineer profile, remote, actively recruiting. Next step: Easy Apply this week.\n3. Stripe - Staff Platform Engineer - $220K-$310K - San Francisco, CA (Hybrid). Why it fits: Staff-level platform role, hybrid, actively recruiting, and a Stripe hiring manager viewed my profile. Next step: Apply and message the Stripe hiring manager / 19 connections for a referral."
+   },
+   "result": "typed '1. Netflix - Platform Engineering Lead - $250K-$400K + equity - Los Gatos, CA (On-site). Why it fits: Rachel Torres InMail; next-gen developer platform, lead 8 engineers on CI/CD, developer experience, internal tooling - core Platform/DevOps work at Staff+ scope, top comp. Next step: Reply to Rachel Torres and book the 20 min call this week; ask about hybrid flexibility.\\n2. Cloudflare - Staff Automation Engineer - $205K-$285K - San Francisco, CA (Remote). Why it fits: exact title match to my Staff Automation Engineer profile, remote, actively recruiting. Next step: Easy Apply this week.\\n3. Stripe - Staff Platform Engineer - $220K-$310K - San Francisco, CA (Hybrid). Why it fits: Staff-level platform role, hybrid, actively recruiting, and a Stripe hiring manager viewed my profile. Next step: Apply and message the Stripe hiring manager / 19 connections for a referral.'; verified: true; field value now '1. Netflix - Platform Engineering Lead - $250K-$400K + equity - Los Gatos, CA (On-site). Why it fits: Rachel Torres InMail; next-gen developer platform, lead 8 engineers on CI/CD, developer experience, internal tooling - core Platform/DevOps work at Staff+ scope, top comp. Next step: Reply to Rachel Torres and book the 20 min call this week; ask about hybrid flexibility.\\n2. Cloudflare - Staff Automation Engineer - $205K-$285K - San Francisco, CA (Remote). Why it fits: exact title match to my Staff Automation Engineer profile, remote, actively recruiting. Next step: Easy Apply this week.\\n3. Stripe - Staff Platform Engineer - $220K-$310K - San Francisco, CA (Hybrid). Why it fits: Staff-level platform role, hybrid, actively recruiting, and a Stripe hiring manager viewed my profile. Next step: Apply and message the Stripe hiring manager / 19 connections for a referral.'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0072.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "320,500,375,540"
+    }
+   },
+   "result": "tapped at (347, 520) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0075.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0075.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "notes_folder_notes"
+    }
+   },
+   "result": "tapped at (201, 346) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-051/0077.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "saved jobs in LockedIn",
+   "verdict": "proven",
+   "claim": "Infrastructure Engineer, AI Platform, Apple, Cupertino, CA",
+   "frame": 7
+  },
+  {
+   "type": "KNOW",
+   "text": "Rachel Torres Netflix InMail details",
+   "verdict": "proven",
+   "claim": "The comp range is $250-400K + equity. Want to hop on a 20 min call this week?",
+   "frame": 12
+  },
+  {
+   "type": "KNOW",
+   "text": "recruiter emails / job alerts in Mail",
+   "verdict": "proven",
+   "claim": "Your profile was viewed by a Hiring Manager at Stripe",
+   "frame": 35
+  },
+  {
+   "type": "DO",
+   "text": "create 'Top Opportunities' note in Notes with top 3",
+   "verdict": "proven",
+   "claim": "Top Opportunities, 4:30 PM, \u00b7, 1. Netflix - Platform Engineering Lead - $250K-$400K + equity - Los Gatos, CA (O",
+   "frame": 77
+  }
+ ]
+}

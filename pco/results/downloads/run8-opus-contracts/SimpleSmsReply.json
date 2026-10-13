@@ -1,0 +1,86 @@
+{
+ "id": "SimpleSmsReply",
+ "app": "Simple Sms",
+ "goal": "Reply to +18407874306 with message: Yoga class every Tuesday and Thursday at 6 PM. in Simple SMS Messenger",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 12,
+ "seconds": 43.8,
+ "cost": 0.1037006,
+ "answer": null,
+ "summary": "I sent the reply \"Yoga class every Tuesday and Thursday at 6 PM.\" to +18407874306 in Simple SMS Messenger. It went into the existing conversation with that number, which already had a message about book club. The message now shows in the thread with a check mark next to it.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple SMS Messenger"
+   },
+   "result": "opened Simple SMS Messenger",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsReply/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Yoga class every Tuesday and Thursday at 6 PM.\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsReply/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (624,566)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsReply/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "Yoga class every Tuesday and Thursday at 6 PM.",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Yoga class every Tuesday and Thursday at 6 PM.\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField ~\"Type a message\" value \"Yoga class every Tuesday and Thursday at 6 PM.\" -> TextField \"Type a message\u2026\" value=\"Yoga class every Tuesday and Thursday at 6 PM.\" [7] has value \"Yoga class every Tuesday and Thursday at 6 PM.\"",
+   "frame": "media/run8-opus-contracts/SimpleSmsReply/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (1006,2148)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsReply/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SimpleSmsReply/005.webp"
+  }
+ ]
+}

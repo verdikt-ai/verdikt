@@ -1,0 +1,215 @@
+{
+ "id": "clock-001",
+ "app": "clock",
+ "category": "single_app",
+ "goal": "Set a new alarm for 6:45 AM labeled 'Gym' in the Clock app and confirm it's set.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 12,
+ "budget": 50,
+ "seconds": 111.6,
+ "cost": 0.4512,
+ "answer": null,
+ "summary": "I set a new 6:45 AM alarm labeled \"Gym\" in the Clock app. It's now at the top of the Alarms list as \"6:45, Gym\", and it's switched on. Before saving, I checked that the time picker read 6, 45, AM.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open Clock app and navigate to the Alarm tab",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Clock app open on the World Clock tab. Step 1 tapped the Alarm tab, and Screenshot 2 shows the Alarms list with the Alarm tab highlighted in orange at the bottom."
+  },
+  {
+   "criterion": "Tap the add alarm button",
+   "satisfied": true,
+   "reasoning": "Step 2 tapped the '+' button (Add Alarm area), and Screenshot 3 shows the 'Add Alarm' screen opened with the time picker and label field."
+  },
+  {
+   "criterion": "Set the alarm time to 6:45 AM",
+   "satisfied": true,
+   "reasoning": "Through multiple swipe actions (steps 3-10), the agent adjusted the hour to 6, minutes to 45, and AM/PM to AM. Screenshots 11 and 12 clearly show '6 45 AM' selected in the picker wheel."
+  },
+  {
+   "criterion": "Set the alarm label to 'Gym'",
+   "satisfied": true,
+   "reasoning": "Step 11 typed 'Gym' into the label field. Screenshots 11 and 12 show the label field containing 'Gym' with the keyboard visible."
+  },
+  {
+   "criterion": "Save the alarm",
+   "satisfied": true,
+   "reasoning": "Step 12 tapped the Save button (in the 'Add Alarm' group). The final screenshot (13) shows the Alarms list, confirming the save was successful."
+  },
+  {
+   "criterion": "Confirm the alarm is set and active",
+   "satisfied": true,
+   "reasoning": "The final screenshot (13) shows the Alarms list with '6:45 Gym' at the top, with the toggle switch in the green/on position, confirming the alarm is set and active."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened the Clock app, navigated to the Alarm tab, tapped the add alarm button (+), set the time to 6:45 AM (the picker shows 6, 45, AM in the selected row in screenshots 11-12), typed 'Gym' as the label, saved the alarm, and the final screenshot confirms the alarm '6:45 Gym' is listed and active (toggle is green/on).",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "100,800,200,850"
+    }
+   },
+   "result": "tapped at (150, 825) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "345,62,385,105"
+    }
+   },
+   "result": "tapped at (365, 83) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "swipe",
+   "args": {
+    "x1": 132,
+    "y1": 300,
+    "x2": 132,
+    "y2": 219,
+    "duration_ms": 800
+   },
+   "result": "swiped (132,300)->(132,219) in 800ms",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "swipe",
+   "args": {
+    "x1": 132,
+    "y1": 280,
+    "x2": 132,
+    "y2": 245,
+    "duration_ms": 800
+   },
+   "result": "swiped (132,280)->(132,245) in 800ms",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 380,
+    "x2": 196,
+    "y2": 130,
+    "duration_ms": 1500,
+    "screen_changed": false
+   },
+   "result": "swiped (196,380)->(196,130) in 1500ms",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 330,
+    "x2": 196,
+    "y2": 160,
+    "duration_ms": 300
+   },
+   "result": "swiped (196,330)->(196,160) in 300ms",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 330,
+    "x2": 196,
+    "y2": 170,
+    "duration_ms": 300
+   },
+   "result": "swiped (196,330)->(196,170) in 300ms",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "wait",
+   "args": {
+    "ms": 1000
+   },
+   "result": "waited 1000ms",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 219,
+    "x2": 196,
+    "y2": 300,
+    "duration_ms": 800
+   },
+   "result": "swiped (196,219)->(196,300) in 800ms",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "240,205,280,227"
+    }
+   },
+   "result": "tapped at (260, 216) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Gym"
+   },
+   "result": "typed 'Gym'; verified: true; field value now 'Gym'",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "320,80,385,120"
+    }
+   },
+   "result": "tapped at (352, 100) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/clock-001/0027.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "alarm 6:45 AM labeled 'Gym' set",
+   "verdict": "proven",
+   "claim": "6:45, Gym",
+   "frame": 27
+  }
+ ]
+}

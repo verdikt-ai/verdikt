@@ -1,0 +1,70 @@
+{
+ "rounds": 1,
+ "obligations": 6,
+ "proven": 5,
+ "unproven": 0,
+ "absent": 1,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: subscriptions in Mail",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Price: $10.99/month",
+   "evidence_frame": 39,
+   "explanation": "Apple email shows \"Apple Music Individual ... Price: $10.99/month\"; earlier YouTube Premium Charge $13.99 and GitHub Pro Amount $4.00 seen.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: recurring charges in MyBank",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Spotify Premium, Monthly subscription, Oct 03, 2026, -$10.99",
+   "evidence_frame": 30,
+   "explanation": "Search results show \"Netflix, Monthly subscription, Oct 04, 2026, -$15.99\" and \"Spotify Premium, Monthly subscription, Oct 03, 2026, -$10.99\" recurring monthly.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: Subscribe & Save items in MegaMart",
+   "type": "KNOW",
+   "status": "fail",
+   "claim": "AMZ100243, Dec 8, 2025, Canceled, JBL Flip 6 Portable Bluetooth Speaker",
+   "evidence_frame": 94,
+   "explanation": "Canceled tab shows only \"AMZ100243, Dec 8, 2025, Canceled, JBL Flip 6 Portable Bluetooth Speaker\" \u2014 not a Subscribe & Save item. Combined with Active, Past Orders (all orders), an opened order detail (no subscription marking), Home and Menu: no Subscribe & Save items exist in MegaMart.",
+   "verdict": "absent",
+   "reason": "Canceled tab shows only \"AMZ100243, Dec 8, 2025, Canceled, JBL Flip 6 Portable Bluetooth Speaker\" \u2014 not a Subscribe & Save item. Combined with Active, Past Orders (all orders), an opened order detail (no subscription marking), Home and Menu: no Subscribe & Save items exist in MegaMart."
+  },
+  {
+   "obligation": "SAY: total monthly recurring cost",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "Total monthly recurring cost is $55.96 (Netflix 15.99, Spotify Premium 10.99, YouTube Premium 13.99, Apple Music 10.99, GitHub Pro 4.00).",
+   "evidence_frame": 71,
+   "explanation": "Computed Netflix $15.99 + Spotify $10.99 + YouTube Premium $13.99 + Apple Music $10.99 + GitHub Pro $4.00; sheet now shows \"55.96\" in B8.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: add Subscriptions row to Subscription Audit in CloudSheets",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Subscriptions",
+   "evidence_frame": 71,
+   "explanation": "Subscription Audit sheet row 8 now shows A8 \"Subscriptions\" and B8 \"55.96\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: create Subscription Audit note in Notes",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Subscription Audit, 12:11 AM, \u00b7, Netflix - $15.99/mo - Keep",
+   "evidence_frame": 87,
+   "explanation": "Notes list now shows \"Subscription Audit, 12:11 AM, \u00b7, Netflix - $15.99/mo - Keep\" as a saved note.",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

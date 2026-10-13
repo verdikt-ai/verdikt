@@ -1,0 +1,566 @@
+{
+ "id": "multi-019",
+ "app": "mybank, splitpay, clouddocs, cloudsheets",
+ "category": "multi_app",
+ "goal": "Transfer $500 from Checking to Savings in MyBank. Open SplitPay and check my balance to make sure I have enough for upcoming payments, then review pending requests and pay any under $50. Update the 'Monthly Expense Log' in CloudSheets to reflect the transfer. What are the new bank balances, SplitPay balance, and any requests paid?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 37,
+ "budget": 50,
+ "seconds": 232.5,
+ "cost": 1.5692,
+ "answer": "Checking $15,121.00, Savings $5,420.50; SplitPay balance $158.00 after payments ($250.00 before); paid Maya Patel $42.00 (dinner split), Kai Santos $33.00 (brunch), Leo Chen $17.00 (parking)",
+ "summary": "I moved $500 from Checking to Savings, paid all three SplitPay requests under $50, and added the transfer to the Monthly Expense Log.\n\n- **Bank balances:** Checking is now $15,121.00 (was $15,621.00) and Savings is $5,420.50 (was $4,920.50).\n- **SplitPay balance:** $250.00 before the payments, which covered the $92 total. It's now $158.00.\n- **Requests paid:** Maya Patel $42.00 (dinner split), Kai Santos $33.00 (brunch) and Leo Chen $17.00 (parking). The other three pending items are requests you sent to others, so there was nothing to pay: Camille Hart $60, Spencer Bowman $90 and Priya Raman $25.\n- **Monthly Expense Log:** I added row 9: Oct 12 | Transfer | 500 | Checking to Savings. The sheet is set up for March 2026, but I put the row there because it's the only sheet tab I saw.\n- **Sheet total:** Adding the row raised the Total from 2752.62 to 3252.62. That total is meant for expenses, and the transfer is money you moved, not money you spent. If you'd rather keep the total to real expenses, clear the 500 amount.\n\nANSWER: Checking $15,121.00, Savings $5,420.50; SplitPay balance $158.00 after payments ($250.00 before); paid Maya Patel $42.00 (dinner split), Kai Santos $33.00 (brunch), Leo Chen $17.00 (parking)",
+ "rubric": [
+  {
+   "criterion": "Open MyBank and transfer $500 from Checking to Savings",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-5 show the agent navigating to MyBank's Pay & Transfer section, selecting Transfer Between Accounts, entering $500 with From: Total Checking and To: Savings, and screenshot 5 shows 'Transfer complete.' banner confirming success."
+  },
+  {
+   "criterion": "Open SplitPay and check the balance",
+   "satisfied": true,
+   "reasoning": "Screenshot 7 shows the SplitPay Me tab with Balance section showing '250' (partially visible), confirming the agent checked the SplitPay balance of $250 before payments."
+  },
+  {
+   "criterion": "Review pending SplitPay requests",
+   "satisfied": true,
+   "reasoning": "Screenshots 9 and 12 show the agent reviewing pending requests: Maya Patel requested $42 (dinner split), Leo Chen requested $17 (parking), Kai Santos requested $33 (brunch) - all visible in the pending requests section."
+  },
+  {
+   "criterion": "Pay any pending requests under $50",
+   "satisfied": true,
+   "reasoning": "Screenshots 13-17 show the agent paying all three pending requests under $50: Maya Patel $42 (confirmed payment dialog), Kai Santos $33 (confirmed payment dialog), and Leo Chen $17 (confirmed payment dialog). Screenshot 17 shows recent transactions confirming all three payments."
+  },
+  {
+   "criterion": "Open CloudSheets and find the 'Monthly Expense Log' spreadsheet",
+   "satisfied": true,
+   "reasoning": "Screenshot 21 shows CloudSheets opened with the Monthly Expense Log visible in the list, and screenshot 22 shows the agent tapping on it, with screenshot 23 showing the spreadsheet opened."
+  },
+  {
+   "criterion": "Update the Monthly Expense Log to reflect the $500 transfer",
+   "satisfied": true,
+   "reasoning": "Screenshots 24-36 show the agent entering data in row 9: A9='Oct 12', B9='Transfer', C9='500', D9='Checking to Savings'. Screenshot 36 confirms the entry is saved showing '500' and 'Checking to Savings' in row 9."
+  },
+  {
+   "criterion": "Report the new bank balances (checking and savings)",
+   "satisfied": true,
+   "reasoning": "The agent's final answer states 'Checking $15,121.00, Savings $5,420.50' which matches the balances shown in screenshots 6 and 38 (the final MyBank screenshot)."
+  },
+  {
+   "criterion": "Report the SplitPay balance",
+   "satisfied": true,
+   "reasoning": "The agent reported SplitPay balance of $158.00 after payments ($250 before). Screenshot 20 shows the balance partially as '159' but the math checks out: $250 - $42 - $33 - $17 = $158. The reported balance is consistent with the payments made."
+  },
+  {
+   "criterion": "Report any requests that were paid",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported paying Maya Patel $42 (dinner split), Kai Santos $33 (brunch), and Leo Chen $17 (parking), which matches the pending requests shown in the screenshots and the payment confirmations."
+  },
+  {
+   "criterion": "Confirm the Monthly Expense Log was updated in CloudSheets",
+   "satisfied": true,
+   "reasoning": "Screenshot 36 (step 36 final state) clearly shows the Monthly Expense Log with row 9 containing '500' in the amount column and 'Checking to Savings' in the description column, confirming the update was saved."
+  }
+ ],
+ "judge": "The agent successfully completed all major tasks: transferred $500 from Checking to Savings in MyBank (confirmed by 'Transfer complete' banner and updated balances), opened SplitPay and checked the balance (initially $250), reviewed pending requests (Maya Patel $42, Kai Santos $33, Leo Chen $17 - all under $50), paid all three requests, opened CloudSheets and updated the Monthly Expense Log with the transfer entry (row 9: Oct 12, Transfer, 500, Checking to Savings), and reported the final balances. The final answer correctly states Checking $15,121.00, Savings $5,420.50, SplitPay balance $158.00 (after paying $42+$33+$17=$92 from $250), and the three paid requests. However, the SplitPay balance shown in screenshot 20 appears to show '159' partially visible, and the agent reported $158.00. The final MyBank screenshot confirms Checking $15,121.00 and Savings $5,420.50. The CloudSheets update is visible in screenshot 36 showing row 9 with 500 and 'Checking to Savings'.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chase_tab_pay_and_transfer"
+    }
+   },
+   "result": "tapped at (124, 787) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (106, 327) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "transfer_amount_field_sheet"
+    },
+    "text": "500"
+   },
+   "result": "typed '500'; verified: true; field value now '500'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,85,390,115"
+    }
+   },
+   "result": "tapped at (360, 100) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0013.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chase_tab_home"
+    }
+   },
+   "result": "tapped at (48, 787) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0015.webp"
+  },
+  {
+   "n": 6,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.splitpay"
+   },
+   "result": "launched com.iosworld.benchmark.splitpay",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0017.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "splitpay_tab_me"
+    }
+   },
+   "result": "tapped at (346, 804) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0019.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "bell.fill"
+    }
+   },
+   "result": "tapped at (300, 131) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0021.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (349, 100) via text",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0024.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Transactions"
+    }
+   },
+   "result": "tapped at (287, 494) via text",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0024.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0026.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 26
+    }
+   },
+   "result": "tapped at (204, 160) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0028.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (275, 497) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0030.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 27
+    }
+   },
+   "result": "tapped at (204, 160) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0032.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (275, 497) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0034.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 27
+    }
+   },
+   "result": "tapped at (204, 160) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0036.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "tapped at (275, 497) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0038.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "splitpay_tab_me"
+    }
+   },
+   "result": "tapped at (346, 804) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0041.webp"
+  },
+  {
+   "n": 19,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 80,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,88)->(201,786) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0041.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Wallet"
+    }
+   },
+   "result": "tapped at (114, 494) via text",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0043.webp"
+  },
+  {
+   "n": 21,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cloudsheets"
+   },
+   "result": "launched com.iosworld.benchmark.cloudsheets",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0045.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 16
+    }
+   },
+   "result": "tapped at (200, 681) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0047.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_A9"
+    }
+   },
+   "result": "tapped at (174, 610) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0049.webp"
+  },
+  {
+   "n": 24,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    },
+    "text": "Oct 12"
+   },
+   "result": "typed 'Oct 12'; verified: true; field value now 'Oct 12'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0053.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "357,795,379,817"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (368, 806) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0053.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 90
+    }
+   },
+   "result": "tapped at (368, 505) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0056.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_B9"
+    }
+   },
+   "result": "tapped at (392, 472) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0056.webp"
+  },
+  {
+   "n": 28,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    },
+    "text": "Transfer"
+   },
+   "result": "typed 'Transfer'; verified: true; field value now 'Transfer'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0059.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 90
+    }
+   },
+   "result": "tapped at (368, 505) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0062.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_C9"
+    }
+   },
+   "result": "tapped at (387, 472) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0062.webp"
+  },
+  {
+   "n": 31,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    },
+    "text": "500"
+   },
+   "result": "typed '500'; verified: true; field value now '500'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0064.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 90
+    }
+   },
+   "result": "tapped at (368, 505) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0067.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "sheet_cell_D9"
+    }
+   },
+   "result": "tapped at (376, 472) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0067.webp"
+  },
+  {
+   "n": 34,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "sheet_formula_bar"
+    },
+    "text": "Checking to Savings"
+   },
+   "result": "typed 'Checking to Savings'; verified: true; field value now 'Checking to Savings'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0069.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 90
+    }
+   },
+   "result": "tapped at (368, 505) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0072.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2,
+     "id": "checkmark"
+    }
+   },
+   "result": "tapped at (27, 136) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0072.webp"
+  },
+  {
+   "n": 37,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.mybank"
+   },
+   "result": "launched com.iosworld.benchmark.mybank",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-019/0074.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Transfer $500 from Checking to Savings in MyBank",
+   "verdict": "proven",
+   "claim": "Transfer to Savings (...1032)",
+   "frame": 74
+  },
+  {
+   "type": "KNOW",
+   "text": "new Checking balance",
+   "verdict": "proven",
+   "claim": "$15,121.00",
+   "frame": 74
+  },
+  {
+   "type": "KNOW",
+   "text": "new Savings balance",
+   "verdict": "proven",
+   "claim": "$5,420.50",
+   "frame": 74
+  },
+  {
+   "type": "KNOW",
+   "text": "SplitPay balance",
+   "verdict": "proven",
+   "claim": "250.00",
+   "frame": 19
+  },
+  {
+   "type": "DO",
+   "text": "Pay pending SplitPay requests under $50",
+   "verdict": "proven",
+   "claim": "You paid Kai Santos, brunch, -$33.00, 1m",
+   "frame": 38
+  },
+  {
+   "type": "DO",
+   "text": "Update Monthly Expense Log in CloudSheets with the transfer",
+   "verdict": "proven",
+   "claim": "Checking to Savings",
+   "frame": 72
+  },
+  {
+   "type": "KNOW",
+   "text": "SplitPay balance after payments",
+   "verdict": "proven",
+   "claim": "158.00",
+   "frame": 43
+  }
+ ]
+}

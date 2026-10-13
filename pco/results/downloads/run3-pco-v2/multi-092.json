@@ -1,0 +1,338 @@
+{
+ "id": "multi-092",
+ "app": "lockedin, teamchat, notes",
+ "category": "multi_app",
+ "goal": "Find Devi Anand's viral post on LockedIn about the RAG anti-pattern (2156 reactions, 347 comments, links to a deepmind.google article). React to the post with 'Insightful' and read the top comments for context. Then post a concise summary of the takeaway in TeamChat #product channel so the team benefits. Open Notes and create a new note titled 'Tech Reading Queue' with the article title, link, and your 2-3 key takeaways. What's the core anti-pattern Devi warns about, name at least 2 top commenters, and confirm the reaction + TeamChat post + note were all completed.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 18,
+ "budget": 50,
+ "seconds": 173.8,
+ "cost": 0.9069,
+ "answer": "Core anti-pattern: Devi warns that RAG is becoming an anti-pattern for most production LLM applications. Agentic search with tool APIs works better, because retrieval adds latency, chunking introduces artifacts and large context windows make retrieval unnecessary. Top commenters: Wyatt Lin, Riley Shah (also Mateo Fuentes). Confirmed done: the Insightful reaction, the TeamChat #product post, and the Notes note \"Tech Reading Queue\" with \"Why Agentic Search Beats RAG\" (deepmind.google) and 3 takeaways.",
+ "summary": "I've reacted to the post, posted the summary in #product and created the note, using 18 of 50 actions.\n\n- **Core anti-pattern:** Devi Anand's post says \"RAG is becoming an anti-pattern for most production LLM applications.\" She argues that agentic search with well-designed tool APIs works better than standard RAG pipelines. In her view, the retrieval step adds latency, chunking introduces artifacts, and context windows are now big enough to skip retrieval for most uses. She sees the future as agents with structured APIs, not vector databases full of PDFs.\n- **Article:** \"Why Agentic Search Beats RAG\" on deepmind.google. The post only showed the domain, so the note has \"deepmind.google\" as the link, not a full URL.\n- **Top commenters:** by likes, Wyatt Lin (24), Riley Shah (22) and Mateo Fuentes (20). Their comments are generic agreement (\"Spot on! We implemented something similar and saw great results\"), so they add little beyond the post itself.\n- **Reaction:** Devi's post now shows \"Insightful\" as your reaction.\n- **TeamChat:** the summary is posted in #product. It starts \"Worth a read: Devi Anand (DeepMind) argues RAG is becoming an anti-pattern\u2026\"\n- **Note:** \"Tech Reading Queue\" is saved in the Notes folder with the article title, the link and three takeaways.\n\nANSWER: Core anti-pattern: Devi warns that RAG is becoming an anti-pattern for most production LLM applications. Agentic search with tool APIs works better, because retrieval adds latency, chunking introduces artifacts and large context windows make retrieval unnecessary. Top commenters: Wyatt Lin, Riley Shah (also Mateo Fuentes). Confirmed done: the Insightful reaction, the TeamChat #product post, and the Notes note \"Tech Reading Queue\" with \"Why Agentic Search Beats RAG\" (deepmind.google) and 3 takeaways.",
+ "rubric": [
+  {
+   "criterion": "Open LockedIn and find Devi Anand's viral post about the RAG anti-pattern",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-2 show the LockedIn app open with Devi Anand's post visible at the bottom of the feed. Screenshot 6 shows the full post content with 347 comments and the deepmind.google article link 'Why Agentic Search Beats RAG'."
+  },
+  {
+   "criterion": "React to the post with 'Insightful'",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows the reaction picker appearing after a long press on the Like button. Screenshot 5 shows the 'Insightful' reaction (lightbulb icon) selected and highlighted in yellow/gold, confirming the reaction was applied successfully."
+  },
+  {
+   "criterion": "Read the top comments on the post for context",
+   "satisfied": true,
+   "reasoning": "Screenshot 7 shows the comments section with multiple top commenters visible: Imani Brooks, Riley Shah, Petra Johansson, Mateo Fuentes, Tessa Monroe, and Wyatt Lin, all with their comments about the RAG post."
+  },
+  {
+   "criterion": "Open TeamChat and navigate to #product channel",
+   "satisfied": true,
+   "reasoning": "Screenshots 8-9 show TeamChat opened with the channel list visible including #product. Screenshot 10 shows the #product channel opened with the message composer active."
+  },
+  {
+   "criterion": "Post a concise summary of the RAG anti-pattern takeaway in #product",
+   "satisfied": true,
+   "reasoning": "Screenshot 11 shows the message was sent in #product channel. The message visible in the chat reads: 'Agentic search with well-designed tool APIs outperforms RAG pipelines: retrieval adds latency, chunking adds artifacts, and large context windows make it skippable. Article: Why Agentic Search Beats RAG (deepmind.google)'"
+  },
+  {
+   "criterion": "Open Notes and create a new note titled 'Tech Reading Queue'",
+   "satisfied": true,
+   "reasoning": "Screenshot 14 shows a new note being created with the title 'Tech Reading Queue'. The final screenshot (19) shows the Notes folder list with 'Tech Reading Queue' visible as a note."
+  },
+  {
+   "criterion": "Add the article title, deepmind.google link, and 2-3 key takeaways to the note",
+   "satisfied": true,
+   "reasoning": "Screenshots 15-16 show the note content being typed with: article title 'Why Agentic Search Beats RAG', link 'deepmind.google', and 3 takeaways about RAG being an anti-pattern, agentic search outperforming RAG, and context windows being large enough to skip retrieval."
+  },
+  {
+   "criterion": "Report the core RAG anti-pattern Devi warns about",
+   "satisfied": true,
+   "reasoning": "The agent correctly identified the core anti-pattern: RAG is becoming an anti-pattern for most production LLM applications because retrieval adds latency, chunking introduces artifacts, and large context windows make retrieval unnecessary. Agentic search with well-designed tool APIs is the recommended alternative."
+  },
+  {
+   "criterion": "Name at least 2 top commenters from the post",
+   "satisfied": true,
+   "reasoning": "The agent named Wyatt Lin and Riley Shah as top commenters (also mentioning Mateo Fuentes). Screenshot 7 confirms these commenters are visible in the comments section with Wyatt Lin having 24 likes and Riley Shah having 22 likes."
+  },
+  {
+   "criterion": "Confirm the reaction, TeamChat post, and note were all completed",
+   "satisfied": true,
+   "reasoning": "The agent's final answer explicitly confirms all three: the Insightful reaction (visible in screenshot 5), the TeamChat #product post (visible in screenshot 11), and the Notes note 'Tech Reading Queue' (visible in screenshots 15-16 and the final screenshot 19)."
+  }
+ ],
+ "judge": "The agent successfully completed all required tasks: found Devi Anand's post about RAG anti-pattern on LockedIn, reacted with 'Insightful', read the top comments, posted a summary in TeamChat #product channel, and created a 'Tech Reading Queue' note in Notes with the article title, deepmind.google link, and 3 key takeaways. The agent also correctly identified the core anti-pattern and named top commenters from the post.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 63
+    }
+   },
+   "result": "tapped at (361, 762) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 55,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,677)->(201,197) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "long_press",
+   "args": {
+    "target": {
+     "index": 75
+    },
+    "duration_ms": 1000
+   },
+   "result": "long-pressed 1000ms at (83, 439) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reaction_insightful"
+    }
+   },
+   "result": "tapped at (222, 388) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 70
+    }
+   },
+   "result": "tapped at (265, 396) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.teamchat"
+   },
+   "result": "launched com.iosworld.benchmark.teamchat",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "channel_row_product"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (203, 427) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0017.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "20,417,120,437"
+    }
+   },
+   "result": "tapped at (70, 427) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0019.webp"
+  },
+  {
+   "n": 10,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "composer_text_field"
+    },
+    "text": "Worth a read: Devi Anand (DeepMind) argues RAG is becoming an anti-pattern for most production LLM apps. Agentic search with well-designed tool APIs outperforms RAG pipelines: retrieval adds latency, chunking adds artifacts, and large context windows make it skippable. Article: Why Agentic Search Beats RAG (deepmind.google)"
+   },
+   "result": "typed 'Worth a read: Devi Anand (DeepMind) argues RAG is becoming an anti-pattern for most production LLM apps. Agentic search with well-designed tool APIs outperforms RAG pipelines: retrieval adds latency, chunking adds artifacts, and large context windows make it skippable. Article: Why Agentic Search Beats RAG (deepmind.google)'; verified: true; field value now 'Worth a read: Devi Anand (DeepMind) argues RAG is becoming an anti-pattern for most production LLM apps. Agentic search with well-designed tool APIs outperforms RAG pipelines: retrieval adds latency, chunking adds artifacts, and large context windows make it skippable. Article: Why Agentic Search Beats RAG (deepmind.google)'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0023.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "send_message_button"
+    }
+   },
+   "result": "tapped at (355, 469) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0023.webp"
+  },
+  {
+   "n": 12,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.notes"
+   },
+   "result": "launched com.iosworld.benchmark.notes",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0025.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "notes_new_note_button"
+    }
+   },
+   "result": "tapped at (349, 822) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0027.webp"
+  },
+  {
+   "n": 14,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "notes_title_field"
+    },
+    "text": "Tech Reading Queue"
+   },
+   "result": "typed 'Tech Reading Queue'; verified: true; field value now 'Tech Reading Queue'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0030.webp"
+  },
+  {
+   "n": 15,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "notes_body_editor"
+    },
+    "text": "Why Agentic Search Beats RAG\nLink: deepmind.google (shared by Devi Anand on LockedIn)\nTakeaways:\n1. RAG is becoming an anti-pattern for most production LLM apps.\n2. Agentic search with well-designed tool APIs outperforms RAG pipelines; retrieval adds latency and chunking introduces artifacts.\n3. Context windows are now big enough to skip retrieval; favor agents with structured APIs over vector DBs stuffed with PDFs."
+   },
+   "result": "typed 'Why Agentic Search Beats RAG\\nLink: deepmind.google (shared by Devi Anand on LockedIn)\\nTakeaways:\\n1. RAG is becoming an anti-pattern for most production LLM apps.\\n2. Agentic search with well-designed tool APIs outperforms RAG pipelines; retrieval adds latency and chunking introduces artifacts.\\n3. Context windows are now big enough to skip retrieval; favor agents with structured APIs over vector DBs stuffed with PDFs.'; verified: true; field value now 'Why Agentic Search Beats RAG\\nLink: deepmind.google (shared by Devi Anand on LockedIn)\\nTakeaways:\\n1. RAG is becoming an anti-pattern for most production LLM apps.\\n2. Agentic search with well-designed tool APIs outperforms RAG pipelines; retrieval adds latency and chunking introduces artifacts.\\n3. Context windows are now big enough to skip retrieval; favor agents with structured APIs over vector DBs stuffed with PDFs.'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0032.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "316,500,386,540"
+    }
+   },
+   "result": "tapped at (351, 520) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0035.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 84) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0035.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "notes_folder_notes"
+    }
+   },
+   "result": "tapped at (201, 346) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-092/0037.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "core anti-pattern Devi warns about",
+   "verdict": "proven",
+   "claim": "RAG is becoming an anti-pattern for most production LLM applications.",
+   "frame": 5
+  },
+  {
+   "type": "KNOW",
+   "text": "article title and link",
+   "verdict": "proven",
+   "claim": "Why Agentic Search Beats RAG",
+   "frame": 5
+  },
+  {
+   "type": "KNOW",
+   "text": "top commenter 1",
+   "verdict": "proven",
+   "claim": "Wyatt Lin",
+   "frame": 13
+  },
+  {
+   "type": "KNOW",
+   "text": "top commenter 2",
+   "verdict": "proven",
+   "claim": "Riley Shah",
+   "frame": 13
+  },
+  {
+   "type": "DO",
+   "text": "react Insightful on Devi's post",
+   "verdict": "proven",
+   "claim": "Insightful",
+   "frame": 9
+  },
+  {
+   "type": "DO",
+   "text": "post summary in TeamChat #product",
+   "verdict": "proven",
+   "claim": "Worth a read: Devi Anand (DeepMind) argues RAG is becoming an anti-pattern for most production LLM apps.",
+   "frame": 23
+  },
+  {
+   "type": "DO",
+   "text": "create note 'Tech Reading Queue' in Notes",
+   "verdict": "proven",
+   "claim": "Tech Reading Queue",
+   "frame": 37
+  }
+ ]
+}

@@ -1,0 +1,740 @@
+{
+ "id": "multi-035",
+ "app": "tasterank, dinespot, cinephile, cityride, quickchat",
+ "category": "multi_app",
+ "goal": "Browse DineSpot for a restaurant in San Francisco with outdoor seating and make a reservation for 2 at 7 PM Saturday. Check TasteRank to see if any friends have reviewed restaurants in that neighborhood. Search Cinephile for a movie to watch afterward and add it to a 'Date Night' list. Compare CityRide prices (CityRideX vs Comfort) for the ride to the restaurant and estimate the total evening cost covering dinner and ride. Message Maya Patel in QuickChat with the full plan. What's the restaurant name, movie title, ride estimate, and total evening cost estimate?",
+ "success": false,
+ "score": 0.9231,
+ "judged": true,
+ "steps": 51,
+ "budget": 50,
+ "seconds": 351.0,
+ "cost": 3.4255,
+ "answer": "Mission Block; Fall 2: Deadpoint; ride estimate CityRideX $10.73 (Comfort $13.73); total evening cost estimate ~$110.73 (~$100 dinner for 2 + $10.73 ride)",
+ "summary": "I've used all 50 actions. Of the two items the checker sent back, I could only do more checking on the TasteRank one. The movie is still not in a 'Date Night' list.\n\n- **TasteRank:** I opened Flour + Water, the Mission District restaurant in my recent searches, and scrolled to the bottom. The page only has your own note (\"Daily pasta was a mushroom agnolotti\u2026\") and no friend reviews. Combined with the feed and the request answers I checked earlier, I found no friend reviews in the Mission. I didn't open the \"Friends\" filter in TasteRank search, so friend reviews could still exist there.\n- **Cinephile:** The movie's list menu only offers Wishlist and Seenlist and says \"No custom lists yet\", so the 'Date Night' list doesn't exist. I ran out of actions before I could create it, so it's still undone. You can create it under My Lists and add Fall 2: Deadpoint.\n\nEverything else is unchanged:\n- **Reservation:** Mission Block (from DineSpot's \"Outdoor\" collection) on Saturday, Oct 17 at 7:00 PM for 2, code RSV2007. The booking's seating preference is still \"No preference\", not outdoor.\n- **Ride:** CityRideX is $10.73 and Comfort is $13.73.\n- **Message:** sent to Maya Patel with the full plan.\n\nThe total is my estimate: about $100 for dinner for 2, using the top of DineSpot's \"$31 to $50\" range (I assumed it's per person), plus $10.73 for a CityRideX ride. It doesn't include the movie or a ride home.\n\nANSWER: Mission Block; Fall 2: Deadpoint; ride estimate CityRideX $10.73 (Comfort $13.73); total evening cost estimate ~$110.73 (~$100 dinner for 2 + $10.73 ride)",
+ "rubric": [
+  {
+   "criterion": "Open DineSpot and search for San Francisco restaurants with outdoor seating",
+   "satisfied": true,
+   "reasoning": "The agent launched DineSpot, used the 'Outdoor' filter category, and browsed restaurants with outdoor seating. Screenshot 22 shows the Outdoor filter applied showing 10 restaurants including Mission Block."
+  },
+  {
+   "criterion": "Make a reservation for 2 at 7 PM Saturday at a restaurant with outdoor seating",
+   "satisfied": true,
+   "reasoning": "Screenshot 32 shows 'Reservation Confirmed' for Mission Block on Sat, Oct 17 at 7:00 PM with code RSV2007. Mission Block is listed as having outdoor seating in the Outdoor filter results."
+  },
+  {
+   "criterion": "Open TasteRank and check for friend reviews in the restaurant's neighborhood",
+   "satisfied": true,
+   "reasoning": "The agent opened TasteRank (screenshot 33) and checked friend responses. Screenshot 34 shows responses from friends including recommendations for restaurants in various SF neighborhoods. The agent did check TasteRank for friend reviews, though the neighborhood match was imperfect."
+  },
+  {
+   "criterion": "Open Cinephile and search for a movie to watch afterward",
+   "satisfied": true,
+   "reasoning": "The agent launched Cinephile (screenshot 35) and browsed movies, selecting 'Fall 2: Deadpoint' as shown in screenshot 36."
+  },
+  {
+   "criterion": "Add the movie to a 'Date Night' list",
+   "satisfied": false,
+   "reasoning": "Screenshot 37 shows the List panel opened for Fall 2: Deadpoint, but it shows 'No custom lists yet'. The agent did not create a 'Date Night' list or add the movie to any such list. The task required creating and adding to a 'Date Night' list specifically."
+  },
+  {
+   "criterion": "Open CityRide and compare CityRideX vs Comfort prices to the restaurant",
+   "satisfied": true,
+   "reasoning": "Screenshot 42 shows CityRide with CityRideX at $10.73. The agent reported Comfort at $13.73 in the message, though the Comfort price isn't clearly visible in the screenshots shown. The CityRideX price of $10.73 is confirmed in the app."
+  },
+  {
+   "criterion": "Estimate total evening cost covering dinner and ride (excluding movie ticket)",
+   "satisfied": true,
+   "reasoning": "The agent estimated ~$100 for dinner + $10.73 for ride = ~$110.73 total, which is a reasonable estimate based on Mission Block's $31-$50 per person pricing for 2 guests."
+  },
+  {
+   "criterion": "Message Maya Patel in QuickChat with the full plan",
+   "satisfied": true,
+   "reasoning": "Screenshot 46 shows the message was sent to Maya Patel in QuickChat with the full plan including restaurant, movie, ride comparison, and total cost estimate."
+  },
+  {
+   "criterion": "Report the restaurant name and reservation details",
+   "satisfied": true,
+   "reasoning": "The agent reported Mission Block with reservation details: outdoor seating, 3120 Valencia St, Mission, Sat Oct 17 at 7:00 PM, confirmation code RSV2007, for 2 guests."
+  },
+  {
+   "criterion": "Report the movie title",
+   "satisfied": true,
+   "reasoning": "The agent reported 'Fall 2: Deadpoint' as the movie title in both the message to Maya and the final answer."
+  },
+  {
+   "criterion": "Report the ride estimate (CityRideX vs Comfort comparison)",
+   "satisfied": true,
+   "reasoning": "The agent reported CityRideX at $10.73 vs Comfort at $13.73. CityRideX price is confirmed in screenshot 42. The Comfort price of $13.73 was reported but not clearly visible in the screenshots."
+  },
+  {
+   "criterion": "Report the total evening cost estimate",
+   "satisfied": true,
+   "reasoning": "The agent reported ~$110.73 total (~$100 dinner + $10.73 ride) in both the message and final answer."
+  },
+  {
+   "criterion": "Confirm the reservation and message were completed",
+   "satisfied": true,
+   "reasoning": "Screenshot 32 shows 'Reservation Confirmed' for Mission Block. Screenshot 46 shows the message was sent to Maya Patel and she responded 'Sounds perfect!', confirming both were completed."
+  }
+ ],
+ "judge": "The agent completed most of the required tasks but failed on a critical one: adding the movie 'Fall 2: Deadpoint' to a 'Date Night' list in Cinephile. The screenshot shows the List panel opened but it showed 'No custom lists yet' - the agent did not create a 'Date Night' list and add the movie to it. Additionally, the TasteRank check was done for the Mission neighborhood but the friend reviews shown were not specifically for the Mission neighborhood where Mission Block is located (they were for Japantown, Marina District, and Financial District). The CityRide comparison also didn't show the Comfort price directly from the app - the agent used $13.73 for Comfort but this wasn't visible in the screenshots. The agent did successfully: open DineSpot and search with outdoor filter, make a reservation at Mission Block for 2 at 7PM Saturday, open TasteRank, open Cinephile and find a movie, open CityRide and get prices, message Maya Patel with the plan, and report all required information.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.dinespot"
+   },
+   "result": "launched com.iosworld.benchmark.dinespot",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0002.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_dinner_view_all"
+    }
+   },
+   "result": "tapped at (357, 360) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0004.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "featured_collection_outdoor"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (793, 124) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0006.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "discover_filter_button"
+    }
+   },
+   "result": "tapped at (344, 124) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0008.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 80,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,786)->(201,88) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0010.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 80,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,786)->(201,88) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0012.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "filter_outdoor"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 638) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0014.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,620,380,656"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (355, 638) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0016.webp"
+  },
+  {
+   "n": 9,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 80,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,88)->(201,786) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0018.webp"
+  },
+  {
+   "n": 10,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 2
+    },
+    "text": "Rooftop"
+   },
+   "result": "typed 'Rooftop'; verified: true; field value now 'Rooftop'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0021.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_restaurant_sf_soma_rooftop"
+    }
+   },
+   "result": "tapped at (205, 591) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0023.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "delete"
+    }
+   },
+   "result": "tapped at (373, 725) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0026.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "Return"
+    }
+   },
+   "result": "tapped at (349, 779) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0026.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "map_marker_restaurant_sf_soma_rooftop"
+    }
+   },
+   "result": "tapped at (237, 434) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0028.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (85, 725) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0030.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "336,765,366,795"
+    }
+   },
+   "result": "tapped at (351, 780) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0032.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (200, 1011) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0034.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Back"
+    }
+   },
+   "result": "tapped at (55, 140) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0037.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "map_marker_restaurant_tr_state_bird"
+    }
+   },
+   "result": "tapped at (192, 398) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0037.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Back"
+    }
+   },
+   "result": "tapped at (55, 140) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0040.webp"
+  },
+  {
+   "n": 21,
+   "tool": "swipe",
+   "args": {
+    "x1": 300,
+    "y1": 124,
+    "x2": 20,
+    "y2": 124,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (300,124)->(20,124) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0040.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "featured_collection_outdoor"
+    }
+   },
+   "result": "tapped at (294, 124) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0042.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_restaurant_sf_mission_block"
+    }
+   },
+   "result": "tapped at (206, 710) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0044.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (81, 725) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0048.webp"
+  },
+  {
+   "n": 25,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "336,765,366,795"
+    }
+   },
+   "result": "tapped at (351, 780) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0048.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (200, 1008) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0048.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (81, 725) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0051.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "336,762,366,792"
+    }
+   },
+   "result": "tapped at (351, 777) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0055.webp"
+  },
+  {
+   "n": 29,
+   "tool": "wait",
+   "args": {
+    "ms": 500
+   },
+   "result": "waited 500ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0055.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    },
+    "guard": "warning"
+   },
+   "result": "tapped at (200, 1008) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0055.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_slot_20261017_1900"
+    }
+   },
+   "result": "tapped at (73, 779) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0057.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 779) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0059.webp"
+  },
+  {
+   "n": 33,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.tasterank"
+   },
+   "result": "launched com.iosworld.benchmark.tasterank",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0061.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 23
+    }
+   },
+   "result": "tapped at (200, 654) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0063.webp"
+  },
+  {
+   "n": 35,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cinephile"
+   },
+   "result": "launched com.iosworld.benchmark.cinephile",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0065.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cinephile_movie_row_1101412"
+    }
+   },
+   "result": "tapped at (201, 484) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0067.webp"
+  },
+  {
+   "n": 37,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "List"
+    }
+   },
+   "result": "tapped at (278, 405) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0069.webp"
+  },
+  {
+   "n": 38,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cityride"
+   },
+   "result": "launched com.iosworld.benchmark.cityride",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0072.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_where_to_button"
+    }
+   },
+   "result": "tapped at (101, 320) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0074.webp"
+  },
+  {
+   "n": 40,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "id": "request_destination_chip_button"
+    }
+   },
+   "result": "sent 4 deletes; cleared: false; field value now 'Where to?'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0077.webp"
+  },
+  {
+   "n": 41,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "3120 Valencia St"
+   },
+   "result": "typed '3120 Valencia St'; verified: false; field value now 'Home'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0079.webp"
+  },
+  {
+   "n": 42,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (144, 388) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0081.webp"
+  },
+  {
+   "n": 43,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0083.webp"
+  },
+  {
+   "n": 44,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 15
+    }
+   },
+   "result": "tapped at (201, 467) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0085.webp"
+  },
+  {
+   "n": 45,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "chat_compose_field"
+    },
+    "text": "Date night plan: dinner for 2 at Mission Block (outdoor seating, 3120 Valencia St, Mission) Sat Oct 17 at 7:00 PM, conf RSV2007. Then movie: Fall 2: Deadpoint. Ride: CityRideX $10.73 vs Comfort $13.73, going CityRideX. Est total: ~$100 dinner + $10.73 ride = ~$110.73."
+   },
+   "result": "typed 'Date night plan: dinner for 2 at Mission Block (outdoor seating, 3120 Valencia St, Mission) Sat Oct 17 at 7:00 PM, conf RSV2007. Then movie: Fall 2: Deadpoint. Ride: CityRideX $10.73 vs Comfort $13.73, going CityRideX. Est total: ~$100 dinner + $10.73 ride = ~$110.73.'; verified: true; field value now 'Date night plan: dinner for 2 at Mission Block (outdoor seating, 3120 Valencia St, Mission) Sat Oct 17 at 7:00 PM, conf RSV2007. Then movie: Fall 2: Deadpoint. Ride: CityRideX $10.73 vs Comfort $13.73, going CityRideX. Est total: ~$100 dinner + $10.73 ride = ~$110.73.'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0089.webp"
+  },
+  {
+   "n": 46,
+   "tool": "press",
+   "args": {
+    "key": "enter"
+   },
+   "result": "pressed enter",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0089.webp"
+  },
+  {
+   "n": 47,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.tasterank"
+   },
+   "result": "launched com.iosworld.benchmark.tasterank",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0091.webp"
+  },
+  {
+   "n": 48,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (349, 100) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0094.webp"
+  },
+  {
+   "n": 49,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Search a restaurant, member, etc."
+    }
+   },
+   "result": "tapped at (201, 146) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0094.webp"
+  },
+  {
+   "n": 50,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 13
+    }
+   },
+   "result": "tapped at (201, 432) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0096.webp"
+  },
+  {
+   "n": 51,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,742)->(201,132) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-035/0098.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "restaurant name (SF, outdoor seating)",
+   "verdict": "proven",
+   "claim": "Mission Block",
+   "frame": 57
+  },
+  {
+   "type": "DO",
+   "text": "reserve for 2 at 7 PM Saturday in DineSpot",
+   "verdict": "proven",
+   "claim": "Sat, Oct 17 \u2022 7:00 PM",
+   "frame": 59
+  },
+  {
+   "type": "KNOW",
+   "text": "friends' reviews in that neighborhood on TasteRank",
+   "verdict": "absent",
+   "claim": "Your latest note",
+   "frame": 98
+  },
+  {
+   "type": "KNOW",
+   "text": "movie title",
+   "verdict": "proven",
+   "claim": "Fall 2: Deadpoint",
+   "frame": 89
+  },
+  {
+   "type": "DO",
+   "text": "add movie to 'Date Night' list in Cinephile",
+   "verdict": "absent",
+   "claim": "No custom lists yet",
+   "frame": null
+  },
+  {
+   "type": "KNOW",
+   "text": "CityRide ride estimates (CityRideX vs Comfort)",
+   "verdict": "proven",
+   "claim": "$10.73",
+   "frame": 81
+  },
+  {
+   "type": "DO",
+   "text": "message Maya Patel in QuickChat with full plan",
+   "verdict": "proven",
+   "claim": "Date night plan: dinner for 2 at Mission Block",
+   "frame": 89
+  }
+ ]
+}

@@ -1,0 +1,196 @@
+{
+ "id": "ExpenseAddSingle",
+ "app": "Pro Expense",
+ "goal": "Add the following expenses into the pro expense:\nExpense: Therapy Sessions\n amount_dollars: $307.01\n category_name: Health Care\n note: I may repeat this\n",
+ "success": true,
+ "score": 1.0,
+ "steps": 12,
+ "budget": 12,
+ "seconds": 70.0,
+ "cost": 0.4080458,
+ "answer": null,
+ "summary": "I added the \"Therapy Sessions\" expense to Pro Expense: $307.01, category Health Care, note \"I may repeat this\". It now shows in the Recent list, and this week's outcome total is 307.01 USD.\n\nI saw the category and note set on the form just before saving. After saving I only checked the name and amount on the Home screen, not the category or note. I left the date and time as the app's default, today at 3:34 PM.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Pro Expense"
+   },
+   "result": "opened Pro Expense",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Therapy Sessions\" visible",
+     "text \"307.01\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 0
+   },
+   "result": "tapped (964,2179)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "Therapy Sessions",
+    "index": 6,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Therapy Sessions\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "307.01",
+    "index": 7,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"307.01\" WARNING: the target field shows \"\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "text": "I may repeat this",
+    "index": 9,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"I may repeat this\" WARNING: the target field shows \"SAVE\", not the typed text; check where it went.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "307.01",
+    "x": 540,
+    "y": 577,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"307.01\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Amount\" value \"307.01\" -> TextField \"Amount\" value=\"307.01\" [6] has value \"307.01\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "text": "I may repeat this",
+    "x": 540,
+    "y": 995,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"I may repeat this\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Note\" value \"I may repeat this\" -> TextField \"Note\" value=\"I may repeat this\" [9] has value \"I may repeat this\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "Therapy Sessions",
+    "x": 540,
+    "y": 365,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Therapy Sessions\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"Name\" value \"Therapy Sessions\" -> TextField \"Name\" value=\"Therapy Sessions\" [5] has value \"Therapy Sessions\"",
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "scroll",
+   "args": {
+    "direction": "right",
+    "index": 8,
+    "amount": "page"
+   },
+   "result": "scrolled right (revealing content further right)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "x": 975,
+    "y": 752
+   },
+   "result": "tapped (975,752)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "index": 10
+   },
+   "result": "tapped (453,1237)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Therapy Sessions\" visible -> TextField \"Name\" value=\"Therapy Sessions\" [5]",
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/011.webp"
+  },
+  {
+   "n": 11,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  ok   text \"Therapy Sessions\" visible -> StaticText \"Therapy Sessions\" [15]\n  MISS text \"307.01\" visible -> ambiguous: text \"307.01\" matched 2 elements [10] [17]; add a role, id= or a longer text\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/012.webp"
+  },
+  {
+   "n": 12,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/ExpenseAddSingle/012.webp"
+  }
+ ]
+}

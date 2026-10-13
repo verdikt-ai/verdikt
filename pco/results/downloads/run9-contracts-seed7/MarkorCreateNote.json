@@ -1,0 +1,148 @@
+{
+ "id": "MarkorCreateNote",
+ "app": "Markor",
+ "goal": "Create a new note in Markor named 2023_06_17_bold_vase.txt with the following text: Better late than never.",
+ "success": true,
+ "score": 1.0,
+ "steps": 9,
+ "budget": 16,
+ "seconds": 73.6,
+ "cost": 0.2692484,
+ "answer": null,
+ "summary": "I created the note `2023_06_17_bold_vase.txt` in Markor's Documents folder with the text \"Better late than never.\" I saved it and went back, and the file now shows in the list.\n\nI left the dialog's Type dropdown on its default, Markdown, and only changed the extension to `.txt`. The file name is correct, but Markor may treat it as Markdown when you open it.\n\nThe final check flagged a miss only because the list labels the entry \"File 2023_06_17_bold_vase.txt\" rather than the bare name. I ended the session anyway.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"2023_06_17_bold_vase.txt\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": ".txt",
+    "index": 2,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \".txt\"",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \".txt\" visible -> no match; nearest: TextField \".md\" [2], TextField \"my_note\" [1]",
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "2023_06_17_bold_vase",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"2023_06_17_bold_vase\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (922,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "Better late than never.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Better late than never.\" WARNING: the target field shows \"Better late than \", not the typed text; check where it went.",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Better late than never.\" visible -> TextField \"\" value=\"Better late than never.\" [8]",
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (817,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 2
+   },
+   "result": "pressed back x2",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text \"2023_06_17_bold_vase.txt\" visible -> no match; nearest: StaticText \"Battery charging, 100 percent.\" [3], StaticText \"Phone signal full.\" [2], StaticText \"Wifi signal full.,No internet\" [1], StaticText \"11:34\" [0]",
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/008.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS text \"2023_06_17_bold_vase.txt\" visible -> no match; nearest: Button \"File 2023_06_17_bold_vase.txt \" [13], Button \"Folder .app \" [12], Button \"Folder .. /storage/emulated/0/Documents\" [11], Button \"Create a new file or folder\" [1], StaticText \"Battery charging, 100 percent.\" [17]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/009.webp"
+  },
+  {
+   "n": 9,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNote/009.webp"
+  }
+ ]
+}

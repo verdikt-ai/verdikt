@@ -1,0 +1,86 @@
+{
+ "id": "SystemWifiTurnOffVerify",
+ "app": "Settings",
+ "goal": "Turn wifi off.",
+ "success": true,
+ "score": 1.0,
+ "steps": 4,
+ "budget": 10,
+ "seconds": 28.1,
+ "cost": 0.08360780000000001,
+ "answer": null,
+ "summary": "Wi-Fi was already off, so I didn't change anything. In Settings > Network & internet > Internet, the Wi-Fi switch showed as off, and I left it that way.\n\nThe phone is using mobile data instead (T-Mobile, 3G). That page also notes Wi-Fi can turn back on automatically under Network preferences.\n\nMy final check confirmed the Wi-Fi row and that it was the only switch on the page. It couldn't read the switch's on/off state by name, so the \"off\" comes from the page itself showing the switch as unchecked.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemWifiTurnOffVerify/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Wi\" unchecked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemWifiTurnOffVerify/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (407,794)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemWifiTurnOffVerify/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (279,610)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemWifiTurnOffVerify/003.webp"
+  },
+  {
+   "n": 3,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Wi-Fi\" visible",
+     "count Switch == 1"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemWifiTurnOffVerify/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SystemWifiTurnOffVerify/005.webp"
+  }
+ ]
+}

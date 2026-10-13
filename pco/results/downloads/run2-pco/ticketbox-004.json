@@ -1,0 +1,291 @@
+{
+ "id": "ticketbox-004",
+ "app": "ticketbox",
+ "category": "single_app",
+ "goal": "Find the Ali Wong show at Great American Music Hall on TicketBox and check ticket prices and venue details. What's the show date, venue name, and price range?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 17,
+ "budget": 50,
+ "seconds": 103.3,
+ "cost": 0.5283,
+ "answer": "Sat, Oct 24 (5:08 PM); Great American Music Hall (859 O'Farrell St, San Francisco); $101\u2013$333; show date: Sat, Oct 24 \u00b7 5:08 PM",
+ "summary": "I found the Ali Wong show at Great American Music Hall in TicketBox. It's on Saturday, Oct 24 at 5:08 PM.\n\n- **Venue:** Great American Music Hall, 859 O'Farrell St, San Francisco. It holds 600 people and the show is a stand-up special taping.\n- **Prices:** $101 to $333 per ticket. The event page lists $101 as the lowest (\"FROM $101\"), but the cheapest listing showing a price with fees is $116. The highest is $333 with fees, a single GA (standing) ticket.\n- **Availability:** 28 listings, and 24 of them offer instant transfer.\n\nI worked out the $333 top price by scrolling to the bottom of the price-sorted listings. That sort isn't strictly in order of the with-fees price, so I can't fully rule out a higher listing I didn't see.\n\nANSWER: Sat, Oct 24 (5:08 PM); Great American Music Hall (859 O'Farrell St, San Francisco); $101\u2013$333",
+ "rubric": [
+  {
+   "criterion": "Open TicketBox app and search for 'Ali Wong'",
+   "satisfied": true,
+   "reasoning": "The agent started in the TicketBox app (visible in Screenshot 1) and found Ali Wong shows by scrolling through the browse page. While the agent didn't explicitly use the Search function to search for 'Ali Wong', they found the Ali Wong show at Great American Music Hall visible in Screenshot 2 under 'Just announced' section with '$101+' price tag."
+  },
+  {
+   "criterion": "Tap on the Ali Wong comedy show from results",
+   "satisfied": true,
+   "reasoning": "In Step 2, the agent tapped on the Ali Wong show with the label '$101+, Ali Wong, Oct 24 \u00b7 Great American Music Hall', which opened the show detail page visible in Screenshot 3 showing 'Ali Wong, Sat, Oct 24 at 5:08pm'."
+  },
+  {
+   "criterion": "View ticket prices and venue details",
+   "satisfied": true,
+   "reasoning": "The agent viewed ticket prices on the venue map (Screenshot 3 showing $116-$168 for various sections), viewed the Event Info panel (Screenshots 4-5 showing venue details), and scrolled through ticket listings (Screenshots 7-18 showing prices from $116 to $333)."
+  },
+  {
+   "criterion": "Report the show date",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported the show date as 'Sat, Oct 24 \u00b7 5:08 PM', which matches what's shown in the Event Info panel in Screenshot 5 and the show header in Screenshot 3."
+  },
+  {
+   "criterion": "Report the venue name",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported the venue name as 'Great American Music Hall', which is clearly visible in the Event Info panel in Screenshot 5."
+  },
+  {
+   "criterion": "Report the price range",
+   "satisfied": true,
+   "reasoning": "The agent reported the price range as '$101\u2013$333'. The lowest price of $101 is confirmed in the Event Info panel (Screenshot 5) and the listings summary. The highest price of $333 is visible in Screenshot 17/18 showing 'Section GA \u00b7 Row GA' at $333. This accurately represents the full price range visible in the app."
+  }
+ ],
+ "judge": "The agent successfully opened the TicketBox app, found the Ali Wong show at Great American Music Hall, tapped on it, viewed ticket prices and venue details through the Event Info panel, and reported accurate information. The show date (Sat, Oct 24 at 5:08 PM), venue name (Great American Music Hall), and price range ($101\u2013$333) are all clearly visible in the screenshots and correctly reported in the final answer.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "210,630,370,740"
+    }
+   },
+   "result": "tapped at (290, 685) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "info.circle"
+    }
+   },
+   "result": "tapped at (342, 122) via id",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 80,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,88)->(201,786) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (309, 192) via index",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "254,161,365,180"
+    }
+   },
+   "result": "tapped at (309, 170) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0017.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (241, 192) via index",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0019.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 90,
+    "duration_ms": 150
+   },
+   "result": "swiped (201,830)->(201,44) in 150ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0023.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 90,
+    "duration_ms": 150
+   },
+   "result": "swiped (201,830)->(201,44) in 150ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0023.webp"
+  },
+  {
+   "n": 12,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 90,
+    "duration_ms": 150,
+    "guard": "warning",
+    "screen_changed": false
+   },
+   "result": "swiped (201,830)->(201,44) in 150ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0023.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 720,
+    "x2": 200,
+    "y2": 60,
+    "duration_ms": 150
+   },
+   "result": "swiped (200,720)->(200,60) in 150ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 720,
+    "x2": 200,
+    "y2": 60,
+    "duration_ms": 150
+   },
+   "result": "swiped (200,720)->(200,60) in 150ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0028.webp"
+  },
+  {
+   "n": 15,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 720,
+    "x2": 200,
+    "y2": 60,
+    "duration_ms": 150
+   },
+   "result": "swiped (200,720)->(200,60) in 150ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0028.webp"
+  },
+  {
+   "n": 16,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 720,
+    "x2": 200,
+    "y2": 60,
+    "duration_ms": 150,
+    "screen_changed": false
+   },
+   "result": "swiped (200,720)->(200,60) in 150ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0028.webp"
+  },
+  {
+   "n": 17,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 720,
+    "x2": 200,
+    "y2": 60,
+    "duration_ms": 150,
+    "screen_changed": false
+   },
+   "result": "swiped (200,720)->(200,60) in 150ms",
+   "refused": false,
+   "frame": "media/run2-pco/ticketbox-004/0030.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "show date",
+   "verdict": "proven",
+   "claim": "Sat, Oct 24 \u00b7 5:08 PM",
+   "frame": 7
+  },
+  {
+   "type": "KNOW",
+   "text": "venue name",
+   "verdict": "proven",
+   "claim": "Great American Music Hall",
+   "frame": 7
+  },
+  {
+   "type": "KNOW",
+   "text": "price range",
+   "verdict": "proven",
+   "claim": "$333",
+   "frame": 30
+  }
+ ]
+}

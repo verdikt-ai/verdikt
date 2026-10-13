@@ -1,0 +1,219 @@
+{
+ "id": "ticketbox-004",
+ "app": "ticketbox",
+ "category": "single_app",
+ "goal": "Find the Ali Wong show at Great American Music Hall on TicketBox and check ticket prices and venue details. What's the show date, venue name, and price range?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 13,
+ "budget": 50,
+ "seconds": 107.7,
+ "cost": 0.4484861999999999,
+ "answer": "Sat, Oct 24 (9:25 AM); Great American Music Hall (859 O'Farrell St, San Francisco); $101\u2013$333 (lowest $116 with fees)",
+ "summary": "The Ali Wong show is on **Saturday, October 24 at 9:25 AM** at **Great American Music Hall**. Tickets run from **$101 to $333**.\n\n- **Venue:** Great American Music Hall, 859 O'Farrell St, San Francisco. It holds 600 people, and the show is described as a stand-up special taping.\n- **Prices:** There are 28 listings. The app lists the lowest price as $101, but with fees included the cheapest listing is $116 (Front section, row 24). The most expensive is $333 with fees (general admission, 1 ticket). The $101 figure probably leaves out fees.\n- **By section:** the app's seat map shows starting prices of Front $116, Side $145, Center $167 and General Admission $168.\n\nANSWER: Sat, Oct 24 (9:25 AM); Great American Music Hall (859 O'Farrell St, San Francisco); $101\u2013$333 (lowest $116 with fees)",
+ "rubric": [
+  {
+   "criterion": "Open TicketBox app and search for 'Ali Wong'",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the TicketBox app open on the Browse screen. Screenshot 2 shows the search tab active with 'Ali Wong' typed in the search field, with results appearing."
+  },
+  {
+   "criterion": "Tap on the Ali Wong comedy show from results",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 shows the search results with 'Ali Wong, Oct 24 \u00b7 Great American...' listed. Step 3 tapped on this result, and Screenshot 4 shows the Ali Wong event page loaded with 'Sat, Oct 24 at 9:25am' displayed."
+  },
+  {
+   "criterion": "View ticket prices and venue details",
+   "satisfied": true,
+   "reasoning": "The agent viewed the venue map with ticket prices ($116, $145, $167, $168) in Screenshot 4/7, opened the Event Info panel showing venue details (Great American Music Hall, 859 O'Farrell St, San Francisco) in Screenshots 5-6, and scrolled through ticket listings showing prices from $116 to $333 in Screenshots 10-14."
+  },
+  {
+   "criterion": "Report the show date",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported 'Sat, Oct 24 (9:25 AM)' which matches what's shown in the screenshots: 'Sat, Oct 24 \u00b7 9:25 AM' in the Event Info panel and 'Sat, Oct 24 at 9:25am' in the event header."
+  },
+  {
+   "criterion": "Report the venue name",
+   "satisfied": true,
+   "reasoning": "The agent correctly reported 'Great American Music Hall (859 O'Farrell St, San Francisco)' which matches the Event Info panel shown in Screenshot 6."
+  },
+  {
+   "criterion": "Report the price range",
+   "satisfied": true,
+   "reasoning": "The agent reported '$101\u2013$333 (lowest $116 with fees)'. The screenshots show: FROM $101 in the listings summary, the lowest listed ticket at $116 incl. fees (Section Front Row 24), and the highest visible at $333 incl. fees (Section GA Row GA). The $101 figure appears as the 'FROM' price in the listings header. The price range reported is accurate based on the data visible in the app."
+  }
+ ],
+ "judge": "The agent successfully completed all required tasks: opened the TicketBox app, searched for 'Ali Wong', tapped on the Ali Wong show at Great American Music Hall (Oct 24), viewed ticket prices and venue details via the Event Info panel, and reported accurate information. The show date (Sat, Oct 24 at 9:25 AM), venue name (Great American Music Hall, 859 O'Farrell St, San Francisco), and price range ($101 lowest listed price, with tickets ranging from $116 to $333 including fees) were all correctly identified from the screenshots.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "tab.search"
+    }
+   },
+   "result": "tapped at (120, 818) via id",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 7
+    },
+    "text": "Ali Wong"
+   },
+   "result": "typed 'Ali Wong'; verified: true; field value now 'Ali Wong'",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 11
+    }
+   },
+   "result": "tapped at (201, 292) via index",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (342, 122) via index",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 70,
+    "x2": 201,
+    "y2": 800,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,70)->(201,800) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 30,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,568)->(201,306) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (309, 469) via index",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (241, 360) via index",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 780,
+    "x2": 201,
+    "y2": 50,
+    "duration_ms": 100
+   },
+   "result": "swiped (201,780)->(201,50) in 100ms",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0024.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 780,
+    "x2": 201,
+    "y2": 50,
+    "duration_ms": 100
+   },
+   "result": "swiped (201,780)->(201,50) in 100ms",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0024.webp"
+  },
+  {
+   "n": 12,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 780,
+    "x2": 201,
+    "y2": 50,
+    "duration_ms": 100
+   },
+   "result": "swiped (201,780)->(201,50) in 100ms",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0024.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "x1": 201,
+    "y1": 780,
+    "x2": 201,
+    "y2": 50,
+    "duration_ms": 100,
+    "screen_changed": false
+   },
+   "result": "swiped (201,780)->(201,50) in 100ms",
+   "refused": false,
+   "frame": "media/run1-opus/ticketbox-004/0026.webp"
+  }
+ ],
+ "ledger": null
+}

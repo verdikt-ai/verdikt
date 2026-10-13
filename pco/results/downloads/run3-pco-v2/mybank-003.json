@@ -1,0 +1,101 @@
+{
+ "id": "mybank-003",
+ "app": "mybank",
+ "category": "single_app",
+ "goal": "Send $50 via Zelle to Maya Patel in MyBank and confirm the payment was sent.",
+ "success": false,
+ "score": 0.8571,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 37.1,
+ "cost": 0.2785,
+ "answer": null,
+ "summary": "I sent $50 to Maya Patel with Zelle in MyBank, and the app confirmed the payment went through. A \"Zelle sent.\" message appeared, and Recent activity now lists Maya Patel at -$50.00 from Total Checking (...6645) on Oct 12, 2026. The checking balance went from $15,621.00 to $15,571.00.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open MyBank app and navigate to Pay & Transfer",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the MyBank app is already open on the home screen. The agent accessed Zelle directly from the home screen chip rather than navigating through Pay & Transfer, but the app was open and functional."
+  },
+  {
+   "criterion": "Select Zelle as the payment method",
+   "satisfied": true,
+   "reasoning": "In Step 1, the agent tapped the 'Send | Zelle\u00ae' button on the home screen, which opened the 'Send with Zelle' interface as shown in Screenshot 2."
+  },
+  {
+   "criterion": "Choose Maya Patel as the recipient",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the Zelle form with 'Maya Patel' already selected in the 'Send to' field, confirming Maya Patel was chosen as the recipient."
+  },
+  {
+   "criterion": "Enter $50 as the amount",
+   "satisfied": true,
+   "reasoning": "In Step 2, the agent typed '50' into the amount field. Screenshots 2 and 3 both show '50' entered in the Payment field."
+  },
+  {
+   "criterion": "Add a memo or note for the payment",
+   "satisfied": false,
+   "reasoning": "The memo field shows 'Memo (optional)' placeholder text in both Screenshots 2 and 3, indicating no memo was entered. The agent skipped this step."
+  },
+  {
+   "criterion": "Send the payment",
+   "satisfied": true,
+   "reasoning": "In Step 3, the agent tapped the 'Send now' button. The final screenshot (Screenshot 4) shows the payment was processed."
+  },
+  {
+   "criterion": "Confirm the payment was sent successfully",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows a green banner at the top reading 'Zelle sent.' confirming the payment was successfully sent. Additionally, the checking account balance decreased from $15,621.00 to $15,571.00, a reduction of exactly $50."
+  }
+ ],
+ "judge": "The agent successfully completed the task of sending $50 via Zelle to Maya Patel in MyBank. The trajectory shows: the app was already open on the home screen, the agent tapped 'Send | Zelle\u00ae', the Zelle form appeared with Maya Patel already selected as recipient, $50 was entered as the amount, and 'Send now' was tapped. The final screenshot shows a green 'Zelle sent.' confirmation banner, and the checking account balance decreased by $50 (from $15,621.00 to $15,571.00), confirming the payment was processed. The only criterion not met was adding a memo, as the memo field was left empty.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_chip_zelle"
+    }
+   },
+   "result": "tapped at (129, 201) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mybank-003/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "zelle_amount_field"
+    },
+    "text": "50"
+   },
+   "result": "typed '50'; verified: true; field value now '50'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mybank-003/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "zelle_send_button"
+    }
+   },
+   "result": "tapped at (201, 551) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/mybank-003/0008.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Send $50 via Zelle to Maya Patel and confirm sent",
+   "verdict": "proven",
+   "claim": "Zelle sent.",
+   "frame": 8
+  }
+ ]
+}

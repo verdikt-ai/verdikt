@@ -1,0 +1,63 @@
+{
+ "id": "SportsTrackerActivityDuration",
+ "app": "Opentracks",
+ "goal": "How long was my skiing activity October 12 2023 in the OpenTracks app? Express your answer in minutes as a single integer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 3,
+ "budget": 10,
+ "seconds": 17.6,
+ "cost": 0.08983559999999999,
+ "answer": "135",
+ "summary": "Your skiing activity on October 12, 2023 lasted **135** minutes. That's the answer I submitted, and the task is now finished.\n\nIn the OpenTracks track list it's called \"Outdoor Adventure\": it has the skiing icon, a duration of 2:15:00 and a distance of 3.73 mi. The list only labels it \"Thursday,\" so I didn't open the track to check the full date. The phone's date is Sunday, October 15, 2023, which makes that Thursday October 12.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "OpenTracks"
+   },
+   "result": "opened OpenTracks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivityDuration/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivityDuration/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "answer",
+   "args": {
+    "text": "135",
+    "evidence": [
+     "text \"2:15:00 (3.73 mi)\" visible",
+     "text \"Outdoor Adventure\" visible"
+    ]
+   },
+   "result": "answer recorded: \"135\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivityDuration/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivityDuration/002.webp"
+  }
+ ]
+}

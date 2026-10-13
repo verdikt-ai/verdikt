@@ -1,0 +1,72 @@
+{
+ "id": "TasksDueNextWeek",
+ "app": "Tasks",
+ "goal": "How many tasks do I have due next week in Tasks app? Assume the week starts from Monday. Express your answer as a single integer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 28.6,
+ "cost": 0.13604080000000002,
+ "answer": "6",
+ "summary": "You have **6** open tasks due next week (Mon Oct 16 \u2013 Sun Oct 22), and I submitted 6 as the answer.\n\nI didn't open each task to check its exact date. I worked them out from the date labels in the list, so the count could be off if I read a label wrong.\n\n| Task | Label shown | Date |\n|---|---|---|\n| Update website content | Tmrw | Mon Oct 16 |\n| Research market trends | Wed | Wed Oct 18 |\n| Review quarterly goals | Thu | Thu Oct 19 |\n| Draft marketing email | Fri | Fri Oct 20 |\n| Exercise session with coach | Sat | Sat Oct 21 |\n| Dinner with friends | Oct 22 | Sun Oct 22 |\n\n- **Short labels:** the app shows only a weekday (like \"Tue\") for nearby dates, which could mean last week or next. Labels in red/orange are overdue, so I counted only the grey ones as next week.\n- **Completed tasks left out:** three finished tasks also have weekday labels: Clean Out Fridge (Thu), Renew Driver's License (Mon) and Change Air Filter (Wed). If any of them is due next week and you want completed tasks counted, the total would be higher.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Tasks"
+   },
+   "result": "opened Tasks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/TasksDueNextWeek/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/TasksDueNextWeek/001.webp"
+  },
+  {
+   "n": 3,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/TasksDueNextWeek/002.webp"
+  },
+  {
+   "n": 4,
+   "tool": "answer",
+   "args": {
+    "text": "6"
+   },
+   "result": "answer recorded: \"6\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/TasksDueNextWeek/003.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/TasksDueNextWeek/003.webp"
+  }
+ ]
+}

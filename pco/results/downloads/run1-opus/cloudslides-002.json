@@ -1,0 +1,295 @@
+{
+ "id": "cloudslides-002",
+ "app": "cloudslides",
+ "category": "single_app",
+ "goal": "Open the '[Draft] Autonomous Agents' presentation in CloudSlides and edit slide 2 to add a bullet about 'safety' to the agenda list. What's the updated agenda?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 20,
+ "budget": 50,
+ "seconds": 158.9,
+ "cost": 0.7318402000000002,
+ "answer": "Threat models, Research gaps, Why benchmarks matter, Safety",
+ "summary": "I added a \"Safety\" bullet to the end of the agenda on slide 2 of \"[Draft] Autonomous Agents\". After leaving the editor, the slide shows four bullets.\n\nWhile clearing the field I accidentally deleted part of the existing text. I typed it back, and the first three bullets on the saved slide read the same as before.\n\nThe bullet is just the one word \"Safety\", since you didn't give exact wording.\n\nANSWER: Threat models, Research gaps, Why benchmarks matter, Safety",
+ "rubric": [
+  {
+   "criterion": "Open CloudSlides app and find the '[Draft] Autonomous Agents' presentation",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the CloudSlides app open with 'Autonomous' typed in the search field, and the '[Draft] Autonomous Agents' presentation (Feb 19, 2026) is visible in the search results."
+  },
+  {
+   "criterion": "Open the presentation",
+   "satisfied": true,
+   "reasoning": "Step 2 shows the agent tapping on the '[Draft] Autonomous Agents' file, and Screenshot 3 shows the presentation opened with slide 1 (Autonomous Agents title slide) and slide 2 (Agenda) visible."
+  },
+  {
+   "criterion": "Navigate to slide 2",
+   "satisfied": true,
+   "reasoning": "Screenshots from step 5 onward show slide 2 (the Agenda slide) is selected and being edited. The slide panel at the bottom shows slide 2 is highlighted, and the main view shows the Agenda slide content."
+  },
+  {
+   "criterion": "Tap slide 2's body text to enter edit mode",
+   "satisfied": true,
+   "reasoning": "Step 5 shows the agent tapping the body text field of slide 2, and subsequent screenshots show the keyboard appearing and the text field being in edit mode with cursor visible in the body text."
+  },
+  {
+   "criterion": "Add a bullet point about 'safety' to slide 2's agenda",
+   "satisfied": true,
+   "reasoning": "Screenshot 19 (step 19) shows 'Safety' being typed and visible as a new line in the slide body. The final screenshot (step 21) clearly shows 'Safety' as a fourth bullet point in the agenda list."
+  },
+  {
+   "criterion": "Confirm the edit was saved",
+   "satisfied": true,
+   "reasoning": "Step 20 shows the agent tapping the checkmark button to save/confirm the edit, and the final screenshot shows the presentation in view mode (not edit mode) with the updated agenda including Safety, confirming the save was successful."
+  },
+  {
+   "criterion": "Report the updated agenda content",
+   "satisfied": true,
+   "reasoning": "The agent's final answer states 'Threat models, Research gaps, Why benchmarks matter, Safety' which matches exactly what is shown in the final screenshot of slide 2's agenda."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened CloudSlides, found and opened the '[Draft] Autonomous Agents' presentation, navigated to slide 2 (the Agenda slide), entered edit mode on the body text, added 'Safety' as a new bullet point, saved the edit (by tapping the checkmark), and reported the updated agenda. The final screenshot clearly shows slide 2 with four bullet points: Threat models, Research gaps, Why benchmarks matter, and Safety. The agent's final answer correctly lists all four items.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 2
+    },
+    "text": "Autonomous"
+   },
+   "result": "typed 'Autonomous'; verified: true; field value now 'Autonomous'",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0004.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (296, 329) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "100,600,300,650"
+    }
+   },
+   "result": "tapped at (200, 625) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0009.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 9
+    }
+   },
+   "result": "tapped at (350, 724) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "tapped at (201, 435) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "sent 50 deletes; cleared: false; field value now '[Draft] Autonomous Agents'",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Threat models\nResearch"
+   },
+   "result": "typed 'Threat models\\nResearch'; verified: false; field value now '[Draft] Autonomous Agents'",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0017.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "tapped at (201, 432) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0019.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "180,272,182,284"
+    }
+   },
+   "result": "tapped at (181, 278) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0022.webp"
+  },
+  {
+   "n": 10,
+   "tool": "wait",
+   "args": {
+    "ms": 500
+   },
+   "result": "waited 500ms",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Research"
+   },
+   "result": "typed 'Research'; verified: false; field value now '[Draft] Autonomous Agents'",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 56
+    }
+   },
+   "result": "tapped at (201, 779) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0027.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "144,272,146,284"
+    }
+   },
+   "result": "tapped at (145, 278) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0029.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 54
+    }
+   },
+   "result": "tapped at (373, 725) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0031.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "268,293,272,305"
+    }
+   },
+   "result": "tapped at (270, 299) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0033.webp"
+  },
+  {
+   "n": 16,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 298,
+    "x2": 200,
+    "y2": 250,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (200,298)->(200,250) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0035.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "236,290,240,302"
+    }
+   },
+   "result": "tapped at (238, 296) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0037.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 57
+    }
+   },
+   "result": "tapped at (349, 779) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0039.webp"
+  },
+  {
+   "n": 19,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Safety"
+   },
+   "result": "typed 'Safety'; verified: false; field value now '[Draft] Autonomous Agents'",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0043.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (12, 95) via index",
+   "refused": false,
+   "frame": "media/run1-opus/cloudslides-002/0043.webp"
+  }
+ ],
+ "ledger": null
+}

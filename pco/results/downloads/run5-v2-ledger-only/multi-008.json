@@ -1,0 +1,288 @@
+{
+ "id": "multi-008",
+ "app": "caltrack, quickchat",
+ "category": "multi_app",
+ "goal": "Log a post-run protein shake in CalTrack (search for 'protein') and check my dashboard to see how it affects my daily calorie and protein progress. Then message Elena Brooks in QuickChat to confirm the Saturday Long Run plans. What's my calorie and protein progress vs goals, and confirm the message was sent.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 17,
+ "budget": 50,
+ "seconds": 154.7,
+ "cost": 0.9511,
+ "answer": "Calories 1829 eaten of a 2450 goal (761 remaining after 140 exercise); protein 155.8 / 170 g (92%); message to Elena Brooks confirming the Saturday Long Run (7 AM start, six miles) was sent.",
+ "summary": "I logged the protein shake in CalTrack and sent Elena Brooks the Saturday Long Run confirmation in QuickChat.\n\n- **Protein shake:** I searched \"protein\" and added \"Protein shake\" (1 bottle, 160 cal, 30 g protein). CalTrack put it under **Breakfast** and didn't offer a meal choice. Your Snacks list already had a protein shake from before, so today now shows two.\n- **Calories:** 1829 eaten against a 2450 goal. With 140 burned from exercise, you have **761 left** (it was 921 before the shake).\n- **Protein:** **155.8 / 170 g (92%)**, up from 125.8 g (74%). You're 14.2 g short of your goal.\n- **Message to Elena:** sent at 1:40 AM and showing as delivered: \"Confirming our Saturday Long Run! 7 AM start, six miles. See you there!\" I took the 7 AM start from the latest \"Perfect. 7 AM start?\" in the Saturday Long Run group chat. The six miles came from Elena's voice note about moving the long run up to six.\n\nANSWER: Calories 1829 eaten of a 2450 goal (761 remaining after 140 exercise); protein 155.8 / 170 g (92%); message to Elena Brooks confirming the Saturday Long Run (7 AM start, six miles) was sent.",
+ "rubric": [
+  {
+   "criterion": "Open CalTrack and search for 'protein' to find a protein shake",
+   "satisfied": true,
+   "reasoning": "Screenshots 3 and 4 clearly show the CalTrack food search screen with 'protein' typed in the search field, and the results showing 'Protein shake' as the first result."
+  },
+  {
+   "criterion": "Log the post-run protein shake",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows the Protein shake detail page with 'Add Food' button, and step 5 confirms tapping it. Screenshot 7 (the dashboard after logging) shows 'Protein shake, 1 1 bottle' listed under Breakfast, and the food total increased from 1669 to 1829 calories (a 160 cal increase matching the protein shake)."
+  },
+  {
+   "criterion": "Check the CalTrack dashboard for daily calorie and protein progress",
+   "satisfied": true,
+   "reasoning": "Screenshots 7 and 18 show the CalTrack dashboard with complete calorie breakdown (Goal: 2450, Food: 1829, Exercise: 140, Remaining: 761) and macronutrient progress (Protein: 155.8/170g, Carbs: 168/250g, Fat: 60.8/75g)."
+  },
+  {
+   "criterion": "Open QuickChat and message Elena Brooks to confirm Saturday Long Run plans",
+   "satisfied": true,
+   "reasoning": "The agent opened QuickChat (screenshot 8), searched for Elena (screenshots 11-12), navigated to Elena Brooks' chat (screenshot 15), typed a confirmation message about the Saturday Long Run, and sent it. Screenshot 17 shows the sent message 'Confirming our Saturday Long Run! 7 AM start, six miles. See you there!' with a green checkmark indicating delivery."
+  },
+  {
+   "criterion": "Report calorie progress vs goal",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly states '1829 eaten of a 2450 goal (761 remaining after 140 exercise)' which matches the dashboard shown in screenshots 7 and 18."
+  },
+  {
+   "criterion": "Report protein progress vs goal",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly states 'protein 155.8 / 170 g (92%)' which matches the dashboard shown in screenshots 7 and 18."
+  },
+  {
+   "criterion": "Confirm the QuickChat message was sent",
+   "satisfied": true,
+   "reasoning": "Screenshot 17 shows the message 'Confirming our Saturday Long Run! 7 AM start, six miles. See you there!' sent to Elena Brooks with a green checkmark (delivered status) at 1:40 AM. The agent confirmed this in the final answer."
+  }
+ ],
+ "judge": "The agent successfully completed all required tasks: (1) opened CalTrack and searched for 'protein', finding the protein shake; (2) logged the protein shake (160 cal, 30g protein); (3) checked the dashboard showing updated calorie and protein progress; (4) opened QuickChat, found Elena Brooks, and sent a confirmation message about the Saturday Long Run; (5) reported calorie progress (1829 eaten of 2450 goal, 761 remaining with 140 exercise calories); (6) reported protein progress (155.8/170g); (7) confirmed the message was sent (visible in screenshot 17 with green checkmark). The final answer accurately reflects the dashboard data shown in the screenshots.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (354, 747) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (201, 156) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "protein"
+   },
+   "result": "typed 'protein'; verified: true; field value now 'protein'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 339) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 20
+    }
+   },
+   "result": "tapped at (201, 811) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (52, 100) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 25
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 1561) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (201, 309) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Elena"
+   },
+   "result": "typed 'Elena'; verified: false; field value now 'Ask Meta AI or Search'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 8
+    },
+    "text": "Elena"
+   },
+   "result": "typed 'Elena'; verified: true; field value now 'Elena'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "18,360,384,380"
+    }
+   },
+   "result": "tapped at (201, 370) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0027.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (19, 157) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0029.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "18,410,384,470"
+    }
+   },
+   "result": "tapped at (201, 440) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0031.webp"
+  },
+  {
+   "n": 15,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 178
+    },
+    "text": "Confirming our Saturday Long Run! 7 AM start, six miles. See you there!"
+   },
+   "result": "typed 'Confirming our Saturday Long Run! 7 AM start, six miles. See you there!'; verified: false; field value now ''",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0034.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_send_button"
+    }
+   },
+   "result": "tapped at (360, 432) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0036.webp"
+  },
+  {
+   "n": 17,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.caltrack"
+   },
+   "result": "launched com.iosworld.benchmark.caltrack",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/multi-008/0038.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Log a protein shake in CalTrack",
+   "verdict": "proven",
+   "claim": "Protein shake added to Breakfast.",
+   "frame": 38
+  },
+  {
+   "type": "KNOW",
+   "text": "Calorie progress vs goal",
+   "verdict": "proven",
+   "claim": "1829",
+   "frame": 38
+  },
+  {
+   "type": "KNOW",
+   "text": "Protein progress vs goal",
+   "verdict": "proven",
+   "claim": "155.8 / 170 g",
+   "frame": 38
+  },
+  {
+   "type": "DO",
+   "text": "Message Elena Brooks in QuickChat confirming Saturday Long Run plans",
+   "verdict": "proven",
+   "claim": "Confirming our Saturday Long Run! 7 AM start, six miles. See you there!",
+   "frame": 36
+  }
+ ]
+}

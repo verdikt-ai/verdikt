@@ -1,0 +1,603 @@
+{
+ "id": "multi-001",
+ "app": "dinespot, teamchat",
+ "category": "multi_app",
+ "goal": "Find a restaurant in San Francisco with outdoor seating on DineSpot (something like Harborline Seafood) and make a reservation for 6 people at 7 PM this Friday. Then post the restaurant name, time, and address in the #general TeamChat channel. Give me the restaurant name, reservation confirmation, and confirm the TeamChat message was posted.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 42,
+ "budget": 50,
+ "seconds": 294.2,
+ "cost": 1.2064,
+ "answer": "SoMa Rooftop (888 Brannan St, San Francisco, CA); reservation confirmed for Fri, Oct 16 at 7:00 PM, 6 guests, code RSV2007; TeamChat message posted in #general.; reservation confirmation: Code: RSV2007",
+ "summary": "I booked **SoMa Rooftop** at 888 Brannan St, San Francisco, CA, for 6 people at 7:00 PM this Friday, Oct 16. The confirmation code is **RSV2007**.\n\n- **Why not Harborline Seafood:** I checked it first, but its full availability list had no 7:00 PM table on Friday. The closest times for 6 were 6:30 and 7:30 PM.\n- **Outdoor seating:** DineSpot didn't list outdoor seating for SoMa Rooftop. I picked it because it's a rooftop, and I set the booking preference to \"Patio seating,\" the only outdoor option the form offered.\n- **TeamChat:** The message is posted in #general. It reads: \"Dinner reservation: SoMa Rooftop, Friday Oct 16 at 7:00 PM for 6, 888 Brannan St, San Francisco, CA\".\n\nANSWER: SoMa Rooftop (888 Brannan St, San Francisco, CA); reservation confirmed for Fri, Oct 16 at 7:00 PM, 6 guests, code RSV2007; TeamChat message posted in #general.",
+ "rubric": [
+  {
+   "criterion": "Open DineSpot and search for restaurants in San Francisco",
+   "satisfied": true,
+   "reasoning": "The agent opened DineSpot (visible from screenshots 1-2 showing the DineSpot home screen with 'San Francisco' location) and used the search functionality to search for restaurants."
+  },
+  {
+   "criterion": "Filter or find a restaurant with outdoor seating (e.g., Harborline Seafood)",
+   "satisfied": true,
+   "reasoning": "The agent searched for 'Harborline' and found Harborline Seafood, then also searched for 'rooftop' and found SoMa Rooftop. The agent selected 'Patio seating' as the dining preference during booking, indicating outdoor seating was considered. SoMa Rooftop is a rooftop restaurant which has outdoor seating."
+  },
+  {
+   "criterion": "Make a reservation for 6 people at 7 PM Friday",
+   "satisfied": true,
+   "reasoning": "Screenshot 38 shows 'Reservation Confirmed' for SoMa Rooftop on Fri, Oct 16 at 7:00 PM with confirmation code RSV2007. The party size was set to 6 guests (visible in screenshots 33-34 showing '6 guests' selected and the booking review showing '6 guests')."
+  },
+  {
+   "criterion": "Open TeamChat and navigate to #general channel",
+   "satisfied": true,
+   "reasoning": "Screenshots 39-40 show the TeamChat app was opened (showing 'Delta Ops' workspace with channels list including #general), and the agent navigated to the #general channel (visible in screenshot 43 showing '#general' in the header)."
+  },
+  {
+   "criterion": "Post the restaurant name, time, and address in #general",
+   "satisfied": true,
+   "reasoning": "The final screenshot (43) shows a message posted by Jordan Avery in #general: 'Dinner reservation: SoMa Rooftop, Friday Oct 16 at 7:00 PM for 6, 888 Brannan St, San Francisco, CA' - this includes the restaurant name, time, and address."
+  },
+  {
+   "criterion": "Report the restaurant name",
+   "satisfied": true,
+   "reasoning": "The agent reported 'SoMa Rooftop' as the restaurant name in its final answer."
+  },
+  {
+   "criterion": "Report the reservation confirmation details",
+   "satisfied": true,
+   "reasoning": "The agent reported confirmation code RSV2007, which matches what was shown in screenshot 38 ('Code: RSV2007'). The reservation was for SoMa Rooftop, Fri Oct 16 at 7:00 PM."
+  },
+  {
+   "criterion": "Confirm the TeamChat message was posted",
+   "satisfied": true,
+   "reasoning": "The final screenshot (43) clearly shows the message was posted in #general by Jordan Avery: 'Dinner reservation: SoMa Rooftop, Friday Oct 16 at 7:00 PM for 6, 888 Brannan St, San Francisco, CA'. The agent confirmed this in its final answer."
+  }
+ ],
+ "judge": "The agent successfully completed all required tasks: opened DineSpot and searched for restaurants in San Francisco, found a restaurant with outdoor seating (SoMa Rooftop, found via 'rooftop' search - a rooftop restaurant inherently has outdoor seating, and the agent also selected 'Patio seating' preference), made a reservation for 6 people at 7 PM on Friday Oct 16, opened TeamChat and navigated to #general channel, posted the restaurant name, time, and address. The reservation was confirmed with code RSV2007. The final screenshot shows the message was successfully posted in #general. However, there are some nuances: the agent initially tried Harborline Seafood but couldn't find a 7 PM slot for Friday (the full availability showed no 7 PM on Fri Oct 16 for Harborline Seafood), so it switched to SoMa Rooftop which had a 7 PM slot on Friday. The agent reported the correct restaurant name (SoMa Rooftop), confirmation code (RSV2007), and the TeamChat message was posted.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Search"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Search)",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "105,815,145,850"
+    }
+   },
+   "result": "tapped at (125, 832) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 2
+    },
+    "text": "Harborline"
+   },
+   "result": "typed 'Harborline'; verified: true; field value now 'Harborline'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0009.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_restaurant_005"
+    }
+   },
+   "result": "tapped at (202, 596) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0011.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "delete"
+    }
+   },
+   "result": "tapped at (373, 725) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0014.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "Return"
+    }
+   },
+   "result": "tapped at (349, 779) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_restaurant_005"
+    }
+   },
+   "result": "tapped at (202, 596) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (81, 808) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "105,815,145,850"
+    }
+   },
+   "result": "tapped at (125, 832) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 30,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,568)->(201,306) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (81, 536) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0024.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "290,765,315,795"
+    }
+   },
+   "result": "tapped at (302, 780) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0026.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "180,80,220,100"
+    }
+   },
+   "result": "tapped at (200, 90) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_party_size_control"
+    }
+   },
+   "result": "tapped at (309, 537) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0030.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_party_size_option_6"
+    }
+   },
+   "result": "tapped at (241, 354) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0032.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_full_availability_button"
+    }
+   },
+   "result": "tapped at (200, 651) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0034.webp"
+  },
+  {
+   "n": 17,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0036.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "full_availability_close_button"
+    }
+   },
+   "result": "tapped at (348, 100) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0039.webp"
+  },
+  {
+   "n": 19,
+   "tool": "swipe",
+   "args": {
+    "x1": 2,
+    "y1": 400,
+    "x2": 250,
+    "y2": 400,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (2,400)->(250,400) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0039.webp"
+  },
+  {
+   "n": 20,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,219)->(201,655) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0042.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Back"
+    }
+   },
+   "result": "tapped at (55, 140) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0042.webp"
+  },
+  {
+   "n": 22,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "sent 10 deletes; cleared: false; field value now 'Search San Francisco'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0045.webp"
+  },
+  {
+   "n": 23,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "outdoor\n"
+   },
+   "result": "typed 'outdoor\\n'; verified: false; field value now 'outdoor'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0047.webp"
+  },
+  {
+   "n": 24,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "sent 7 deletes; cleared: false; field value now 'Search San Francisco'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0050.webp"
+  },
+  {
+   "n": 25,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "rooftop\n"
+   },
+   "result": "typed 'rooftop\\n'; verified: false; field value now 'rooftop'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0052.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_row_restaurant_sf_soma_rooftop"
+    }
+   },
+   "result": "tapped at (205, 596) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0054.webp"
+  },
+  {
+   "n": 27,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 30,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,568)->(201,306) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0056.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_date_control"
+    }
+   },
+   "result": "tapped at (81, 536) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0059.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "290,765,315,795"
+    }
+   },
+   "result": "tapped at (302, 780) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0059.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "290,765,315,795"
+    }
+   },
+   "result": "tapped at (302, 780) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0062.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "180,80,220,100"
+    }
+   },
+   "result": "tapped at (200, 90) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0062.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_party_size_control"
+    }
+   },
+   "result": "tapped at (309, 537) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0065.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "restaurant_party_size_option_6"
+    }
+   },
+   "result": "tapped at (241, 354) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0065.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_slot_20261016_1900"
+    }
+   },
+   "result": "tapped at (73, 590) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0067.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "booking_preference_picker"
+    }
+   },
+   "result": "tapped at (201, 634) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0069.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Patio seating"
+    }
+   },
+   "result": "tapped at (245, 537) via text",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0072.webp"
+  },
+  {
+   "n": 37,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 779) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0072.webp"
+  },
+  {
+   "n": 38,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.teamchat"
+   },
+   "result": "launched com.iosworld.benchmark.teamchat",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0074.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "channel_row_general"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (203, 461) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0076.webp"
+  },
+  {
+   "n": 40,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "20,451,120,471"
+    }
+   },
+   "result": "tapped at (70, 461) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0078.webp"
+  },
+  {
+   "n": 41,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "composer_text_field"
+    },
+    "text": "Dinner reservation: SoMa Rooftop, Friday Oct 16 at 7:00 PM for 6, 888 Brannan St, San Francisco, CA"
+   },
+   "result": "typed 'Dinner reservation: SoMa Rooftop, Friday Oct 16 at 7:00 PM for 6, 888 Brannan St, San Francisco, CA'; verified: true; field value now 'Dinner reservation: SoMa Rooftop, Friday Oct 16 at 7:00 PM for 6, 888 Brannan St, San Francisco, CA'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0082.webp"
+  },
+  {
+   "n": 42,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "send_message_button"
+    }
+   },
+   "result": "tapped at (355, 469) via id",
+   "refused": false,
+   "frame": "media/run2-pco/multi-001/0082.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "restaurant name (SF, outdoor seating)",
+   "verdict": "proven",
+   "claim": "SoMa Rooftop",
+   "frame": 54
+  },
+  {
+   "type": "KNOW",
+   "text": "restaurant address",
+   "verdict": "proven",
+   "claim": "888 Brannan St, San Francisco, CA",
+   "frame": 54
+  },
+  {
+   "type": "DO",
+   "text": "reservation for 6 at 7 PM Friday",
+   "verdict": "proven",
+   "claim": "Fri, Oct 16 \u2022 7:00 PM",
+   "frame": 72
+  },
+  {
+   "type": "KNOW",
+   "text": "reservation confirmation",
+   "verdict": "proven",
+   "claim": "Code: RSV2007",
+   "frame": 72
+  },
+  {
+   "type": "DO",
+   "text": "post name, time, address in TeamChat #general",
+   "verdict": "proven",
+   "claim": "Dinner reservation: SoMa Rooftop, Friday Oct 16 at 7:00 PM for 6, 888 Brannan St, San Francisco, CA",
+   "frame": 82
+  }
+ ]
+}

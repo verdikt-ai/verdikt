@@ -1,0 +1,97 @@
+{
+ "id": "mail-002",
+ "app": "mail",
+ "category": "single_app",
+ "goal": "Filter my Inbox in Mail to show only the Transactions category, then archive a QuickBite receipt. Confirm it was archived.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 39.0,
+ "cost": 0.2875,
+ "answer": null,
+ "summary": "I filtered your inbox to the Transactions category and archived the QuickBite receipt \"Your Chipotle order receipt\" (from Oct 11, total $26.00).\n\nIt's confirmed archived: after I tapped Archive, the app returned to the Transactions list and that email was no longer there. The unread count also dropped from 8 to 7. Your other QuickBite receipt, the $47.82 Sushi Ran order from Oct 9, is still in the inbox.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open Mail app and go to Inbox",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Mail app is open and displaying 'All Inboxes' with emails listed, confirming the app was open and in the inbox."
+  },
+  {
+   "criterion": "Tap the Transactions category filter",
+   "satisfied": true,
+   "reasoning": "In Step 1, the agent tapped the 'Transactions' category filter. Screenshot 2 shows the Transactions filter is now selected (highlighted in blue) and the inbox shows 'Transactions \u2022 8 unread', confirming the filter was applied."
+  },
+  {
+   "criterion": "Find a QuickBite receipt email in the filtered list",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the QuickBite email 'Your Chipotle order receipt' visible in the Transactions-filtered list. The agent then tapped on it in Step 2, and Screenshot 3 shows the email opened with the full QuickBite Chipotle receipt content."
+  },
+  {
+   "criterion": "Archive the QuickBite receipt email",
+   "satisfied": true,
+   "reasoning": "In Step 3, the agent tapped the archive button (box with down arrow icon) in the toolbar at the bottom of the email view. Screenshot 3 shows the archive icon in the toolbar, and the action was performed on it."
+  },
+  {
+   "criterion": "Confirm the email was archived",
+   "satisfied": true,
+   "reasoning": "The final screenshot (Screenshot 4) shows the inbox returned to the Transactions-filtered view, and the QuickBite 'Your Chipotle order receipt' email that was previously visible is no longer in the list. The unread count decreased from 8 to 7. A different QuickBite email ('Your QuickBite order receipt') is visible, but the Chipotle receipt that was archived is gone, confirming successful archiving."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: started in the Mail inbox, tapped the Transactions category filter (which filtered the inbox to show only Transactions emails), found and opened the QuickBite receipt email (Your Chipotle order receipt), tapped the archive button (the box with down arrow icon in the toolbar), and the final screenshot shows the inbox with the QuickBite Chipotle receipt no longer present in the list (it was removed from the inbox, indicating it was archived). The unread count also decreased from 8 to 7, confirming the action was performed.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "category_transactions"
+    }
+   },
+   "result": "tapped at (187, 215) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mail-002/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mail_row_your_chipotle_order_receipt"
+    }
+   },
+   "result": "tapped at (201, 682) via id",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mail-002/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "245,807,265,827"
+    }
+   },
+   "result": "tapped at (255, 817) via bounds",
+   "refused": false,
+   "frame": "media/run4-pco-v2-repeat/mail-002/0008.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Filter Inbox to show only Transactions category",
+   "verdict": "proven",
+   "claim": "Transactions \u2022 7 unread",
+   "frame": 8
+  },
+  {
+   "type": "DO",
+   "text": "Archive a QuickBite receipt and confirm it was archived",
+   "verdict": "proven",
+   "claim": "Transactions \u2022 7 unread",
+   "frame": 8
+  }
+ ]
+}

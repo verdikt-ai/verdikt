@@ -1,0 +1,197 @@
+{
+ "id": "FilesMoveFile",
+ "app": "Files",
+ "goal": "Move the file biography_audio.mp3 from Movies within the sdk_gphone_x86_64 storage area to the Audiobooks within the same sdk_gphone_x86_64 storage area in the Android filesystem.",
+ "success": true,
+ "score": 1.0,
+ "steps": 14,
+ "budget": 20,
+ "seconds": 107.6,
+ "cost": 0.36129239999999996,
+ "answer": null,
+ "summary": "I moved biography_audio.mp3 from Movies to Audiobooks in internal storage, which this phone calls sdk_gphone64_arm64. The Audiobooks folder now shows the file.\n\nWhen I tried to finish, the final check failed once, but only because the word \"Audiobooks\" appears three times on that screen and the check couldn't tell which one I meant. The folder and the file were both there, so I finished anyway.\n\nThe similarly named backup_biography_audio.mp3 is still in Movies; I didn't touch it.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Files"
+   },
+   "result": "opened Files",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"biography_audio.mp3\" visible",
+     "text ~\"Audiobooks\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (73,126)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (441,1232)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 20
+   },
+   "result": "tapped (247,1123)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "long_press",
+   "args": {
+    "x": 780,
+    "y": 1500,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (780,1500) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/006.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (1017,126)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/007.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (812,755)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/009.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (73,126)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/010.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (441,497)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/011.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (286,699)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Files in Audiobooks\" visible -> StaticText \"Files in Audiobooks\" [5]",
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/012.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (418,2274)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/013.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "x": 245,
+    "y": 255
+   },
+   "result": "tapped (245,255)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/014.webp"
+  },
+  {
+   "n": 13,
+   "tool": "tap",
+   "args": {
+    "index": 16
+   },
+   "result": "tapped (286,825)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"biography_audio.mp3\" visible -> StaticText \"biography_audio.mp3\" [14]",
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/015.webp"
+  },
+  {
+   "n": 13,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  ok   text \"biography_audio.mp3\" visible -> StaticText \"biography_audio.mp3\" [14]\n  MISS text ~\"Audiobooks\" visible -> ambiguous: text ~\"Audiobooks\" matched 3 elements [2] [8] [18]; add a role, id= or a longer text\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/016.webp"
+  },
+  {
+   "n": 14,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/FilesMoveFile/016.webp"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "id": "SportsTrackerLongestDistanceActivity",
+ "app": "Opentracks",
+ "goal": "What was the longest distance covered in a mountain biking activity in the OpenTracks app this week? Assume the week starts from Monday. Express your answer as a single number in meters rounded to the nearest integer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 4,
+ "budget": 10,
+ "seconds": 29.7,
+ "cost": 0.1192056,
+ "answer": "4506",
+ "summary": "I answered **4506** meters, but the true value could be anywhere from about 4498 to 4514 m. That's because the app only shows distance in miles to two decimal places.\n\n- **Which activity:** Only one track this week (Mon Oct 9 \u2013 Sun Oct 15) has the mountain-biking icon: \"Mindful Movement\" on Tuesday, Oct 10, 3:45 PM. I went by the icon and didn't open the track editor to check the activity type it's saved as.\n- **Distance:** Its stats screen shows 2.80 mi, which works out to about 4506 m.\n- **Not checked:** I could have switched the app to metric for a closer reading, but didn't because of the step limit. If the original value was a round number like 4500 m (2.796 mi, which also displays as 2.80), my answer would be slightly off.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "OpenTracks"
+   },
+   "result": "opened OpenTracks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed7/SportsTrackerLongestDistanceActivity/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 40
+   },
+   "result": "tapped (291,1276)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed7/SportsTrackerLongestDistanceActivity/001.webp"
+  },
+  {
+   "n": 3,
+   "tool": "answer",
+   "args": {
+    "text": "4506"
+   },
+   "result": "answer recorded: \"4506\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed7/SportsTrackerLongestDistanceActivity/002.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed7/SportsTrackerLongestDistanceActivity/002.webp"
+  }
+ ]
+}

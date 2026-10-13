@@ -1,0 +1,196 @@
+{
+ "id": "multi-025",
+ "app": "megamart, clouddocs",
+ "category": "multi_app",
+ "goal": "Browse MegaMart for a desk lamp under $50. Check CloudDocs 'Budget Tracker' to see my current monthly spending and figure out how much budget I'd have left after the purchase. If it's affordable, add the lamp to my MegaMart cart. What's the lamp name, price, and remaining budget, and was it added to cart?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 8,
+ "budget": 50,
+ "seconds": 93.7,
+ "cost": 0.5387,
+ "answer": "TaoTronics LED Desk Lamp with 3 Color Modes, $35.99, remaining budget $109.01 ($145 \u2212 $35.99), yes it was added to cart; monthly budget and current spending from Budget Tracker: Total Spent: $355",
+ "summary": "I added the TaoTronics LED Desk Lamp with 3 Color Modes ($35.99) to your MegaMart cart. You can afford it: you'd have $109.01 left this month.\n\n- **Lamp:** It was the only result under $50 on the first screen of the \"desk lamp\" search. The other one I saw, the BenQ ScreenBar Monitor Light, costs $109.00.\n- **Budget:** Your Budget Tracker in CloudDocs is set up for March 2026, not the current month. It shows a $500 monthly budget, $355 spent and $145 remaining. After the lamp, that leaves $145 \u2212 $35.99 = $109.01.\n- **Cart:** MegaMart showed \"Added to cart\" and your cart count went from 19 to 20.\n\nANSWER: TaoTronics LED Desk Lamp with 3 Color Modes, $35.99, remaining budget $109.01 ($145 \u2212 $35.99), yes it was added to cart",
+ "rubric": [
+  {
+   "criterion": "Open MegaMart and browse for a desk lamp under $50",
+   "satisfied": true,
+   "reasoning": "The agent opened MegaMart, searched for 'desk lamp', and found the TaoTronics LED Desk Lamp at $35.99, which is under $50."
+  },
+  {
+   "criterion": "Note the lamp name and price",
+   "satisfied": true,
+   "reasoning": "The agent identified the lamp as 'TaoTronics LED Desk Lamp with 3 Color Modes' at $35.99, clearly visible in screenshots 2 and 3."
+  },
+  {
+   "criterion": "Open CloudDocs and find the 'Budget Tracker' document",
+   "satisfied": true,
+   "reasoning": "The agent launched CloudDocs, searched for 'Budget', found the Budget Tracker document, and opened it (visible in screenshots 4-7)."
+  },
+  {
+   "criterion": "Check current monthly spending in the Budget Tracker",
+   "satisfied": true,
+   "reasoning": "Screenshot 7 shows the Budget Tracker with Monthly Budget: $500 and spending breakdown: Groceries $185, Dining Out $62, Subscriptions $45, Transportation $38, Entertainment $25, totaling $355."
+  },
+  {
+   "criterion": "Calculate remaining budget after the lamp purchase",
+   "satisfied": true,
+   "reasoning": "The agent correctly calculated: $500 total budget - $355 current spending = $145 remaining; $145 - $35.99 = $109.01 remaining after purchase."
+  },
+  {
+   "criterion": "If affordable, add the lamp to the MegaMart cart",
+   "satisfied": true,
+   "reasoning": "The lamp at $35.99 is affordable (within the $145 remaining budget), and the final screenshot shows an 'Added to cart' confirmation banner with the cart count increasing from 19 to 20."
+  },
+  {
+   "criterion": "Report the lamp name and price",
+   "satisfied": true,
+   "reasoning": "The agent reported 'TaoTronics LED Desk Lamp with 3 Color Modes' at $35.99 in the final answer."
+  },
+  {
+   "criterion": "Report the remaining budget",
+   "satisfied": true,
+   "reasoning": "The agent reported remaining budget of $109.01 ($145 - $35.99) in the final answer, which is correctly calculated."
+  },
+  {
+   "criterion": "Report whether the lamp was added to cart",
+   "satisfied": true,
+   "reasoning": "The agent confirmed 'yes it was added to cart' in the final answer, supported by the 'Added to cart' confirmation visible in the final screenshot."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: browsed MegaMart for a desk lamp under $50 (found TaoTronics LED Desk Lamp at $35.99), opened CloudDocs and found the Budget Tracker document (Monthly Budget $500, total spending $355, leaving $145 remaining), determined the lamp was affordable, added it to cart (confirmed by 'Added to cart' banner in final screenshot), and reported all required information correctly in the final answer.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (201, 64) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-025/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "desk lamp\n"
+   },
+   "result": "typed 'desk lamp\\n'; verified: false; field value now 'desk lamp'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-025/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clouddocs"
+   },
+   "result": "launched com.iosworld.benchmark.clouddocs",
+   "refused": false,
+   "frame": "media/run2-pco/multi-025/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (151, 176) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-025/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "Budget"
+   },
+   "result": "typed 'Budget'; verified: true; field value now 'Budget'",
+   "refused": false,
+   "frame": "media/run2-pco/multi-025/0013.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 354) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-025/0015.webp"
+  },
+  {
+   "n": 7,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.megamart"
+   },
+   "result": "launched com.iosworld.benchmark.megamart",
+   "refused": false,
+   "frame": "media/run2-pco/multi-025/0017.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 25
+    }
+   },
+   "result": "tapped at (292, 615) via index",
+   "refused": false,
+   "frame": "media/run2-pco/multi-025/0019.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "desk lamp name under $50",
+   "verdict": "proven",
+   "claim": "TaoTronics LED Desk Lamp with 3 Color Modes",
+   "frame": 17
+  },
+  {
+   "type": "KNOW",
+   "text": "desk lamp price",
+   "verdict": "proven",
+   "claim": "$35.99",
+   "frame": 17
+  },
+  {
+   "type": "KNOW",
+   "text": "monthly budget and current spending from Budget Tracker",
+   "verdict": "proven",
+   "claim": "Total Spent: $355",
+   "frame": 15
+  },
+  {
+   "type": "IF",
+   "text": "affordable (remaining budget after purchase >= 0)",
+   "verdict": "proven",
+   "claim": "Remaining: $145",
+   "frame": 15
+  },
+  {
+   "type": "DO",
+   "text": "add the desk lamp to MegaMart cart",
+   "verdict": "proven",
+   "claim": "Added to cart",
+   "frame": 19
+  }
+ ]
+}

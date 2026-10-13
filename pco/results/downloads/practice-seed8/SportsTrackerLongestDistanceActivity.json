@@ -1,0 +1,106 @@
+{
+ "id": "SportsTrackerLongestDistanceActivity",
+ "app": "Opentracks",
+ "goal": "What was the longest distance covered in a running activity in the OpenTracks app this week? Assume the week starts from Monday. Express your answer as a single number in meters rounded to the nearest integer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 8,
+ "budget": 10,
+ "seconds": 41.9,
+ "cost": 0.2741468,
+ "answer": "4506",
+ "summary": "I answered **4506** meters and ended the episode. That number could be off by up to about 8 m.\n\n- **Which run counts:** OpenTracks lists 2 running tracks in total, 4.14 mi over 4:15:00. \"Running Challenge\" (2 Oct, 1.34 mi, 3:45:00) and \"Quick outing\" (Thursday Oct 12, 2.80 mi, 30:00) add up to exactly that. So \"Quick outing\" is the only run this week, and it's the longest by default.\n- **Why the meters aren't exact:** the app shows distances in miles, rounded to two decimals. 2.80 mi works out to about 4506 m, but the real distance could be anywhere from about 4498 to 4514 m. I didn't have enough steps left to switch the app to metric and read the exact figure, so if the expected answer comes from the stored value, 4506 may be slightly off.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "OpenTracks"
+   },
+   "result": "opened OpenTracks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/SportsTrackerLongestDistanceActivity/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (104,2232)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/SportsTrackerLongestDistanceActivity/001.webp"
+  },
+  {
+   "n": 3,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 1
+   },
+   "result": "pressed back",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/SportsTrackerLongestDistanceActivity/002.webp"
+  },
+  {
+   "n": 4,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/SportsTrackerLongestDistanceActivity/003.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (104,2232)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/SportsTrackerLongestDistanceActivity/004.webp"
+  },
+  {
+   "n": 6,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/SportsTrackerLongestDistanceActivity/005.webp"
+  },
+  {
+   "n": 7,
+   "tool": "answer",
+   "args": {
+    "text": "4506"
+   },
+   "result": "answer recorded: \"4506\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/SportsTrackerLongestDistanceActivity/006.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/practice-seed8/SportsTrackerLongestDistanceActivity/006.webp"
+  }
+ ]
+}

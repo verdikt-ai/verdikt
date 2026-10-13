@@ -1,0 +1,83 @@
+{
+ "id": "ClockStopWatchPausedVerify",
+ "app": "Clock",
+ "goal": "Pause the stopwatch.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 10,
+ "seconds": 57.9,
+ "cost": 0.11271300000000001,
+ "answer": null,
+ "summary": "The stopwatch is now paused. It was at zero and not running when I opened the Clock app, so I started it and then paused it after a couple of seconds. The Start and Reset buttons are showing, which is what the Stopwatch tab shows when it's paused.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Clock"
+   },
+   "result": "opened Clock",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockStopWatchPausedVerify/001.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Button \"Start\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockStopWatchPausedVerify/001.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (756,2232)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockStopWatchPausedVerify/003.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 2
+   },
+   "result": "tapped (540,1959)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   Button \"Pause\" visible -> Button \"Pause\" [3]",
+   "frame": "media/run9-contracts-seed7/ClockStopWatchPausedVerify/004.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (540,1959)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   Button \"Start\" visible -> Button \"Start\" [3]",
+   "frame": "media/run9-contracts-seed7/ClockStopWatchPausedVerify/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/ClockStopWatchPausedVerify/006.webp"
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "id": "caltrack-001",
+ "app": "caltrack",
+ "category": "single_app",
+ "goal": "Log today's breakfast in CalTrack \u2014 search the food database for 'oatmeal', add a serving, and give me the calories and macros.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 6,
+ "budget": 50,
+ "seconds": 60.3,
+ "cost": 0.3031448,
+ "answer": "Oatmeal (1 cup cooked): 150 calories, 5 g protein, 27 g carbs, 3 g fat",
+ "summary": "I logged one serving of oatmeal (1 cup cooked) to today's breakfast in CalTrack. I found it by searching the food database for \"oatmeal\", and the app confirmed \"Oatmeal added to Breakfast.\"\n\nOne serving has 150 calories, 5 g protein, 27 g carbs and 3 g fat. It also lists 4 g fiber and 0 mg sodium.\n\nToday's breakfast already had an oatmeal entry before I started, so there are now two oatmeal entries. Breakfast went from 385 to 535 calories. If the first one was already this morning's oatmeal, you can delete one of them in CalTrack.\n\nANSWER: Oatmeal (1 cup cooked): 150 calories, 5 g protein, 27 g carbs, 3 g fat",
+ "rubric": [
+  {
+   "criterion": "Open CalTrack app and navigate to food logging section",
+   "satisfied": true,
+   "reasoning": "The first screenshot shows the CalTrack app open on the Today dashboard with the Breakfast section visible, indicating the app was already open and the agent navigated to the food logging section."
+  },
+  {
+   "criterion": "Tap the log food / add food button",
+   "satisfied": true,
+   "reasoning": "Step 1 shows the agent tapped the Add button for the Breakfast row (dashboard_meal_breakfast_row), which opened the Search Food screen visible in Screenshot 2."
+  },
+  {
+   "criterion": "Search for 'oatmeal' in the food database",
+   "satisfied": true,
+   "reasoning": "Step 2 shows the agent typed 'oatmeal' in the food_search_field, and Screenshots 2 and 3 show 'oatmeal' in the search field with 'Food Database Results' showing Oatmeal as a result."
+  },
+  {
+   "criterion": "Select oatmeal from search results",
+   "satisfied": true,
+   "reasoning": "Step 3 shows the agent tapped the Oatmeal result row, and Screenshot 4 shows the Oatmeal detail page with serving size and nutrition information."
+  },
+  {
+   "criterion": "Set serving size to 1 serving",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows the serving size is already set to 1.0 (1 cup cooked), which is the default serving size. No adjustment was needed."
+  },
+  {
+   "criterion": "Confirm and save the food log entry",
+   "satisfied": true,
+   "reasoning": "Step 4 shows the agent tapped 'Add Food' button, and the final screenshot shows Oatmeal (1 1 cup cooked) appearing in the Breakfast section with 150 calories, confirming the entry was saved."
+  },
+  {
+   "criterion": "Report the calorie count for the logged serving",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly states '150 calories' for Oatmeal (1 cup cooked), which matches the value shown in the app screenshots."
+  },
+  {
+   "criterion": "Report macros (protein, carbs, fat)",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports '5g protein, 27g carbs, 3g fat', which matches the values shown in the food detail screen (Screenshot 4) and the search results listing (P 5g C 27g F 3g)."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened CalTrack, navigated to the breakfast food logging section, searched for 'oatmeal', selected it from results, confirmed 1 serving (1 cup cooked), and added it to the log. The final screenshot shows Oatmeal (1 1 cup cooked) appearing in the Breakfast section with 150 calories. The agent correctly reported 150 calories, 5g protein, 27g carbs, and 3g fat. Note that the food was added twice (visible in final screenshot showing two Oatmeal entries), but the core task was completed successfully and the nutritional information reported is accurate.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 33
+    }
+   },
+   "result": "tapped at (370, 524) via index",
+   "refused": false,
+   "frame": "media/run1-opus/caltrack-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "oatmeal"
+   },
+   "result": "typed 'oatmeal'; verified: true; field value now 'oatmeal'",
+   "refused": false,
+   "frame": "media/run1-opus/caltrack-001/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 339) via index",
+   "refused": false,
+   "frame": "media/run1-opus/caltrack-001/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 20
+    }
+   },
+   "result": "tapped at (201, 811) via index",
+   "refused": false,
+   "frame": "media/run1-opus/caltrack-001/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (201, 829) via index",
+   "refused": false,
+   "frame": "media/run1-opus/caltrack-001/0013.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (52, 100) via index",
+   "refused": false,
+   "frame": "media/run1-opus/caltrack-001/0013.webp"
+  }
+ ],
+ "ledger": null
+}

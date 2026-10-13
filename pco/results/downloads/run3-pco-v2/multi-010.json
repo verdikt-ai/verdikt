@@ -1,0 +1,268 @@
+{
+ "id": "multi-010",
+ "app": "megamart, mybank, clouddocs",
+ "category": "multi_app",
+ "goal": "Search MegaMart for a PS5 headset and note the price. Open the 'Budget Tracker' document in CloudDocs and add a new row with the potential purchase. Check my MyBank credit card balance to see if I can afford it \u2014 if so, go back to MegaMart and add it to my cart. What's the headset price, my credit card balance, and did you add it to cart?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 14,
+ "budget": 50,
+ "seconds": 127.0,
+ "cost": 0.6686,
+ "answer": "The headset (Sony PULSE 3D Wireless Headset for PS5) costs $89.99. Your credit card balance is $4,588.98, with $3,411.02 of credit available. Yes, I added it to your cart.",
+ "summary": "I added the headset to your MegaMart cart because your card has enough credit left to cover it.\n\n- **Headset price:** The PS5 headset search turned up the Sony PULSE 3D Wireless Headset for PlayStation 5 at $89.99 (marked down from $109.99).\n- **Budget Tracker:** I added a line in CloudDocs under Spending: \"PS5 Headset (potential purchase): $89.99\". I didn't change the \"Total Spent\" and \"Remaining\" lines, so they still show $355 and $145. Your monthly budget is $500, so with the headset you'd be at about $445 spent and $55 left.\n- **Credit card:** In MyBank, your Freedom Unlimited card has a balance of $4,588.98 and $3,411.02 of available credit.\n- **Cart:** MegaMart confirmed \"Added to cart\", and your cart went from 19 to 20 items.\n\nANSWER: The headset (Sony PULSE 3D Wireless Headset for PS5) costs $89.99. Your credit card balance is $4,588.98, with $3,411.02 of credit available. Yes, I added it to your cart.",
+ "rubric": [
+  {
+   "criterion": "Open MegaMart and search for a PS5 headset",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-4 show the agent opened MegaMart, tapped the search bar, typed 'PS5 headset', and the search results appeared showing PS5 headset products."
+  },
+  {
+   "criterion": "Note the headset price",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 clearly shows the Sony PULSE 3D Wireless Headset for PlayStation 5 priced at $89.99 (with -18% discount from $109.99). The agent noted this price and used it in subsequent steps."
+  },
+  {
+   "criterion": "Open CloudDocs and find the 'Budget Tracker' document",
+   "satisfied": true,
+   "reasoning": "Screenshots 5-8 show the agent launched CloudDocs, searched for 'Budget', found the Budget Tracker document in search results, and opened it successfully."
+  },
+  {
+   "criterion": "Add a new row to the Budget Tracker with the potential purchase",
+   "satisfied": true,
+   "reasoning": "Screenshots 9-11 show the agent entered edit mode, typed 'PS5 Headset (potential purchase): $89.99' at the end of the document, and the text is visible in the document. Screenshot 12 shows the saved document with the new entry visible at the bottom."
+  },
+  {
+   "criterion": "Open MyBank and check the credit card balance",
+   "satisfied": true,
+   "reasoning": "Screenshot 13 shows the MyBank app opened with the credit card section showing 'Freedom Unlimited (...2095)' with a current balance of $4,588.98."
+  },
+  {
+   "criterion": "Determine if the credit card balance allows the purchase",
+   "satisfied": true,
+   "reasoning": "The agent correctly determined that with $3,411.02 available credit (credit limit minus current balance), the $89.99 purchase was affordable. The agent proceeded to add the item to cart, indicating it made the correct affordability determination."
+  },
+  {
+   "criterion": "If affordable, return to MegaMart and add the headset to cart",
+   "satisfied": true,
+   "reasoning": "Screenshots 14-15 show the agent returned to MegaMart's PS5 headset search results and tapped 'Add to cart'. The final screenshot shows an 'Added to cart' confirmation notification and the cart count increased from 19 to 20."
+  },
+  {
+   "criterion": "Report the headset price",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly states the headset price is $89.99, matching what was shown in the MegaMart search results."
+  },
+  {
+   "criterion": "Report the credit card balance",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports the credit card balance as $4,588.98, matching what was shown in the MyBank app."
+  },
+  {
+   "criterion": "Report whether the headset was added to cart",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly states 'Yes, I added it to your cart', which is confirmed by the 'Added to cart' notification visible in the final screenshot."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: searched MegaMart for a PS5 headset and found the Sony PULSE 3D Wireless Headset at $89.99, opened CloudDocs and found the Budget Tracker document, added a new row with 'PS5 Headset (potential purchase): $89.99', opened MyBank and checked the credit card balance ($4,588.98 current balance with $3,411.02 available credit), determined the purchase was affordable, returned to MegaMart and added the headset to cart (confirmed by 'Added to cart' notification and cart count increasing from 19 to 20). The final answer correctly reported all three pieces of information.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (201, 64) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "search_products_field"
+    },
+    "text": "PS5 headset"
+   },
+   "result": "typed 'PS5 headset'; verified: true; field value now 'PS5 headset'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0007.webp"
+  },
+  {
+   "n": 3,
+   "tool": "press",
+   "args": {
+    "key": "enter"
+   },
+   "result": "pressed enter",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clouddocs"
+   },
+   "result": "launched com.iosworld.benchmark.clouddocs",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0009.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (151, 176) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "Budget"
+   },
+   "result": "typed 'Budget'; verified: true; field value now 'Budget'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 354) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "docs_edit_button"
+    }
+   },
+   "result": "tapped at (346, 638) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "330,316,370,336"
+    }
+   },
+   "result": "tapped at (350, 326) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "\nPS5 Headset (potential purchase): $89.99"
+   },
+   "result": "typed '\\nPS5 Headset (potential purchase): $89.99'; verified: unknown (field not readable; screen changed after typing, check the screenshot)",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "checkmark"
+    }
+   },
+   "result": "tapped at (31, 147) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0024.webp"
+  },
+  {
+   "n": 12,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.mybank"
+   },
+   "result": "launched com.iosworld.benchmark.mybank",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0026.webp"
+  },
+  {
+   "n": 13,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.megamart"
+   },
+   "result": "launched com.iosworld.benchmark.megamart",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 22
+    }
+   },
+   "result": "tapped at (292, 672) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-010/0030.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "PS5 headset price in MegaMart",
+   "verdict": "proven",
+   "claim": "$89.99",
+   "frame": 7
+  },
+  {
+   "type": "DO",
+   "text": "Add row with headset purchase to Budget Tracker doc in CloudDocs",
+   "verdict": "proven",
+   "claim": "PS5 Headset (potential purchase): $89.99",
+   "frame": 24
+  },
+  {
+   "type": "KNOW",
+   "text": "MyBank credit card balance",
+   "verdict": "proven",
+   "claim": "$4,588.98",
+   "frame": 26
+  },
+  {
+   "type": "IF",
+   "text": "Can afford headset given credit card balance",
+   "verdict": "proven",
+   "claim": "$3,411.02",
+   "frame": 26
+  },
+  {
+   "type": "DO",
+   "text": "Add PS5 headset to MegaMart cart",
+   "verdict": "proven",
+   "claim": "Added to cart",
+   "frame": 30
+  }
+ ]
+}

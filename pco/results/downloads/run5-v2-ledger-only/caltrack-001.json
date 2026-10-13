@@ -1,0 +1,158 @@
+{
+ "id": "caltrack-001",
+ "app": "caltrack",
+ "category": "single_app",
+ "goal": "Log today's breakfast in CalTrack \u2014 search the food database for 'oatmeal', add a serving, and give me the calories and macros.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 5,
+ "budget": 50,
+ "seconds": 65.6,
+ "cost": 0.3819,
+ "answer": "Oatmeal (1 cup cooked) added to Breakfast \u2014 150 calories, 5 g protein, 27 g carbs, 3 g fat; Oatmeal protein: P 5g; Oatmeal carbs: C 27g; Oatmeal fat: F 3g",
+ "summary": "I logged one serving of oatmeal (1 cup cooked) to today's breakfast in CalTrack. I found it by searching the food database for \"oatmeal\". The app confirmed \"Oatmeal added to Breakfast.\" and the breakfast total went from 385 to 535 calories.\n\nA serving has:\n- **Calories:** 150\n- **Protein:** 5 g\n- **Carbs:** 27 g\n- **Fat:** 3 g\n\nBreakfast already had one oatmeal entry, so it now lists oatmeal twice. If the first one was already this morning's bowl, you may want to delete one of them.\n\nANSWER: Oatmeal (1 cup cooked) added to Breakfast \u2014 150 calories, 5 g protein, 27 g carbs, 3 g fat",
+ "rubric": [
+  {
+   "criterion": "Open CalTrack app and navigate to food logging section",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the CalTrack app open on the Today/dashboard screen with the Breakfast section visible, indicating the app was already open and the agent navigated to the food logging section."
+  },
+  {
+   "criterion": "Tap the log food / add food button",
+   "satisfied": true,
+   "reasoning": "Step 1 shows the agent tapped the Add button (dashboard_meal_breakfast_row) in the Breakfast section, which opened the Search Food screen visible in Screenshot 2."
+  },
+  {
+   "criterion": "Search for 'oatmeal' in the food database",
+   "satisfied": true,
+   "reasoning": "Step 2 shows the agent typed 'oatmeal' into the food_search_field, and Screenshots 2 and 3 confirm 'oatmeal' was entered in the search field with results showing 'Oatmeal, 1 cup cooked, 150 cal'."
+  },
+  {
+   "criterion": "Select oatmeal from search results",
+   "satisfied": true,
+   "reasoning": "Step 3 shows the agent tapped the Oatmeal result row, and Screenshot 4 shows the Oatmeal detail page with serving size and nutrition information, confirming the selection was made."
+  },
+  {
+   "criterion": "Set serving size to 1 serving",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows the serving size is set to 1.0 with 'Serving: 1 cup cooked', which is the default serving size and represents 1 serving."
+  },
+  {
+   "criterion": "Confirm and save the food log entry",
+   "satisfied": true,
+   "reasoning": "Step 4 shows the agent tapped the 'Add Food' button (add_food_confirm_button), and the final screenshot (Screenshot 6) shows Oatmeal appearing in the Breakfast section with 150 calories, confirming the entry was saved."
+  },
+  {
+   "criterion": "Report the calorie count for the logged serving",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports 150 calories for the oatmeal serving, which matches what's shown in Screenshots 3, 4, and 6."
+  },
+  {
+   "criterion": "Report macros (protein, carbs, fat)",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports 5g protein, 27g carbs, and 3g fat, which matches the nutritional information shown in Screenshots 3 and 4 (P 5g, C 27g, F 3g)."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened CalTrack, navigated to the breakfast food logging section, tapped the add food button, searched for 'oatmeal', selected it from search results, confirmed the serving size (1 cup cooked = 1 serving), tapped 'Add Food' to save the entry, and reported the correct nutritional information (150 calories, 5g protein, 27g carbs, 3g fat). The final screenshot confirms oatmeal was added to breakfast with 150 calories visible in the dashboard.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 33
+    }
+   },
+   "result": "tapped at (370, 524) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/caltrack-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "oatmeal"
+   },
+   "result": "typed 'oatmeal'; verified: true; field value now 'oatmeal'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/caltrack-001/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 339) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/caltrack-001/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 20
+    }
+   },
+   "result": "tapped at (201, 811) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/caltrack-001/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 1
+    }
+   },
+   "result": "tapped at (52, 100) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/caltrack-001/0012.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Add a serving of oatmeal to today's breakfast",
+   "verdict": "proven",
+   "claim": "Oatmeal added to Breakfast.",
+   "frame": 12
+  },
+  {
+   "type": "KNOW",
+   "text": "Oatmeal calories",
+   "verdict": "proven",
+   "claim": "150 cal",
+   "frame": 10
+  },
+  {
+   "type": "KNOW",
+   "text": "Oatmeal protein",
+   "verdict": "proven",
+   "claim": "P 5g",
+   "frame": 10
+  },
+  {
+   "type": "KNOW",
+   "text": "Oatmeal carbs",
+   "verdict": "proven",
+   "claim": "C 27g",
+   "frame": 10
+  },
+  {
+   "type": "KNOW",
+   "text": "Oatmeal fat",
+   "verdict": "proven",
+   "claim": "F 3g",
+   "frame": 10
+  }
+ ]
+}

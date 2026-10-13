@@ -1,0 +1,488 @@
+{
+ "id": "multi-031",
+ "app": "weather, clock, caltrack, quickchat",
+ "category": "multi_app",
+ "goal": "Check Weather in San Francisco for Saturday conditions. Set a 6:30 AM alarm in Clock labeled 'Saturday Run'. Log a protein shake in CalTrack (search 'protein') for post-run recovery and check my calorie progress vs my 2,450 goal. Then message Priya Raman in QuickChat with the weather conditions and how I'm feeling. What's the weather forecast and calorie progress, and confirm the message was sent.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 31,
+ "budget": 50,
+ "seconds": 238.3,
+ "cost": 1.2293,
+ "answer": "Saturday in San Francisco: Sunny, high 73\u00b0, low 57\u00b0. Calories: 1,829 eaten of your 2,450 goal, 761 left after adding back 140 burned. The message to Priya Raman was sent at 7:10 PM and shows as delivered.; San Francisco Saturday weather conditions: Sunny, with a high near 73.; Calorie progress vs 2,450 goal: 1829",
+ "summary": "I did all four steps and checked each one on screen.\n\n- **Weather:** San Francisco on Saturday will be sunny, with a high of 73\u00b0 and a low of 57\u00b0.\n- **Alarm:** There's a new alarm in Clock for 6:30 AM labeled \"Saturday Run\", and it's turned on.\n- **Protein shake:** I logged one 160-calorie protein shake. The app filed it under Breakfast, not as a post-run entry. Your food total went from 1,669 to 1,829 calories against your 2,450 goal. With the 140 calories you burned walking added back, you have 761 calories left.\n- **Message:** I sent Priya Raman this in QuickChat: \"Saturday run forecast for SF: Sunny, high 73, low 57. Alarm set for 6:30 AM! Feeling great - still restless with taper energy, but rested and ready to go. Just had a protein shake for recovery.\" It shows as delivered at 7:10 PM, and she has already replied (\"Sounds like the perfect morning for a run!\u2026\"). Nothing in your apps says how you feel today. I based that part on your recent messages to her about restless taper energy, so check that it's accurate.\n\nANSWER: Saturday in San Francisco: Sunny, high 73\u00b0, low 57\u00b0. Calories: 1,829 eaten of your 2,450 goal, 761 left after adding back 140 burned. The message to Priya Raman was sent at 7:10 PM and shows as delivered.",
+ "rubric": [
+  {
+   "criterion": "Open Weather and check San Francisco forecast for Saturday",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-3 show the Weather app open for San Francisco, with the 10-day forecast visible showing Saturday (Sat) with Sunny conditions, high 73\u00b0, low 57\u00b0. The agent tapped on the Saturday row to see detailed conditions."
+  },
+  {
+   "criterion": "Open Clock and set a 6:30 AM alarm labeled 'Saturday Run'",
+   "satisfied": true,
+   "reasoning": "Screenshot 16 (step 16 before actions) shows the Alarms list with a '6:30' alarm labeled 'Saturday Run' at the top, enabled (green toggle). Screenshots 14-15 show the alarm being configured with time 6:30 AM and label 'Saturday Run' before saving."
+  },
+  {
+   "criterion": "Open CalTrack and search for 'protein' to find a protein shake",
+   "satisfied": true,
+   "reasoning": "Screenshots 19-20 show CalTrack's Search Food screen with 'protein' typed in the search field, and results showing 'Protein shake, 1 bottle, P 30g C 5g F 2g, 160 cal' as the first result."
+  },
+  {
+   "criterion": "Log the protein shake for post-run recovery",
+   "satisfied": true,
+   "reasoning": "Screenshot 23 (CalTrack dashboard after logging) shows 'Protein shake, 1 1 bottle' listed under Breakfast, and the food total increased from 1,669 to 1,829 calories, confirming the protein shake was successfully logged."
+  },
+  {
+   "criterion": "Check calorie progress vs the 2,450 goal",
+   "satisfied": true,
+   "reasoning": "Screenshot 23 clearly shows the CalTrack dashboard with Goal: 2,450, Food: 1,829, Exercise: 140, Remaining: 761 calories. The agent viewed this calorie progress information."
+  },
+  {
+   "criterion": "Open QuickChat and message Priya Raman with weather conditions and how feeling",
+   "satisfied": true,
+   "reasoning": "The final screenshot (32) shows a message sent to Priya Raman at 7:10 PM containing weather conditions ('high 73, low 57') and how they're feeling ('Feeling great - still restless with taper energy, but rested and ready to go'). The message was delivered (green checkmark)."
+  },
+  {
+   "criterion": "Report the Saturday weather forecast",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports: 'Saturday in San Francisco: Sunny, high 73\u00b0, low 57\u00b0' which matches what was shown in the Weather app (Screenshot 3: 'Sat, High 73\u00b0 Low 57\u00b0, Sunny')."
+  },
+  {
+   "criterion": "Report calorie progress vs goal",
+   "satisfied": true,
+   "reasoning": "The agent's final answer reports: 'Calories: 1,829 eaten of your 2,450 goal, 761 left after adding back 140 burned' which accurately reflects the CalTrack dashboard shown in Screenshot 23."
+  },
+  {
+   "criterion": "Confirm the alarm was set",
+   "satisfied": true,
+   "reasoning": "Screenshot 16 shows the Alarms list with '6:30 Saturday Run' at the top with a green (enabled) toggle, confirming the alarm was successfully set."
+  },
+  {
+   "criterion": "Confirm the QuickChat message was sent",
+   "satisfied": true,
+   "reasoning": "The final screenshot (32) shows the message to Priya Raman was sent at 7:10 PM with a green checkmark (delivered indicator), and Priya even responded to it. The agent's answer confirms 'The message to Priya Raman was sent at 7:10 PM and shows as delivered.'"
+  }
+ ],
+ "judge": "The agent successfully completed all major tasks: checked San Francisco Saturday weather (Sunny, high 73\u00b0, low 57\u00b0), set a 6:30 AM alarm labeled 'Saturday Run' in Clock, searched for 'protein' in CalTrack and logged a protein shake (160 cal), checked calorie progress (1,829 eaten vs 2,450 goal, 761 remaining after 140 exercise calories), and sent a message to Priya Raman in QuickChat with weather conditions and how they're feeling. The final screenshot confirms the message was sent and delivered at 7:10 PM. The agent's final answer correctly reports the weather forecast and calorie progress.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "weather_daily_row_sat"
+    }
+   },
+   "result": "tapped at (201, 438) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clock"
+   },
+   "result": "launched com.iosworld.benchmark.clock",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "110,800,190,860"
+    }
+   },
+   "result": "tapped at (150, 830) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0011.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "345,65,385,105"
+    }
+   },
+   "result": "tapped at (365, 85) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0013.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "120,228,145,248"
+    }
+   },
+   "result": "tapped at (132, 238) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0016.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "230,228,265,248"
+    }
+   },
+   "result": "tapped at (247, 238) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "x1": 131,
+    "y1": 248,
+    "x2": 131,
+    "y2": 276,
+    "duration_ms": 1000
+   },
+   "result": "swiped (131,248)->(131,276) in 1000ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 385,
+    "x2": 196,
+    "y2": 55,
+    "duration_ms": 3000,
+    "screen_changed": false
+   },
+   "result": "swiped (196,385)->(196,55) in 3000ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 330,
+    "x2": 196,
+    "y2": 55,
+    "duration_ms": 3000
+   },
+   "result": "swiped (196,330)->(196,55) in 3000ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0022.webp"
+  },
+  {
+   "n": 11,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 330,
+    "x2": 196,
+    "y2": 55,
+    "duration_ms": 3000
+   },
+   "result": "swiped (196,330)->(196,55) in 3000ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0024.webp"
+  },
+  {
+   "n": 12,
+   "tool": "swipe",
+   "args": {
+    "x1": 196,
+    "y1": 330,
+    "x2": 196,
+    "y2": 92,
+    "duration_ms": 3000
+   },
+   "result": "swiped (196,330)->(196,92) in 3000ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0026.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "x1": 259,
+    "y1": 248,
+    "x2": 259,
+    "y2": 285,
+    "duration_ms": 1000
+   },
+   "result": "swiped (259,248)->(259,285) in 1000ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Saturday Run"
+   },
+   "result": "typed 'Saturday Run'; verified: true; field value now 'Saturday Run'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0030.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "320,80,385,120"
+    }
+   },
+   "result": "tapped at (352, 100) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0032.webp"
+  },
+  {
+   "n": 16,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.caltrack"
+   },
+   "result": "launched com.iosworld.benchmark.caltrack",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0034.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "screen_dashboard"
+    }
+   },
+   "result": "tapped at (354, 747) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0036.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (201, 156) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0038.webp"
+  },
+  {
+   "n": 19,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "food_search_field"
+    },
+    "text": "protein"
+   },
+   "result": "typed 'protein'; verified: true; field value now 'protein'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0041.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "food_result_row_001"
+    }
+   },
+   "result": "tapped at (201, 339) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0043.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "add_food_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 811) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0045.webp"
+  },
+  {
+   "n": 22,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "food_search_close_button"
+    }
+   },
+   "result": "tapped at (52, 100) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0047.webp"
+  },
+  {
+   "n": 23,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0049.webp"
+  },
+  {
+   "n": 24,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_search_trigger"
+    }
+   },
+   "result": "tapped at (201, 309) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0051.webp"
+  },
+  {
+   "n": 25,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Priya"
+   },
+   "result": "typed 'Priya'; verified: false; field value now 'Ask Meta AI or Search'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0053.webp"
+  },
+  {
+   "n": 26,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 8
+    },
+    "text": "Priya"
+   },
+   "result": "typed 'Priya'; verified: true; field value now 'Priya'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0056.webp"
+  },
+  {
+   "n": 27,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "30,531,380,537"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (205, 534) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0058.webp"
+  },
+  {
+   "n": 28,
+   "tool": "press",
+   "args": {
+    "key": "enter"
+   },
+   "result": "pressed enter",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0060.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "tapped at (201, 589) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0062.webp"
+  },
+  {
+   "n": 30,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "chat_compose_field"
+    },
+    "text": "Saturday run forecast for SF: Sunny, high 73, low 57. Alarm set for 6:30 AM! Feeling great - still restless with taper energy, but rested and ready to go. Just had a protein shake for recovery."
+   },
+   "result": "typed 'Saturday run forecast for SF: Sunny, high 73, low 57. Alarm set for 6:30 AM! Feeling great - still restless with taper energy, but rested and ready to go. Just had a protein shake for recovery.'; verified: true; field value now 'Saturday run forecast for SF: Sunny, high 73, low 57. Alarm set for 6:30 AM! Feeling great - still restless with taper energy, but rested and ready to go. Just had a protein shake for recovery.'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0065.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_send_button"
+    }
+   },
+   "result": "tapped at (360, 432) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-031/0067.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "San Francisco Saturday weather conditions",
+   "verdict": "proven",
+   "claim": "Sunny, with a high near 73.",
+   "frame": 5
+  },
+  {
+   "type": "DO",
+   "text": "Set 6:30 AM alarm labeled 'Saturday Run'",
+   "verdict": "proven",
+   "claim": "6:30, Saturday Run",
+   "frame": 32
+  },
+  {
+   "type": "DO",
+   "text": "Log protein shake in CalTrack",
+   "verdict": "proven",
+   "claim": "Protein shake added to Breakfast.",
+   "frame": 47
+  },
+  {
+   "type": "KNOW",
+   "text": "Calorie progress vs 2,450 goal",
+   "verdict": "proven",
+   "claim": "1829",
+   "frame": 47
+  },
+  {
+   "type": "DO",
+   "text": "Message Priya Raman in QuickChat with weather and how I'm feeling (confirm sent)",
+   "verdict": "proven",
+   "claim": "Saturday run forecast for SF: Sunny, high 73, low 57.",
+   "frame": 67
+  }
+ ]
+}

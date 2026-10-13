@@ -1,0 +1,83 @@
+{
+ "id": "TasksHighPriorityTasksDueOnDate",
+ "app": "Tasks",
+ "goal": "Which tasks with high priority are due October 18 2023 in the Tasks app? Answer with the title only. If there are multiples titles, format your answer in a comma separated list.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 38.8,
+ "cost": 0.1664116,
+ "answer": "Marketing Campaign Launch",
+ "summary": "I answered \"Marketing Campaign Launch\" and ended the episode. The answer relies partly on inference, because the task list shows weekdays (\"Wed\") rather than full dates.\n\n- **Marketing Campaign Launch:** red checkbox (high priority), not completed, due \"Wed\" in grey. Grey is how this list showed due dates that are still ahead, so I took it as Wednesday, October 18.\n- **Learn to Play Guitar:** high priority and due \"Wed\", but the date was orange like the other overdue items. I took it to mean Wednesday, October 11, so I left it out.\n- **Back Up Computer Files:** a completed high-priority task listed as \"Wed\". Its detail screen showed \"Saturday, October 7\" and \"Wednesday\" in orange, but not which field is the due date. I read it as October 11 and left it out. If it is actually due October 18, the answer should have included it too.\n\nI opened that task only to look at it and changed nothing.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Tasks"
+   },
+   "result": "opened Tasks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run5-opus-skills/TasksHighPriorityTasksDueOnDate/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run5-opus-skills/TasksHighPriorityTasksDueOnDate/001.webp"
+  },
+  {
+   "n": 3,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run5-opus-skills/TasksHighPriorityTasksDueOnDate/002.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 28
+   },
+   "result": "tapped (546,1245)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run5-opus-skills/TasksHighPriorityTasksDueOnDate/003.webp"
+  },
+  {
+   "n": 5,
+   "tool": "answer",
+   "args": {
+    "text": "Marketing Campaign Launch"
+   },
+   "result": "answer recorded: \"Marketing Campaign Launch\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run5-opus-skills/TasksHighPriorityTasksDueOnDate/004.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run5-opus-skills/TasksHighPriorityTasksDueOnDate/004.webp"
+  }
+ ]
+}

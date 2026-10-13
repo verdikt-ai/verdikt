@@ -1,0 +1,121 @@
+{
+ "id": "stayfinder-001",
+ "app": "stayfinder",
+ "category": "single_app",
+ "goal": "Pull up my upcoming Catalina Island trip (dates shown in StayFinder) on StayFinder and check the listing details. What's the listing name, price per night, number of beds, and number of baths?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 53.6,
+ "cost": 0.4726,
+ "answer": "Clifftop retreat on Catalina; $327 per night; 5 beds; 3 baths",
+ "summary": "The Catalina Island trip in StayFinder runs Oct 19 \u2013 Oct 22 (3 nights) and is listed as \"Clifftop retreat on Catalina.\" It costs $327 per night and has 5 beds and 3 baths. With fees and taxes, the listing shows a total of $1280.\n\nANSWER: Clifftop retreat on Catalina; $327 per night; 5 beds; 3 baths",
+ "rubric": [
+  {
+   "criterion": "Open StayFinder app and navigate to the Trips tab",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 shows the Trips tab is active with 'Upcoming reservations' displayed, confirming the agent successfully navigated to the Trips tab in StayFinder."
+  },
+  {
+   "criterion": "Find and tap the Catalina Island trip (dates shown in StayFinder)",
+   "satisfied": true,
+   "reasoning": "Screenshot 3 shows the Trips tab with 'Clifftop retreat on Catalina' listed with dates Oct 19 - Oct 22 at Catalina Island, CA. The agent tapped on this trip in Step 3, leading to the listing detail view in Screenshot 4."
+  },
+  {
+   "criterion": "View the listing details",
+   "satisfied": true,
+   "reasoning": "Screenshot 4 shows the full listing detail page for 'Clifftop retreat on Catalina' with all relevant details visible including name, price, beds, and baths."
+  },
+  {
+   "criterion": "Report the listing name",
+   "satisfied": true,
+   "reasoning": "The agent reported 'Clifftop retreat on Catalina' which matches exactly what is shown in Screenshot 4."
+  },
+  {
+   "criterion": "Report the price per night",
+   "satisfied": true,
+   "reasoning": "The agent reported '$327 per night' which matches the '$327 per night' shown at the bottom of Screenshot 4."
+  },
+  {
+   "criterion": "Report the number of beds",
+   "satisfied": true,
+   "reasoning": "The agent reported '5 beds' which matches the '5 Beds' shown in the listing details in Screenshot 4."
+  },
+  {
+   "criterion": "Report the number of baths",
+   "satisfied": true,
+   "reasoning": "The agent reported '3 baths' which matches the '3 Baths' shown in the listing details in Screenshot 4."
+  }
+ ],
+ "judge": "The agent successfully opened the StayFinder app, navigated to the Trips tab, found the Catalina Island trip (Clifftop retreat on Catalina, Oct 19-Oct 22), tapped on it to view the listing details, and correctly reported all requested information: listing name (Clifftop retreat on Catalina), price per night ($327), number of beds (5), and number of baths (3). All details are confirmed in the final screenshot.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Trips"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Trips)",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/stayfinder-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "180,805,220,845"
+    }
+   },
+   "result": "tapped at (200, 825) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/stayfinder-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 3
+    }
+   },
+   "result": "tapped at (201, 299) via index",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/stayfinder-001/0007.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "listing name of Catalina Island trip",
+   "verdict": "proven",
+   "claim": "Clifftop retreat on Catalina",
+   "frame": 7
+  },
+  {
+   "type": "KNOW",
+   "text": "price per night",
+   "verdict": "proven",
+   "claim": "$327 per night",
+   "frame": 7
+  },
+  {
+   "type": "KNOW",
+   "text": "number of beds",
+   "verdict": "proven",
+   "claim": "5",
+   "frame": 7
+  },
+  {
+   "type": "KNOW",
+   "text": "number of baths",
+   "verdict": "proven",
+   "claim": "3",
+   "frame": 7
+  }
+ ]
+}

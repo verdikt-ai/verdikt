@@ -1,0 +1,174 @@
+{
+ "id": "MarkorMoveNote",
+ "app": "Markor",
+ "goal": "In Markor, move the note shy_king_copy.md from StudyGuides to MeetingMinutes.",
+ "success": true,
+ "score": 1.0,
+ "steps": 12,
+ "budget": 14,
+ "seconds": 83.5,
+ "cost": 0.2807716,
+ "answer": null,
+ "summary": "I moved shy_king_copy.md from StudyGuides to MeetingMinutes in Markor. It's now listed in MeetingMinutes and no longer in StudyGuides. Files with similar names, like BlJB_shy_king_copy.md and final_shy_king_copy.md, are still in StudyGuides.\n\nThe completion check failed at first because the file shows up as \"File shy_king_copy.md\" rather than the exact name it was looking for. The file was on screen in MeetingMinutes, so I ended the task anyway.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"shy_king_copy.md\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 14
+   },
+   "result": "tapped (540,702)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "long_press",
+   "args": {
+    "index": 24,
+    "duration_ms": 1000
+   },
+   "result": "long-pressed (540,1904) for 1000ms",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (1027,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (844,261)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (540,448)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (540,736)",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text \"Move \u2192 MeetingMinutes\" visible -> StaticText \"Move \u2192 MeetingMinutes\" [0]",
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (793,2206)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 1
+   },
+   "result": "pressed back",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/010.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "index": 13
+   },
+   "result": "tapped (540,558)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/011.webp"
+  },
+  {
+   "n": 11,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS text \"shy_king_copy.md\" visible -> no match; nearest: Button \"File shy_king_copy.md 10/15/2023, 15:34\" [12], StaticText \"Battery charging, 100 percent.\" [16], StaticText \"> MeetingMinutes\" [2], Button \"QuickNote\" [9], StaticText \"Phone signal full.\" [15]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/012.webp"
+  },
+  {
+   "n": 12,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorMoveNote/012.webp"
+  }
+ ]
+}

@@ -1,0 +1,159 @@
+{
+ "id": "MarkorCreateNoteFromClipboard",
+ "app": "Markor",
+ "goal": "Create a note in Markor named 3Fji_strong_lamp.txt. Perform a paste operation in the note and save the note.",
+ "success": true,
+ "score": 1.0,
+ "steps": 10,
+ "budget": 14,
+ "seconds": 71.1,
+ "cost": 0.2995844,
+ "answer": null,
+ "summary": "I created the note `3Fji_strong_lamp.txt` in Markor, pasted the clipboard into it and saved it. The pasted text is \"E6OcaZeNX6\".\n\nThe note is in the Documents folder and shows in Markor's file list.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"3Fji_strong_lamp.txt\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "3Fji_strong_lamp",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"3Fji_strong_lamp\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": ".txt",
+    "index": 2,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \".txt\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (922,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "wait",
+   "args": {
+    "seconds": 1
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "press",
+   "args": {
+    "key": "paste",
+    "repeat": 1
+   },
+   "result": "pressed paste",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   text ~\"E6OcaZeNX6\" visible -> TextField \"\" value=\"E6OcaZeNX6\" [8]",
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (817,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 2
+   },
+   "result": "pressed back x2",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text \"3Fji_strong_lamp.txt\" visible -> no match; nearest: Button \"File 3Fji_strong_lamp.txt \" [13], StaticText \"Wifi signal full.\" [15], Button \"Folder .. /storage/emulated/0/Documents\" [11], StaticText \"Phone signal full.\" [16], Button \"Folder .app \" [12]",
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/009.webp"
+  },
+  {
+   "n": 9,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Button ~\"3Fji_strong_lamp.txt\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorCreateNoteFromClipboard/011.webp"
+  }
+ ]
+}

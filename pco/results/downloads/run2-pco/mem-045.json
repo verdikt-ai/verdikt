@@ -1,0 +1,681 @@
+{
+ "id": "mem-045",
+ "app": "cloudslides, clouddrive, teamchat, clouddocs",
+ "category": "memory",
+ "goal": "Audit my presentation portfolio by recency and cross-references. Browse all presentations in CloudSlides and note each one's last-modified date and slide count. Check CloudDrive for how they're organized into folders. Read TeamChat #eng-mobile and #launch-war-room for any mentions of specific presentations (requests, feedback, launch deadlines). Review related documents in CloudDocs. Group each presentation into one of three buckets: recently-worked (modified in the last 2 weeks), stale (older than 2 weeks with no recent chat/doc references), and actively-discussed (referenced in TeamChat or CloudDocs regardless of age). Report each presentation with its bucket and the evidence (last-modified date, slide count, any referencing channel/doc).",
+ "success": false,
+ "score": 0.0,
+ "judged": true,
+ "steps": 47,
+ "budget": 50,
+ "seconds": 388.8,
+ "cost": 2.9575,
+ "answer": "Recently-worked: none (newest deck Mar 5, 2026; today Oct 12, 2026). Actively-discussed: none confirmed \u2014 no deck named in #eng-mobile, #launch-war-room or CloudDocs; possible doc links: Agent Systems Review\u2192Agent Systems Talk, Partner Brief\u2192Partner Kickoff, Client Workshop Agenda\u2192Workshop Deck/Slides. Stale (all 20): Product Demo Deck, Design System Update, All Hands Storyline, Conference Practice Deck, Team Update (Mar 5, 2026); Partner Kickoff, Q2 All-Hands (Mar 4); Board Prep, Frontend Codegen Review (Mar 1); Project Pitch (Feb 23); Creative Review (Feb 22); [Draft] Autonomous Agents (Feb 19); S26 City Guide (Feb 18); Workshop Deck (Feb 17); Healthcare Startup Criteria (Feb 11); Workshop Slides (Jan 30, 2 slides); Signal Check (Jan 26, 2 slides); Agent Systems Talk (Jan 24, 2 slides); Product Pitch (Jan 23, 2 slides); S25 City Guide (Jan 14, 2 slides); other 15 slide counts not collected (out of actions). CloudDrive has 11 folders (Projects, Design Sprint, Research, Product Strategy, Ops Review, Shared Assets, Research Ops, Recruiting, Finance, Personal, Archive); deck placement not checked.; TeamChat deck mentions: Quarterly business review deck is 80% done. Need finance inputs by Thursday.; S25 City Guide slide count: page 1 of 2; Presentation last-modified dates: Mar 5, 2026 at 3:45 AM; Agent Systems Talk slide count: page 1 of 2; Product Pitch slide count: page 1 of 2; Signal Check slide count: page 1 of 2; Workshop Slides slide count: page 1 of 2",
+ "summary": "y-discussed: none confirmed.**\n  - **TeamChat:** No deck is mentioned by name in the parts of #eng-mobile and #launch-war-room I read. Searching \"deck\" turned up only an ops review deck in a Riley Shah DM, a quarterly business review deck in #leadership and a competitive analysis deck in #product. None of those is a CloudSlides deck.\n  - **CloudDocs:** Its search only matches titles, and nothing matched \"deck\" or \"slide\". Three docs share a topic with a deck, but I didn't open them, so I can't confirm they reference it. If they do, move those decks here:\n    - Agent Systems Review \u2194 Agent Systems Talk\n    - Partner Brief \u2194 Partner Kickoff\n    - Client Workshop Agenda \u2194 Workshop Deck and Workshop Slides\n- **Stale: all 20 decks** (full list in the ANSWER line below).\n- **CloudDrive:** There are 11 folders, but I didn't open them, so I don't know which deck sits where.\n\nANSWER: Recently-worked: none (newest deck Mar 5, 2026; today Oct 12, 2026). Actively-discussed: none confirmed \u2014 no deck named in #eng-mobile, #launch-war-room or CloudDocs; possible doc links: Agent Systems Review\u2192Agent Systems Talk, Partner Brief\u2192Partner Kickoff, Client Workshop Agenda\u2192Workshop Deck/Slides. Stale (all 20): Product Demo Deck, Design System Update, All Hands Storyline, Conference Practice Deck, Team Update (Mar 5, 2026); Partner Kickoff, Q2 All-Hands (Mar 4); Board Prep, Frontend Codegen Review (Mar 1); Project Pitch (Feb 23); Creative Review (Feb 22); [Draft] Autonomous Agents (Feb 19); S26 City Guide (Feb 18); Workshop Deck (Feb 17); Healthcare Startup Criteria (Feb 11); Workshop Slides (Jan 30, 2 slides); Signal Check (Jan 26, 2 slides); Agent Systems Talk (Jan 24, 2 slides); Product Pitch (Jan 23, 2 slides); S25 City Guide (Jan 14, 2 slides); other 15 slide counts not collected (out of actions). CloudDrive has 11 folders (Projects, Design Sprint, Research, Product Strategy, Ops Review, Shared Assets, Research Ops, Recruiting, Finance, Personal, Archive); deck placement not checked.",
+ "rubric": [
+  {
+   "criterion": "Browse all presentations in CloudSlides and capture each one's last-modified date and slide count",
+   "satisfied": false,
+   "reasoning": "The agent browsed CloudSlides and captured last-modified dates for all visible presentations (scrolling through the list view). However, slide counts were only captured for 5 presentations (S25 City Guide, Agent Systems Talk, Product Pitch, Signal Check, Workshop Slides - all 2 slides). The agent explicitly acknowledged 'other 15 slide counts not collected.' The task required slide counts for ALL presentations."
+  },
+  {
+   "criterion": "Check CloudDrive folder organization for presentations",
+   "satisfied": false,
+   "reasoning": "The agent launched CloudDrive and saw the folder list (Projects, Design Sprint, Research, Product Strategy, Ops Review, Shared Assets, Research Ops, and more). However, the agent did not open any folders to check which presentations were stored inside them. The agent's final answer noted 'deck placement not checked.' This criterion was only partially met - folder names were seen but not their contents."
+  },
+  {
+   "criterion": "Read TeamChat #eng-mobile and #launch-war-room for mentions of specific presentations",
+   "satisfied": false,
+   "reasoning": "The agent opened both #eng-mobile and #launch-war-room channels. In #eng-mobile, the visible messages were about biometric auth, build times, iOS builds, and memory profiling - no presentation mentions were visible. In #launch-war-room, visible messages were about rollout metrics. The agent did not scroll through the full history of either channel to check for presentation mentions. The agent also used the global search for 'deck' which found some results (ops review deck, quarterly business review deck, competitive analysis deck) but these were not in the required channels specifically."
+  },
+  {
+   "criterion": "Review related documents in CloudDocs for presentation references",
+   "satisfied": false,
+   "reasoning": "The agent launched CloudDocs and searched for 'deck' (no results), 'slide' (no results), and 'Agent' (found 'Agent Systems Review' document). The agent opened some presentations in what appeared to be CloudDocs but did not actually open and read the CloudDocs documents to find presentation references within them. The search was superficial and the agent did not read document contents."
+  },
+  {
+   "criterion": "Bucket each presentation into recently-worked / stale / actively-discussed using the \u226414-day modification rule and cross-reference evidence",
+   "satisfied": false,
+   "reasoning": "The agent attempted bucketing but with incomplete data. The agent correctly identified that all presentations are stale (oldest is Jan 14, 2026, newest is Mar 5, 2026, and the assumed current date is Oct 12, 2026 - all well beyond 14 days). However, the 'actively-discussed' bucket was not properly populated because the agent didn't thoroughly read TeamChat channels or CloudDocs documents to find cross-references. The agent noted 'possible doc links' but couldn't confirm them."
+  },
+  {
+   "criterion": "Report each presentation with its bucket and supporting evidence (modified date, slide count, referencing channel/doc)",
+   "satisfied": false,
+   "reasoning": "The final report was incomplete. Slide counts were missing for ~15 presentations. The actively-discussed bucket was empty or uncertain. The agent acknowledged gaps in the data. The report did not provide a complete, per-presentation breakdown with all required evidence fields (bucket, modified date, slide count, referencing channel/doc) for every presentation."
+  }
+ ],
+ "judge": "The agent made a reasonable attempt to gather information from CloudSlides, CloudDrive, TeamChat, and CloudDocs, but the task was not fully completed. Key deficiencies: (1) Slide counts were only captured for 5 presentations (S25 City Guide, Agent Systems Talk, Product Pitch, Signal Check, Workshop Slides - all showing 2 slides via page dots), while the remaining ~15 presentations had no slide counts collected. (2) The agent did not scroll through the full #eng-mobile channel to check for presentation mentions at the top of the channel history. (3) The agent did not read the full #launch-war-room channel content - only saw partial messages. (4) CloudDocs was searched but the agent did not open and read individual documents to find presentation references. (5) The agent did not check CloudDrive folder contents to see which presentations were organized into which folders. (6) The final report was incomplete and acknowledged missing data ('other 15 slide counts not collected'). (7) The bucketing was incomplete - the agent could not properly identify 'actively-discussed' presentations because it didn't thoroughly read the CloudDocs documents or fully scroll through TeamChat channels. The agent's final answer was a partial report with significant gaps in the required data.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (369, 180) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 90,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,830)->(201,44) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0007.webp"
+  },
+  {
+   "n": 3,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 90,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,830)->(201,44) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 90,
+    "duration_ms": 400,
+    "guard": "warning",
+    "screen_changed": false
+   },
+   "result": "swiped (201,830)->(201,44) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0007.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 106
+    }
+   },
+   "result": "tapped at (359, 670) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0009.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 2
+    }
+   },
+   "result": "tapped at (247, 401) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0011.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 8
+    }
+   },
+   "result": "tapped at (345, 95) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0013.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (201, 437) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0016.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "play"
+    }
+   },
+   "result": "tapped at (99, 94) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0016.webp"
+  },
+  {
+   "n": 10,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.teamchat"
+   },
+   "result": "launched com.iosworld.benchmark.teamchat",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0018.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (80, 594) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0020.webp"
+  },
+  {
+   "n": 12,
+   "tool": "swipe",
+   "args": {
+    "direction": "down",
+    "distance_percent": 70,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (201,132)->(201,742) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0022.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 250,
+    "x2": 200,
+    "y2": 650,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,250)->(200,650) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0024.webp"
+  },
+  {
+   "n": 14,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 220,
+    "x2": 200,
+    "y2": 660,
+    "duration_ms": 200
+   },
+   "result": "swiped (200,220)->(200,660) in 200ms",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0026.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "14,62,60,108"
+    }
+   },
+   "result": "tapped at (37, 85) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0029.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "channel_row_launch_war_room"
+    }
+   },
+   "result": "tapped at (203, 360) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0029.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "14,62,60,108"
+    }
+   },
+   "result": "tapped at (37, 85) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0032.webp"
+  },
+  {
+   "n": 18,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "tab_search"
+    }
+   },
+   "result": "tap failed: error: no element matched (id=tab_search)",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0032.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "tab_search"
+    }
+   },
+   "result": "tapped at (358, 810) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0034.webp"
+  },
+  {
+   "n": 20,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "search_query_field"
+    },
+    "text": "deck\n"
+   },
+   "result": "typed 'deck\\n'; verified: false; field value now 'deck'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0037.webp"
+  },
+  {
+   "n": 21,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clouddrive"
+   },
+   "result": "launched com.iosworld.benchmark.clouddrive",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0039.webp"
+  },
+  {
+   "n": 22,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.clouddocs"
+   },
+   "result": "launched com.iosworld.benchmark.clouddocs",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0041.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "docs_open_search_button"
+    }
+   },
+   "result": "tapped at (151, 176) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0043.webp"
+  },
+  {
+   "n": 24,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "deck\n"
+   },
+   "result": "typed 'deck\\n'; verified: false; field value now 'Search documents'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0045.webp"
+  },
+  {
+   "n": 25,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "deck"
+   },
+   "result": "typed 'deck'; verified: true; field value now 'deck'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0048.webp"
+  },
+  {
+   "n": 26,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "sent 4 deletes; cleared: false; field value now 'Search documents'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0051.webp"
+  },
+  {
+   "n": 27,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "slide"
+   },
+   "result": "typed 'slide'; verified: true; field value now 'slide'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0053.webp"
+  },
+  {
+   "n": 28,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "index": 4
+    }
+   },
+   "result": "sent 5 deletes; cleared: false; field value now 'Search documents'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0056.webp"
+  },
+  {
+   "n": 29,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 4
+    },
+    "text": "Agent"
+   },
+   "result": "typed 'Agent'; verified: true; field value now 'Agent'",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0058.webp"
+  },
+  {
+   "n": 30,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cloudslides"
+   },
+   "result": "launched com.iosworld.benchmark.cloudslides",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0061.webp"
+  },
+  {
+   "n": 31,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 86) via text",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0064.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chevron.left"
+    }
+   },
+   "result": "tapped at (52, 95) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0064.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 93
+    }
+   },
+   "result": "tapped at (78, 558) via index",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0067.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "play"
+    }
+   },
+   "result": "tapped at (99, 94) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0067.webp"
+  },
+  {
+   "n": 35,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 86) via text",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0072.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chevron.left"
+    }
+   },
+   "result": "tapped at (52, 95) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0072.webp"
+  },
+  {
+   "n": 37,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "file_row_slides_product_pitch"
+    }
+   },
+   "result": "tapped at (78, 670) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0072.webp"
+  },
+  {
+   "n": 38,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "play"
+    }
+   },
+   "result": "tapped at (99, 94) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0072.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 86) via text",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0077.webp"
+  },
+  {
+   "n": 40,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chevron.left"
+    }
+   },
+   "result": "tapped at (52, 95) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0077.webp"
+  },
+  {
+   "n": 41,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "file_row_slides_signal_check"
+    }
+   },
+   "result": "tapped at (78, 670) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0077.webp"
+  },
+  {
+   "n": 42,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "play"
+    }
+   },
+   "result": "tapped at (99, 94) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0077.webp"
+  },
+  {
+   "n": 43,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (357, 86) via text",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0082.webp"
+  },
+  {
+   "n": 44,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chevron.left"
+    }
+   },
+   "result": "tapped at (52, 95) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0082.webp"
+  },
+  {
+   "n": 45,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "file_row_slides_workshop_slides"
+    }
+   },
+   "result": "tapped at (78, 670) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0082.webp"
+  },
+  {
+   "n": 46,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "play"
+    }
+   },
+   "result": "tapped at (99, 94) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0082.webp"
+  },
+  {
+   "n": 47,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "play"
+    }
+   },
+   "result": "tapped at (99, 94) via id",
+   "refused": false,
+   "frame": "media/run2-pco/mem-045/0084.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "TeamChat deck mentions",
+   "verdict": "proven",
+   "claim": "Quarterly business review deck is 80% done. Need finance inputs by Thursday.",
+   "frame": 37
+  },
+  {
+   "type": "KNOW",
+   "text": "CloudDrive folder organization",
+   "verdict": "proven",
+   "claim": "Product Strategy",
+   "frame": 39
+  },
+  {
+   "type": "KNOW",
+   "text": "S25 City Guide slide count",
+   "verdict": "proven",
+   "claim": "page 1 of 2",
+   "frame": 61
+  },
+  {
+   "type": "KNOW",
+   "text": "Presentation last-modified dates",
+   "verdict": "proven",
+   "claim": "Mar 5, 2026 at 3:45 AM",
+   "frame": 64
+  },
+  {
+   "type": "KNOW",
+   "text": "Agent Systems Talk slide count",
+   "verdict": "proven",
+   "claim": "page 1 of 2",
+   "frame": 67
+  },
+  {
+   "type": "KNOW",
+   "text": "Product Pitch slide count",
+   "verdict": "proven",
+   "claim": "page 1 of 2",
+   "frame": 72
+  },
+  {
+   "type": "KNOW",
+   "text": "Signal Check slide count",
+   "verdict": "proven",
+   "claim": "page 1 of 2",
+   "frame": 77
+  },
+  {
+   "type": "KNOW",
+   "text": "Workshop Slides slide count",
+   "verdict": "proven",
+   "claim": "page 1 of 2",
+   "frame": 84
+  },
+  {
+   "type": "KNOW",
+   "text": "Slide counts for remaining 15 decks",
+   "verdict": "absent",
+   "claim": "The counts exist but weren't collected: 3 actions are left, and one more count takes 4 (Done, Back, open deck, Play).",
+   "frame": null
+  }
+ ]
+}

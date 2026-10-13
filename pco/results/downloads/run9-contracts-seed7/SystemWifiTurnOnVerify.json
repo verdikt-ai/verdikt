@@ -1,0 +1,109 @@
+{
+ "id": "SystemWifiTurnOnVerify",
+ "app": "Settings",
+ "goal": "Turn wifi on.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 49.5,
+ "cost": 0.1241286,
+ "answer": null,
+ "summary": "Wi\u2011Fi was already on, so I didn't change anything. In Settings > Network & internet > Internet, the Wi\u2011Fi switch shows as on and the phone is connected to \"AndroidWifi\". That connection says \"Limited connection\", so there's no internet access through it.\n\nThe automated end check only confirmed that \"Wi-Fi\" and \"AndroidWifi\" were on screen, because the switch has no label it can target. I confirmed the switch itself was on by reading the screen.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOnVerify/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Wi-Fi\" checked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOnVerify/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "x": 300,
+    "y": 820
+   },
+   "result": "tapped (300,820)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOnVerify/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "wait",
+   "args": {
+    "seconds": 1
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOnVerify/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (279,610)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOnVerify/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "wait",
+   "args": {
+    "seconds": 1
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOnVerify/005.webp"
+  },
+  {
+   "n": 5,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"Wi-Fi\" visible",
+     "text \"AndroidWifi\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOnVerify/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SystemWifiTurnOnVerify/007.webp"
+  }
+ ]
+}

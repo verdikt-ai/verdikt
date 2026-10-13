@@ -1,0 +1,129 @@
+{
+ "id": "ClockTimerEntry",
+ "app": "Clock",
+ "goal": "Create a timer with 7 hours, 35 minutes, and 16 seconds. Do not start the timer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 8,
+ "budget": 10,
+ "seconds": 37.4,
+ "cost": 0.159985,
+ "answer": null,
+ "summary": "I've set a timer for 7 hours, 35 minutes and 16 seconds in the Clock app, and I didn't start it. It's waiting on the Timer tab showing 07h 35m 16s. Tap the play button there when you want it to run.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Clock"
+   },
+   "result": "opened Clock",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"07h 35m 16s\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (540,2232)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 9
+   },
+   "result": "tapped (265,1344)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 5
+   },
+   "result": "tapped (816,793)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (540,1068)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (265,793)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (816,1068)",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS text ~\"07h 35m 16s\" visible -> no match; nearest: StaticText \"7 hours, 35 minutes, 16 seconds\" [2], StaticText \"Phone signal full.\" [23], Button \"Backspace 6\" [14], Image \"More options\" [1], Button \"1\" [3]",
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/007.webp"
+  },
+  {
+   "n": 7,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"7 hours, 35 minutes, 16 seconds\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/ClockTimerEntry/009.webp"
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "id": "SportsTrackerActivitiesCountForWeek",
+ "app": "Opentracks",
+ "goal": "How many running activities did I do this week in the OpenTracks app? Assume the week starts from Monday. Express your answer as a single integer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 33.4,
+ "cost": 0.191143,
+ "answer": "2",
+ "summary": "I counted **2** running activities in OpenTracks for this week (Mon Oct 9 \u2013 Sun Oct 15), and submitted that answer.\n\nThe two are:\n- **\"Trying and failing to keep up with John\"** on Saturday (yesterday)\n- **\"Active Rest Day\"** on Friday, Oct 13\n\nThe track list doesn't name each track's activity type, so I went by the activity icons. Both of these have the running icon. I opened \"Active Rest Day\" and its detail page also shows the running icon, but no activity type written out. I didn't open \"Trying and failing to keep up with John\" or the walking tracks.\n\nI left out \"Trail Hike\" (Friday) and \"Hill Walk\" (Tuesday) because they show a walking icon. If either of those was logged as a run, the answer would be higher. The other tracks from this week are cycling, skiing, climbing and skateboarding.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "OpenTracks"
+   },
+   "result": "opened OpenTracks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivitiesCountForWeek/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivitiesCountForWeek/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "half"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivitiesCountForWeek/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "scroll",
+   "args": {
+    "direction": "up",
+    "amount": "page"
+   },
+   "result": "scrolled up (revealing content further up)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivitiesCountForWeek/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 31
+   },
+   "result": "tapped (260,987)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivitiesCountForWeek/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "answer",
+   "args": {
+    "text": "2",
+    "evidence": [
+     "text \"Active Rest Day\" visible"
+    ]
+   },
+   "result": "answer recorded: \"2\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivitiesCountForWeek/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/SportsTrackerActivitiesCountForWeek/005.webp"
+  }
+ ]
+}

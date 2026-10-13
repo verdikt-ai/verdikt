@@ -1,0 +1,95 @@
+{
+ "id": "SportsTrackerLongestDistanceActivity",
+ "app": "Opentracks",
+ "goal": "What was the longest distance covered in a mountain biking activity in the OpenTracks app this week? Assume the week starts from Monday. Express your answer as a single number in meters rounded to the nearest integer.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 47.1,
+ "cost": 0.1708994,
+ "answer": "4506",
+ "summary": "I answered **4506** meters, but that number is a conversion from a rounded figure, so the last digit may be off.\n\nThe only mountain biking activity I found this week (Monday Oct 9 to Sunday Oct 15) is \"Mindful Movement\" on Tuesday, October 10. I picked it out by its mountain-bike icon, not by opening it to read the category name. The app shows its distance in miles to two decimals: 2.80 mi. That converts to about 4506 m, but the true distance could be anywhere from about 4498 to 4514 m. I didn't switch the app to metric, because it would still round to two decimals (4.51 km) and give no meter-level precision.\n\nThe rest of the week's activities are swimming, rowing, surfing, bike touring and skiing. The trip list had no entries for today or Monday.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "OpenTracks"
+   },
+   "result": "opened OpenTracks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerLongestDistanceActivity/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerLongestDistanceActivity/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 40
+   },
+   "result": "tapped (291,1276)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerLongestDistanceActivity/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "wait",
+   "args": {
+    "seconds": 2
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerLongestDistanceActivity/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 8
+   },
+   "result": "tapped (443,2232)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerLongestDistanceActivity/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "answer",
+   "args": {
+    "text": "4506",
+    "evidence": [
+     "text \"2.80\" visible"
+    ]
+   },
+   "result": "answer recorded: \"4506\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerLongestDistanceActivity/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SportsTrackerLongestDistanceActivity/005.webp"
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "rounds": 0,
+ "obligations": 7,
+ "proven": 5,
+ "unproven": 0,
+ "absent": 2,
+ "open": 0,
+ "ledger": [
+  {
+   "obligation": "KNOW: trip dates and flight cost from SkyTrip past trips",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "$388.00",
+   "evidence_frame": 39,
+   "explanation": "Most recent past trip JFK \u2192 LAX, Confirmation: Q5R1NZ, cost \"$388.00\", depart \"Oct 13, 2026 7:40 AM\" arrive \"Oct 13, 2026 1:47 PM\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: CityRide ride receipts (ground transport) from Mail",
+   "type": "KNOW",
+   "status": "fail",
+   "claim": null,
+   "evidence_frame": null,
+   "explanation": "I scrolled through Mail's Transactions down to Aug 24. The CityRide receipts there were dated Oct 4, Sep 30, Sep 28, Sep 24, Sep 19, Sep 17 and Sep 14, and none was dated Oct 13. The MyBank card had no CityRide charge on Oct 13 either; its only CityRide charge was \"Airport to downtown\" on Oct 6.",
+   "verdict": "absent",
+   "reason": "I scrolled through Mail's Transactions down to Aug 24. The CityRide receipts there were dated Oct 4, Sep 30, Sep 28, Sep 24, Sep 19, Sep 17 and Sep 14, and none was dated Oct 13. The MyBank card had no CityRide charge on Oct 13 either; its only CityRide charge was \"Airport to downtown\" on Oct 6."
+  },
+  {
+   "obligation": "KNOW: hotel confirmation cost from Mail",
+   "type": "KNOW",
+   "status": "fail",
+   "claim": null,
+   "evidence_frame": null,
+   "explanation": "Searching Mail for \"hotel\" gave \"No results\" in Transactions and Updates. Primary returned only Spencer Bowman's \"Offsite logistics\", which mentions a hotel block and is not a booking. Transactions had no hotel confirmations, only a StayFinder Lake Tahoe cabin booking dated Oct 3. The MyBank card had no hotel charges either.",
+   "verdict": "absent",
+   "reason": "Searching Mail for \"hotel\" gave \"No results\" in Transactions and Updates. Primary returned only Spencer Bowman's \"Offsite logistics\", which mentions a hotel block and is not a booking. Transactions had no hotel confirmations, only a StayFinder Lake Tahoe cabin booking dated Oct 3. The MyBank card had no hotel charges either."
+  },
+  {
+   "obligation": "KNOW: MyBank credit card charges during trip dates (food etc.)",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Food: $31.40 (QuickBite Chipotle, Oct 13, Freedom Unlimited card)",
+   "evidence_frame": 50,
+   "explanation": "MyBank Freedom Unlimited (step 34) listed \"QuickBite, Chipotle, Oct 13, 2026, -$31.40\" as the only Oct 13 charge; it is recorded in the doc shown here.",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "SAY: category totals and total trip cost",
+   "type": "SAY",
+   "status": "pass",
+   "claim": "Flights $388.00, ground transport $0.00, food $31.40, hotel $0.00; total $419.40",
+   "evidence_frame": 50,
+   "explanation": "Computed from SkyTrip fare $388.00 and the MyBank QuickBite Chipotle Oct 13 charge of -$31.40; no CityRide or hotel items on Oct 13. The doc preview shows \"Flights: $388.00\" and \"Food: $31.40\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "DO: create expense report document in CloudDocs",
+   "type": "DO",
+   "status": "pass",
+   "claim": "Untitled document",
+   "evidence_frame": 50,
+   "explanation": "The CloudDocs list now shows a new doc dated \"Oct 13, 2026\" containing \"Business Trip Expense Report, Trip: JFK to LAX, Oct 13, 2026\", titled \"Untitled document\".",
+   "verdict": "proven",
+   "reason": ""
+  },
+  {
+   "obligation": "KNOW: trip date",
+   "type": "KNOW",
+   "status": "pass",
+   "claim": "Oct 13, 2026 7:40 AM",
+   "evidence_frame": 39,
+   "explanation": "Trip Detail shows DL1348 JFK \u2192 LAX departing \"Oct 13, 2026 7:40 AM\".",
+   "verdict": "proven",
+   "reason": ""
+  }
+ ]
+}

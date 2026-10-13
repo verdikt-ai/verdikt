@@ -1,0 +1,108 @@
+{
+ "id": "SystemBluetoothTurnOnVerify",
+ "app": "Settings",
+ "goal": "Turn bluetooth on.",
+ "success": true,
+ "score": 1.0,
+ "steps": 6,
+ "budget": 10,
+ "seconds": 54.4,
+ "cost": 0.1508876,
+ "answer": null,
+ "summary": "Bluetooth is on. When I opened Settings > Connected devices > Connection preferences > Bluetooth, the \"Use Bluetooth\" switch was already on, so I didn't need to change anything.",
+ "step_list": [
+  {
+   "n": 0,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "Switch ~\"Bluetooth\" checked"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": null
+  },
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Settings"
+   },
+   "result": "opened Settings",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBluetoothTurnOnVerify/001.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (412,1025)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBluetoothTurnOnVerify/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "wait",
+   "args": {
+    "seconds": 1
+   },
+   "result": "waited",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBluetoothTurnOnVerify/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (343,1055)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBluetoothTurnOnVerify/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 3
+   },
+   "result": "tapped (302,721)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBluetoothTurnOnVerify/006.webp"
+  },
+  {
+   "n": 5,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "id=switch_widget checked",
+     "text \"Use Bluetooth\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBluetoothTurnOnVerify/007.webp"
+  },
+  {
+   "n": 6,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/SystemBluetoothTurnOnVerify/009.webp"
+  }
+ ]
+}

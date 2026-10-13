@@ -1,0 +1,111 @@
+{
+ "id": "TasksCompletedTasksForDate",
+ "app": "Tasks",
+ "goal": "Which tasks have I completed for October 14 2023 in Tasks app? Answer with the titles only. If there are multiples titles, format your answer in a comma separated list.",
+ "success": true,
+ "score": 1.0,
+ "steps": 7,
+ "budget": 10,
+ "seconds": 49.5,
+ "cost": 0.1762236,
+ "answer": "Book flights for conference, Draft marketing email, Call client for follow-up",
+ "summary": "You completed three tasks for October 14, 2023: Book flights for conference, Draft marketing email, Call client for follow-up.\n\nIn the Tasks app these three are checked off and show \"Yest\" as their due date, which is October 14 since the phone's date is October 15. I took that label at face value and didn't open each task to check the full date. Other completed tasks are marked \"Sat\", but that should be the coming Saturday (October 21), because the app writes \"Yest\" for yesterday.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Tasks"
+   },
+   "result": "opened Tasks",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksCompletedTasksForDate/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksCompletedTasksForDate/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 7
+   },
+   "result": "tapped (1027,2263)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksCompletedTasksForDate/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 1
+   },
+   "result": "pressed back",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksCompletedTasksForDate/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksCompletedTasksForDate/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksCompletedTasksForDate/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "answer",
+   "args": {
+    "text": "Book flights for conference, Draft marketing email, Call client for follow-up",
+    "evidence": [
+     "text \"Book flights for conference\" visible",
+     "text \"Draft marketing email\" visible",
+     "text \"Call client for follow-up\" visible"
+    ]
+   },
+   "result": "answer recorded: \"Book flights for conference, Draft marketing email, Call client for follow-up\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksCompletedTasksForDate/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/TasksCompletedTasksForDate/006.webp"
+  }
+ ]
+}

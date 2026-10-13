@@ -1,0 +1,185 @@
+{
+ "id": "splitpay-001",
+ "app": "splitpay",
+ "category": "single_app",
+ "goal": "Send $32.50 to Maya Patel on SplitPay for 'dinner split' from my SplitPay balance and confirm the payment was sent.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 10,
+ "budget": 50,
+ "seconds": 51.8,
+ "cost": 0.452,
+ "answer": null,
+ "summary": "I sent the payment: $32.50 to Maya Patel (@Maya-Patel) on SplitPay, with the note \"dinner split\". Before I tapped \"Pay $32.50\", the confirmation screen showed it would come from your SplitPay balance and arrive instantly.\n\nAfter paying, a new entry \"Jordan Avery paid Maya Patel, 1m, dinner split\" appeared at the top of the SplitPay feed, which confirms it went through. That feed line doesn't show the amount, but $32.50 was on the confirmation screen.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open SplitPay app and tap pay or send money",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the SplitPay app is open and the agent tapped the Pay/Request button at the bottom of the screen."
+  },
+  {
+   "criterion": "Search for and select Maya Patel as recipient",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows the recipient selection screen with Maya Patel visible at the top of the list, and the agent tapped on her row. Screenshot 3 shows the payment screen with Maya Patel as the recipient."
+  },
+  {
+   "criterion": "Enter $32.50 as the amount",
+   "satisfied": true,
+   "reasoning": "Screenshot 8 clearly shows $32.50 entered as the amount in the payment screen, and this is confirmed in the Confirm Payment dialog in screenshot 10."
+  },
+  {
+   "criterion": "Add the note 'dinner split'",
+   "satisfied": true,
+   "reasoning": "Screenshots 8 and 9 show 'dinner split' typed in the memo field, and the Confirm Payment dialog in screenshot 10 also shows 'dinner split' as the note."
+  },
+  {
+   "criterion": "Select SplitPay balance as the payment source",
+   "satisfied": true,
+   "reasoning": "The Confirm Payment dialog in screenshot 10 shows 'Funding: SplitPay balance', confirming that SplitPay balance was selected as the payment source (likely the default)."
+  },
+  {
+   "criterion": "Send the payment",
+   "satisfied": true,
+   "reasoning": "Step 9 shows the agent tapped the Pay button, which brought up the Confirm Payment dialog. The final screenshot shows the payment was processed as the home feed shows 'Jordan Avery paid Maya Patel - dinner split' 1 minute ago."
+  },
+  {
+   "criterion": "Confirm the payment was sent successfully",
+   "satisfied": true,
+   "reasoning": "The final screenshot (screenshot 11) shows the home feed with 'Jordan Avery paid Maya Patel - dinner split' appearing 1 minute ago, confirming the payment was successfully sent and processed."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: opened the SplitPay app, tapped Pay/Request, selected Maya Patel as recipient, entered $32.50 as the amount, added 'dinner split' as the note, the payment source was SplitPay balance (confirmed in the Confirm Payment dialog showing 'Funding: SplitPay balance'), tapped Pay, and the final screenshot shows the home feed with 'Jordan Avery paid Maya Patel - dinner split' appearing 1 minute ago, confirming the payment was sent successfully.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "pay_or_request_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "recipient_row_maya_patel"
+    }
+   },
+   "result": "tapped at (201, 282) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_3"
+    }
+   },
+   "result": "tapped at (325, 610) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0011.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_2"
+    }
+   },
+   "result": "tapped at (200, 610) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0011.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_decimal"
+    }
+   },
+   "result": "tapped at (76, 802) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0011.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_5"
+    }
+   },
+   "result": "tapped at (200, 674) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0011.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "amount_digit_0"
+    }
+   },
+   "result": "tapped at (200, 802) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0011.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "memo_field"
+    },
+    "text": "dinner split"
+   },
+   "result": "typed 'dinner split'; verified: true; field value now 'dinner split'",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0013.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "send_button"
+    }
+   },
+   "result": "tapped at (297, 347) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0015.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "208,770,375,825"
+    }
+   },
+   "result": "tapped at (291, 797) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/splitpay-001/0017.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Send $32.50 to Maya Patel for 'dinner split' from SplitPay balance and confirm sent",
+   "verdict": "proven",
+   "claim": "Jordan Avery paid Maya Patel, 1m, dinner split",
+   "frame": 17
+  }
+ ]
+}

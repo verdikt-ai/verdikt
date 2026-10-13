@@ -1,0 +1,76 @@
+{
+ "id": "SimpleCalendarFirstEventAfterStartTime",
+ "app": "Simple Calendar",
+ "goal": "What is my first event after 7:45am October 20 2023 in Simple Calendar Pro? Answer with the titles only. If there are multiples titles, format your answer in a comma separated list.",
+ "success": true,
+ "score": 1.0,
+ "steps": 4,
+ "budget": 10,
+ "seconds": 29.1,
+ "cost": 0.1056326,
+ "answer": "Team Brainstorming",
+ "summary": "Your first event on Friday, October 20, is **Team Brainstorming**. That's the answer I recorded, and the episode is finished.\n\nOne judgment call: it starts at 07:45 (07:45 - 08:45), exactly the time you gave, not after it. I counted it because an event starting at 7:45 is usually what's meant. If you meant strictly after 7:45, there's no other event on that Friday. The only other one, Workshop on Annual Report, runs 04:05 - 05:05.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Calendar Pro"
+   },
+   "result": "opened Simple Calendar Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarFirstEventAfterStartTime/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarFirstEventAfterStartTime/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "scroll",
+   "args": {
+    "direction": "down",
+    "amount": "page"
+   },
+   "result": "scrolled down (revealing content further down)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarFirstEventAfterStartTime/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "answer",
+   "args": {
+    "text": "Team Brainstorming",
+    "evidence": [
+     "text \"Team Brainstorming\" visible",
+     "text \"07:45 - 08:45\" visible",
+     "text \"20 Friday\" visible"
+    ]
+   },
+   "result": "answer recorded: \"Team Brainstorming\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarFirstEventAfterStartTime/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/SimpleCalendarFirstEventAfterStartTime/003.webp"
+  }
+ ]
+}

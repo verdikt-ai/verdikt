@@ -1,0 +1,87 @@
+{
+ "id": "MarkorEditNote",
+ "app": "Markor",
+ "goal": "Edit note_lA2OD.txt in Markor. Replace the text with The pen is mightier than the sword.\nLunch meeting with Sarah at 1 PM Cafe L'amour.\nGym membership renewal due on the 20th.",
+ "success": true,
+ "score": 1.0,
+ "steps": 5,
+ "budget": 12,
+ "seconds": 127.9,
+ "cost": 0.12995020000000002,
+ "answer": null,
+ "summary": "I replaced the text of note_lA2OD.txt in Markor and saved it. It now reads:\n\nThe pen is mightier than the sword.\nLunch meeting with Sarah at 1 PM Cafe L'amour.\nGym membership renewal due on the 20th.\n\nThe old line about the dentist appointment is gone. After I tapped Save, the Save icon greyed out, which means the change was written to the file. The note is still open in the editor.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorEditNote/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text ~\"Gym membership renewal due on the 20th.\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorEditNote/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "x": 300,
+    "y": 900
+   },
+   "result": "tapped (300,900)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorEditNote/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": "The pen is mightier than the sword.\nLunch meeting with Sarah at 1 PM Cafe L'amour.\nGym membership renewal due on the 20th.",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"The pen is mightier than the sword.\\nLunch meeting with Sarah at 1 PM Cafe L'amour.\\nGym membership renewal due on the 20th.\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorEditNote/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (817,136)",
+   "refused": false,
+   "expect": "\n  unparsable expect 'TextView desc=\"Save\" disabled': StaticText needs a label: a quoted string, ~\"substring\" or /regex/",
+   "frame": "media/run10-contracts-seed8/MarkorEditNote/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run10-contracts-seed8/MarkorEditNote/005.webp"
+  }
+ ]
+}

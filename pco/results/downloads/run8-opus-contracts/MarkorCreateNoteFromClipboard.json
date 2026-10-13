@@ -1,0 +1,146 @@
+{
+ "id": "MarkorCreateNoteFromClipboard",
+ "app": "Markor",
+ "goal": "Create a note in Markor named 2023_09_08_active_umbrella.txt. Perform a paste operation in the note and save the note.",
+ "success": true,
+ "score": 1.0,
+ "steps": 9,
+ "budget": 14,
+ "seconds": 64.0,
+ "cost": 0.27842480000000003,
+ "answer": null,
+ "summary": "I created the note `2023_09_08_active_umbrella.txt` in Markor, pasted the clipboard into it and saved it. It's now in the Markor file list, and the note's text is \"ILRmaKdNIH\", which is what the clipboard held.\n\nThe new-file dialog's Type setting was left on its default, Markdown, but the file has the `.txt` extension you asked for.\n\nThe automatic check refused my first `finish`. It looked for the bare file name, but the list labels the entry \"File 2023_09_08_active_umbrella.txt\". The note itself was fine, so I called `finish` again.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": [
+     "text \"2023_09_08_active_umbrella.txt\" visible"
+    ]
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "text": ".txt",
+    "index": 2,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \".txt\"",
+   "refused": false,
+   "expect": "expect: FAIL\n  MISS TextField \".txt\" visible -> no match; nearest: TextField \".md\" [2], TextField \"my_note\" [1]",
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "type",
+   "args": {
+    "text": "2023_09_08_active_umbrella",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"2023_09_08_active_umbrella\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (922,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "press",
+   "args": {
+    "key": "paste",
+    "repeat": 1
+   },
+   "result": "pressed paste",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (817,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "press",
+   "args": {
+    "key": "back",
+    "repeat": 2
+   },
+   "result": "pressed back x2",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/008.webp"
+  },
+  {
+   "n": 8,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "goal contract: FAIL\n  MISS text \"2023_09_08_active_umbrella.txt\" visible -> no match; nearest: Button \"File 2023_09_08_active_umbrella.txt \" [13], StaticText \"Wifi signal full.,No internet\" [15], Button \"More\" [10], Button \"Create a new file or folder\" [1], Button \"Folder .. /storage/emulated/0/Documents\" [11]\nrefused (no step used): the goal contract does not hold on the current screen. Fix what is missing, or navigate to where it can be seen, or - if the contract itself was wrong - call finish again to finish anyway.",
+   "refused": true,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/009.webp"
+  },
+  {
+   "n": 9,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run8-opus-contracts/MarkorCreateNoteFromClipboard/009.webp"
+  }
+ ]
+}

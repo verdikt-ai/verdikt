@@ -1,0 +1,84 @@
+{
+ "id": "mail-002",
+ "app": "mail",
+ "category": "single_app",
+ "goal": "Filter my Inbox in Mail to show only the Transactions category, then archive a QuickBite receipt. Confirm it was archived.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 3,
+ "budget": 50,
+ "seconds": 39.1,
+ "cost": 0.2373,
+ "answer": null,
+ "summary": "I filtered your Inbox to Transactions and archived the QuickBite \"Your Chipotle order receipt\" email from yesterday.\n\nTo confirm it, I checked the inbox afterwards: that email is no longer in the Transactions list, and the unread count went from 8 to 7. I didn't open the Archive folder to see it there.\n\nThe other QuickBite receipt (Sushi Ran, Oct 9) is still in your inbox.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open Mail app and go to Inbox",
+   "satisfied": true,
+   "reasoning": "Screenshot 1 shows the Mail app is already open and displaying 'All Inboxes' with emails listed."
+  },
+  {
+   "criterion": "Tap the Transactions category filter",
+   "satisfied": true,
+   "reasoning": "Step 1 tapped the Transactions category filter. Screenshot 2 confirms the Transactions filter is now active (highlighted in blue) and the subtitle shows 'Transactions \u2022 8 unread'."
+  },
+  {
+   "criterion": "Find a QuickBite receipt email in the filtered list",
+   "satisfied": true,
+   "reasoning": "Screenshot 2 shows a QuickBite email with subject 'Your Chipotle order receipt' visible in the Transactions-filtered list."
+  },
+  {
+   "criterion": "Archive the QuickBite receipt email",
+   "satisfied": true,
+   "reasoning": "Step 2 swiped left on the QuickBite email to reveal Archive/Delete options (visible in Screenshot 3), and Step 3 tapped the Archive button. The QuickBite 'Your Chipotle order receipt' email disappears from the list in the final screenshot."
+  },
+  {
+   "criterion": "Confirm the email was archived",
+   "satisfied": true,
+   "reasoning": "The final screenshot shows the Transactions filter still active with '7 unread' (down from 8), and the QuickBite 'Your Chipotle order receipt' email is no longer present in the list, confirming it was successfully archived."
+  }
+ ],
+ "judge": "The agent successfully completed all required steps: started in the Mail inbox, filtered by Transactions category, found the QuickBite receipt email, swiped to reveal archive option, tapped Archive, and the final screenshot confirms the QuickBite 'Your Chipotle order receipt' email is no longer in the list (unread count dropped from 8 to 7), confirming it was archived.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "category_transactions"
+    }
+   },
+   "result": "tapped at (187, 215) via id",
+   "refused": false,
+   "frame": "media/run1-opus/mail-002/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "swipe",
+   "args": {
+    "x1": 350,
+    "y1": 682,
+    "x2": 60,
+    "y2": 682,
+    "duration_ms": 300
+   },
+   "result": "swiped (350,682)->(60,682) in 300ms",
+   "refused": false,
+   "frame": "media/run1-opus/mail-002/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 13
+    }
+   },
+   "result": "tapped at (276, 682) via index",
+   "refused": false,
+   "frame": "media/run1-opus/mail-002/0007.webp"
+  }
+ ],
+ "ledger": null
+}

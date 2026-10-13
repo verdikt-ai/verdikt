@@ -1,0 +1,233 @@
+{
+ "id": "quickbite-001",
+ "app": "quickbite",
+ "category": "single_app",
+ "goal": "Order a chicken bowl from Chipotle on QuickBite for delivery to 410 Brannan St and confirm the order was placed.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 14,
+ "budget": 50,
+ "seconds": 109.5,
+ "cost": 0.4203,
+ "answer": null,
+ "summary": "I ordered one Chicken Bowl from Chipotle Mexican Grill on QuickBite, and the order went through. The tracking screen shows \"Order confirmed,\" with an ETA of 22 minutes and drop-off at 410 Brannan St, Unit 12B.\n\n- **Cost:** $20.70 total: the $11.75 bowl, plus a $1.99 delivery fee, $2.99 service fee, $0.97 tax and the $3.00 tip that was already selected.\n- **Payment:** it was charged to your saved Freedom Unlimited Visa ending in 2095.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open QuickBite app and search or browse for Chipotle",
+   "satisfied": true,
+   "reasoning": "Screenshots 3-4 show the agent navigated to the Browse tab and typed 'Chipotle' in the search field, with results showing Chipotle Mexican Grill."
+  },
+  {
+   "criterion": "Select Chipotle from results",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows the Chipotle Mexican Grill restaurant page was opened after tapping on the search result in step 4."
+  },
+  {
+   "criterion": "Find and select a chicken bowl from the menu",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows the Chipotle menu with 'Chicken Bowl' visible. Screenshot 6 shows 'View Cart $11.75' with 1 item, and the cart in screenshot 7 confirms 'Chicken Bowl $11.75' was added."
+  },
+  {
+   "criterion": "Confirm delivery address is 410 Brannan St",
+   "satisfied": true,
+   "reasoning": "Screenshots 1-2 show the app header displaying '410 Brannan St, Unit 12B'. The cart screen (screenshots 7-8) shows 'Deliver to Home - 410 Brannan St, Unit 12B'. The checkout screen (screenshot 9) also shows 'Home \u00b7 410 Brannan St, Unit 12B'."
+  },
+  {
+   "criterion": "Proceed to checkout and place the order",
+   "satisfied": true,
+   "reasoning": "The agent tapped 'View Cart', then 'Place Order', navigated through the MyBank Checkout screen, toggled the confirmation checkbox (screenshot 14 shows it enabled/green), and tapped 'Confirm & Place Order'."
+  },
+  {
+   "criterion": "Confirm the order was placed successfully",
+   "satisfied": true,
+   "reasoning": "The final screenshot (15) shows a Tracking screen with 'ETA 22 min' and 'Order confirmed' text, along with a map showing the Chipotle Mexican Grill location and driver position, confirming the order was successfully placed."
+  }
+ ],
+ "judge": "The agent successfully completed all steps of the task: opened QuickBite, searched for Chipotle, selected Chipotle Mexican Grill, added a Chicken Bowl to cart, confirmed delivery to 410 Brannan St, proceeded through checkout, toggled the confirmation checkbox, and placed the order. The final screenshot shows a Tracking screen with 'Order confirmed' and ETA 22 min, confirming the order was successfully placed.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Browse"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Browse)",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "140,800,180,850"
+    }
+   },
+   "result": "tapped at (160, 825) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Chipotle"
+   },
+   "result": "typed 'Chipotle'; verified: true; field value now 'Chipotle'",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 351) via index",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "menu_item_add_chicken_bowl"
+    }
+   },
+   "result": "tapped at (382, 632) via id",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "view_cart_button"
+    }
+   },
+   "result": "tapped at (201, 752) via id",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0014.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 936) via id",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0016.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 40,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,611)->(201,263) in 400ms",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0018.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0020.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmToggle"
+    }
+   },
+   "result": "tapped at (352, 413) via id",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0023.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0023.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "360,405,380,421"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (370, 413) via bounds",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0026.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "x1": 335,
+    "y1": 413,
+    "x2": 378,
+    "y2": 413,
+    "duration_ms": 300
+   },
+   "result": "swiped (335,413)->(378,413) in 300ms",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0028.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    }
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run2-pco/quickbite-001/0030.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "DO",
+   "text": "Place order of chicken bowl from Chipotle delivered to 410 Brannan St",
+   "verdict": "proven",
+   "claim": "Order confirmed",
+   "frame": 30
+  }
+ ]
+}

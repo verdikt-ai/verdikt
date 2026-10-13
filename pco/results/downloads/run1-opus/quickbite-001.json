@@ -1,0 +1,225 @@
+{
+ "id": "quickbite-001",
+ "app": "quickbite",
+ "category": "single_app",
+ "goal": "Order a chicken bowl from Chipotle on QuickBite for delivery to 410 Brannan St and confirm the order was placed.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 14,
+ "budget": 50,
+ "seconds": 109.3,
+ "cost": 0.44235680000000005,
+ "answer": null,
+ "summary": "I ordered one Chicken Bowl from Chipotle Mexican Grill on QuickBite. It's going to Home, 410 Brannan St, Unit 12B, which was already set as the delivery address. The tracking screen shows \"Order confirmed\" with an ETA of 32 minutes.\n\n- **Total charged: $20.70.** That's the $11.75 bowl plus a $1.99 delivery fee, $2.99 service fee, $0.97 tax and a $3.00 tip. The tip was already set and I left it as is.\n- **Card:** the saved Freedom Unlimited Visa ending in 2095, which was already selected. Placing the order also needed a box ticked confirming the charge on that card.\n\nANSWER: done",
+ "rubric": [
+  {
+   "criterion": "Open QuickBite app and search or browse for Chipotle",
+   "satisfied": true,
+   "reasoning": "Screenshots 3-4 show the agent navigated to the Browse tab and searched for 'Chipotle', with results showing Chipotle Mexican Grill."
+  },
+  {
+   "criterion": "Select Chipotle from results",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows the Chipotle Mexican Grill restaurant page was opened after tapping on the search result."
+  },
+  {
+   "criterion": "Find and select a chicken bowl from the menu",
+   "satisfied": true,
+   "reasoning": "Screenshot 5 shows the Chipotle menu with Chicken Bowl visible, and Screenshot 6 shows the 'View Cart' button with $11.75 (the Chicken Bowl price), confirming it was added to cart."
+  },
+  {
+   "criterion": "Confirm delivery address is 410 Brannan St",
+   "satisfied": true,
+   "reasoning": "Screenshots 7-9 show the cart with 'Deliver to Home - 410 Brannan St, Unit 12B' as the delivery address. The address contains 410 Brannan St as required."
+  },
+  {
+   "criterion": "Proceed to checkout and place the order",
+   "satisfied": true,
+   "reasoning": "The agent proceeded through the cart, tapped 'Place Order', navigated to MyBank Checkout, toggled the confirmation switch (visible as green in Screenshot 14), and tapped 'Confirm & Place Order'."
+  },
+  {
+   "criterion": "Confirm the order was placed successfully",
+   "satisfied": true,
+   "reasoning": "The final screenshot (Screenshot 15) shows a Tracking screen with 'Order confirmed' text, ETA 32 min, and Chipotle Mexican Grill with 1 item, confirming the order was successfully placed."
+  }
+ ],
+ "judge": "The agent successfully completed all steps of the task: opened QuickBite, searched for Chipotle, selected Chipotle Mexican Grill, added a Chicken Bowl to cart, verified the delivery address as 410 Brannan St, proceeded to checkout, confirmed the order via MyBank checkout, and the final screenshot shows a Tracking screen with 'Order confirmed' status for Chipotle Mexican Grill with ETA 32 min.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Browse"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Browse)",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "140,820,180,850"
+    }
+   },
+   "result": "tapped at (160, 835) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0006.webp"
+  },
+  {
+   "n": 3,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 3
+    },
+    "text": "Chipotle"
+   },
+   "result": "typed 'Chipotle'; verified: true; field value now 'Chipotle'",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0009.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 351) via index",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0011.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "menu_item_add_chicken_bowl"
+    }
+   },
+   "result": "tapped at (382, 632) via id",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0013.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "view_cart_button"
+    }
+   },
+   "result": "tapped at (201, 752) via id",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0015.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 936) via id",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0017.webp"
+  },
+  {
+   "n": 8,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 50,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,655)->(201,219) in 400ms",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0019.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cart_place_order_button"
+    }
+   },
+   "result": "tapped at (201, 740) via id",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0021.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmToggle"
+    }
+   },
+   "result": "tapped at (352, 413) via id",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0024.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0024.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "355,405,375,421"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (365, 413) via bounds",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0027.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "x1": 335,
+    "y1": 413,
+    "x2": 375,
+    "y2": 413,
+    "duration_ms": 300
+   },
+   "result": "swiped (335,413)->(375,413) in 300ms",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0029.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "mybank.checkout.confirmButton"
+    }
+   },
+   "result": "tapped at (201, 470) via id",
+   "refused": false,
+   "frame": "media/run1-opus/quickbite-001/0031.webp"
+  }
+ ],
+ "ledger": null
+}

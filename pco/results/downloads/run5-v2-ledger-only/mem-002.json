@@ -1,0 +1,179 @@
+{
+ "id": "mem-002",
+ "app": "cityride",
+ "category": "memory",
+ "goal": "Look at my CityRide app and figure out my most common route based on my saved locations. Then request a ride along that route and tell me the route and estimated fare.",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 9,
+ "budget": 50,
+ "seconds": 123.0,
+ "cost": 0.9673,
+ "answer": "Most common route: Work (201 Mission St) \u2192 Home (410 Brannan St); ride requested (CityRideX), estimated fare $14.20; estimated fare: Request CityRideX \u00b7 $14.20",
+ "summary": "I requested a CityRideX ride from Work to Home, which is your most common route. The estimated fare is $14.20 and it's on its way.\n\n- **How I picked the route:** you have three saved places: Home (410 Brannan St), Work (201 Mission St) and the Airport (SFO). Home is the most frequent destination in your ride history. I opened only the latest Home trip, and it started at Work. I'm assuming your other rides home also start there, since pickups aren't shown in the trip list.\n- **The request:** the trip screen shows \"Requesting\", \"Work to Home\" and \"Ride requested\", and says it's matching you with a nearby driver. The ETA is 11 minutes via I-280 S.\n- **The fare:** $14.20 is the upfront price, the same as your past Work \u2192 Home rides.\n\nANSWER: Most common route: Work (201 Mission St) \u2192 Home (410 Brannan St); ride requested (CityRideX), estimated fare $14.20",
+ "rubric": [
+  {
+   "criterion": "Open CityRide and review saved locations and route templates",
+   "satisfied": true,
+   "reasoning": "The agent opened the CityRide app (visible in screenshots 1-2 showing the home screen with saved locations like Home, Work, Chase Center, Ferry Building, Pier 39, Russian Hill, Embarcadero). The agent also navigated to the Activity tab (screenshot 3) to review past trips and route history."
+  },
+  {
+   "criterion": "Identify the most common route",
+   "satisfied": true,
+   "reasoning": "In screenshot 4, the agent reviewed the past trips list which shows multiple 'Home' destination trips (Oct 12, Oct 9, Oct 7, Oct 6) compared to other destinations appearing once. The agent correctly identified Work \u2192 Home as the most common route, which is confirmed by the trip details in screenshot 5 showing Pickup: Work, Destination: Home."
+  },
+  {
+   "criterion": "Request a ride along the identified commute route",
+   "satisfied": true,
+   "reasoning": "The agent successfully requested a CityRideX ride from Work (201 Mission St) to Home (410 Brannan St). Screenshot 9 shows the ride selection screen with 'Work' to 'Home' route and CityRideX selected at $14.20. Screenshot 10 (final state) shows 'Requesting - Work to Home' with Trip Status confirming the ride was requested."
+  },
+  {
+   "criterion": "Report the route details and estimated fare",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports: Most common route is Work (201 Mission St) \u2192 Home (410 Brannan St), ride type CityRideX, estimated fare $14.20. This matches what's shown in the final screenshot (Trip: CityRideX, Price: $14.20, Route: I-280 S, Work to Home)."
+  }
+ ],
+ "judge": "The agent successfully opened the CityRide app, reviewed saved locations and activity history, identified the most common route (Work to Home, appearing multiple times in past trips), requested a ride along that route using CityRideX, and reported the route details and estimated fare of $14.20. The final screenshot confirms the ride was requested with 'Requesting - Work to Home' status, CityRideX ride type, price $14.20, and route I-280 S.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Activity"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Activity)",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mem-002/0003.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "115,805,150,845"
+    }
+   },
+   "result": "tapped at (132, 825) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mem-002/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 30,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,568)->(201,306) in 400ms",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mem-002/0007.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "activity_detail_button_trip_past_1"
+    }
+   },
+   "result": "tapped at (354, 182) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mem-002/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "BackButton"
+    }
+   },
+   "result": "tapped at (38, 83) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mem-002/0013.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "activity_rebook_button_trip_past_1"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (290, 199) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mem-002/0013.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "40,805,85,845"
+    }
+   },
+   "result": "tapped at (62, 825) via bounds",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mem-002/0015.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "recent_destination_row_home"
+    }
+   },
+   "result": "tapped at (138, 454) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mem-002/0017.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "request_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 773) via id",
+   "refused": false,
+   "frame": "media/run5-v2-ledger-only/mem-002/0019.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "pickup location of most common route",
+   "verdict": "proven",
+   "claim": "Work",
+   "frame": 10
+  },
+  {
+   "type": "KNOW",
+   "text": "destination of most common route",
+   "verdict": "proven",
+   "claim": "Home",
+   "frame": 10
+  },
+  {
+   "type": "KNOW",
+   "text": "estimated fare",
+   "verdict": "proven",
+   "claim": "Request CityRideX \u00b7 $14.20",
+   "frame": 17
+  },
+  {
+   "type": "DO",
+   "text": "request ride along most common route",
+   "verdict": "proven",
+   "claim": "Work to Home",
+   "frame": 19
+  }
+ ]
+}

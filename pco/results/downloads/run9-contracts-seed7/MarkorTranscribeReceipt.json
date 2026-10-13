@@ -1,0 +1,143 @@
+{
+ "id": "MarkorTranscribeReceipt",
+ "app": "Simple Gallery",
+ "goal": "Create a file in Markor, called receipt.md with the transactions from the receipt.png. Use Simple Gallery to view the receipt. Please enter transactions in csv format including the header \"Date, Item, Amount\".",
+ "success": true,
+ "score": 1.0,
+ "steps": 10,
+ "budget": 18,
+ "seconds": 100.8,
+ "cost": 0.2679734,
+ "answer": null,
+ "summary": "I created receipt.md in Markor's Documents folder and saved it with the three transactions from receipt.png, in CSV format with the header you asked for:\n\n```\nDate, Item, Amount\n2023-09-12, Wireless Mouse, $48.58\n2023-08-03, Wireless Mouse, $41.38\n2023-02-17, USB-C Cable, $18.45\n```\n\nI read these from the full image in Simple Gallery. The receipt also shows the shop name, its slogan and a thank-you note, which I left out because they aren't transactions. The save button went grey after I saved, so the file is stored.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "open_app",
+   "args": {
+    "name": "Simple Gallery Pro"
+   },
+   "result": "opened Simple Gallery Pro",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/000.webp"
+  },
+  {
+   "n": 1,
+   "tool": "contract",
+   "args": {
+    "checks": []
+   },
+   "result": null,
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/000.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "x": 270,
+    "y": 400
+   },
+   "result": "tapped (270,400)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/002.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "index": 6
+   },
+   "result": "tapped (180,411)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/003.webp"
+  },
+  {
+   "n": 4,
+   "tool": "open_app",
+   "args": {
+    "name": "Markor"
+   },
+   "result": "opened Markor",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/004.webp"
+  },
+  {
+   "n": 5,
+   "tool": "tap",
+   "args": {
+    "index": 1
+   },
+   "result": "tapped (964,2074)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/005.webp"
+  },
+  {
+   "n": 6,
+   "tool": "type",
+   "args": {
+    "text": "receipt",
+    "index": 1,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"receipt\"",
+   "refused": false,
+   "expect": "expect: PASS\n  ok   TextField \"my_note\" value \"receipt\" -> TextField \"my_note\" value=\"receipt\" [1] has value \"receipt\"",
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/006.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "index": 11
+   },
+   "result": "tapped (922,1080)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/007.webp"
+  },
+  {
+   "n": 8,
+   "tool": "type",
+   "args": {
+    "text": "Date, Item, Amount\n2023-09-12, Wireless Mouse, $48.58\n2023-08-03, Wireless Mouse, $41.38\n2023-02-17, USB-C Cable, $18.45",
+    "index": 8,
+    "clear": true,
+    "enter": false
+   },
+   "result": "typed \"Date, Item, Amount\\n2023-09-12, Wireless Mouse, $48.58\\n2023-08-03, Wireless Mouse, $41.38\\n2023-02-17, USB-C Cable, $18.45\"",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/008.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "index": 4
+   },
+   "result": "tapped (817,136)",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/009.webp"
+  },
+  {
+   "n": 10,
+   "tool": "finish",
+   "args": {
+    "status": "complete"
+   },
+   "result": "episode finished. Stop now and do not call any more tools.",
+   "refused": false,
+   "expect": null,
+   "frame": "media/run9-contracts-seed7/MarkorTranscribeReceipt/009.webp"
+  }
+ ]
+}

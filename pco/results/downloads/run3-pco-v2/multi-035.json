@@ -1,0 +1,721 @@
+{
+ "id": "multi-035",
+ "app": "tasterank, dinespot, cinephile, cityride, quickchat",
+ "category": "multi_app",
+ "goal": "Browse DineSpot for a restaurant in San Francisco with outdoor seating and make a reservation for 2 at 7 PM Saturday. Check TasteRank to see if any friends have reviewed restaurants in that neighborhood. Search Cinephile for a movie to watch afterward and add it to a 'Date Night' list. Compare CityRide prices (CityRideX vs Comfort) for the ride to the restaurant and estimate the total evening cost covering dinner and ride. Message Maya Patel in QuickChat with the full plan. What's the restaurant name, movie title, ride estimate, and total evening cost estimate?",
+ "success": true,
+ "score": 1.0,
+ "judged": true,
+ "steps": 48,
+ "budget": 50,
+ "seconds": 360.8,
+ "cost": 3.8086,
+ "answer": "Restaurant: Marina Oyster Club (booked for 2, Sat Oct 17, 7:30 PM, the closest slot to 7 PM; code RSV2007); no TasteRank friend reviews in the Marina. Movie: The Fix (added to the 'Date Night' list). Ride estimate: CityRideX $14.83 vs Comfort $18.98. Total evening cost estimate: about $114.83 (dinner about $100 for 2 plus CityRideX $14.83), or about $118.98 with Comfort.; friends' reviews in that neighborhood on TasteRank: Marina District, San Francisco; total evening cost estimate (dinner + ride): About $114.83 (dinner ~$100 for 2 + CityRideX $14.83); about $118.98 with Comfort",
+ "summary": "I booked dinner for Saturday, but at 7:30 PM, not 7:00: Marina Oyster Club had no 7:00 PM slot that day. The rest of the plan is done and Maya Patel has the details. The checker had rejected the movie title, so I reopened the \"Date Night\" list in Cinephile. It shows the list holds one movie, The Fix, and that item is now closed again.\n\n- **Restaurant:** Marina Oyster Club (2250 Chestnut St, Marina), from DineSpot's \"Outdoor\" collection. The booking is for 2 on Sat, Oct 17 at 7:30 PM, code RSV2007. I didn't check other outdoor restaurants for a 7:00 PM table.\n- **TasteRank:** no friends have reviewed restaurants in the Marina. The only Marina place it found was Mama, and the only note on it is your own.\n- **Movie:** The Fix, added to the new \"Date Night\" list.\n- **Ride from Home to the restaurant:** CityRideX is $14.83 and Comfort is $18.98.\n- **Total evening cost:** about $114.83, which is roughly $100 for dinner for two plus the CityRideX fare. With Comfort it's about $118.98. The dinner figure uses DineSpot's \"$50+\" per-person price, so it's a lower bound and doesn't include movie tickets.\n- **Message:** Maya has the full plan in QuickChat and replied \"Sounds perfect!\"\n\nI've used 48 of the 50 actions.\n\nANSWER: Restaurant: Marina Oyster Club (booked for 2, Sat Oct 17, 7:30 PM, the closest slot to 7 PM; code RSV2007); no TasteRank friend reviews in the Marina. Movie: The Fix (added to the 'Date Night' list). Ride estimate: CityRideX $14.83 vs Comfort $18.98. Total evening cost estimate: about $114.83 (dinner about $100 for 2 plus CityRideX $14.83), or about $118.98 with Comfort.",
+ "rubric": [
+  {
+   "criterion": "Open DineSpot and search for San Francisco restaurants with outdoor seating",
+   "satisfied": true,
+   "reasoning": "Screenshots 5-6 show the agent opened DineSpot, navigated to the Search tab showing San Francisco restaurants, and tapped the 'Outdoor' filter category, resulting in a filtered list of 10 restaurants with outdoor seating including Marina Oyster Club."
+  },
+  {
+   "criterion": "Make a reservation for 2 at 7 PM Saturday at a restaurant with outdoor seating",
+   "satisfied": true,
+   "reasoning": "Screenshots 19-21 show the agent selected the 7:30 PM slot on Sat, Oct 17 (the closest available to 7 PM) for 2 guests at Marina Oyster Club, reviewed the booking details, and confirmed the reservation. Screenshot 21 shows 'Reservation Confirmed' with code RSV2007."
+  },
+  {
+   "criterion": "Open TasteRank and check for friend reviews in the restaurant's neighborhood",
+   "satisfied": true,
+   "reasoning": "Screenshots 35-40 show the agent opened TasteRank, searched for 'Marina', found a restaurant in the Marina District, and viewed its page. The agent checked for friend reviews in the Marina neighborhood."
+  },
+  {
+   "criterion": "Open Cinephile and search for a movie to watch afterward",
+   "satisfied": true,
+   "reasoning": "Screenshots 27-28 show the agent opened Cinephile and selected 'The Fix' from the Now Playing list as the movie to watch afterward."
+  },
+  {
+   "criterion": "Add the movie to a 'Date Night' list",
+   "satisfied": true,
+   "reasoning": "Screenshots 29-34 and the final screenshot 48 confirm the agent created a 'Date Night' custom list in Cinephile and added 'The Fix' to it. The final screenshot shows the 'Date Night' list with 'The Fix' as its only movie."
+  },
+  {
+   "criterion": "Open CityRide and compare CityRideX vs Comfort prices to the restaurant",
+   "satisfied": true,
+   "reasoning": "Screenshot 26 shows CityRide with the destination set to 2250 Chestnut St (Marina Oyster Club's address), displaying CityRideX at $14.83 and CityRide Green at $16.31. The Comfort option price of $18.98 was also obtained (visible in the message sent to Maya Patel), indicating the agent scrolled to see Comfort pricing."
+  },
+  {
+   "criterion": "Estimate total evening cost covering dinner and ride (excluding movie ticket)",
+   "satisfied": true,
+   "reasoning": "The agent estimated ~$114.83 total (dinner ~$100 for 2 + CityRideX $14.83), which is a reasonable estimate covering dinner and ride as requested."
+  },
+  {
+   "criterion": "Message Maya Patel in QuickChat with the full plan",
+   "satisfied": true,
+   "reasoning": "Screenshots 42-44 show the agent opened QuickChat, found Maya Patel's chat, typed a comprehensive message with the full plan including restaurant, reservation details, ride comparison, movie, and total cost estimate, and sent it successfully. Screenshot 44 shows Maya's response confirming receipt."
+  },
+  {
+   "criterion": "Report the restaurant name and reservation details",
+   "satisfied": true,
+   "reasoning": "The agent's final answer correctly reports Marina Oyster Club, reservation for 2 on Sat Oct 17 at 7:30 PM (closest slot to 7 PM), with confirmation code RSV2007."
+  },
+  {
+   "criterion": "Report the movie title",
+   "satisfied": true,
+   "reasoning": "The agent correctly reports 'The Fix' as the movie title in the final answer."
+  },
+  {
+   "criterion": "Report the ride estimate (CityRideX vs Comfort comparison)",
+   "satisfied": true,
+   "reasoning": "The agent correctly reports CityRideX at $14.83 vs Comfort at $18.98 in the final answer."
+  },
+  {
+   "criterion": "Report the total evening cost estimate",
+   "satisfied": true,
+   "reasoning": "The agent reports approximately $114.83 (dinner ~$100 for 2 + CityRideX $14.83) as the total evening cost estimate, which is reasonable and covers dinner and ride as requested."
+  },
+  {
+   "criterion": "Confirm the reservation and message were completed",
+   "satisfied": true,
+   "reasoning": "Screenshot 21 shows 'Reservation Confirmed' for Marina Oyster Club, Sat Oct 17, 7:30 PM with code RSV2007. Screenshot 44 shows the message was sent to Maya Patel and she responded positively."
+  }
+ ],
+ "judge": "The agent successfully completed all major components of the task: opened DineSpot and searched for SF restaurants with outdoor seating, found and selected Marina Oyster Club (which has outdoor seating in the Marina neighborhood), made a reservation for 2 at 7:30 PM Saturday Oct 17 (closest available slot to 7 PM), confirmed the reservation (code RSV2007), checked TasteRank for friend reviews in the Marina neighborhood, opened Cinephile and selected 'The Fix' as the movie, added it to a newly created 'Date Night' list, opened CityRide and compared CityRideX ($14.83) vs Comfort ($18.98) prices, estimated total evening cost (~$114.83), and messaged Maya Patel in QuickChat with the full plan. The final answer correctly reports all requested information.",
+ "step_list": [
+  {
+   "n": 1,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.dinespot"
+   },
+   "result": "launched com.iosworld.benchmark.dinespot",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0002.webp"
+  },
+  {
+   "n": 2,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Search"
+    }
+   },
+   "result": "tap failed: error: no element matched (text=Search)",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0005.webp"
+  },
+  {
+   "n": 3,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "110,805,145,850"
+    }
+   },
+   "result": "tapped at (127, 827) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0008.webp"
+  },
+  {
+   "n": 4,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "featured_collection_outdoor"
+    },
+    "screen_changed": false
+   },
+   "result": "tapped at (793, 124) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0010.webp"
+  },
+  {
+   "n": 5,
+   "tool": "swipe",
+   "args": {
+    "x1": 350,
+    "y1": 124,
+    "x2": 20,
+    "y2": 124,
+    "duration_ms": 400,
+    "screen_changed": false
+   },
+   "result": "swiped (350,124)->(20,124) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0012.webp"
+  },
+  {
+   "n": 6,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 12
+    }
+   },
+   "result": "tapped at (294, 124) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0015.webp"
+  },
+  {
+   "n": 7,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 27
+    }
+   },
+   "result": "tapped at (206, 596) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0017.webp"
+  },
+  {
+   "n": 8,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (81, 725) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0019.webp"
+  },
+  {
+   "n": 9,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "340,767,364,791"
+    }
+   },
+   "result": "tapped at (352, 779) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0021.webp"
+  },
+  {
+   "n": 10,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (200, 1008) via text",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0023.webp"
+  },
+  {
+   "n": 11,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 31
+    }
+   },
+   "result": "tapped at (200, 840) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0025.webp"
+  },
+  {
+   "n": 12,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "110,805,145,850"
+    }
+   },
+   "result": "tapped at (127, 827) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0027.webp"
+  },
+  {
+   "n": 13,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 30,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,568)->(201,306) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0029.webp"
+  },
+  {
+   "n": 14,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 24
+    }
+   },
+   "result": "tapped at (81, 536) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0031.webp"
+  },
+  {
+   "n": 15,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "340,767,364,791"
+    }
+   },
+   "result": "tapped at (352, 779) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0034.webp"
+  },
+  {
+   "n": 16,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Done"
+    }
+   },
+   "result": "tapped at (200, 1008) via text",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0034.webp"
+  },
+  {
+   "n": 17,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 31
+    }
+   },
+   "result": "tapped at (200, 651) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0036.webp"
+  },
+  {
+   "n": 18,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 70,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,742)->(201,132) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0038.webp"
+  },
+  {
+   "n": 19,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 17
+    }
+   },
+   "result": "tapped at (201, 730) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0040.webp"
+  },
+  {
+   "n": 20,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "full_availability_slot_seed_restaurant_sf_marina_oyster_20261017_1930_p2"
+    }
+   },
+   "result": "tapped at (201, 705) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0042.webp"
+  },
+  {
+   "n": 21,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "reservation_confirm_button"
+    }
+   },
+   "result": "tapped at (201, 779) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0044.webp"
+  },
+  {
+   "n": 22,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cityride"
+   },
+   "result": "launched com.iosworld.benchmark.cityride",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0046.webp"
+  },
+  {
+   "n": 23,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "home_where_to_button"
+    }
+   },
+   "result": "tapped at (101, 320) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0048.webp"
+  },
+  {
+   "n": 24,
+   "tool": "clear",
+   "args": {
+    "target": {
+     "id": "request_destination_chip_button"
+    }
+   },
+   "result": "sent 4 deletes; cleared: false; field value now 'Where to?'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0051.webp"
+  },
+  {
+   "n": 25,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "2250 Chestnut St"
+   },
+   "result": "typed '2250 Chestnut St'; verified: false; field value now 'Home'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0053.webp"
+  },
+  {
+   "n": 26,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (134, 334) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0055.webp"
+  },
+  {
+   "n": 27,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cinephile"
+   },
+   "result": "launched com.iosworld.benchmark.cinephile",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0057.webp"
+  },
+  {
+   "n": 28,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "cinephile_movie_row_1228834"
+    }
+   },
+   "result": "tapped at (201, 680) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0059.webp"
+  },
+  {
+   "n": 29,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 15
+    }
+   },
+   "result": "tapped at (278, 405) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0061.webp"
+  },
+  {
+   "n": 30,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "350,85,395,125"
+    }
+   },
+   "result": "tapped at (372, 105) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0064.webp"
+  },
+  {
+   "n": 31,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 5
+    },
+    "text": "Date Night"
+   },
+   "result": "typed 'Date Night'; verified: true; field value now 'Date Night'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0068.webp"
+  },
+  {
+   "n": 32,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "text": "Create"
+    }
+   },
+   "result": "tapped at (201, 473) via text",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0068.webp"
+  },
+  {
+   "n": 33,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 15
+    }
+   },
+   "result": "tapped at (278, 405) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0070.webp"
+  },
+  {
+   "n": 34,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 7
+    }
+   },
+   "result": "tapped at (201, 360) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0072.webp"
+  },
+  {
+   "n": 35,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.tasterank"
+   },
+   "result": "launched com.iosworld.benchmark.tasterank",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0074.webp"
+  },
+  {
+   "n": 36,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 10
+    }
+   },
+   "result": "tapped at (201, 146) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0076.webp"
+  },
+  {
+   "n": 37,
+   "tool": "type",
+   "args": {
+    "target": {},
+    "text": "Marina"
+   },
+   "result": "typed 'Marina'; verified: false; field value now 'Search restaurant, cuisine, occasion'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0078.webp"
+  },
+  {
+   "n": 38,
+   "tool": "type",
+   "args": {
+    "target": {
+     "index": 6
+    },
+    "text": "Marina"
+   },
+   "result": "typed 'Marina'; verified: true; field value now 'Marina'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0081.webp"
+  },
+  {
+   "n": 39,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 13
+    }
+   },
+   "result": "tapped at (201, 432) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0083.webp"
+  },
+  {
+   "n": 40,
+   "tool": "swipe",
+   "args": {
+    "direction": "up",
+    "distance_percent": 60,
+    "duration_ms": 400
+   },
+   "result": "swiped (201,699)->(201,175) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0085.webp"
+  },
+  {
+   "n": 41,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.quickchat"
+   },
+   "result": "launched com.iosworld.benchmark.quickchat",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0087.webp"
+  },
+  {
+   "n": 42,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 15
+    }
+   },
+   "result": "tapped at (201, 467) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0089.webp"
+  },
+  {
+   "n": 43,
+   "tool": "type",
+   "args": {
+    "target": {
+     "id": "chat_compose_field"
+    },
+    "text": "Date night plan for Sat Oct 17: dinner at Marina Oyster Club (2250 Chestnut St, outdoor seating), reservation for 2 at 7:30 PM (closest slot to 7, code RSV2007). Ride: CityRideX $14.83 vs Comfort $18.98, going with CityRideX. Then the movie The Fix afterward. Est. total about $115 (dinner ~$100 for 2 + ride $14.83)."
+   },
+   "result": "typed 'Date night plan for Sat Oct 17: dinner at Marina Oyster Club (2250 Chestnut St, outdoor seating), reservation for 2 at 7:30 PM (closest slot to 7, code RSV2007). Ride: CityRideX $14.83 vs Comfort $18.98, going with CityRideX. Then the movie The Fix afterward. Est. total about $115 (dinner ~$100 for 2 + ride $14.83).'; verified: true; field value now 'Date night plan for Sat Oct 17: dinner at Marina Oyster Club (2250 Chestnut St, outdoor seating), reservation for 2 at 7:30 PM (closest slot to 7, code RSV2007). Ride: CityRideX $14.83 vs Comfort $18.98, going with CityRideX. Then the movie The Fix afterward. Est. total about $115 (dinner ~$100 for 2 + ride $14.83).'",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0092.webp"
+  },
+  {
+   "n": 44,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "id": "chat_send_button"
+    }
+   },
+   "result": "tapped at (360, 432) via id",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0094.webp"
+  },
+  {
+   "n": 45,
+   "tool": "launch",
+   "args": {
+    "bundle_id": "com.iosworld.benchmark.cinephile"
+   },
+   "result": "launched com.iosworld.benchmark.cinephile",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0096.webp"
+  },
+  {
+   "n": 46,
+   "tool": "swipe",
+   "args": {
+    "x1": 200,
+    "y1": 150,
+    "x2": 200,
+    "y2": 800,
+    "duration_ms": 400
+   },
+   "result": "swiped (200,150)->(200,800) in 400ms",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0098.webp"
+  },
+  {
+   "n": 47,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "bounds": "310,815,350,855"
+    }
+   },
+   "result": "tapped at (330, 835) via bounds",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0100.webp"
+  },
+  {
+   "n": 48,
+   "tool": "tap",
+   "args": {
+    "target": {
+     "index": 6
+    }
+   },
+   "result": "tapped at (201, 304) via index",
+   "refused": false,
+   "frame": "media/run3-pco-v2/multi-035/0102.webp"
+  }
+ ],
+ "ledger": [
+  {
+   "type": "KNOW",
+   "text": "restaurant name (SF, outdoor seating) in DineSpot",
+   "verdict": "proven",
+   "claim": "Marina Oyster Club",
+   "frame": 23
+  },
+  {
+   "type": "DO",
+   "text": "reserve for 2 at 7 PM Saturday in DineSpot",
+   "verdict": "proven",
+   "claim": "Sat, Oct 17 \u2022 7:30 PM",
+   "frame": 44
+  },
+  {
+   "type": "KNOW",
+   "text": "friends' reviews in that neighborhood on TasteRank",
+   "verdict": "proven",
+   "claim": "Marina District, San Francisco",
+   "frame": 85
+  },
+  {
+   "type": "KNOW",
+   "text": "movie title from Cinephile",
+   "verdict": "proven",
+   "claim": "The Fix",
+   "frame": 102
+  },
+  {
+   "type": "DO",
+   "text": "add movie to 'Date Night' list in Cinephile",
+   "verdict": "proven",
+   "claim": "Date Night",
+   "frame": 72
+  },
+  {
+   "type": "KNOW",
+   "text": "CityRideX price",
+   "verdict": "proven",
+   "claim": "$14.83",
+   "frame": 55
+  },
+  {
+   "type": "KNOW",
+   "text": "Comfort price",
+   "verdict": "proven",
+   "claim": "$18.98",
+   "frame": 55
+  },
+  {
+   "type": "SAY",
+   "text": "total evening cost estimate (dinner + ride)",
+   "verdict": "proven",
+   "claim": "About $114.83 (dinner ~$100 for 2 + CityRideX $14.83); about $118.98 with Comfort",
+   "frame": 85
+  },
+  {
+   "type": "DO",
+   "text": "message Maya Patel in QuickChat with full plan",
+   "verdict": "proven",
+   "claim": "Date night plan for Sat Oct 17: dinner at Marina Oyster Club",
+   "frame": 94
+  }
+ ]
+}
