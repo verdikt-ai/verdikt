@@ -5,7 +5,7 @@ import re
 import subprocess
 import xml.etree.ElementTree as ET
 
-from proofop.drivers.base import Shot
+from verdikt_core.drivers.base import Shot
 
 CLASS_TYPE = {'Button': 'Button', 'ImageView': 'Image', 'ImageButton': 'Button', 'CheckBox': 'Switch', 'Switch': 'Switch',
               'ToggleButton': 'Switch', 'RadioButton': 'Radio', 'EditText': 'TextField', 'TextView': 'StaticText'}

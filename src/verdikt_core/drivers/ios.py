@@ -1,7 +1,7 @@
 """iOS simulators over fb-idb: one idb_companion per simulator, verified to serve that simulator.
 
 Needs `idb_companion` on PATH (brew install idb-companion) and the `fb-idb` Python package
-(`pip install proofop[ios]`).
+(`pip install verdikt-core[ios]`).
 """
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ import subprocess
 import threading
 import time
 
-from proofop.drivers.base import Shot
+from verdikt_core.drivers.base import Shot
 
 KEY_ENTER = 40
 

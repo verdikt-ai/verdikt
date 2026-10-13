@@ -1,8 +1,8 @@
-"""proofop command line.
+"""verdikt-core command line.
 
-    proofop serve --ios UDID | --android SERIAL [--run-dir DIR] [--budget N] [--rounds N] [--http PORT]
-    proofop verify RUN_DIR [--json]
-    proofop check 'CHECK' --tree TREE.json
+    verdikt-core serve --ios UDID | --android SERIAL [--run-dir DIR] [--budget N] [--rounds N] [--http PORT]
+    verdikt-core verify RUN_DIR [--json]
+    verdikt-core check 'CHECK' --tree TREE.json
 """
 from __future__ import annotations
 
@@ -14,20 +14,20 @@ from pathlib import Path
 
 
 def cmd_serve(a: argparse.Namespace) -> int:
-    from proofop.server import build
-    from proofop.session import Session
+    from verdikt_core.server import build
+    from verdikt_core.session import Session
     if bool(a.ios) == bool(a.android):
         print('give exactly one of --ios UDID or --android SERIAL', file=sys.stderr)
         return 2
     if a.ios:
-        from proofop.drivers.ios import IOSDriver
+        from verdikt_core.drivers.ios import IOSDriver
         driver = IOSDriver(a.ios)
     else:
-        from proofop.drivers.android import AndroidDriver
+        from verdikt_core.drivers.android import AndroidDriver
         driver = AndroidDriver(a.android)
     run_dir = Path(a.run_dir or Path('runs') / time.strftime('%Y%m%d-%H%M%S'))
     session = Session(driver, run_dir, budget=a.budget, rounds=a.rounds)
-    print(f'proofop: run folder {run_dir.resolve()}', file=sys.stderr)
+    print(f'verdikt-core: run folder {run_dir.resolve()}', file=sys.stderr)
     mcp = build(session)
     try:
         if a.http:
@@ -41,7 +41,7 @@ def cmd_serve(a: argparse.Namespace) -> int:
 
 
 def cmd_verify(a: argparse.Namespace) -> int:
-    from proofop import ledger
+    from verdikt_core import ledger
     result = ledger.verify_run(Path(a.run_dir))
     if a.json:
         print(json.dumps(ledger.certificate(result, rounds=0), indent=1))
@@ -56,8 +56,8 @@ def cmd_verify(a: argparse.Namespace) -> int:
 def cmd_check(a: argparse.Namespace) -> int:
     from types import SimpleNamespace
 
-    from proofop.checks import match_once, parse_check
-    from proofop.tree import parse_tree
+    from verdikt_core.checks import match_once, parse_check
+    from verdikt_core.tree import parse_tree
     c = parse_check(a.check)
     if c.problems:
         print('cannot parse: ' + '; '.join(c.problems), file=sys.stderr)
@@ -69,7 +69,7 @@ def cmd_check(a: argparse.Namespace) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    p = argparse.ArgumentParser(prog='proofop', description='Proof-carrying operation for device agents.')
+    p = argparse.ArgumentParser(prog="verdikt-core", description='Proof-carrying operation for device agents.')
     sub = p.add_subparsers(dest='cmd', required=True)
     s = sub.add_parser('serve', help='run the MCP server for one device')
     s.add_argument('--ios', metavar='UDID')

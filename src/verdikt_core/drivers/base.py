@@ -7,7 +7,7 @@ from typing import Protocol
 
 @dataclass
 class Shot:
-    """One captured screen: a PNG and the UI tree as nodes `proofop.tree.parse_tree` reads
+    """One captured screen: a PNG and the UI tree as nodes `verdikt_core.tree.parse_tree` reads
     (type, AXLabel, AXValue, AXUniqueId, frame, enabled, traits)."""
     png: bytes
     nodes: list[dict] = field(default_factory=list)

@@ -9,7 +9,7 @@ and deterministic code - not the model - decides whether it does.
 - Answer evidence: `answer` may cite checks for the facts it reports; each must have held on
   some screen seen in the episode, else the answer is refused once.
 
-Checks use `proofop.checks` (e.g. `text "Pasta" visible`, `count StaticText ~"Pasta"
+Checks use `verdikt_core.checks` (e.g. `text "Pasta" visible`, `count StaticText ~"Pasta"
 == 1`, `TextField "Name" value "Ann"`, `Switch "Wi-Fi" checked`), over the UI tree mapped to
 elements the way an Android adapter maps uiautomator nodes.
 """
@@ -18,8 +18,8 @@ from __future__ import annotations
 from types import SimpleNamespace
 from typing import Any
 
-from proofop.checks import Check, match_once, nearest_labels, parse_check
-from proofop.tree import parse_tree
+from verdikt_core.checks import Check, match_once, nearest_labels, parse_check
+from verdikt_core.tree import parse_tree
 
 # Same class -> type map as verdikt.sessions.android.CLASS_TYPE_MAP.
 CLASS_TYPE = {'Button': 'Button', 'ImageView': 'Image', 'ImageButton': 'Button', 'CheckBox': 'Switch',

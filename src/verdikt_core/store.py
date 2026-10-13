@@ -12,7 +12,7 @@ import json
 import time
 from pathlib import Path
 
-from proofop.drivers.base import Shot
+from verdikt_core.drivers.base import Shot
 
 
 class Store:

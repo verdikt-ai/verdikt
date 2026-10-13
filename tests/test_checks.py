@@ -7,9 +7,9 @@ import json
 
 import pytest
 
-from proofop import checks
-from proofop.checks import CheckResult, evaluate, parse_check
-from proofop.tree import parse_tree
+from verdikt_core import checks
+from verdikt_core.checks import CheckResult, evaluate, parse_check
+from verdikt_core.tree import parse_tree
 
 
 def _node(t, label="", value="", ident="", x=0, y=0, w=100, h=20, enabled=True, traits=None):
@@ -127,7 +127,7 @@ def test_count_url_title():
 
 
 def test_screen_changed_against_before_hash():
-    from proofop.tree import tree_value_hash
+    from verdikt_core.tree import tree_value_hash
 
     before = Shot([_node("Switch", "A", value="off")])
     after = Shot([_node("Switch", "A", value="on")])

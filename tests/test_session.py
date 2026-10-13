@@ -1,9 +1,9 @@
 """A whole session against a fake device: act-then-observe, stable targeting, and the gated finish."""
 import json
 
-from proofop.drivers.android import parse_dump
-from proofop.drivers.base import Shot
-from proofop.session import Session
+from verdikt_core.drivers.android import parse_dump
+from verdikt_core.drivers.base import Shot
+from verdikt_core.session import Session
 
 
 def node(label, y, kind='Button', ident='', value=None, traits=()):

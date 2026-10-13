@@ -1,6 +1,6 @@
-"""The proofop MCP server: device tools plus the obligation ledger, with a finish the checker gates.
+"""The verdikt-core MCP server: device tools plus the obligation ledger, with a finish the checker gates.
 
-    proofop serve --ios <udid> | --android <serial> [--run-dir DIR] [--budget 50] [--http PORT]
+    verdikt-core serve --ios <udid> | --android <serial> [--run-dir DIR] [--budget 50] [--http PORT]
 """
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from typing import Literal
 
 from mcp.server.mcpserver import Image, MCPServer
 
-from proofop.session import Session
+from verdikt_core.session import Session
 
 INSTRUCTIONS = """Operate the phone to accomplish the user's goal. Completion is decided by a checker, not by you.
 1. Call `screen`, then record every obligation of the goal with `record` (free): DO for each state change,
@@ -23,7 +23,7 @@ INSTRUCTIONS = """Operate the phone to accomplish the user's goal. Completion is
 
 
 def build(session: Session) -> MCPServer:
-    mcp = MCPServer('proofop', instructions=INSTRUCTIONS)
+    mcp = MCPServer("verdikt-core", instructions=INSTRUCTIONS)
 
     def reply(text: str, png: bytes | None) -> list:
         return [text, Image(data=png, format='png')] if png else [text]

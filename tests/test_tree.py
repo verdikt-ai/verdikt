@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from proofop.tree import (
+from verdikt_core.tree import (
     compact,
     find,
     foreground_app,
